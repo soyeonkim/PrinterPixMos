@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Printerpix</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="lib/jquery.cycle2.js"></script>
+    <script src="lib/jquery.cycle2.scrollVert.js"></script>
+    <script src="lib/jquery.cycle2.carousel.js"></script>
+    <script src="lib/dropit.js"></script>
+    <script src="lib/handlebars-v4.0.2.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+    <!-- Custom LESS -->
+    <link rel="stylesheet/less" type="text/css" href="css/main.less" />
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!--<link href="css/media.css" rel="stylesheet"> -->
+
+  </head>
+  <body>
+    <!--- header menu       -->
+    <header>
+      <div id="top-header-bar" class="header-box"> <!-- total menu box -->
+      </div> 
+    </header>
+    <nav>
+      <div id="nav-memu-bar"class="top-bar-center center"> <!-- white background-->
+      </div>
+    </nav>
+    <!--- end header menu   -->
+
+    <!--  main container -->
+    <section>
+      <!--  promotion slider show -->
+      <div id="promotion-slider-bar">
+      </div>
+      <!--  end promotion slider show -->
+
+
+      <!-- productions -->
+      <div class="pd-containder center">     <!-- production container -->
+        <div class="pd-contents ">
+          <!--- best production -->
+          <div id="best-seller" class="best-product">
+          </div>
+          <!--- end best production-->
+          <!--- instagram production -->
+          <div id="instagram-seller"class="inst-product">
+          </div>
+          <!--- end instagram production-->
+          <!--promotion -->
+          <div id="promo-seller"class="promo-product">
+          </div>
+          <!-- end promotion -->
+        </div>
+      </div> 
+      <!-- end productions -->
+    </section>
+    <!-- end main container -->
+
+    <!--- footer -->
+    <footer id="footer-main">
+    </footer>
+    <!--- end footer-->
+    <!--<script src="js/data.js"></script> -->
+    <script src="js/main.js"></script>
+
+  <!--       *******************Template include ********************      -->
+  <script id="headerTemplate" type="text/x-handlebars-template">
+  <div class="container">
+    <div class="header-box">
+      <div class="logo-box"><a herf="#"><img src="img/header/PixLogo.png"></a></div>
+      <div class="menu-box">
+        <div class="hamburger-menu"><a href="#menu">&#9776;</a></div>
+        <div class="basket-menu"><a href="#basket"><img src="img/header/Basket-Icon.png"></a></div>
+         <div class="login-menu"><a class="register hidden" href="#login"><img src="img/header/Phone-Icon.png"></a>
+         <a class="logedin" href="#login"><center><p>hello</p><h1><strong>Willson</strong></center></h1>
+         </a></div>
+
+      </div>
+    </div>
+  </div>
+  </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,91 @@
+
+
+@font-face {
+  	font-family: 'MyriadProRegular';	src:  url('../fonts/MyriadProRegular.ttf');
+}
+@font-face {
+    font-family: 'MyriadProSemibold';
+    src: url('../fonts/MyriadPro-Semibold.otf');
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+a {
+  text-decoration: none;
+}
+img {
+   max-width: 100% !important;
+}
+.hidden{ display:none !important;}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0px;
+}
+
+.header-box {
+  width: 100%;
+  height: 52px;
+}
+.logo-box {
+  width: 50px;
+  float: left;
+  height: inherit;
+}
+
+.menu-box{
+  width: 80%;
+  float: right;
+  height: inherit;
+}
+.hamburger-menu,.basket-menu, .login-menu{
+  float: right;
+  margin: 0px 15px;
+}
+.hamburger-menu a{
+  font-size: 2.5em;
+  color: #414141;
+}
+.basket-menu, .login-menu {
+   padding-top: 5px;
+}
+.login-menu h1 {
+  font-size: 1.1em;
+  color: #414141;
+  margin: 0px;
+  margin-top: 5px;
+
+}
+.login-menu p {
+  font-size: 1.0em;
+  color: #414141;
+  margin: 0px;
+}
