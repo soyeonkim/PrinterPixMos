@@ -34,6 +34,8 @@
   <body>
     <!--- header menu       -->
     <header>
+      <div id="caller-header-bar">
+      </div>
       <div id="top-header-bar" class="header-box"> <!-- total menu box -->
       </div> 
     </header>
@@ -80,13 +82,39 @@
     <script src="js/main.js"></script>
 
   <!--       *******************Template include ********************      -->
+  <script id="headerCallTemplate" type="text/x-handlebars-template">
+  <div class="container">
+    <div class="call-box">
+      <div class="call-img">
+         <span class="glyphicon glyphicon-user white"></span>
+      </div>
+      <div class="call-number white">
+        <ul>
+          <li>
+            <p>Call: 0844 567 8228 Mon-Fri 9:00 am to 5:00 pm (UK)</p>
+          </li>
+           <li>
+            <p class="skyblue">Email: contact@printerpix.co.uk</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  </script>
   <script id="headerTemplate" type="text/x-handlebars-template">
   <div class="container">
     <div class="header-box">
       <div class="logo-box"><a herf="#"><img src="img/header/PixLogo.png"></a></div>
       <div class="menu-box">
         <div class="hamburger-menu menu">
-  
+          <ul>
+            <li>Register</li>
+            <li>Subscribe</li>
+            <li>Help</li>
+            <li>Track Order</li>
+          </ul>
+          <label for="navbar-checkbox" class="navbar">
 
         </div>
 

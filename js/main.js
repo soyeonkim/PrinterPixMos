@@ -3,6 +3,10 @@
 $(document).ready(function () {
 	var template;
 
+	template = Handlebars.compile($('#headerCallTemplate').html()); 
+	$('#caller-header-bar').append(template);
+
+
 	template = Handlebars.compile($('#headerTemplate').html()); 
 	$('#top-header-bar').append(template);
 
