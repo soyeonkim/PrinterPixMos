@@ -66,6 +66,10 @@ li {
 .skyblue, .skyblue a{
   color: #5FB0E4;
 }
+.black, black a { color: #000;}
+.img-centered {
+    margin: 0 auto;
+}
 .call-box {
   width: 100%;
   height:46px;
@@ -87,19 +91,27 @@ li {
   float: left;
   height: inherit;
 }
+.logo-img {
 
+}
+.header-nav-box{
+  margin: 0px !important;
+}
 .menu-box{
   width: 80%;
   float: right;
   height: inherit;
 }
-.hamburger-menu,.basket-menu, .login-menu{
-  float: right;
-  margin: 0px 15px;
+.hambuger {
+  margin: 4px 10px;
 }
-.hamburger-menu a{
-  font-size: 2.5em;
-  color: #414141;
+.hambuger >.icon-bar {
+  background: #414141;
+  width: 25px;
+  height: 3px;
+}
+.navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 6px;
 }
 .basket-menu, .login-menu {
    padding-top: 5px;
@@ -115,4 +127,64 @@ li {
   font-size: 1.0em;
   color: #414141;
   margin: 0px;
+}
+.fixed-menu {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  left:43%;
+}
+.fixed-menu ul{margin: 0px;}
+.fixed-menu li{width: 50px; height: 50px;}
+.fixed-menu img {
+
+}
+.list-icons { padding: 0px; }
+
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+
+.fixed-menu ul.list-icons > li.on-mobile{
+    display: inline-block;
+    min-width: 0px;
+    width: 50px;
+  }
+   .fixed-menu ul.list-icons li .zone-icon span.img{
+    display: block;
+  }
+.fixed-menu ul.list-icons li .zone-icon img {
+    display: block;
+    width: 46px;
+    height: auto;
+    margin: 3px auto;
+}
+.fixed-menu ul.list-icons li .zone-icon span{
+    display: none;
+}
+/*.fixed-menu ul.list-icons li.on-mobile .zone-icon span.bubble-basket{
+    right: 4px;
+    top: 4px;
+}
+*/
+.fixed-menu ul.list-icons li .zone-icon span.bubble-basket{
+    position: absolute;
+    background: #cf207e;
+    display: block;
+    color: #fff;
+    min-width: 17px;
+    height: 18px;
+    line-height: 17px;
+    border-radius: 9px;
+    font-size: 12px;
+    text-align: center;
+    right: 38px;
+    top: 12px;
+    padding: 1px 2px;
+}
+
 }
