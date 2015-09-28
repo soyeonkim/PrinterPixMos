@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Printerpix</title>
 
@@ -83,26 +84,29 @@
 
   <!--       *******************Template include ********************      -->
   <script id="headerCallTemplate" type="text/x-handlebars-template">
-  <div class="container">
-    <div class="call-box">
-      <div class="call-img">
-         <span class="glyphicon glyphicon-user white"></span>
-      </div>
-      <div class="call-number white">
-        <ul>
-          <li>
-            <p>Call: 0844 567 8228 Mon-Fri 9:00 am to 5:00 pm (UK)</p>
-          </li>
-           <li>
-            <p class="skyblue">Email: contact@printerpix.co.uk</p>
-          </li>
-        </ul>
+  <div class="headerCallBox">
+    <div class="container">
+      <div class="call-box">
+        <div class="call-img">
+           <span class="glyphicon glyphicon-user white"></span>
+        </div>
+        <div class="call-number white">
+          <ul>
+            <li>
+              <p>Call: 0844 567 8228 Mon-Fri 9:00 am to 5:00 pm (UK)</p>
+            </li>
+             <li>
+              <p>Email: contact@printerpix.co.uk</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
   </script>
   <script id="headerTemplate" type="text/x-handlebars-template">
+  <div class="headerContainer">
   <div class="container">
     <div class="header-box">
       <div class="logo-box"><a herf="#"><img src="img/header/PixLogo.png"></a></div>
@@ -125,6 +129,51 @@
          </a></div>
 
       </div>
+    </div>
+  </div>
+  </div>
+  </script>
+  <script id="headerNavTemplate"  type="text/x-handlebars-template">
+  <div class="container header-nav-box">
+    <div class="navbar-header ">
+     <button type="button" class="navbar-toggle collapsed hambuger" data-toggle="collapse" data-target="#navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+        <span class="icon-title"><p>Menu</p></span>            
+      </button>
+     <div class="brand">  
+      <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png"></a></div>
+      <div class="fixed-menu">
+        <ul class="list-icons">
+          <li class="on-mobile">
+              <a class="register" href="#login">
+            <span class="img"><center><img src="img/header/login_60.png"></center></span>              
+              <span class="icon-title black"><p> Login </p></span>
+             </a>
+           </li>
+           <li class="on-mobile">
+         <a class="basket" href="#basket">
+             <span class="img"><center><img src="img/header/Basket.png"></center></span>
+              <span class="icon-title black"><p>Basket</p></span>
+              <span id="BubbleCountBasket" class="bubble-basket menu_basket_count">0</span>
+            </a> 
+          </li>
+        </ul>
+      </div>
+      </div> 
+
+    </div> 
+
+
+    <div class="collapse navbar-collapse" id="navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li>Flag</li>
+        <li>Subscribe</li>
+        <li>Help</li>
+        <li>Track Order</li>
+      </ul>
     </div>
   </div>
   </script>

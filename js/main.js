@@ -7,7 +7,7 @@ $(document).ready(function () {
 	$('#caller-header-bar').append(template);
 
 
-	template = Handlebars.compile($('#headerTemplate').html()); 
+	template = Handlebars.compile($('#headerNavTemplate').html()); 
 	$('#top-header-bar').append(template);
 
  
