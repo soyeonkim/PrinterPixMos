@@ -2,11 +2,7 @@
 
 $(document).ready(function () {
 	var template;
-	Handlebars.registerHelper('breaklines', function(text) {
-    text = Handlebars.Utils.escapeExpression(text);
-    text = text.replace(/(\r\n|\n|\r)/gm, '<br>');
-    return new Handlebars.SafeString(text);
-	});
+
 	template = Handlebars.compile($('#headerTemplate').html()); 
 	$('#top-header-bar').append(template);
 
@@ -27,11 +23,9 @@ $(document).ready(function () {
 			numberSlide = 4;
 		}
 
-	 
-
+	
 
 	}
 	initCycle();
 
-    $('.flag-drop-down').dropit();
 });

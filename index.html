@@ -13,6 +13,15 @@
     <script src="lib/jquery.cycle2.carousel.js"></script>
     <script src="lib/dropit.js"></script>
     <script src="lib/handlebars-v4.0.2.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
     <!-- Custom LESS -->
@@ -76,7 +85,12 @@
     <div class="header-box">
       <div class="logo-box"><a herf="#"><img src="img/header/PixLogo.png"></a></div>
       <div class="menu-box">
-        <div class="hamburger-menu"><a href="#menu">&#9776;</a></div>
+        <div class="hamburger-menu menu">
+  
+
+        </div>
+
+
         <div class="basket-menu"><a href="#basket"><img src="img/header/Basket-Icon.png"></a></div>
          <div class="login-menu"><a class="register hidden" href="#login"><img src="img/header/Phone-Icon.png"></a>
          <a class="logedin" href="#login"><center><p>hello</p><h1><strong>Willson</strong></center></h1>
@@ -87,6 +101,14 @@
   </div>
   </script>
 
+  <script id="navbarTemplate" type="text/x-handlebars-template">
+  <div class="container">
+    <div class="nav-memu-bar">
+      <div class="nav-left-menu-box"></div>
+      <div class="nav-right-menu-box"></div>
+    </div>
+  </div>
+  </script>
 
   </body>
 </html>
