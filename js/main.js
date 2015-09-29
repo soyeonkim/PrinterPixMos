@@ -31,14 +31,30 @@ $(document).ready(function () {
 	$('#menu-toggle').click(function(){
  		$(this).toggleClass('bottom-borderline');
 	});
-	$('#shop-pd').click(function(){
+	/*$('#shop-pd').click(function(){
  		$(this).toggleClass('bottom-borderline');
 	});
 	$('#shop-occas').click(function(){
  		$(this).toggleClass('bottom-borderline');
 	});
+*/
+	$('#navbar-ex2-collapse').on('show.bs.collapse', function () {
+		console.log("open?");
+		$('#navbar-ex3-collapse').collapse('hide');
+		$('#shop-pd').removeClass('bottom-borderline');
+	});
+	$('#navbar-ex2-collapse').on('hidden.bs.collapse', function () {
+		$('#shop-pd').addClass('bottom-borderline');
+	});
+	$('#navbar-ex3-collapse').on('show.bs.collapse', function () {
+		console.log("close?");
+		$('#navbar-ex2-collapse').collapse('hide');
+		$('#shop-occas').removeClass('bottom-borderline');
+	});
+	$('#navbar-ex3-collapse').on('hidden.bs.collapse', function () {
+		$('#shop-occas').addClass('bottom-borderline');
+	});
 
-	
 
 	function initCycle () {
 		var iw = window.innerWidth;
@@ -60,3 +76,16 @@ $(document).ready(function () {
 	initCycle();
 
 });
+
+function reference() {
+	$('#bs-example-navbar-collapse-1').on('show.bs.collapse', function () {
+  $('#bs-example-navbar-collapse-1').append($('#sidebar').html());
+  $('#bs-example-navbar-collapse-1 ul').last().removeClass('nav-pills nav-stacked').addClass('navbar navbar-nav');
+});
+$('#bs-example-navbar-collapse-1').on('hidden.bs.collapse', function () {
+  $('#bs-example-navbar-collapse-1 ul:last-child').remove();
+});
+$(window).on('resize', function () {
+  if (window.innerWidth > 768) {$('#bs-example-navbar-collapse-1').collapse('hide');}
+});
+}

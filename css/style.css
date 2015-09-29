@@ -241,6 +241,19 @@ li {
 
 }
 
+.pd-menu { 
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  margin-top:0px;
+  z-index: 999;
+}
+
+.pd-menu li{   
+    font-size: 4.2vw;
+    text-align: center;
+    line-height: 2.5em;}
+
 @media screen and (max-width: 768px){
   .fixed-menu {
     width: 126px;
@@ -257,8 +270,8 @@ li {
      height: 62px;
   }
   .Pd-text-box {
-    margin-top: 5px;
-    padding-bottom: 6px;
+    margin-top: 2px;
+    padding-bottom: 3px;
   }
 }
 
@@ -270,7 +283,7 @@ li {
     border-radius: 0px;
   }
   .nav-memu-bar li {
-    font-size: 4vw;
+    font-size: 4.5vw;
   }
 
 
