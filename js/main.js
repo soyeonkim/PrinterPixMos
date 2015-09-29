@@ -10,8 +10,35 @@ $(document).ready(function () {
 	template = Handlebars.compile($('#headerNavTemplate').html()); 
 	$('#top-header-bar').append(template);
 
- 
+	template = Handlebars.compile($('#navbarTemplate').html()); 
+	$('#product-menu-bar').append(template(menu));
 
+	
+
+
+	$('.main-flag').click(function (){
+		console.log("click");
+		$('.sub-menu-list').addClass('hidden');
+		$('.flags-list').removeClass('hidden');
+		$('.main-flag').addClass('hidden');
+	});
+	$('.gb-flag').click(function(){
+		console.log("click2");
+		$('.sub-menu-list').removeClass('hidden');
+		$('.flags-list').addClass('hidden');
+		$('.main-flag').removeClass('hidden');
+	});
+	$('#menu-toggle').click(function(){
+ 		$(this).toggleClass('bottom-borderline');
+	});
+	$('#shop-pd').click(function(){
+ 		$(this).toggleClass('bottom-borderline');
+	});
+	$('#shop-occas').click(function(){
+ 		$(this).toggleClass('bottom-borderline');
+	});
+
+	
 
 	function initCycle () {
 		var iw = window.innerWidth;
