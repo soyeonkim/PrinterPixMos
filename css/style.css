@@ -253,7 +253,16 @@ li {
     font-size: 4.2vw;
     text-align: center;
     line-height: 2.5em;}
+.slide-showcase { position: relative; overflow: hidden; width: 100%; }
+.pager-box-mobile{
 
+    background: url('../img/buttons/Arrow_56x56.png') no-repeat;
+    position: relative;
+    bottom:20px;
+    left: 83%;
+    z-index: 999;
+   text-indent: -9999px;
+   cursor: pointer;}
 @media screen and (max-width: 768px){
   .fixed-menu {
     width: 126px;
@@ -316,8 +325,13 @@ li {
  .nav-memu-bar li {
     font-size: 17px;
   }
+  .pager-box-mobile{
+    width: 56px;
+    height: 56px;
+  }
 
 }
+
 @media screen and (max-width: 320px) {
 
 .logo-outer-box {

@@ -1,4 +1,54 @@
+function initCycle (numberSlide) {
+		 
+	$('#slider-source').cycle({
+			fx: 'fadeout',
+			timeout: 3000,
+			speed:800,
+			manualSpeed:300,
+			sildes: 'div',
+			pager: '#page-pager',
 
+		});
+ 		$('#best-slider').cycle({
+			fx: 'carousel',
+			timeout: 0,
+			sildes: 'div',
+			next :'#prev_PhotoBookPage',
+			prev :'#next_PhotoBookPage',
+			startingSlide: 0,
+			carouselVisible:numberSlide
+		});
+		 $('#best-slider2').cycle({
+			fx: 'carousel',
+			timeout: 0,
+			sildes: 'div',
+			next :'#prev_PhotoBookPage',
+			prev :'#next_PhotoBookPage',
+			startingSlide: 2,
+			carouselVisible:numberSlide
+		});
+
+		$('#instagram-slider').cycle({
+			fx: 'carousel',
+			timeout: 0,
+			sildes: 'div',
+			next :'#prev_InstagramPage',
+			prev :'#nex_InstagramPage',
+			startingSlide: 0,
+			carouselVisible:numberSlide
+		});
+		$('#instagram-slider2').cycle({
+			fx: 'carousel',
+			timeout: 0,
+			sildes: 'div',
+			next :'#prev_InstagramPage',
+			prev :'#nex_InstagramPage',
+			startingSlide: 2,
+			carouselVisible:numberSlide
+		});
+
+
+	}
 
 $(document).ready(function () {
 	var template;
@@ -14,6 +64,8 @@ $(document).ready(function () {
 	$('#product-menu-bar').append(template(menu));
 
 	
+	template = Handlebars.compile($('#promoTemplate').html()); 
+	$('#promotion-slider-bar').append(template(Mobildata));
 
 
 	$('.main-flag').click(function (){
@@ -56,24 +108,8 @@ $(document).ready(function () {
 	});
 
 
-	function initCycle () {
-		var iw = window.innerWidth;
-		var numberSlide=4;
-
-		if(iw <768){
-			numberSlide=2;
-		}
-		else if(iw <960){
-			numberSlide = 3;
-		}
-		else {
-			numberSlide = 4;
-		}
-
-	
-
-	}
-	initCycle();
+ 
+	initCycle(2);
 
 });
 
