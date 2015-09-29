@@ -310,6 +310,13 @@ li {
     top: 5px;
 
   }
+.nav-memu-bar{
+     height: 56px;
+  }
+ .nav-memu-bar li {
+    font-size: 17px;
+  }
+
 }
 @media screen and (max-width: 320px) {
 
@@ -348,9 +355,13 @@ li {
     height: 40px;
   }
   .Pd-text-box {
-  width: 40%;
   margin-top: 2px;
-}
+  }
+  .nav-memu-bar{
+     height: 42px;
+  }
+  .nav-memu-bar li {font-size: 3.7vw;}
+
 
 }
 
