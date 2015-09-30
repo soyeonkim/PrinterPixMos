@@ -2,7 +2,7 @@ function initCycle (numberSlide) {
 		 
 	$('#slider-source').cycle({
 			fx: 'fadeout',
-			timeout: 3000,
+			timeout: 0,
 			speed:800,
 			manualSpeed:300,
 			sildes: 'div',
@@ -64,8 +64,35 @@ $(document).ready(function () {
 	$('#product-menu-bar').append(template(menu));
 
 	
-	template = Handlebars.compile($('#promoTemplate').html()); 
+	template = Handlebars.compile($('#promoMobileTemplate').html()); 
 	$('#promotion-slider-bar').append(template(Mobildata));
+
+	template = Handlebars.compile($('#bestSellerMobileTemplate1').html()); 
+	$('#best-seller').append(template(Mobildata));
+
+	template = Handlebars.compile($('#instagramMobileTemplate').html()); 
+	$('#instagram-seller').append(template(Mobildata));
+
+	template = Handlebars.compile($('#instagramMobileTemplate2').html()); 
+	$('#instagram-seller2').append(template(Mobildata));
+	
+	template = Handlebars.compile($('#bestSellerMobileTemplate2').html()); 
+	$('#best-seller').append(template(Mobildata));
+
+	template = Handlebars.compile($('#promotionMobileSellerTemplate').html()); 
+   $('#promo-mobile-seller').append(template(Mobildata));
+
+	template = Handlebars.compile($('#footerMobileTemplate1').html()); 
+	$('#footer-mobile-about').append(template(footer));
+   
+   	template = Handlebars.compile($('#footerMobileTemplate2').html()); 
+	$('#footer-social').append(template(footer));
+
+   	template = Handlebars.compile($('#footerMobileTemplate4').html()); 
+	$('#footer-pd-list').append(template(footer));
+
+   	template = Handlebars.compile($('#footerMobileTemplate5').html()); 
+	$('#footer-register').append(template(footer));
 
 
 	$('.main-flag').click(function (){

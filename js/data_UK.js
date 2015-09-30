@@ -509,7 +509,80 @@ var footer = {
         url: "https://www.youtube.com/user/printerpix", 
         img_url:  "./img/social/Social-Youtube.png",
         description: "youtube" }
-  ]
+  ],
+  AboutInfoLeft:[
+      { 
+        img_url:'./img/footer/2milCustomers.png',
+        description:"2m + <br>Customers",
+
+      },
+      { 
+        img_url:'./img/footer/30years.png',
+        description:"+30 Years<br>printing experience",
+
+      },
+     { 
+        img_url:'./img/footer/25Countries.png',
+        description:"+300 worldwide<br>employees",
+
+      },
+
+  ],
+    AboutInfoRight:[
+      { 
+        img_url:'./img/footer/20YearsEcommerce.png',
+        description:"+10 Years<br>e-commerce",
+      },
+      { 
+        img_url:'./img/footer/10mPhotos.png',
+        description:"10m. photo<br>uploaded every week",
+      }, 
+
+  ],
+  MorelinkLeft:[
+    { 
+        url: "/photo-books/leather-cover", 
+        title:"Products" },
+
+    { 
+        url: "/Pricelist",   
+        title:"Prices" },
+
+    { 
+        url: "/Payment-Methods.html", 
+        title:"Payment Methods" },
+    { 
+        url: "/Delivery.html", 
+        title:"Delivery" },
+    { 
+        url: "/photoquality",  
+        title:"Photo Quality" },
+    { 
+        url: "/AboutUs.html", 
+        title:"About Us" },
+  ],
+    MorelinkRight:[
+    { 
+        url: "/photo-books/leather-cover", 
+        title:"Products" },
+
+    { 
+        url: "/Pricelist",   
+        title:"Prices" },
+
+    { 
+        url: "/Payment-Methods.html", 
+        title:"Payment Methods" },
+    { 
+        url: "/Delivery.html", 
+        title:"Delivery" },
+    { 
+        url: "/photoquality",  
+        title:"Photo Quality" },
+    { 
+        url: "/AboutUs.html", 
+        title:"About Us" },
+  ],
   
 
 };
