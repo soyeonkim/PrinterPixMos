@@ -563,8 +563,8 @@ var footer = {
   ],
     MorelinkRight:[
     { 
-        url: "/photo-books/leather-cover", 
-        title:"Products" },
+        url: "/AboutUs/AboutUs.aspx?contentId=960f9bf4-dd99-4009-9c87-c54cbfe89a2c",    
+        title:"Terms and Conditions" },
 
     { 
         url: "/Pricelist",   
