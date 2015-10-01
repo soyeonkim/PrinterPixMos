@@ -49,7 +49,26 @@ function initCycle (numberSlide) {
 
 
 	}
+ function loginPage(){
+ //	$('input').on('keydown', function(e) {
+ //   	if( !/[a-z]|[A-Z]/.test( String.fromCharCode( e.which ) ) )
+ //       	return false;
+//	});​​​​​​​​
 
+	$('input').on('click focusin', function() {
+    this.value = '';
+});
+ }
+
+ function showLoginPage() {
+ 	$('#login-container').toggleClass('hidden');
+ 	$('#promotion-slider-bar').toggleClass('hidden');
+ 	$('#next_banner').toggleClass('no-background');
+ 	$('#best-seller').toggleClass('hidden');
+ 	$('#best-seller2').toggleClass('hidden');
+ 	$('#instagram-seller').toggleClass('hidden');
+ 	$('#instagram-seller2').toggleClass('hidden');
+ }
 $(document).ready(function () {
 	var template;
 
@@ -62,8 +81,10 @@ $(document).ready(function () {
 
 	template = Handlebars.compile($('#navbarTemplate').html()); 
 	$('#product-menu-bar').append(template(menu));
-
 	
+	template = Handlebars.compile($('#loginMobileTemplate').html()); 
+	$('#login-container').append(template(Mobildata));
+
 	template = Handlebars.compile($('#promoMobileTemplate').html()); 
 	$('#promotion-slider-bar').append(template(Mobildata));
 
@@ -141,6 +162,12 @@ $(document).ready(function () {
 
  
 	initCycle(2);
+	// when login button is clicked
+	$('.register').click( function() {
+		showLoginPage();
+	});
+	loginPage();
+	//
 
 });
 

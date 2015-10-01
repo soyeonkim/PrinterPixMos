@@ -79,7 +79,19 @@
    cursor: pointer;
 }
 .nav-right-menu-box { border-top: 1px solid;}
-.pd-text-box { padding-top: 2px; padding-bottom: 4px; }
+/*.pd-text-box { padding-top: 2px; padding-bottom: 4px; }*/
+.pd-text-box h3{    
+  font-size: 20px;
+    width: 109px;
+    height: 56px;
+    margin: 0px;
+    margin-left: 32%;
+    line-height: 1.35em;
+
+  }
+
+
+.pd-text-box img{ float: left;width:63px; height:63px;}
 .pd-menu { border-left: 1px solid; border-right: 1px solid; border-bottom: 1px solid;
   margin-top:0px; margin-bottom: 0px;  z-index: 300;}
 .pd-menu li{ text-align: center;line-height: 2.5em;}
@@ -150,6 +162,40 @@
 .footer-text-mobile { text-transform: uppercase; text-align: center;}
 .footer-login-box{ height: 52px;}
 
+.login-container{background: #dedede;}
+.login-box { width: 250px; padding-top: 15px; padding-bottom: 15px;}
+.login-icon{ width: 100px; }
+.login-form{ width:250px; margin: 15px 0px;}
+.login-form p {text-align: right;}
+.user-form-box,.pw-form-box{
+  width: 250px;
+  height: 33px;
+  margin: 10px 0px 5px 0px;
+  color:#d0d0d0;
+  padding: 4px 10px;
+}
+.user-form-box:focus,.pw-form-box:focus {
+  color: #414141;
+}
+.login-btn-box,.register-btn-box{
+  width: 200px;
+ 
+}
+
+.loginbtn,.regbtn{
+  width: 200px;
+  padding: 8px 0px; 
+  border-radius: 30px;
+  margin: 10px 0px;
+}
+.loginbtn{
+    color: #ff2a98;
+   border: 1px solid #ff2a98;
+ }
+ .regbtn{
+  color:#337ab7;
+  border: 1px solid #337ab7;
+ }
 
 /*
 .rebrand-header-main,

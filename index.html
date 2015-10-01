@@ -51,30 +51,25 @@
     <!--  main container -->
     <section>
       <!--  promotion slider show -->
-      <div id="promotion-slider-bar">
-      </div>
+      <div id="login-container" class='hidden'></div>
+      <div id="promotion-slider-bar">      </div>
       <!--  end promotion slider show -->
 
       <!---->
       <!-- productions -->
-      <div class="pd-mobile-containder center">     <!-- production container -->
+      <div class="pd-mobile-containder center" id="mobile-product">     <!-- production container -->
         <div class="pager-box-mobile" id="next_banner"></div> 
         <div class="pd-mobile-contents">
           <!--- best production -->
-          <div id="best-seller" class="best-product">
-          </div>
-          <div id="best-seller2" class="best-product">
-          </div>
+          <div id="best-seller" class="best-product"></div>
+          <div id="best-seller2" class="best-product"></div>
           <!--- end best production-->
           <!--- instagram production -->
-          <div id="instagram-seller"class="inst-product">
-          </div>
-          <div id="instagram-seller2"class="inst-product">
-          </div>
+          <div id="instagram-seller"class="inst-product"></div>
+          <div id="instagram-seller2"class="inst-product"></div>
           <!--- end instagram production-->
           <!--promotion -->
-          <div id="promo-mobile-seller"class="promo-mobile-product">
-          </div>
+          <div id="promo-mobile-seller"class="promo-mobile-product"> </div>
           <!-- end promotion -->
         </div>
       </div> 
@@ -211,13 +206,15 @@
         <ul>
           <li class="nav-left-menu-box">
             <button type="button" class="navbar-toggle collapsed pd-text-box bottom-borderline" data-toggle="collapse" data-target="#navbar-ex2-collapse" id="shop-pd">
-             <span>shop by <br><strong>Products</strong></span>
+             <span><h3>shop by <strong>Products</strong></h3></span>
+             <span class="nav-arrow"><img src="img/header/RightArrow_pink.png"></span>
             </button>
 
           </li>
           <li class="nav-right-menu-box">
           <button type="button" class="navbar-toggle collapsed pd-text-box bottom-borderline" data-toggle="collapse" data-target="#navbar-ex3-collapse" id="shop-occas">
-             <span>shop by <br><strong>Occasions</strong></span>
+             <span><h3>shop by <strong>Products</strong></h3></span>
+             <span class="nav-arrow"><img src="img/header/RightArrow_pink.png"></span>
             </button>
           </li>
         </ul>
@@ -459,7 +456,6 @@
 
   <script id="footerMobileTemplate4" type="text/x-handlebars-template">
     <div class="footer-mobile-box center">
-
       <div class="clear"></div>
       
       <!-- Product info box -->
@@ -487,11 +483,46 @@
     </div>
   </script>
   <script id="footerMobileTemplate5" type="text/x-handlebars-template">
-  <div class="footer-mobile-box center">
-    <div class="footer-login-box">
-      <a href="#"><p><center>LOGIN</center></p></a>
+    <div class="footer-mobile-box center">
+      <div class="footer-login-box">
+        <a href="#"><p><center>LOGIN</center></p></a>
+      </div>
     </div>
-  </div>
   </script>
+
+  <!--------------------------------------------------------------------------- -->
+
+  <script id="loginMobileTemplate" type="text/x-handlebars-template">
+    <div class="login-container">
+      <div class="login-box center">
+        <div class="login-icon center">
+          <img src='img/header/ContactUs.png'>
+        </div>
+        <div class="login-form">
+          <form>
+            <input type="text" name="username" value="  Username" class="user-form-box">
+            <br>
+            <input tyle="password" name="psw" value="  Password" class="pw-form-box">
+            <a href="#"><p>Forgotten login</p></a>
+          </form>
+        </div>
+        <div class="login-btn-box center">
+          <div class="login-btn">
+            <button type="button" class="loginbtn"><center>Login</center></button>
+          </div>
+        </div>
+        <div class="login-btn-box center"><p><center> Not a member yet?</center></p></div>
+        <div class="register-btn-box center">
+          <div class="register-btn">
+          <button type="button" class="regbtn"><center>Register Here</center></button>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </script>
+
 </body>
 </html>

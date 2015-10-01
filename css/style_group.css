@@ -64,6 +64,7 @@ footer { background: #ececec; }
 .middle-div { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
 .text-center { text-align: center;}
 .clear {clear:both;  line-height: 1px; height: 1px;}
+.no-background{background: none !important;}
 
 /**************************************************************************
     header
@@ -115,7 +116,9 @@ footer { background: #ececec; }
 .slider-box,
 .info-about li ,.footer-category-mobile li,
 .vert-list-left li img ,.vert-list-right li img,
-.logo-outer-box
+.logo-outer-box,
+.pd-text-box h3,
+.pd-text-box img
 {float: left;}
 
 .menu-box,.fixed-menu,.sub-menu 
