@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Printerpix</title>
 
@@ -27,7 +28,9 @@
     <!-- Custom LESS -->
     <link rel="stylesheet/less" type="text/css" href="css/main.less" />
     <!-- Custom CSS -->
+    <link href="css/style_group.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+     <link href="css/style_media.css" rel="stylesheet">
     <!--<link href="css/media.css" rel="stylesheet"> -->
 
   </head>
@@ -40,33 +43,33 @@
       </div> 
     </header>
     <nav>
-      <div id="nav-memu-bar"class="top-bar-center center"> <!-- white background-->
-      </div>
+      <div id="nav-memu-bar"class="top-bar-center center"></div>
+      <div id="product-menu-bar" class="pd-menu-bar"></div>
     </nav>
     <!--- end header menu   -->
 
     <!--  main container -->
     <section>
       <!--  promotion slider show -->
-      <div id="promotion-slider-bar">
-      </div>
+      <div id="login-container" class='hidden'></div>
+      <div id="promotion-slider-bar">      </div>
       <!--  end promotion slider show -->
 
-
+      <!---->
       <!-- productions -->
-      <div class="pd-containder center">     <!-- production container -->
-        <div class="pd-contents ">
+      <div class="pd-mobile-containder center" id="mobile-product">     <!-- production container -->
+        <div class="pager-box-mobile" id="next_banner"></div> 
+        <div class="pd-mobile-contents">
           <!--- best production -->
-          <div id="best-seller" class="best-product">
-          </div>
+          <div id="best-seller" class="best-product"></div>
+          <div id="best-seller2" class="best-product"></div>
           <!--- end best production-->
           <!--- instagram production -->
-          <div id="instagram-seller"class="inst-product">
-          </div>
+          <div id="instagram-seller"class="inst-product"></div>
+          <div id="instagram-seller2"class="inst-product"></div>
           <!--- end instagram production-->
           <!--promotion -->
-          <div id="promo-seller"class="promo-product">
-          </div>
+          <div id="promo-mobile-seller"class="promo-mobile-product"> </div>
           <!-- end promotion -->
         </div>
       </div> 
@@ -75,68 +78,451 @@
     <!-- end main container -->
 
     <!--- footer -->
-    <footer id="footer-main">
+    <footer>
+      <div id="footer-mobile-about"></div>
+      <div id="footer-social"></div>
+      <div id="footer-flag"></div>
+      <div id="footer-pd-list"></div>
+      <div id="footer-register"></div>
     </footer>
     <!--- end footer-->
+  <!-------------------------------------------------------------------------->
     <!--<script src="js/data.js"></script> -->
+    <script src="js/data_UK.js"></script>
     <script src="js/main.js"></script>
-
+  <!-------------------------------------------------------------------------->
   <!--       *******************Template include ********************      -->
   <script id="headerCallTemplate" type="text/x-handlebars-template">
-  <div class="container">
-    <div class="call-box">
-      <div class="call-img">
-         <span class="glyphicon glyphicon-user white"></span>
+    <div class="headerCallBox">
+      <div class="callcontainer">
+        <div class="call-box">
+          <div class="call-img">
+             <!--<span class="glyphicon glyphicon-user white"></span>-->
+             <img src="img/header/ContactUs.png">
+          </div>
+          <div class="call-number middle-div white">
+            <ul>
+              <li>
+                <p>Call: 0844 567 8228 Mon-Fri 9:00 am to 5:00 pm (UK)</p>
+              </li>
+               <li>
+                <p>Email: contact@printerpix.co.uk</p>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="call-number white">
-        <ul>
-          <li>
-            <p>Call: 0844 567 8228 Mon-Fri 9:00 am to 5:00 pm (UK)</p>
+    </div>
+ <div class="clear hidden"></div>
+  </script>
+  <script id="headerNavTemplate"  type="text/x-handlebars-template">
+    <div class="navcontainer header-nav-box">
+      <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed hambuger bottom-borderline" data-toggle="collapse" data-target="#navbar-ex1-collapse" id="menu-toggle">
+        <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar black"></span>
+          <span class="icon-bar black"></span>
+          <span class="icon-bar black"></span> 
+          <span class="icon-title"><p>Menu</p></span>            
+        </button>
+       <div class="brand">  
+       <div class="logo-outer-box">
+        <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png"></a></div>
+        </div>
+
+        <div class="fixed-menu">
+          <ul class="list-icons">
+            <li class="on-mobile">
+                <a class="register" href="#login">
+              <span class="img"><center><img src="img/header/login.png"></center></span>              
+                <span class="icon-title black"><p> Login </p></span>
+               </a>
+             </li>
+             <li class="on-mobile">
+           <a class="basket" href="#basket">
+               <span class="img"><center><img src="img/header/Basket.png"></center></span>
+                <span class="icon-title black"><p>Basket</p></span>
+                <span id="BubbleCountBasket" class="bubble-basket menu_basket_count">0</span>
+              </a> 
+            </li>
+          </ul>
+        </div>
+        </div> 
+
+      </div> 
+
+
+      <div class="collapse navbar-collapse" id="navbar-ex1-collapse">
+        <ul class="nav navbar-nav sub-menu">
+          <li class ="sub-menu-list-flag">
+           <a href="#">
+             <span class="main-flag"> 
+              <img src="img/flag/UK-24x24.png"/>
+              </span>
+           </a> 
+            <table class="flags-list hidden">
+            <tr>
+              <td><a href="#"><span class="gb-flag"><img src="img/flag/UK-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="us-flag"><img src="img/flag/US-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="mx-flag"><img src="img/flag/Mexico-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="br-flag"><img src="img/flag/Brazil-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="ge-flag"><img src="img/flag/Germany-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="it-flag"><img src="img/flag/Italy-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="ca-flag"><img src="img/flag/Canada-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="fl-flag"><img src="img/flag/Finland-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="fr-flag"><img src="img/flag/France-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="sp-flag"><img src="img/flag/Spain-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="no-flag"><img src="img/flag/Norway-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="de-flag"><img src="img/flag/Denmark-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="nl-flag"><img src="img/flag/Holland-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="gr-flag"><img src="img/flag/Greece-24x24.png"/></span></a></td>
+            </tr>
+            </table>
+
           </li>
-           <li>
-            <p class="skyblue">Email: contact@printerpix.co.uk</p>
-          </li>
+          <li class ="sub-menu-list"><a href="#">Subscribe</a></li>
+          <li class ="sub-menu-list"><a href="#">Help</a></li>
+          <li class ="sub-menu-list"><a href="#">Track Order</a></li>
         </ul>
       </div>
     </div>
-  </div>
-
-  </script>
-  <script id="headerTemplate" type="text/x-handlebars-template">
-  <div class="container">
-    <div class="header-box">
-      <div class="logo-box"><a herf="#"><img src="img/header/PixLogo.png"></a></div>
-      <div class="menu-box">
-        <div class="hamburger-menu menu">
-          <ul>
-            <li>Register</li>
-            <li>Subscribe</li>
-            <li>Help</li>
-            <li>Track Order</li>
-          </ul>
-          <label for="navbar-checkbox" class="navbar">
-
-        </div>
-
-
-        <div class="basket-menu"><a href="#basket"><img src="img/header/Basket-Icon.png"></a></div>
-         <div class="login-menu"><a class="register hidden" href="#login"><img src="img/header/Phone-Icon.png"></a>
-         <a class="logedin" href="#login"><center><p>hello</p><h1><strong>Willson</strong></center></h1>
-         </a></div>
-
-      </div>
-    </div>
-  </div>
   </script>
 
   <script id="navbarTemplate" type="text/x-handlebars-template">
-  <div class="container">
-    <div class="nav-memu-bar">
-      <div class="nav-left-menu-box"></div>
-      <div class="nav-right-menu-box"></div>
+    <div class="navcontainer">
+      <div class="nav-memu-bar">
+        <ul>
+          <li class="nav-left-menu-box">
+            <button type="button" class="navbar-toggle collapsed pd-text-box bottom-borderline" data-toggle="collapse" data-target="#navbar-ex2-collapse" id="shop-pd">
+             <span><h3>shop by <strong>Products</strong></h3></span>
+             <span class="nav-arrow"><img src="img/header/RightArrow_pink.png"></span>
+            </button>
+
+          </li>
+          <li class="nav-right-menu-box">
+          <button type="button" class="navbar-toggle collapsed pd-text-box bottom-borderline" data-toggle="collapse" data-target="#navbar-ex3-collapse" id="shop-occas">
+             <span><h3>shop by <strong>Products</strong></h3></span>
+             <span class="nav-arrow"><img src="img/header/RightArrow_pink.png"></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+        <div class="collapse navbar-collapse" id="navbar-ex2-collapse">
+        <ul class="nav navbar-nav pd-menu">
+         {{#nav}}
+          <li><a href="#">{{title}}</a></li>
+         {{/nav}}
+        </ul>
+      </div>
+     <div class="collapse navbar-collapse" id="navbar-ex3-collapse">
+        <ul class="nav navbar-nav pd-menu">
+         {{#nav_occasions}}
+          <li><a href="#">{{title}}</a></li>
+         {{/nav_occasions}}
+        </ul>
+      </div>
+
+    
     </div>
-  </div>
+
+
+
+
+
+    
+
+    <div class="clear hidden"></div>
+  </script>
+ <!-------------------------------------------------------------------------->
+  <script id="promoMobileTemplate" type="text/x-handlebars-template">
+    <div class="slider-container  center">  <!-- slider container -->
+      <div class="slide-showcase banner-slide">
+        <div id="slider-source" class="cycle-slideshow" data-cycle-fx=scrollVert data-cycle-pause-on-hover="true" data-cycle-speed="1000" data-cycle-pager='#page-pager' data-cycle-pager-template=""  data-cycle-center-horz=true
+    data-cycle-center-vert=true data-cycle-slides="div"> 
+           {{#promotion_mobile}}
+          <div class="promo-slide">
+           <a href="{{url}}"><img src="{{img_url}}"/></a>
+          </div> 
+          {{/promotion_mobile}}
+        </div>  
+
+      </div>
+       
+    </div>
+    
+  </script>
+  <script id="bestSellerMobileTemplate1" type="text/x-handlebars-template">
+    <div class="text-center pd-mobile-title">
+      <p>our <strong>best seller</strong> products ready to print for you </p>
+    </div>
+
+    <div class="slider-box">
+      <a href="#" title="Previous"  class="pd_prev" id="prev_PhotoBookPage">Previous</a>
+      <a href="#" title="Next"      class="pd_next" id="next_PhotoBookPage">Next </a>
+    
+      <div class="slide-showcase product-box">
+         <div id="best-slider"class="silder-holder cycle-slideshow" data-cycle-fx=carousel data-cycle-timeout=0 data-cycle-carousel-visible=2 data-cycle-prev="#prev_PhotoBookPage" data-cycle-next="#next_PhotoBookPage" data-cycle-slides="div">
+         {{#bestSeller}}
+          <div class="pd-mobile-img">
+            <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
+              <img src="{{img_url}}" />
+              <h1>{{title}}</h1>
+              <span class="customer-star "><img src="{{customerStar}}"></span>
+              <p>{{description}}</p>
+              <h4 class="readmore" href="#">Read more...</h4>
+           <!-- </a> -->
+          </div>
+          {{/bestSeller}}  
+      </div>
+    </div> 
+  </script>
+  <script id="bestSellerMobileTemplate2" type="text/x-handlebars-template">
+
+    <div class="slider-box">
+      <a href="#" title="Previous"  class="pd_prev" id="prev_PhotoBookPage">Previous</a>
+      <a href="#" title="Next"      class="pd_next" id="next_PhotoBookPage">Next </a>
+    
+      <div class="slide-showcase product-box">
+         <div id="best-slider2"class="silder-holder cycle-slideshow" data-cycle-fx=carousel data-cycle-timeout=0 data-cycle-carousel-visible=2 data-cycle-prev="#prev_PhotoBookPage" data-cycle-next="#next_PhotoBookPage" data-cycle-slides="div">
+         {{#bestSeller}}
+          <div class="pd-mobile-img">
+            <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
+              <img src="{{img_url}}" />
+              <h1>{{title}}</h1>
+              <span class="customer-star "><img src="{{customerStar}}"></span>
+              <p>{{description}}</p>
+              <h4 class="readmore" href="#">Read more...</h4>
+           <!-- </a> -->
+          </div>
+          {{/bestSeller}}  
+      </div>
+    </div> 
   </script>
 
-  </body>
+  <script id="instagramMobileTemplate" type="text/x-handlebars-template">
+
+    <div class="slider-box">
+      <a href="#" title="Previous"  class="pd_prev" id="prev_PhotoBookPage">Previous</a>
+      <a href="#" title="Next"      class="pd_next" id="next_PhotoBookPage">Next </a>
+    
+      <div class="slide-showcase product-box">
+         <div id="instagram-slider"class="silder-holder cycle-slideshow" data-cycle-fx=carousel data-cycle-timeout=0 data-cycle-carousel-visible=2 data-cycle-prev="#prev_PhotoBookPage" data-cycle-next="#next_PhotoBookPage" data-cycle-slides="div">
+         {{#instagram}}
+          <div class="pd-mobile-img">
+            <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
+              <img src="{{img_url}}" />
+              <h1>{{title}}</h1>
+              <span class="customer-star "><img src="{{customerStar}}"></span>
+              <p>{{description}}</p>
+              <h4 class="readmore" href="#">Read more...</h4>
+           <!-- </a> -->
+          </div>
+          {{/instagram}}  
+      </div>
+    </div> 
+  </script>
+  <script id="instagramMobileTemplate2" type="text/x-handlebars-template">
+    <div class="slider-box">
+      <a href="#" title="Previous"  class="pd_prev" id="prev_PhotoBookPage">Previous</a>
+      <a href="#" title="Next"      class="pd_next" id="next_PhotoBookPage">Next </a>
+    
+      <div class="slide-showcase product-box">
+         <div id="instagram-slider2"class="silder-holder cycle-slideshow" data-cycle-fx=carousel data-cycle-timeout=0 data-cycle-carousel-visible=2 data-cycle-prev="#prev_PhotoBookPage" data-cycle-next="#next_PhotoBookPage" data-cycle-slides="div">
+         {{#instagram}}
+          <div class="pd-mobile-img">
+            <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
+              <img src="{{img_url}}" />
+              <h1>{{title}}</h1>
+              <span class="customer-star "><img src="{{customerStar}}"></span>
+              <p>{{description}}</p>
+              <h4 class="readmore" href="#">Read more...</h4>
+           <!-- </a> -->
+          </div>
+          {{/instagram}}  
+      </div>
+    </div> 
+  </script>
+  <script id="promotionMobileSellerTemplate" type="text/x-handlebars-template">
+    <div class="promo-mobile-box">
+     {{#advertise}}
+      <div class="col-1-mobile">
+        <div class="appStore">
+          <img src="{{app_img_url}}"/> 
+        </div>
+      </div>
+      {{/advertise}}
+    </div>
+  </script>
+
+
+  <!-------------------------------------------------------------------------->
+  <script id="footerMobileTemplate1" type="text/x-handlebars-template">
+    <div class="footer-mobile-box center">
+      <div class="clear"></div>
+
+      <div class="about-mobile-box">
+        <div class="info-about">
+          <ul>
+            <li>
+              <ul class="vert-list-left">
+              {{#AboutInfoLeft}}
+                <li><img src="{{img_url}}"><h4>{{{description}}}</h4></li>
+              {{/AboutInfoLeft}}
+              </ul>
+            </li>
+            <li>
+             <ul class="vert-list-right">
+             {{#AboutInfoRight}}
+                <li><img src="{{img_url}}"><h4>{{{description}}}</h4></li>
+              {{/AboutInfoRight}}
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script id="footerMobileTemplate2" type="text/x-handlebars-template">
+    <div class="footer-mobile-box center">
+      <div class="clear"></div>
+      <!--  social box -->
+      <div class="social-title-box">
+        <h3 class="">YOU MAY ALSO FIND US, ON:</h3>
+      </div>
+      <div id="horz-social-link" class="social-mobile-outbox">
+        <div class="social-box center ">
+          <div class="social-mobile-link">
+            <a target="_blank" href="https://twitter.com/printerpix">
+              <img alt="" src="img/social/twitter.png"></a>
+            <a target="_blank" href="https://www.facebook.com/PrinterPixUK">
+              <img alt="" src="img/social/Facebook.png"></a>
+            <a target="_blank" href="https://www.youtube.com/user/printerpix">
+              <img alt="" src="img/social/Youtube.png"></a>
+            <a target="_blank" href="https://uk.pinterest.com/printerpixuk/">
+              <img alt=""src="img/social/Pinterest.png"></a>
+            <a target="_blank" href="https://instagram.com/printerpixuk/">
+              <img alt="" src="img/social/Instagram.png"></a>   
+            <a target="_blank" href="http://printerpix.tumblr.com">
+              <img alt=""src="img/social/tumblr.png"></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </script>
+
+  <script id="footerMobileTemplate3" type="text/x-handlebars-template">
+    <div class="footer-mobile-box center">
+  
+      <div class="clear"></div>
+      <!-- end social box -->
+       <!-- flg box -->
+      <div class="flag-mobile-outbox">
+        <div class="footer-flag-box center">
+          <div class="flag-hor-list">
+            <img src="img/flag/UK-36x36.png">
+            <img src="img/flag/US-36x36.png">
+            <img src="img/flag/Germany-36x36.png">
+            <img src="img/flag/Italy-36x36.png">
+            <img src="img/flag/France-36x36.png">
+            <img src="img/flag/Spain-36x36.png">
+            <img src="img/flag/Holland-36x36.png">
+            <img src="img/flag/Mexico-36x36.png">
+            <img src="img/flag/Brazil-36x36.png">
+            <img src="img/flag/Canada-36x36.png">
+            <img src="img/flag/Finland-36x36.png">
+            <img src="img/flag/Norway-36x36.png">
+            <img src="img/flag/Denmark-36x36.png">
+            <img src="img/flag/Greece-36x36.png">
+          </div>
+        </div>
+      </div> <!-- end flg box -->
+    </div>
+  </script>
+
+  <script id="footerMobileTemplate4" type="text/x-handlebars-template">
+    <div class="footer-mobile-box center">
+      <div class="clear"></div>
+      
+      <!-- Product info box -->
+      <div class="footer-category-mobile-box">
+        <div class="footer-category-mobile">
+          <ul>
+            <li>
+              <ul class="vert-list-left">
+              {{#MorelinkLeft}}
+                <li><a class="footer-text-mobile">{{title}}</a></li>
+              {{/MorelinkLeft}}
+              </ul>
+            </li>
+            <li>
+              <ul class="vert-list-right">
+              {{#MorelinkRight}}
+                <li><a class="footer-text-mobile">{{title}}</a></li>
+                {{/MorelinkRight}}
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- end Product info box -->
+    </div>
+  </script>
+  <script id="footerMobileTemplate5" type="text/x-handlebars-template">
+    <div class="footer-mobile-box center">
+      <div class="footer-login-box">
+        <a href="#"><p><center>LOGIN</center></p></a>
+      </div>
+    </div>
+  </script>
+
+  <!--------------------------------------------------------------------------- -->
+
+  <script id="loginMobileTemplate" type="text/x-handlebars-template">
+    <div class="login-container">
+      <div class="login-box center">
+        <div class="login-icon center">
+          <img src='img/header/ContactUs.png'>
+        </div>
+        <div class="login-form">
+          <form>
+            <input type="text" name="username" value="  Username" class="user-form-box">
+            <br>
+            <input tyle="password" name="psw" value="  Password" class="pw-form-box">
+            <a href="#"><p>Forgotten login</p></a>
+          </form>
+        </div>
+        <div class="login-btn-box center">
+          <div class="login-btn">
+            <button type="button" class="loginbtn"><center>Login</center></button>
+          </div>
+        </div>
+        <div class="login-btn-box center"><p><center> Not a member yet?</center></p></div>
+        <div class="register-btn-box center">
+          <div class="register-btn">
+          <button type="button" class="regbtn"><center>Register Here</center></button>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </script>
+
+</body>
 </html>
