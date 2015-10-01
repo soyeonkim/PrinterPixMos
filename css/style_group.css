@@ -1,0 +1,141 @@
+
+
+@font-face {
+  	font-family: 'MyriadProRegular';	src:  url('../fonts/MyriadProRegular.ttf');
+}
+@font-face {
+    font-family: 'MyriadProLight';
+    src: url('../fonts/MyriadPro-Light.otf');
+}
+@font-face {
+    font-family: 'MyriadProSemibold';
+    src: url('../fonts/MyriadPro-Semibold.otf');
+}
+
+html {
+  font-family: MyriadProRegular !important;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+a {
+  text-decoration: none;
+}
+img {
+   max-width: 100% !important;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: inline;
+}
+footer { background: #ececec; }
+.container {}
+.hidden{ display:none !important;}
+.white, .white a{ color:#fff;}
+.black, .black a { color: #000;}
+.img-centered { margin: 0 auto;}
+.center { margin: 0 auto; }
+.middle-div { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
+.text-center { text-align: center;}
+.clear {clear:both;  line-height: 1px; height: 1px;}
+
+/**************************************************************************
+    header
+***************************************************************************/
+.headerCallBox,
+.call-box,
+.header-box,
+.flags-list,
+.pd-text-box,
+.slide-showcase,
+.silder-holder,
+.slider-box,
+
+.footer-mobile-box,.about-mobile-box,.social-title-box,
+.info-about ul ul li,.vert-list-left, .vert-list-right,
+.footer-category-mobile-box,
+.footer-category-mobile ul ul li,
+.footer-login-box,
+ .social-title-box
+{width: 100%;}
+
+.call-number ul,
+.call-number p,
+.icon-title p,
+.hambuger,
+.hambuger p,
+.login-menu h1,
+.login-menu p,
+.fixed-menu ul,
+.nav-memu-bar ul,
+.pd-text-box,
+.promo-mobile-product,
+.footer-category-mobile-box,
+.footer-category-mobile ul,
+.readmore,
+.pd-mobile-img h1, .pd-mobile-img p
+{margin: 0px;}
+
+.list-icons,
+.nav-memu-bar ul,
+.pd-text-box,
+.pd-mobile-img,.promo-mobile-box,
+.footer-category-mobile ul
+{padding: 0px;}
+
+.call-box,
+.logo-box,
+.pd-text-box,
+.slider-box,
+.info-about li ,.footer-category-mobile li,
+.vert-list-left li img ,.vert-list-right li img,
+.logo-outer-box
+{float: left;}
+
+.menu-box,.fixed-menu,.sub-menu 
+{ float: right;}
+
+/*header text color */
+.icon-title ,.login-menu h1,.login-menu p,
+.pd-menu li a,.footer-text-mobile,
+.pd-mobile-img h1, .pd-mobile-img p
+{ color:#414141;}
+ 
+.fixed-menu,.sub-menu, .slide-showcase
+ {position: relative;}
+.fixed-menu,.nav-memu-bar
+ {font-size: 0px;}
+
+/* font size */
+ .nav-memu-bar li
+ {font-size: 3.5vw;}
+
+ .pd-menu li{ font-size: 4.2vw;}
+ .vert-list-left li h4, .vert-list-right li h4
+ { font-size: 3vw;}

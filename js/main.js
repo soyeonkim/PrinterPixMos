@@ -88,6 +88,10 @@ $(document).ready(function () {
    	template = Handlebars.compile($('#footerMobileTemplate2').html()); 
 	$('#footer-social').append(template(footer));
 
+	template = Handlebars.compile($('#footerMobileTemplate3').html()); 
+	$('#footer-flag').append(template(footer));
+
+
    	template = Handlebars.compile($('#footerMobileTemplate4').html()); 
 	$('#footer-pd-list').append(template(footer));
 
