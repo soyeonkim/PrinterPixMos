@@ -270,7 +270,109 @@
     </div>
     
   </script>
- 
+  <script id="bestSellerMobileTemplate1" type="text/x-handlebars-template">
+    <div class="text-center pd-mobile-title">
+      <p>our <strong>best seller</strong> products ready to print for you </p>
+    </div>
+
+    <div class="slider-box">
+      <a href="#" title="Previous"  class="pd_prev" id="prev_PhotoBookPage">Previous</a>
+      <a href="#" title="Next"      class="pd_next" id="next_PhotoBookPage">Next </a>
+    
+      <div class="slide-showcase product-box">
+         <div id="best-slider"class="silder-holder cycle-slideshow" data-cycle-fx=carousel data-cycle-timeout=0 data-cycle-carousel-visible=2 data-cycle-prev="#prev_PhotoBookPage" data-cycle-next="#next_PhotoBookPage" data-cycle-slides="div">
+         {{#bestSeller}}
+          <div class="pd-mobile-img">
+            <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
+              <img src="{{img_url}}" />
+              <h1>{{title}}</h1>
+              <span class="customer-star "><img src="{{customerStar}}"></span>
+              <p>{{{description}}}</p>
+              <h4 class="readmore" href="#">Read more...</h4>
+           <!-- </a> -->
+          </div>
+          {{/bestSeller}}  
+      </div>
+    </div> 
+  </script>
+  <script id="bestSellerMobileTemplate2" type="text/x-handlebars-template">
+
+    <div class="slider-box">
+      <a href="#" title="Previous"  class="pd_prev" id="prev_PhotoBookPage">Previous</a>
+      <a href="#" title="Next"      class="pd_next" id="next_PhotoBookPage">Next </a>
+    
+      <div class="slide-showcase product-box">
+         <div id="best-slider2"class="silder-holder cycle-slideshow" data-cycle-fx=carousel data-cycle-timeout=0 data-cycle-carousel-visible=2 data-cycle-prev="#prev_PhotoBookPage" data-cycle-next="#next_PhotoBookPage" data-cycle-slides="div">
+         {{#bestSeller}}
+          <div class="pd-mobile-img">
+            <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
+              <img src="{{img_url}}" />
+              <h1>{{title}}</h1>
+              <span class="customer-star "><img src="{{customerStar}}"></span>
+              <p>{{description}}</p>
+              <h4 class="readmore" href="#">Read more...</h4>
+           <!-- </a> -->
+          </div>
+          {{/bestSeller}}  
+      </div>
+    </div> 
+  </script>
+
+  <script id="instagramMobileTemplate" type="text/x-handlebars-template">
+
+    <div class="slider-box">
+      <a href="#" title="Previous"  class="pd_prev" id="prev_PhotoBookPage">Previous</a>
+      <a href="#" title="Next"      class="pd_next" id="next_PhotoBookPage">Next </a>
+    
+      <div class="slide-showcase product-box">
+         <div id="instagram-slider"class="silder-holder cycle-slideshow" data-cycle-fx=carousel data-cycle-timeout=0 data-cycle-carousel-visible=2 data-cycle-prev="#prev_PhotoBookPage" data-cycle-next="#next_PhotoBookPage" data-cycle-slides="div">
+         {{#instagram}}
+          <div class="pd-mobile-img">
+            <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
+              <img src="{{img_url}}" />
+              <h1>{{title}}</h1>
+              <span class="customer-star "><img src="{{customerStar}}"></span>
+              <p>{{description}}</p>
+              <h4 class="readmore" href="#">Read more...</h4>
+           <!-- </a> -->
+          </div>
+          {{/instagram}}  
+      </div>
+    </div> 
+  </script>
+  <script id="instagramMobileTemplate2" type="text/x-handlebars-template">
+    <div class="slider-box">
+      <a href="#" title="Previous"  class="pd_prev" id="prev_PhotoBookPage">Previous</a>
+      <a href="#" title="Next"      class="pd_next" id="next_PhotoBookPage">Next </a>
+    
+      <div class="slide-showcase product-box">
+         <div id="instagram-slider2"class="silder-holder cycle-slideshow" data-cycle-fx=carousel data-cycle-timeout=0 data-cycle-carousel-visible=2 data-cycle-prev="#prev_PhotoBookPage" data-cycle-next="#next_PhotoBookPage" data-cycle-slides="div">
+         {{#instagram}}
+          <div class="pd-mobile-img">
+            <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
+              <img src="{{img_url}}" />
+              <h1>{{title}}</h1>
+              <span class="customer-star "><img src="{{customerStar}}"></span>
+              <p>{{description}}</p>
+              <h4 class="readmore" href="#">Read more...</h4>
+           <!-- </a> -->
+          </div>
+          {{/instagram}}  
+      </div>
+    </div> 
+  </script>
+  <script id="promotionMobileSellerTemplate" type="text/x-handlebars-template">
+    <div class="promo-mobile-box">
+     {{#advertise}}
+      <div class="col-1-mobile">
+        <div class="appStore">
+          <img src="{{getFree_img_url}}"/> 
+        </div>
+      </div>
+      {{/advertise}}
+    </div>
+  </script>
+
 
   <!-------------------------------------------------------------------------->
   <script id="footerMobileTemplate1" type="text/x-handlebars-template">
@@ -433,16 +535,9 @@
 
   <script id="productMobileTemplate" type="text/x-handlebars-template">
     <div class="productContainer center">
-
-      <div class="text-center pd-mobile-title">
-      {{#productTitle}}
-        <p>{{{title}}}</p>
-        {{/productTitle}}
-      </div>
-
       {{#productPath}}
       <div class="product-path">
-        <span>  {{path}} > </span><span style="color:#ff2a98">   {{secondPath}}   </span>
+        <p> {{path}} > {{secondPath}} </p>
       </div>
       
       <div class="text-center product-title">
