@@ -84,8 +84,20 @@ $(document).ready(function () {
 
 	$('#next_banner').addClass('hidden');
 
+	//template = Handlebars.compile($('#productMobileTemplate').html()); 
+	//$('#product-list').append(template(PhotoBook));
+
+	//template = Handlebars.compile($('#productMobileTemplate').html()); 
+	//$('#product-list').append(template(Calendars));
+	
+	//template = Handlebars.compile($('#productMobileTemplate').html()); 
+	//$('#product-list').append(template(Calendars));
+
+	//template = Handlebars.compile($('#productMobileTemplate').html()); 
+	//$('#product-list').append(template(Canvas));
+
 	template = Handlebars.compile($('#productMobileTemplate').html()); 
-	$('#product-list').append(template(PhotoBook));
+	$('#product-list').append(template(wallDecor));
 	
 	
 /*	template = Handlebars.compile($('#loginMobileTemplate').html()); 
