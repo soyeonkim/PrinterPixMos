@@ -81,14 +81,20 @@ $(document).ready(function () {
 
 	template = Handlebars.compile($('#navbarTemplate').html()); 
 	$('#product-menu-bar').append(template(menu));
+
+	$('#next_banner').addClass('hidden');
+
+	template = Handlebars.compile($('#productMobileTemplate').html()); 
+	$('#product-list').append(template(PhotoBook));
 	
-	template = Handlebars.compile($('#loginMobileTemplate').html()); 
+	
+/*	template = Handlebars.compile($('#loginMobileTemplate').html()); 
 	$('#login-container').append(template(Mobildata));
 
 	template = Handlebars.compile($('#promoMobileTemplate').html()); 
 	$('#promotion-slider-bar').append(template(Mobildata));
 
-	template = Handlebars.compile($('#bestSellerMobileTemplate1').html()); 
+	template = Handlebars.compile($('#productMobileTemplate').html()); 
 	$('#best-seller').append(template(Mobildata));
 
 	template = Handlebars.compile($('#instagramMobileTemplate').html()); 
@@ -102,7 +108,7 @@ $(document).ready(function () {
 
 	template = Handlebars.compile($('#promotionMobileSellerTemplate').html()); 
    $('#promo-mobile-seller').append(template(Mobildata));
-
+	*/
 	template = Handlebars.compile($('#footerMobileTemplate1').html()); 
 	$('#footer-mobile-about').append(template(footer));
    

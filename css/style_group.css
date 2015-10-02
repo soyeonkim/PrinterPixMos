@@ -83,7 +83,9 @@ footer { background: #ececec; }
 .footer-category-mobile-box,
 .footer-category-mobile ul ul li,
 .footer-login-box,
- .social-title-box
+ .social-title-box,
+ .product-box,
+ .product-title
 {width: 100%;}
 
 .call-number ul,
@@ -100,7 +102,8 @@ footer { background: #ececec; }
 .footer-category-mobile-box,
 .footer-category-mobile ul,
 .readmore,
-.pd-mobile-img h1, .pd-mobile-img p
+.pd-mobile-img h1, .pd-mobile-img p,
+.product-box
 {margin: 0px;}
 
 .list-icons,

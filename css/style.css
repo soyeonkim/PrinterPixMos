@@ -81,13 +81,12 @@
 .nav-right-menu-box { border-top: 1px solid;}
 /*.pd-text-box { padding-top: 2px; padding-bottom: 4px; }*/
 .pd-text-box h3{    
-  font-size: 20px;
+    font-size: 20px;
     width: 109px;
     height: 56px;
     margin: 0px;
     margin-left: 32%;
     line-height: 1.35em;
-
   }
 
 
@@ -115,7 +114,7 @@
 .pd_prev ,.pd_next{ display: none; width: 18px; height: 34px; position: absolute; top: 35%; z-index:300; text-indent: -9999px;}
 .pd_prev {  background: url('../img/buttons/Arrow-L.png') no-repeat left top; left: 1px;}
 .pd_next {  background: url('../img/buttons/Arrow-R.png') no-repeat right top; right: 1px;}
-.pd-mobile-img,.promo-mobile-box{ margin: 0px 15px;} 
+.pd-mobile-img,.promo-mobile-box{ margin: 5px 15px;} 
 .pd-mobile-img, .pd-mobile-img img { width: 200px; }
 .pd-mobile-img h1, .pd-mobile-img p{ white-space: normal; padding: 3px 0px;}
 .pd-mobile-img h4{ margin: 5px 0px; }
@@ -197,6 +196,10 @@
   border: 1px solid #337ab7;
  }
 
+/****************************************************************************
+*****************************************************************************/
+.product-path{margin: 5px 15px;}
+.product-title h3{margin: 20px 0px;}
 /*
 .rebrand-header-main,
 body[class^="pbx_layout_stretch"] .rebrand-header-main{
