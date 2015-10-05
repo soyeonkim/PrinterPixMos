@@ -125,7 +125,7 @@ var footer = {
       },
 
   ],
-    AboutInfoRight:[
+   AboutInfoRight:[
       { 
         img_url:'./img/footer/20YearsEcommerce.png',
         description:"+10 Years<br>e-commerce",
@@ -134,6 +134,12 @@ var footer = {
         img_url:'./img/footer/10mPhotos.png',
         description:"10m. photo<br>uploaded every week",
       }, 
+
+  ],
+  AboutInfoImage:[ 
+    {
+      img_url:'./img/footer/Footer_UK.png',
+    }
 
   ],
   MorelinkLeft:[

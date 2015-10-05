@@ -1,4 +1,5 @@
-
+/****************************************************************************************
+*************************************************************************************/
 var PhotoBook = { 
   productPath:[{
     path:"Products",
@@ -7,20 +8,23 @@ var PhotoBook = {
   ],
 
 
-  productList:[
-       
-      {   
-        url:  " /photo-books/PhotoHardCover/", 
+  productList:[       
+      { 
+         url:  " /photo-books/PhotoHardCover/", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
         customerStar: "./img/Themes/bestSeller/stars/star_4_5.png",
         title: "Photo Cover Book", 
-        description: " "},
+        description: " ",
+        details:"Decorate your home with this beautiful hard cover photo book. Available in two different sizes with a fully customisable photo cover, you can arrange your photos however you want for a totally personalised album."
+    },
      { 
         url: "/photo-books/leather-cover", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
         customerStar: "./img/Themes/bestSeller/stars/star_4_5.png",
         title: "Leather Cover Book",  
-        description: " " },
+        description: " ",
+        details:"From family celebrations to good times with friends, preserve your memories with this Leather Cover book. Printed with high-definition ink on 200gsm photographic paper and protected by bonded leather covers, give the perfect gift to your friends or family today.",
+    },
  
      { 
        url: "/photo-books/SoftCover/", 
@@ -108,6 +112,23 @@ var PhotoBook = {
         title: "Spiral Bound Diary", 
         description: " " },    
   ],
+  cutomerReview: [
+      {
+        customerStar:"./img/Themes/bestSeller/stars/star_5_0.png",
+        review:"I made this photobook to remind me of my daughter's first year.It was a joy to create this album, it made me feel playful and creative. No professional photografer could give me that!"
+
+      },
+    {
+        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
+        review:"The only con is that alot of my pictures were marked with a red exclamation warning sign whilst I designing my book. My worry was that my pictures would come out unclearly, thankfully they were fine, but I guess that if there is any way to ensure better picture quality this would be extremely beneficial"
+
+      },
+    {
+        customerStar:"./img/Themes/bestSeller/stars/star_4_0.png",
+        review:"Great value especially as I had been able to use a code that had been emailed to me. This did take me some time to ceate but worth the effort."
+
+      },
+  ]
 
 };
 
@@ -420,125 +441,122 @@ var Gifts = {
 
 };
 
-var Case = { 
+var Cases = { 
   productPath:[{
     path:"Products",
-    secondPath:"Wall Decor",
+    secondPath:"Cases",
   },
   ],
     productList:[
     {
-        url: "/posters//", 
+        url: "/iphone-cases/", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
-        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
+        customerStar:"./img/Themes/bestSeller/stars/no_star.png",
         isNew:"",
-        title: "Photo Poster", 
+        title: "iPhone Case", 
         description: " " },    
     {
-        url: "/mounted-prints/", 
+        url: "/ipad-cases//", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
-        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
+        customerStar:"./img/Themes/bestSeller/stars/no_star.png",
         isNew:"",
-        title: "Mounted Photo Poster", 
+        title: "iPad Case", 
         description: " " },     
 
     {
-        url: "/montage-canvas/", 
+        url: "/samsung-cases/", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
-        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
+        customerStar:"./img/Themes/bestSeller/stars/no_star.png",
         isNew:"",
-        title: "Collage Canvas", 
+        title: "Samsung Case", 
         description: " " },    
     {
-        url: "/personalised-photo-frames/", 
+        url: "/kindle-cases/", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
-        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
+        customerStar:"./img/Themes/bestSeller/stars/no_star.png",
         isNew:"",
-        title: "Square Instagram Canvas", 
+        title: "Kindle Case", 
         description: " " },    
    {
-        url: "/aluminium-dibonds/", 
+        url: "/sony-phone-cover/", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
-        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
+        customerStar:"./img/Themes/bestSeller/stars/no_star.png",
         isNew:"",
-        title: "Aluminium Panel", 
-        description: " " },    
-
-    {
-        url: "/acrylics/", 
-        img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
-        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
-        isNew:"",
-        title: "Photo Acrylic", 
-        description: " " },    
-    {
-        url: "/wooden-blocks/", 
-        img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
-        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
-        isNew:"",
-        title: "Photo Wooden Block", 
+        title: "Sony Case", 
         description: " " },    
     
   ],
 };
 
-var Occasions = { 
+var Prints = { 
   productPath:[{
     path:"Products",
-    secondPath:"Wall Decor",
+    secondPath:"Prints",
   },
   ],
     productList:[
     {
-        url: "/posters//", 
+        url: "/photo-instagram-prints/", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
-        title: "Photo Poster", 
+        title: "Photo Instagram Prints", 
+        description: " " },  
+    {
+        url: "/photo-prints/", 
+        img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
+        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
+        isNew:"",
+        title: "Photo Prints", 
+        description: " " },  
+    ]
+};  
+
+var Occasions = { 
+  productPath:[{
+    path:"Products",
+    secondPath:"Occasions",
+  },
+  ],
+    productList:[
+    {
+        url: "/rwc2015/", 
+        img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
+        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
+        isNew:"",
+        title: "Rugby Champion 2015", 
         description: " " },    
     {
-        url: "/mounted-prints/", 
+        url: "/happy-halloween14/", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
-        title: "Mounted Photo Poster", 
+        title: "Halloween", 
         description: " " },     
 
     {
-        url: "/montage-canvas/", 
+        url: "/b2s/", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
-        title: "Collage Canvas", 
+        title: "Back To School", 
         description: " " },    
-    {
-        url: "/personalised-photo-frames/", 
-        img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
-        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
-        isNew:"",
-        title: "Square Instagram Canvas", 
-        description: " " },    
+ 
    {
-        url: "/aluminium-dibonds/", 
+        url: "/PixGraduateUK/", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
-        title: "Aluminium Panel", 
+        title: "Graduation", 
         description: " " },    
 
+ 
     {
-        url: "/acrylics/", 
+        url: "/wedding-shop/", 
         img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
-        title: "Photo Acrylic", 
-        description: " " },    
-    {
-        url: "/wooden-blocks/", 
-        img_url: "./img/Themes/photoBooks/UK/mobile/example.png",
-        customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
-        isNew:"",
-        title: "Photo Wooden Block", 
+        title: "Wedding", 
         description: " " },    
     
   ],

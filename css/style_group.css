@@ -1,15 +1,25 @@
 
-
 @font-face {
-  	font-family: 'MyriadProRegular';	src:  url('../fonts/MyriadProRegular.ttf');
+    font-family: 'MyriadProRegular';  
+    src: url('../fonts/MYRIADPROREGULAR.eot');
+    src:  url('../fonts/MyriadProRegular.ttf');
+    src:  url('../fonts/MYRIADPROREGULAR.woff') format('woff'), url('../fonts/MYRIADPROREGULAR.ttf') format('truetype');
+
 }
+ 
 @font-face {
     font-family: 'MyriadProLight';
     src: url('../fonts/MyriadPro-Light.otf');
+    src: url('../fonts/MyriadPro-Light.eot');
+    src:  url('../fonts/MyriadPro-Light.woff') format('woff'), url('../fonts/MyriadPro-Light.ttf') format('truetype');
+
 }
 @font-face {
     font-family: 'MyriadProSemibold';
     src: url('../fonts/MyriadPro-Semibold.otf');
+    src: url('../fonts/MyriadPro-Semibold.eot');
+    src:  url('../fonts/MyriadPro-Semibold.woff') format('woff'), url('../fonts/MyriadPro-Semibold.ttf') format('truetype');
+
 }
 
 html {
@@ -59,12 +69,28 @@ footer { background: #ececec; }
 .hidden{ display:none !important;}
 .white, .white a{ color:#fff;}
 .black, .black a { color: #000;}
+.printerpix, .printerpix a{color:#ce207e;}
 .img-centered { margin: 0 auto;}
 .center { margin: 0 auto; }
 .middle-div { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
 .text-center { text-align: center;}
 .clear {clear:both;  line-height: 1px; height: 1px;}
+.only-clear{clear:both;}
 .no-background{background: none !important;}
+.button-printerpix{
+    background: #ff5db1;
+    background: -moz-linear-gradient(top,#ff5db1 0%,#ef007c 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ff5db1),color-stop(100%,#ef007c));
+    background: -webkit-linear-gradient(top,#ff5db1 0%,#ef007c 100%);
+    background: -o-linear-gradient(top,#ff5db1 0%,#ef007c 100%);
+    background: -ms-linear-gradient(top,#ff5db1 0%,#ef007c 100%);
+    background: linear-gradient(to bottom,#ff5db1 0%,#ef007c 100%);
+
+    box-shadow: inset 0 1px 0 0 #f893c4;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+  }
 
 /**************************************************************************
     header
@@ -85,7 +111,8 @@ footer { background: #ececec; }
 .footer-login-box,
  .social-title-box,
  .product-box,
- .product-title
+ .product-title,
+ .review-list
 {width: 100%;}
 
 .call-number ul,
@@ -110,7 +137,8 @@ footer { background: #ececec; }
 .nav-memu-bar ul,
 .pd-text-box,
 .pd-mobile-img,.promo-mobile-box,
-.footer-category-mobile ul
+.footer-category-mobile ul,
+.review-list ul
 {padding: 0px;}
 
 .call-box,
