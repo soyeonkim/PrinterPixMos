@@ -16,6 +16,11 @@ var menu = {
         img_url: " ",
         title:"Calendar", 
         description: "" },
+      {   
+        url: "http://www.printerpix.co.uk/photo-canvas/", 
+        img_url: " ",
+        title:"Canvas", 
+        description: "" },
       { 
         url: "http://www.printerpix.co.uk/posters", 
         img_url: " ",
