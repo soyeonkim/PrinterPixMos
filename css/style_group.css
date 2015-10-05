@@ -1,15 +1,25 @@
 
-
 @font-face {
-  	font-family: 'MyriadProRegular';	src:  url('../fonts/MyriadProRegular.ttf');
+    font-family: 'MyriadProRegular';  
+    src: url('../fonts/MYRIADPROREGULAR.eot');
+    src:  url('../fonts/MyriadProRegular.ttf');
+    src:  url('../fonts/MYRIADPROREGULAR.woff') format('woff'), url('../fonts/MYRIADPROREGULAR.ttf') format('truetype');
+
 }
+ 
 @font-face {
     font-family: 'MyriadProLight';
     src: url('../fonts/MyriadPro-Light.otf');
+    src: url('../fonts/MyriadPro-Light.eot');
+    src:  url('../fonts/MyriadPro-Light.woff') format('woff'), url('../fonts/MyriadPro-Light.ttf') format('truetype');
+
 }
 @font-face {
     font-family: 'MyriadProSemibold';
     src: url('../fonts/MyriadPro-Semibold.otf');
+    src: url('../fonts/MyriadPro-Semibold.eot');
+    src:  url('../fonts/MyriadPro-Semibold.woff') format('woff'), url('../fonts/MyriadPro-Semibold.ttf') format('truetype');
+
 }
 
 html {
