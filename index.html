@@ -530,6 +530,33 @@
 
 </script>
 
+<script id="CardsMobileTemplate" type="text/x-handlebars-template">
+  <div class="product-path">
+    <span>  Products > </span><span style="color:#ff2a98"> Cards </span>
+  </div>
+  <div class="productContainer center">
+
+      <div class="text-center pd-mobile-title">
+        <h3>Cards</h3>
+        <h3>Pick Your Occasion</h3>
+      </div>
+      <div class="row cards-box">
+      {{#Occasions}}
+       <div class="col-xs-6 cards-col" >
+      
+      <a href={{url}}>
+      <span class="select-box">{{title}}</span>
+
+      </a>
+
+     
+      </div>
+       {{/Occasions}}
+      </div>
+  </div>
+
+</script>
+
 
 </body>
 </html>
