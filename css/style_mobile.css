@@ -176,13 +176,17 @@
 .user-form-box:focus,.pw-form-box:focus {
   color: #414141;
 }
-.login-btn-box,.register-btn-box{
-  width: 200px;
- 
+
+/**
+login, register button
+*/
+.btn-box{
+  width: 250px;
 }
 
 .loginbtn,.regbtn{
-  width: 200px;
+ /* width: 200px;*/
+ width: 80%;
   padding: 8px 0px; 
   border-radius: 30px;
   margin: 10px 0px;
@@ -200,6 +204,58 @@
 *****************************************************************************/
 .product-path{margin: 5px 15px;}
 .product-title h3{margin: 20px 0px;}
+
+/***
+  After choose the product 
+***/
+.editer-box{width: 95vw; height: 75vw; border:1px dashed #ececec; margin: 10px 0px; }
+.personalised{width: 100%; background-color: #ff2a98; font-size: 20px; line-height: 2.0em;
+  border: none;}
+.product_details {width:90vw; margin: 5px auto; white-space: normal;}
+.product_price{
+  font-size: 2.2rem;
+  text-align: right;
+  margin-right:15px;
+
+}
+.product-info{width: 90vw;}
+.product-info h1 {
+  font-size: 2.6rem;
+}
+.product-info >.customer-star img{
+   height: 20px;
+   width: 92px;
+}
+.score{
+  margin-left: 5px;
+  background: #414141;
+  padding: 2px 5px;
+  border:1px solid #414141;
+  border-radius: 3px;
+}
+.review-list{
+  width: 80vw;
+  margin: 15px auto;
+}
+.review-list ul {
+  width: 100%;
+  margin: 10px 0px;
+}
+.review-list li {
+  width: 100%;
+  border-top: 1px solid #414141;
+  display: inline-block;
+}
+.review-list li img {
+  margin: 10px 0px;
+}
+.review-list li p {
+  width: 70vw;
+  margin: 10px auto;
+  text-align: center;
+ 
+}
+
 /*
 .rebrand-header-main,
 body[class^="pbx_layout_stretch"] .rebrand-header-main{
