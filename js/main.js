@@ -1,3 +1,6 @@
+
+ 
+var product=[];
 function initCycle (numberSlide) {
 		 
 	$('#slider-source').cycle({
@@ -84,6 +87,18 @@ $(document).ready(function () {
 
 	$('#next_banner').addClass('hidden');
 
+
+
+	template = Handlebars.compile($('#moreInfoMobileTemplate').html()); 
+	$('#product-list').append(template(PhotoBook));
+	//Example to choose
+	product.push('Leather Cover Book');
+	$('#lastPath').text(product[product.length-1]);
+	$('.product-info h1').text(PhotoBook.productList[1].title);
+	$('.product-info img').attr("src",PhotoBook.productList[1].customerStar);
+	$('.product-info p').text(PhotoBook.productList[1].details);
+	
+
 	//template = Handlebars.compile($('#productMobileTemplate').html()); 
 	//$('#product-list').append(template(PhotoBook));
 
@@ -96,14 +111,25 @@ $(document).ready(function () {
 	//template = Handlebars.compile($('#productMobileTemplate').html()); 
 	//$('#product-list').append(template(Canvas));
 
-	template = Handlebars.compile($('#productMobileTemplate').html()); 
-	$('#product-list').append(template(wallDecor));
+	//template = Handlebars.compile($('#productMobileTemplate').html()); 
+	//$('#product-list').append(template(wallDecor));
 	
+	//template = Handlebars.compile($('#productMobileTemplate').html()); 
+	//$('#product-list').append(template(Gifts));
+
+	//template = Handlebars.compile($('#productMobileTemplate').html()); 
+	//$('#product-list').append(template(Cases));
+
+	//template = Handlebars.compile($('#productMobileTemplate').html()); 
+	//$('#product-list').append(template(Prints));
+
+	//template = Handlebars.compile($('#productMobileTemplate').html()); 
+	//$('#product-list').append(template(Occasions));
 	
-/*	template = Handlebars.compile($('#loginMobileTemplate').html()); 
+	template = Handlebars.compile($('#loginMobileTemplate').html()); 
 	$('#login-container').append(template(Mobildata));
 
-	template = Handlebars.compile($('#promoMobileTemplate').html()); 
+/*	template = Handlebars.compile($('#promoMobileTemplate').html()); 
 	$('#promotion-slider-bar').append(template(Mobildata));
 
 	template = Handlebars.compile($('#productMobileTemplate').html()); 
@@ -121,10 +147,13 @@ $(document).ready(function () {
 	template = Handlebars.compile($('#promotionMobileSellerTemplate').html()); 
    $('#promo-mobile-seller').append(template(Mobildata));
 	*/
-	template = Handlebars.compile($('#footerMobileTemplate1').html()); 
-	$('#footer-mobile-about').append(template(footer));
+	//template = Handlebars.compile($('#footerMobileTemplate1').html()); 
+	//$('#footer-mobile-about').append(template(footer));
    
-   	template = Handlebars.compile($('#footerMobileTemplate2').html()); 
+	template = Handlebars.compile($('#footerMobileTemplate6').html()); 
+	$('#footer-mobile-about').append(template(footer));
+
+   	template = Handlebars.compile($('#socialMobileTemplate').html()); 
 	$('#footer-social').append(template(footer));
 
 	template = Handlebars.compile($('#footerMobileTemplate3').html()); 

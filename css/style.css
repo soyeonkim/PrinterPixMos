@@ -134,7 +134,7 @@
 .social-title-box h3 { font-size: 0.9em; font-weight: normal;}
 .social-mobile-link img {margin: 0px 5px;}
 .about-mobile-box { height: 150px; border-top: 1px solid #414141; border-bottom: 1px solid #414141;}
-
+.about-mobile-Abox{ border-top: 1px solid #414141; border-bottom: 1px solid #414141; padding: 8px 0px;}
 .info-about {}
 .info-about ul { padding-left: 9px;}
 .info-about li ,.footer-category-mobile li{width: 50%;}
