@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Printerpix</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="lib/jquery.cycle2.js"></script>
+    <script src="lib/jquery.cycle2.scrollVert.js"></script>
+    <script src="lib/jquery.cycle2.carousel.js"></script>
+    <script src="lib/dropit.js"></script>
+    <script src="lib/handlebars-v4.0.2.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+    <!-- Custom LESS -->
+    <link rel="stylesheet/less" type="text/css" href="css/main.less" />
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!--<link href="css/media.css" rel="stylesheet"> -->
+
+  </head>
+  <body>
+    <!--- header menu       -->
+    <header>
+      <div id="caller-header-bar">
+      </div>
+      <div id="top-header-bar" class="header-box"> <!-- total menu box -->
+      </div> 
+    </header>
+    <nav>
+      <div id="nav-memu-bar"class="top-bar-center center"></div>
+      <div id="product-menu-bar" class="pd-menu-bar"><div>
+    </nav>
+    <!--- end header menu   -->
+
+    <!--  main container -->
+    <section>
+      <!--  promotion slider show -->
+      <div id="promotion-slider-bar">
+      </div>
+      <!--  end promotion slider show -->
+
+
+      <!-- productions -->
+      <div class="pd-containder center">     <!-- production container -->
+        <div class="pd-contents ">
+          <!--- best production -->
+          <div id="best-seller" class="best-product">
+          </div>
+          <!--- end best production-->
+          <!--- instagram production -->
+          <div id="instagram-seller"class="inst-product">
+          </div>
+          <!--- end instagram production-->
+          <!--promotion -->
+          <div id="promo-seller"class="promo-product">
+          </div>
+          <!-- end promotion -->
+        </div>
+      </div> 
+      <!-- end productions -->
+    </section>
+    <!-- end main container -->
+
+    <!--- footer -->
+    <footer id="footer-main">
+    </footer>
+    <!--- end footer-->
+    <!--<script src="js/data.js"></script> -->
+    <script src="js/data_UK.js"></script>
+    <script src="js/main.js"></script>
+
+  <!--       *******************Template include ********************      -->
+  <script id="headerCallTemplate" type="text/x-handlebars-template">
+    <div class="headerCallBox">
+      <div class="container">
+        <div class="call-box">
+          <div class="call-img">
+             <span class="glyphicon glyphicon-user white"></span>
+          </div>
+          <div class="call-number middle-div  white">
+            <ul>
+              <li>
+                <p>Call: 0844 567 8228 Mon-Fri 9:00 am to 5:00 pm (UK)</p>
+              </li>
+               <li>
+                <p>Email: contact@printerpix.co.uk</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </script>
+  <script id="headerNavTemplate"  type="text/x-handlebars-template">
+    <div class="container header-nav-box">
+      <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed hambuger bottom-borderline" data-toggle="collapse" data-target="#navbar-ex1-collapse" id="menu-toggle">
+        <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
+          <span class="icon-title"><p>Menu</p></span>            
+        </button>
+       <div class="brand">  
+       <div class="logo-outer-box">
+        <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png"></a></div>
+        </div>
+
+        <div class="fixed-menu">
+          <ul class="list-icons">
+            <li class="on-mobile">
+                <a class="register" href="#login">
+              <span class="img"><center><img src="img/header/login_60.png"></center></span>              
+                <span class="icon-title black"><p> Login </p></span>
+               </a>
+             </li>
+             <li class="on-mobile">
+           <a class="basket" href="#basket">
+               <span class="img"><center><img src="img/header/Basket.png"></center></span>
+                <span class="icon-title black"><p>Basket</p></span>
+                <span id="BubbleCountBasket" class="bubble-basket menu_basket_count">0</span>
+              </a> 
+            </li>
+          </ul>
+        </div>
+        </div> 
+
+      </div> 
+
+
+      <div class="collapse navbar-collapse" id="navbar-ex1-collapse">
+        <ul class="nav navbar-nav sub-menu">
+          <li class ="sub-menu-list-flag">
+           <a href="#">
+             <span class="main-flag"> 
+              <img src="img/flag/UK-24x24.png"/>
+              </span>
+           </a> 
+            <table class="flags-list hidden">
+            <tr>
+              <td><a href="#"><span class="gb-flag"><img src="img/flag/UK-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="us-flag"><img src="img/flag/US-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="mx-flag"><img src="img/flag/Mexico-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="br-flag"><img src="img/flag/Brazil-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="ge-flag"><img src="img/flag/Germany-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="it-flag"><img src="img/flag/Italy-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="ca-flag"><img src="img/flag/Canada-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="fl-flag"><img src="img/flag/Finland-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="fr-flag"><img src="img/flag/France-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="sp-flag"><img src="img/flag/Spain-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="no-flag"><img src="img/flag/Norway-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="de-flag"><img src="img/flag/Denmark-24x24.png"/></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="nl-flag"><img src="img/flag/Holland-24x24.png"/></span></a></td>
+              <td><a href="#"><span class="gr-flag"><img src="img/flag/Greece-24x24.png"/></span></a></td>
+            </tr>
+            </table>
+
+          </li>
+          <li class ="sub-menu-list"><a href="#">Subscribe</a></li>
+          <li class ="sub-menu-list"><a href="#">Help</a></li>
+          <li class ="sub-menu-list"><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+    </div>
+  </script>
+
+  <script id="navbarTemplate" type="text/x-handlebars-template">
+  <div class="navcontainer">
+    <div class="nav-memu-bar">
+      <ul>
+        <li class="nav-left-menu-box">
+          <button type="button" class="navbar-toggle collapsed Pd-text-box bottom-borderline" data-toggle="collapse" data-target="#navbar-ex2-collapse" id="shop-pd">
+           <span>shop by <br><strong>Products</strong></span>
+          </button>
+
+        </li>
+        <li class="nav-right-menu-box">
+        <button type="button" class="navbar-toggle collapsed Pd-text-box bottom-borderline" data-toggle="collapse" data-target="#navbar-ex3-collapse" id="shop-occas">
+           <span>shop by <br><strong>Occasions</strong></span>
+          </button>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+
+
+   <div class="collapse navbar-collapse" id="navbar-ex2-collapse">
+      <ul class="nav navbar-nav pd-menu">
+       {{#nav }}
+        <li>{{title}}</li>
+       {{/nav}}
+      </ul>
+    </div>
+
+    
+   <div class="collapse navbar-collapse" id="navbar-ex3-collapse">
+      <ul class="nav navbar-nav pd-menu">
+       {{#nav_occasions}}
+        <li>{{title}}</li>
+       {{/nav_occasions}}
+      </ul>
+    </div>
+  </script>
+
+  <script id="promoTemplate" type="text/x-handlebars-template">
+    <div class="slider-container center">  <!-- slider container -->
+      <div class="slide-showcase banner-slide">
+        <div id="slider-source" class="cycle-slideshow" data-cycle-fx=scrollVert data-cycle-pause-on-hover="true" data-cycle-speed="1000" data-cycle-pager='#page-pager' data-cycle-pager-template=""  data-cycle-center-horz=true
+    data-cycle-center-vert=true data-cycle-slides="div"> 
+           {{#promotion_mobile}}
+          <div class="promo-slide">
+           <a href="{{url}}"><img src="{{img_url}}"/></a>
+          </div> 
+          {{/promotion_mobile}}
+        </div>  
+
+      </div>
+       
+    </div>
+    <div class="pager-box-mobile" id="next_banner"></div>
+  </script>
+
+  </body>
+</html>
