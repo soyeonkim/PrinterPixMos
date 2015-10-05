@@ -497,19 +497,21 @@
     <div class="product_details">
       <div class="product-info">
         <h1></h1>
-        <span class="customer-star"><img src=""><span class="score white">4.6</span></span>
+        <span class="customer-star"><img src=""><span class="score white">4.6</span><span id="number_review">  (900 reviews)</span> </span>
+        <h5><a href="">Read 900 reviews</a></h5>
+        <div class="product_price printerpix">£20.99
+        </div>
+
+        <div class="btn-box center">
+          <button class="personalised button-printerpix white">Personalise >
+          </button>
+        </div>
         <p></p>
       </div>
-      <div class="product_price printerpix">£20.99
-      </div>
-        //TODO: list option.
 
     </div>
 
-    <div class="btn-box center">
-      <button class="personalised button-printerpix white">Personalise >
-      </button>
-    </div>
+
 
     <div class="review-list">
       <ul>
@@ -525,6 +527,33 @@
   </div>
 
 
+
+</script>
+
+<script id="CardsMobileTemplate" type="text/x-handlebars-template">
+  <div class="product-path">
+    <span>  Products > </span><span style="color:#ff2a98"> Cards </span>
+  </div>
+  <div class="productContainer center">
+
+      <div class="text-center pd-mobile-title">
+        <h3>Cards</h3>
+        <h3>Pick Your Occasion</h3>
+      </div>
+      <div class="row cards-box">
+      {{#Occasions}}
+       <div class="col-xs-6 cards-col" >
+      
+      <a href={{url}}>
+      <span class="select-box">{{title}}</span>
+
+      </a>
+
+     
+      </div>
+       {{/Occasions}}
+      </div>
+  </div>
 
 </script>
 

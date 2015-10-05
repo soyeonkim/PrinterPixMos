@@ -89,14 +89,19 @@ $(document).ready(function () {
 
 
 
-	template = Handlebars.compile($('#moreInfoMobileTemplate').html()); 
-	$('#product-list').append(template(PhotoBook));
+	//template = Handlebars.compile($('#moreInfoMobileTemplate').html()); 
+	//$('#product-list').append(template(PhotoBook));
 	//Example to choose
 	product.push('Leather Cover Book');
 	$('#lastPath').text(product[product.length-1]);
 	$('.product-info h1').text(PhotoBook.productList[1].title);
 	$('.product-info img').attr("src",PhotoBook.productList[1].customerStar);
 	$('.product-info p').text(PhotoBook.productList[1].details);
+
+
+	product.push('Cards');
+	template = Handlebars.compile($('#CardsMobileTemplate').html()); 
+	$('#product-list').append(template(Cards));
 	
 
 	//template = Handlebars.compile($('#productMobileTemplate').html()); 

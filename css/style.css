@@ -28,6 +28,51 @@
   border-left:1px solid;
   border-bottom: 1px solid;
 }
+<<<<<<< HEAD
+.login-menu h1 {
+  font-size: 1.1em;
+  color: #414141;
+  margin: 0px;
+  margin-top: 5px;
+
+}
+.login-menu p {
+  font-size: 1.0em;
+  color: #414141;
+  margin: 0px;
+}
+.fixed-menu {
+  float: right;
+  position: relative;
+  font-size: 0px;
+  width: 106px;
+ 
+}
+.fixed-menu ul{margin: 0px;}
+.fixed-menu li{width: 53px; height: 53px;}
+.fixed-menu img {
+  height: 35px;
+}
+.list-icons { padding: 0px; }
+
+
+
+@media screen and (max-width: 768px){
+
+  .fixed-menu ul.list-icons > li.on-mobile{
+    display: inline-block;
+    min-width: 0px;
+    border-left:1px solid;
+  
+  }
+}
+
+@media screen and (max-width: 512px) {
+
+  
+ 
+=======
+>>>>>>> origin/develop
 .bubble-basket{
     position: absolute;
     background: #cf207e;
@@ -176,9 +221,62 @@
 .user-form-box:focus,.pw-form-box:focus {
   color: #414141;
 }
+<<<<<<< HEAD
+
+@media screen and (max-width: 400px) {
+  .header-box, .fixed-menu li{ 
+    height: 63px;
+  }
+  .logo-box, .fixed-menu li{
+    width: 63px;
+  }
+
+  .fixed-menu {
+    width: 126px;
+  }
+  .hambuger{ padding-top: 12px; padding-bottom: 3px;
+    padding-left: 10px}
+  .icon-title p {font-size: 14px;}
+  .fixed-menu img {
+    height: 38px;
+  }
+
+  .fixed-menu ul.list-icons li .bubble-basket{
+     right: 10px;
+  }
+  .call-img {
+     
+    border:1px solid #fff;
+  }
+
+=======
 .login-btn-box,.register-btn-box{
   width: 200px;
  
+>>>>>>> origin/develop
+}
+/* iphone 4, 5 portrait */
+@media screen and (max-width: 340px) {
+
+  .header-box, .fixed-menu li{ 
+    height: 53px;
+  }
+  .logo-box, .fixed-menu li{
+    width: 53px;
+  }
+  .fixed-menu img {
+    height: 36px;
+  }
+
+
+  .fixed-menu {
+    width: 106px;
+  }
+  .hambuger{   padding-top:8px;
+  padding-left: 7px;
+  padding-bottom:0px;
+  padding-right:11px;}
+  .icon-title p {font-size: 12px;}
 }
 
 .loginbtn,.regbtn{
