@@ -210,11 +210,12 @@ login, register button
 ***/
 .editer-box{width: 95vw; height: 75vw; border:1px dashed #ececec; margin: 10px 0px; }
 .personalised{width: 100%; background-color: #ff2a98; font-size: 20px; line-height: 2.0em;
-  border: none;}
+  border: none;
+margin: 10px auto;}
 .product_details {width:90vw; margin: 5px auto; white-space: normal;}
 .product_price{
-  font-size: 2.2rem;
-  text-align: right;
+  font-size: 2.4rem;
+  text-align: left;
   margin-right:15px;
 
 }
@@ -226,6 +227,7 @@ login, register button
    height: 20px;
    width: 92px;
 }
+.product-info p{ margin: 10px 15px;}
 .score{
   margin-left: 5px;
   background: #414141;
@@ -234,7 +236,7 @@ login, register button
   border-radius: 3px;
 }
 .review-list{
-  width: 80vw;
+  width: 90vw;
   margin: 15px auto;
 }
 .review-list ul {
