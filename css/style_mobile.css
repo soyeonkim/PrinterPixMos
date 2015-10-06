@@ -1,6 +1,6 @@
 
 
-.headerCallBox,.call-box { background: #000; height: 52px;}
+.headerCallBox,.call-box { height: 52px;}
 .call-box { font-size: 1.4em; font-family: MyriadProRegular;}
 .call-img { width: 48px; height: 48px; padding: 5px 4px; float: inherit;}
 .call-number ul {margin-left: 3px;}
@@ -11,9 +11,9 @@
 .bottom-borderline { border-bottom: 1px solid; border-radius: 0px; }
 .icon-title p { font-size: 12px; text-align: center;}
 .menu-box{ width: 80%; height: inherit;}
-.hambuger { padding-top:13px; padding-left: 12px;padding-bottom:2px; padding-right:16px; border-left:solid 1px #000; border-radius: 0px;}
-.hambuger p{ padding-top: 8px; padding-left: 2px;}
-.hambuger >.icon-bar { background: #000; width: 29px; height: 3px; margin-left: 3px}
+.hambuger { padding:13px 16px 12px 12px; border-left:solid 1px; border-radius: 0px;}
+.hambuger p{ padding:8px 0px 2px 1px;}
+.hambuger >.icon-bar { width: 29px; height: 3px; margin-left: 3px}
 .navbar-toggle .icon-bar + .icon-bar { margin-top: 6px;}
 .basket-menu, .login-menu { padding-top: 5px;}
 .login-menu h1 { font-size: 1.1em;  margin-top: 5px;}
@@ -30,9 +30,7 @@
 }
 .bubble-basket{
     position: absolute;
-    background: #cf207e;
     display: block;
-    color: #fff;
     min-width: 17px;
     height: 18px;
     line-height: 17px;
@@ -44,10 +42,9 @@
     top: 5px;
 }
 .sub-menu {
-  border-left: 1px solid #414141;
-  border-bottom: 1px solid #414141;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
   margin-top: 0px;
-  background: #fff;
   z-index: 999;
 }
 .sub-menu ul { width: auto; height: auto; position: absolute; top:100%; }
@@ -56,7 +53,7 @@
 .sub-menu li:hover, .sub-menu li:active, .sub-menu li a:hover,..sub-menu li a:active {
   background: #ebebeb;
 }
-.sub-menu-list-flag { background: #fff !important; }
+/*.sub-menu-list-flag { background: #fff !important; }*/
 .flags-list tr { height: 40px;}
 .nav-memu-bar{ height: 63px;}
 .nav-memu-bar li {
@@ -68,29 +65,21 @@
   width: -o-calc(50% );
   /* Standard */
   width: calc(50%);
- 
+
   display: inline-block;
-  height: 100%;
   font-size: 3.5vw; /* TODO: define size for model*/;
 }
-.nav-left-menu-box{
-   border-top: 1px solid;   
-   border-right: 1px solid;
-   cursor: pointer;
-}
+.nav-left-menu-box{ border-top: 1px solid;  border-right: 1px solid; cursor: pointer;}
 .nav-right-menu-box { border-top: 1px solid;}
 /*.pd-text-box { padding-top: 2px; padding-bottom: 4px; }*/
 .pd-text-box h3{    
     font-size: 20px;
     width: 109px;
-    height: 56px;
-    margin: 0px;
     margin-left: 32%;
     line-height: 1.35em;
   }
 
-
-.pd-text-box img{ float: left;width:63px; height:63px;}
+.pd-text-box img{width:63px; height:63px;}
 .pd-menu { border-left: 1px solid; border-right: 1px solid; border-bottom: 1px solid;
   margin-top:0px; margin-bottom: 0px;  z-index: 300;}
 .pd-menu li{ text-align: center;line-height: 2.5em;}
@@ -112,15 +101,15 @@
 .slider-box { position: relative; overflow: hidden;}
 .pd-mobile-contents{margin-top:-10px;}
 .pd_prev ,.pd_next{ display: none; width: 18px; height: 34px; position: absolute; top: 35%; z-index:300; text-indent: -9999px;}
-.pd_prev {  background: url('../img/buttons/Arrow-L.png') no-repeat left top; left: 1px;}
-.pd_next {  background: url('../img/buttons/Arrow-R.png') no-repeat right top; right: 1px;}
+.pd_prev { background: url('../img/buttons/Arrow-L.png') no-repeat left top; left: 1px;}
+.pd_next { background: url('../img/buttons/Arrow-R.png') no-repeat right top; right: 1px;}
 .pd-mobile-img,.promo-mobile-box{ margin: 5px 15px;} 
 .pd-mobile-img, .pd-mobile-img img { width: 200px; }
 .pd-mobile-img h1, .pd-mobile-img p{ white-space: normal; padding: 3px 0px;}
 .pd-mobile-img h4{ margin: 5px 0px; }
 .pd-mobile-img p { display: block; display: -webkit-box; max-height: 50px; font-size:3vw; height: 1.0em*1.4*2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
 
-.readmore { color: #2a83c7; font-size:2.8vw; }
+.readmore { font-size:2.8vw; }
 .each-mobile-slide { text-decoration: none; display: inline; }
 .customer-star img{ height: 15px; width:85px;}
 .promo-mobile-product{ margin-bottom: 20px;}
@@ -128,12 +117,13 @@
 /***********************************************************************
   footer
 ***********************************************************************/
+.about-mobile-Abox{ padding: 20px 0px;}
 .social-mobile-outbox{height: 54px;}
 .social-box { width: 300px; }
 .social-title-box{  height: 30px; text-align: center;}
 .social-title-box h3 { font-size: 0.9em; font-weight: normal;}
 .social-mobile-link img {margin: 0px 5px;}
-.about-mobile-box { height: 150px; border-top: 1px solid #414141; border-bottom: 1px solid #414141;}
+.about-mobile-box { height: 150px; border-top: 1px solid ; border-bottom: 1px solid;}
 
 .info-about {}
 .info-about ul { padding-left: 9px;}
@@ -149,57 +139,43 @@
 .flag-mobile-outbox{ height: 100px; }
 .footer-flag-box{width: 756px;}
 .flag-hor-list img {margin: 3px 7px;}
-.footer-category-mobile-box {border-top: 1px solid #414141; }
-
-.footer-category-mobile{
-    height: 200px;
-    margin:0px 15px;
-    margin-top: 15px;
-}
+.footer-category-mobile-box {border-top: 1px solid; }
+.footer-category-mobile{ height: 200px; margin:15px 15px 0px;}
 .footer-category-mobile li{ text-align: center;}
 .footer-category-mobile ul ul li {padding: 6px 0px;}
 .footer-text-mobile { text-transform: uppercase; text-align: center;}
-.footer-login-box{ height: 52px;}
-
-.login-container{background: #dedede;}
-.login-box { width: 250px; padding-top: 15px; padding-bottom: 15px;}
+.footer-login-box{ height: 52px; padding:10px 0px;}
+.footer-login-box a{ height:100%; }
+.login-container{ }
+.login-box,.login-form,.btn-box,.user-form-box,.pw-form-box{width: 420px;}
+.login-box { padding-top: 15px; padding-bottom: 15px;}
 .login-icon{ width: 100px; }
-.login-form{ width:250px; margin: 15px 0px;}
+.login-form{ margin: 15px 0px;}
 .login-form p {text-align: right;}
 .user-form-box,.pw-form-box{
-  width: 250px;
   height: 33px;
   margin: 10px 0px 5px 0px;
   color:#d0d0d0;
   padding: 4px 10px;
 }
-.user-form-box:focus,.pw-form-box:focus {
-  color: #414141;
-}
-
-/**
+.btn-box p{ font-size: 1.8rem;}
+.textBlock { margin-left: 8px;}
+.textBlock a {text-decoration: underline;}
+/*
 login, register button
 */
-.btn-box{
-  width: 250px;
-}
-
-.loginbtn,.regbtn{
- /* width: 200px;*/
- width: 80%;
-  padding: 8px 0px; 
-  border-radius: 30px;
-  margin: 10px 0px;
-}
-.loginbtn{
-    color: #ff2a98;
+ 
+.login-btn,.register-btn{ width:70%; margin:10px auto;}
+.loginbtn,.regbtn{ padding: 8px 0px;  border-radius: 30px;  margin: 10px 0px; font-size: 4.0vw;}
+/*.loginbtn{
+   color: #ff2a98;
    border: 1px solid #ff2a98;
  }
  .regbtn{
   color:#337ab7;
   border: 1px solid #337ab7;
  }
-
+*/
 /****************************************************************************
 *****************************************************************************/
 .product-path{margin: 5px 15px;}
@@ -209,9 +185,7 @@ login, register button
   After choose the product 
 ***/
 .editer-box{width: 95vw; height: 75vw; border:1px dashed #ececec; margin: 10px 0px; }
-.personalised{width: 100%; background-color: #ff2a98; font-size: 20px; line-height: 2.0em;
-  border: none;
-margin: 10px auto;}
+.personalised{font-size: 20px; line-height: 2.0em; border: none; margin: 10px auto;}
 .product_details {width:90vw; margin: 5px auto; white-space: normal;}
 .product_price{
   font-size: 2.4rem;
@@ -231,9 +205,7 @@ margin: 10px auto;}
 .product-info p{ margin: 10px 15px;}
 .score{
   margin-left: 5px;
-  background: #414141;
   padding: 2px 5px;
-  border:1px solid #414141;
   border-radius: 3px;
 }
 .review-list{
@@ -241,12 +213,9 @@ margin: 10px auto;}
   margin: 15px auto;
 }
 .review-list ul {
-  width: 100%;
   margin: 10px 0px;
 }
 .review-list li {
-  width: 100%;
-  border-top: 1px solid #414141;
   display: inline-block;
 }
 .review-list li img {
@@ -259,17 +228,14 @@ margin: 10px auto;}
  
 }
 .cards-box{
-  /*margin: 30px auto;*/
   margin-top:30px;
   margin-bottom: 30px;
 }
-.cards-col{border: 1px solid #414141; padding: 5px 10px; text-align: center;}
-.cards-col a{ color:#414141; text-decoration: none;}
-.select-box{
-  font-size: 2.8vw;
-    text-align: center;
-    line-height: 2.4em;
-}
+.cards-col{padding: 5px 10px; text-align: center;}
+.cards-col a{ text-decoration: none;}
+.select-box{ font-size: 2.8vw; text-align: center; line-height: 2.4em;}
+.product-option-box{margin: 10px auto;}
+.select-option { margin:5px 5px;width:90%;}
 
 /*
 .rebrand-header-main,

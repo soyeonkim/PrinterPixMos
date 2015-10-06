@@ -30,7 +30,7 @@
     <!-- Custom CSS -->
     <link href="css/style_group.css" rel="stylesheet">
     <link href="css/style_mobile.css" rel="stylesheet">
-     <link href="css/style_media.css" rel="stylesheet">
+    <link href="css/style_media.css" rel="stylesheet">
     <!--<link href="css/media.css" rel="stylesheet"> -->
 
   </head>
@@ -119,7 +119,7 @@
         </div>
       </div>
     </div>
- <div class="clear hidden"></div>
+ <div class="only-clear"></div>
   </script>
   <script id="headerNavTemplate"  type="text/x-handlebars-template">
     <div class="navcontainer header-nav-box">
@@ -139,7 +139,7 @@
         <div class="fixed-menu">
           <ul class="list-icons">
             <li class="on-mobile">
-                <a class="register" href="#login">
+                <a class="register">
               <span class="img"><center><img src="img/header/login.png"></center></span>              
                 <span class="icon-title black"><p> Login </p></span>
                </a>
@@ -148,7 +148,7 @@
            <a class="basket" href="#basket">
                <span class="img"><center><img src="img/header/Basket.png"></center></span>
                 <span class="icon-title black"><p>Basket</p></span>
-                <span id="BubbleCountBasket" class="bubble-basket menu_basket_count">0</span>
+                <span id="BubbleCountBasket" class="bubble-basket menu_basket_count white">0</span>
               </a> 
             </li>
           </ul>
@@ -250,7 +250,7 @@
 
     
 
-    <div class="clear hidden"></div>
+    <div class="only-clear"></div>
   </script>
  <!-------------------------------------------------------------------------->
   <script id="promoMobileTemplate" type="text/x-handlebars-template">
@@ -299,6 +299,7 @@
         </div>
       </div>
     </div>
+    <div class="only-clear"></div>
   </script>
   <script id="socialMobileTemplate" type="text/x-handlebars-template">
     <div class="footer-mobile-box center">
@@ -387,9 +388,9 @@
     </div>
   </script>
   <script id="footerMobileTemplate5" type="text/x-handlebars-template">
-    <div class="footer-mobile-box center">
+    <div class="footer-mobile-box">
       <div class="footer-login-box">
-        <a href="#"><p><center>LOGIN</center></p></a>
+        <a href="#"> <center>LOGIN</center> </a>
       </div>
     </div>
   </script>
@@ -418,12 +419,12 @@
             <input type="text" name="username" value="  Username" class="user-form-box">
             <br>
             <input tyle="password" name="psw" value="  Password" class="pw-form-box">
-            <a href="#"><p>Forgotten login</p></a>
+            <a href="#" id="forgetPassword"><p>Forgotten Password</p></a>
           </form>
         </div>
         <div class="btn-box center">
-          <div class="login-btn ">
-            <button type="button" class="loginbtn center"><center>Login</center></button>
+          <div class="login-btn">
+            <button type="button" class="loginbtn"><center>Login</center></button>
           </div>
         </div>
         <div class="btn-box center"><p><center> Not a member yet?</center></p></div>
@@ -432,12 +433,73 @@
           <button type="button" class="regbtn"><center>Register Here</center></button>
           </div>
         </div>
-
-
       </div>
 
     </div>
   </script>
+
+  <!--------------------------------------------------------------------------- -->
+
+  <script id="forgotPasswordMobileTemplate" type="text/x-handlebars-template">
+    <div class="login-container">
+      <div class="login-box center">
+        <div class="text-center">
+          <h3>Forgot Password</h3>
+          <br><br>
+          <h3> Please enter your email address above to retrieve your password. Your password will be emailed to you immediately. </h3>
+        </div>
+
+        <div class="login-form">
+            <form>
+              <input type="text" name="username" value="Email" class="user-form-box">
+            </form>
+        </div>
+        <div class="btn-box center">
+          <div class="login-btn">
+            <button type="button" class="loginbtn"><center>Send Password</center></button>
+          </div>
+        </div>
+     </div>
+  </script>
+    <!--------------------------------------------------------------------------- -->
+   <script id="registerMobileTemplate" type="text/x-handlebars-template">
+    <div class="login-container">
+      <div class="login-box center">
+        <div class="text-center">
+          <h3>Register</h3>
+        </div>
+
+        <div class="login-form">
+            <form>
+              <input type="text" name="firstname" value="  First name" class="user-form-box">
+              <br>
+              <input type="text" name="lastname" value="  Last name" class="user-form-box">
+              <br>
+              <input type="text" name="username" value="  Email" class="user-form-box">
+              <br>
+              <input tyle="password" name="psw" value="  Password" class="pw-form-box">
+              <br>
+              <input tyle="password" name="conpsw" value="  Confirm Password" class="pw-form-box">
+            </form>
+        </div>
+        <div class="btn-box center">
+          <div class="login-btn">
+            <button type="button" class="loginbtn"><center>Send Password</center></button>
+
+            <br>
+            <form class="login-btn center">
+              <input type="radio" name="TandC" value="agreed" checked class="radioleft">
+              <div class="textBlock">Yes,I accept the Printerpix<br><a herf="#">Terms and conditions</a>
+              </div>
+              <div style="clear:both;"/>
+            </form>
+          </div>
+        </div>
+
+
+     </div>
+  </script>
+
 
 
   <!-------------------------------------------------------------------------->
@@ -475,6 +537,8 @@
             </div>
         {{/productList}} 
       <div>
+
+      <div class="only-clear"></div>
     </div>
 
   </script>
@@ -502,8 +566,39 @@
         <div class="product_price printerpix">£20.99
         </div>
         <div class="product-option-box">
-          <div class="option1">Select size</div>
-          <div class="option2">Select PageW</div>
+          <div class="option1">
+            <div class="dropdown select-option">
+              <button class="btn btn-default dropdown-toggle option-btn" type="button" data-toggle="dropdown">
+                Select Size
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a herf="#">A5(21x15cm)-Landscape</a></li>
+                <li><a herf="#">20x20cm</a></li>
+                <li><a herf="#">A4(30x21cm)-Landscape</a></li>
+                <li><a herf="#">30x30cm</a></li>
+
+              </ul>
+            </div>
+
+          </div>
+          <div class="option2">
+            <div class="dropdown select-option">
+              <button class="btn btn-default dropdown-toggle option-btn" type="button" data-toggle="dropdown">
+                Select Pages
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a herf="#">20</a></li>
+                <li><a herf="#">40</a></li>
+                <li><a herf="#">60</a></li>
+                <li><a herf="#">100</a></li>
+
+              </ul>
+            </div>
+
+          </div>
+          <div class="only-clear"></div>
         </div>
 
         <div class="btn-box center">

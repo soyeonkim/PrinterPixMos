@@ -64,13 +64,59 @@ function initCycle (numberSlide) {
  }
 
  function showLoginPage() {
- 	$('#login-container').toggleClass('hidden');
- 	$('#promotion-slider-bar').toggleClass('hidden');
- 	$('#next_banner').toggleClass('no-background');
- 	$('#best-seller').toggleClass('hidden');
- 	$('#best-seller2').toggleClass('hidden');
- 	$('#instagram-seller').toggleClass('hidden');
- 	$('#instagram-seller2').toggleClass('hidden');
+ 	$(window).bind('hashchange', function(){
+ 		console.log("onhashchange");
+ 		showLoginPage();
+ 
+ 	});
+ 	console.log("showLoginPage");
+ 	function displayLogin() {
+ 		$('#login-container').removeClass('hidden');
+ 		$('#promotion-slider-bar').addClass('hidden');
+ 		$('#next_banner').addClass('no-background');
+ 		$('#best-seller').addClass('hidden');
+ 	}
+ 	function hiddenLogin(){
+ 	 	$('#login-container').addClass('hidden');
+ 		$('#promotion-slider-bar').removeClass('hidden');
+ 		$('#next_banner').removeClass('no-background');
+ 		$('#best-seller').removeClass('hidden');	
+ 	}
+ 	if($('#login-container').hasClass('hidden')) displayLogin();
+ 	else hiddenLogin();
+ 
+ 	$('#forgetPassword').click(function(){
+ 		showforgetPasswordPage();
+ 	});
+
+ 	$('.regbtn').click(function(){
+ 		showRegisterPage();
+ 	});
+
+ }
+ function showforgetPasswordPage(){
+ 	console.log("showforgetPasswordPage");
+ 	$('#login-container').children("div").remove();
+ 	var template = Handlebars.compile($('#forgotPasswordMobileTemplate').html()); 
+	$('#login-container').append(template(Mobildata));
+	window.onhashchange = function() {
+		$('#login-container').children("div").remove();
+ 	 	template = Handlebars.compile($('#loginMobileTemplate').html()); 
+		$('#login-container').append(template(Mobildata));
+
+	}
+ }
+
+ function showRegisterPage(){
+ 	console.log("showRegisterPage");
+ 	$('#login-container').children("div").remove();
+ 	var template = Handlebars.compile($('#registerMobileTemplate').html()); 
+	$('#login-container').append(template(Mobildata));
+	window.onhashchange = function() {
+		$('#login-container').children("div").remove();
+		template = Handlebars.compile($('#loginMobileTemplate').html()); 
+		$('#login-container').append(template(Mobildata));
+	}
  }
 $(document).ready(function () {
 	var template;
@@ -78,30 +124,29 @@ $(document).ready(function () {
 	template = Handlebars.compile($('#headerCallTemplate').html()); 
 	$('#caller-header-bar').append(template);
 
-
 	template = Handlebars.compile($('#headerNavTemplate').html()); 
 	$('#top-header-bar').append(template);
 
 	template = Handlebars.compile($('#navbarTemplate').html()); 
 	$('#product-menu-bar').append(template(menu));
 
-	$('#next_banner').addClass('hidden');
+	//$('#next_banner').addClass('hidden');
 
 
 
 	//template = Handlebars.compile($('#moreInfoMobileTemplate').html()); 
 	//$('#product-list').append(template(PhotoBook));
 	//Example to choose
-	product.push('Leather Cover Book');
-	$('#lastPath').text(product[product.length-1]);
-	$('.product-info h1').text(PhotoBook.productList[1].title);
-	$('.product-info img').attr("src",PhotoBook.productList[1].customerStar);
-	$('.product-info p').text(PhotoBook.productList[1].details);
+	//product.push('Leather Cover Book');
+	//$('#lastPath').text(product[product.length-1]);
+	//$('.product-info h1').text(PhotoBook.productList[1].title);
+	//$('.product-info img').attr("src",PhotoBook.productList[1].customerStar);
+	//$('.product-info p').text(PhotoBook.productList[1].details);
 
 
-	product.push('Cards');
-	template = Handlebars.compile($('#CardsMobileTemplate').html()); 
-	$('#product-list').append(template(Cards));
+	//product.push('Cards');
+	//template = Handlebars.compile($('#CardsMobileTemplate').html()); 
+	//$('#product-list').append(template(Cards));
 	
 
 	//template = Handlebars.compile($('#productMobileTemplate').html()); 
@@ -134,12 +179,18 @@ $(document).ready(function () {
 	template = Handlebars.compile($('#loginMobileTemplate').html()); 
 	$('#login-container').append(template(Mobildata));
 
-/*	template = Handlebars.compile($('#promoMobileTemplate').html()); 
+	//template = Handlebars.compile($('#forgotPasswordMobileTemplate').html()); 
+	//$('#login-container').append(template(Mobildata));
+
+	//template = Handlebars.compile($('#registerMobileTemplate').html()); 
+	//$('#login-container').append(template(Mobildata));
+
+	template = Handlebars.compile($('#promoMobileTemplate').html()); 
 	$('#promotion-slider-bar').append(template(Mobildata));
 
 	template = Handlebars.compile($('#productMobileTemplate').html()); 
 	$('#best-seller').append(template(Mobildata));
-
+/*
 	template = Handlebars.compile($('#instagramMobileTemplate').html()); 
 	$('#instagram-seller').append(template(Mobildata));
 
