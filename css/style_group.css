@@ -130,7 +130,8 @@ footer { background: #ececec; }
 .footer-category-mobile ul,
 .readmore,
 .pd-mobile-img h1, .pd-mobile-img p,
-.product-box
+.product-box,
+.product-option-box
 {margin: 0px;}
 
 .list-icons,
@@ -149,7 +150,8 @@ footer { background: #ececec; }
 .vert-list-left li img ,.vert-list-right li img,
 .logo-outer-box,
 .pd-text-box h3,
-.pd-text-box img
+.pd-text-box img,
+.option1,.option2
 {float: left;}
 
 .menu-box,.fixed-menu,.sub-menu 
