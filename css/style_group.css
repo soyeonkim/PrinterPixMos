@@ -226,13 +226,12 @@ footer { background: #ececec; }
 
 .sub-menu,.hambuger,.bottom-borderline,
 .fixed-menu ul.list-icons > li.on-mobile ,
-.nav-left-menu-box,.nav-right-menu-box,
 .pd-menu,.about-mobile-Abox,
 .about-mobile-box,
 .footer-category-mobile-box,
 .score,.review-list li,.cards-col
 {border-color:#8d8d8d;}
 
-.about-mobile-Abox,.loginbtn,.regbtn,.cards-col
+.about-mobile-Abox,.cards-col
 .score,.review-list li
-{border: 1px solid;}
+{border: 1px solid  #8d8d8d;}
