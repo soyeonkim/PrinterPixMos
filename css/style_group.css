@@ -2,8 +2,8 @@
 @font-face {
     font-family: 'MyriadProRegular';  
     src: url('../fonts/MYRIADPROREGULAR.eot');
-    src:  url('../fonts/MyriadProRegular.ttf');
-    src:  url('../fonts/MYRIADPROREGULAR.woff') format('woff'), url('../fonts/MYRIADPROREGULAR.ttf') format('truetype');
+    src: url('../fonts/MyriadProRegular.ttf');
+    src: url('../fonts/MYRIADPROREGULAR.woff') format('woff'), url('../fonts/MYRIADPROREGULAR.ttf') format('truetype');
 
 }
  
@@ -11,14 +11,14 @@
     font-family: 'MyriadProLight';
     src: url('../fonts/MyriadPro-Light.otf');
     src: url('../fonts/MyriadPro-Light.eot');
-    src:  url('../fonts/MyriadPro-Light.woff') format('woff'), url('../fonts/MyriadPro-Light.ttf') format('truetype');
+    src: url('../fonts/MyriadPro-Light.woff') format('woff'), url('../fonts/MyriadPro-Light.ttf') format('truetype');
 
 }
 @font-face {
     font-family: 'MyriadProSemibold';
     src: url('../fonts/MyriadPro-Semibold.otf');
     src: url('../fonts/MyriadPro-Semibold.eot');
-    src:  url('../fonts/MyriadPro-Semibold.woff') format('woff'), url('../fonts/MyriadPro-Semibold.ttf') format('truetype');
+    src: url('../fonts/MyriadPro-Semibold.woff') format('woff'), url('../fonts/MyriadPro-Semibold.ttf') format('truetype');
 
 }
 
@@ -28,8 +28,13 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
+  font-family: MyriadProRegular;
+  background: #fff;
   margin: 0;
 }
+b,strong {font-family: MyriadProSemibold;}
+h1,h2,h3,h4,p, a{font-family: MyriadProRegular;}
+header { font-family: MyriadProLight;}
 article,
 aside,
 details,
@@ -54,6 +59,7 @@ video {
 }
 a {
   text-decoration: none;
+  color:#36a9e0;
 }
 img {
    max-width: 100% !important;
@@ -69,7 +75,7 @@ footer { background: #ececec; }
 .hidden{ display:none !important;}
 .white, .white a{ color:#fff;}
 .black, .black a { color: #000;}
-.printerpix, .printerpix a{color:#ce207e;}
+.printerpix, .printerpix a{color:#ce217e;}
 .img-centered { margin: 0 auto;}
 .center { margin: 0 auto; }
 .middle-div { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
@@ -112,8 +118,23 @@ footer { background: #ececec; }
  .social-title-box,
  .product-box,
  .product-title,
- .review-list
+ .review-list,
+ .option-btn,
+ .nav-memu-bar ul,
+ .pd-text-box,
+ .review-list ul,
+ .review-list li,
+ .loginbtn,.regbtn,
+ .option-btn,
+ .personalised
 {width: 100%;}
+
+.nav-memu-bar ul,
+.nav-memu-bar li,
+.pd-text-box h3,
+.pd-text-box
+{height:100%;}
+
 
 .call-number ul,
 .call-number p,
@@ -131,7 +152,8 @@ footer { background: #ececec; }
 .readmore,
 .pd-mobile-img h1, .pd-mobile-img p,
 .product-box,
-.product-option-box
+.product-option-box,
+.pd-text-box h3
 {margin: 0px;}
 
 .list-icons,
@@ -145,24 +167,22 @@ footer { background: #ececec; }
 .call-box,
 .logo-box,
 .pd-text-box,
+.pd-text-box img,
 .slider-box,
 .info-about li ,.footer-category-mobile li,
 .vert-list-left li img ,.vert-list-right li img,
 .logo-outer-box,
 .pd-text-box h3,
 .pd-text-box img,
-.option1,.option2
+.option1,.option2,
+.radioleft,.textBlock
+
 {float: left;}
 
 .menu-box,.fixed-menu,.sub-menu 
 { float: right;}
 
-/*header text color */
-.icon-title ,.login-menu h1,.login-menu p,
-.pd-menu li a,.footer-text-mobile,
-.pd-mobile-img h1, .pd-mobile-img p
-{ color:#414141;}
- 
+
 .fixed-menu,.sub-menu, .slide-showcase
  {position: relative;}
 .fixed-menu,.nav-memu-bar
@@ -172,6 +192,47 @@ footer { background: #ececec; }
  .nav-memu-bar li
  {font-size: 3.5vw;}
 
- .pd-menu li{ font-size: 4.2vw;}
- .vert-list-left li h4, .vert-list-right li h4
+.pd-menu li{ font-size: 4.2vw;}
+.vert-list-left li h4, .vert-list-right li h4
  { font-size: 3vw;}
+
+/*header text color */
+.icon-title ,.login-menu h1,.login-menu p,
+.pd-menu li a,.footer-text-mobile,
+.pd-mobile-img h1, .pd-mobile-img p
+{ color:#414141;}
+
+.readmore,.regbtn
+{ color:#36a9e0;}
+.loginbtn
+{ color:#ce217e;}
+
+
+.headerCallBox,.call-box 
+ {background:#000;}
+ .sub-menu,.sub-menu-list-flag,
+ .loginbtn,.regbtn
+{background:#fff;}
+.hambuger >.icon-bar,
+.user-form-box:focus,.pw-form-box:focus,
+.score,.cards-col a
+{ background:#1c1c1b;}
+.bubble-basket,.personalised
+{background:#ce217e;}
+.bubble-basket,.loginbtn
+{border-color:#ce217e;}
+
+
+
+.sub-menu,.hambuger,.bottom-borderline,
+.fixed-menu ul.list-icons > li.on-mobile ,
+.nav-left-menu-box,.nav-right-menu-box,
+.pd-menu,.about-mobile-Abox,
+.about-mobile-box,
+.footer-category-mobile-box,
+.score,.review-list li,.cards-col
+{border-color:#8d8d8d;}
+
+.about-mobile-Abox,.loginbtn,.regbtn,.cards-col
+.score,.review-list li
+{border: 1px solid;}

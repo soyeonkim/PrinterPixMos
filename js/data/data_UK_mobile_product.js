@@ -561,3 +561,96 @@ var Occasions = {
     
   ],
 };
+var Cards={
+    Occasions:[
+    {   
+        url:"",
+        title:"Graduation",
+    },
+    {   
+        url:"",
+        title:"Wdding Invitation",
+    },
+    {   
+        url:"",
+        title:"Wedding Anneverary",
+    },
+    {   
+        url:"",
+        title:"Bachelortte Party",
+    },
+    {   
+        url:"",
+        title:"Baby Shower",
+    },
+    {   
+        url:"",
+        title:"New Baby",
+    },
+    {   
+        url:"",
+        title:"First Baby",
+    },
+    {   
+        url:"",
+        title:"Birthday Invitation",
+    },
+    {   
+        url:"",
+        title:"Happy Birthday",
+    },
+    {   
+        url:"",
+        title:"Sorry",
+    },
+    {   
+        url:"",
+        title:"Thankyou",
+    },
+    {   
+        url:"",
+        title:"Thanksgiving",
+    },
+    {   
+        url:"",
+        title:"Hanukkah",
+    },
+    {   
+        url:"",
+        title:"Chistmas",
+    },
+    {   
+        url:"",
+        title:"New Year",
+    },
+    {   
+        url:"",
+        title:"Valentines Day",
+    },
+    {   
+        url:"",
+        title:"Happy Easter",
+    },
+    {   
+        url:"",
+        title:"Thanksgiving",
+    },
+    {   
+        url:"",
+        title:"Mother's day",
+    },
+    {   
+        url:"",
+        title:"Father's day",
+    },
+
+
+
+
+
+]}
+
+
+
+
+
