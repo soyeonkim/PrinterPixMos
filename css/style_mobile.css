@@ -8,8 +8,9 @@
 .logo-box,.fixed-menu li{ width: 64px; }
 .logo-outer-box,.header-box,.fixed-menu li,.hambuger { height: 64px;  }
 .header-nav-box{ margin: 0px !important;}
-.pd-text-box { border-radius: 0px; border-top:1px solid #8d8d8d;}
-.bottom-borderline { /*border-bottom: 1px solid #8d8d8d; */ border-radius: 0px; }
+.pd-text-box,.pd-text-box-left { border-radius: 0px; border-top:1px solid #8d8d8d;}
+.pd-text-box-left{border-right:1px solid #8d8d8d;}
+.bottom-borderline { border-bottom: 1px solid #8d8d8d;  border-radius: 0px; }
 .icon-title p { font-size: 12px; text-align: center;}
 .menu-box{ width: 80%; height: inherit;}
 .hambuger { padding:13px 16px 12px 12px; border-left:solid 1px #8d8d8d; border-radius: 0px;}
@@ -42,7 +43,8 @@
     right: 8px;
     top: 5px;
 }
-.sub-menu {
+
+.sub-menu,.sub-menu-account {
   border-left: 1px solid  #8d8d8d;
   border-bottom: 1px solid  #8d8d8d;
   margin-top: 0px;
@@ -50,10 +52,14 @@
 }
 .sub-menu ul { width: auto; height: auto; position: absolute; top:100%; }
 .sub-menu li { width: 125px; text-align: center;}
-.sub-menu li a {text-decoration: none; color:#414141; line-height: 1.0em;}
-.sub-menu li:hover, .sub-menu li:active, .sub-menu li a:hover,..sub-menu li a:active {
+.sub-menu li a ,.sub-menu-account li a{text-decoration: none; color:#1c1c1b; line-height: 1.0em;}
+.sub-menu li:hover, .sub-menu li:active, .sub-menu li a:hover,..sub-menu li a:active ,
+.sub-menu-account li:hover, .sub-menu-account li:active, .sub-menu-account li a:hover,..sub-menu-account li a:active ,
+{
   background: #ebebeb;
 }
+.sub-menu-account{right:60px; border-right:1px solid #8d8d8d;}
+.sub-menu-account li {text-align: center;}
 /*.sub-menu-list-flag { background: #fff !important; }*/
 .flags-list tr { height: 40px;}
 .nav-memu-bar{ height: 63px;}
@@ -108,7 +114,7 @@
 .pd-mobile-img, .pd-mobile-img img { width: 200px; }
 .pd-mobile-img h1, .pd-mobile-img p{ white-space: normal; padding: 3px 0px;}
 .pd-mobile-img h4{ margin: 5px 0px; }
-.pd-mobile-img p { display: block; display: -webkit-box; max-height: 50px; font-size:3vw; height: 1.0em*1.4*2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+.pd-mobile-img p { display: block; display: -webkit-box; max-height: 3em; font-size:3vw; height: 1.0em*1.4*2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
 
 .readmore { font-size:2.8vw; }
 .each-mobile-slide { text-decoration: none; display: inline; }
@@ -149,8 +155,8 @@
 .footer-login-box a{ height:100%; }
 .login-container{ }
 .login-box,.login-form,.btn-box,.user-form-box,.pw-form-box{width: 420px;}
-.login-box { padding-top: 15px; padding-bottom: 15px;}
-.login-icon{ width: 100px; }
+.login-box { padding-top: 10vw; padding-bottom: 15px;}
+.login-icon{ width: 70px; }
 .login-form{ margin: 15px 0px;}
 .login-form p {text-align: right;}
 .user-form-box,.pw-form-box{
@@ -186,7 +192,7 @@ login, register button
   After choose the product 
 ***/
 .editer-box{width: 95vw; height: 75vw; border:1px dashed #ececec; margin: 10px 0px; }
-.personalised{font-size: 20px; line-height: 2.0em; border: none; margin: 10px auto;}
+.personalised{font-size: 18px; line-height: 2.0em; border: none; margin: 10px auto;}
 .product_details {width:90vw; margin: 5px auto; white-space: normal;}
 .product_price{
   font-size: 2.4rem;
@@ -242,3 +248,38 @@ login, register button
 .rebrand-header-main,
 body[class^="pbx_layout_stretch"] .rebrand-header-main{
   */
+
+/******************************
+  cart/basket page
+*******************************/
+.basketcontainer{margin-top:10px;}
+.cart-outer-box{}
+.cart-title{
+  text-align: center;
+  float:left;
+  width:70%;
+  font-size: 6vw;
+  padding-top:15px;
+}
+.flow{ }
+.active-text {color:#1c1c1b !important;}
+.btn-box-half{width:60%; margin: 15px 15px;}
+.cartcontainer{height:120px;}
+.list-container{margin:10px 0px;}
+.top-title {padding:10px 5px; float:left;}
+.top-title h4{float:left;}
+.top-title >.sq-btn{float:right; padding:8px 15px; width:36px;}
+.your-list {}
+.your-list img{ float:left; width: 125px; height:125px;}
+.your-list li>.sq-btn{float:left; padding:8px 15px; width:36px; margin: 5px 0px 0px 10px;}
+.your-price{ float:right; font-size: 6vw;}
+.right-basketbox { float:right; margin:0px; padding:0px;}
+.right-basketbox li>.sq-btn {float:left; padding:5px 15px; width:32px; margin: 5px 0px 0px 5px;}
+.right-basketbox li{ display:list-item; height:40px;}
+.your-price{padding:5px 0px;}
+
+.promotion-code-box{height:50px;}
+.promo-form-box{ margin:10px 5px; width:65%; font-size: 5vw; }
+.apply-btn{ margin:10px 0px; width:27%; font-size: 5vw;}
+.totoal-price{font-size: 6vw; margin:5px; padding:5px;}
+.checkout-btn{font-size: 5vw; margin:5px; padding:10px;}

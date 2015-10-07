@@ -58,7 +58,7 @@
       <!---->
       <!-- productions -->
       <div class="pd-mobile-containder center" id="mobile-product">     <!-- production container -->
-        <div class="pager-box-mobile" id="next_banner"></div> 
+       <!-- <div class="pager-box-mobile" id="next_banner"></div> -->
           <div class="pd-mobile-contents">
           <!--- best production -->
             <div id="best-seller" class="best-product"></div>
@@ -124,7 +124,7 @@
   <script id="headerNavTemplate"  type="text/x-handlebars-template">
     <div class="navcontainer header-nav-box">
       <div class="navbar-header">
-       <button type="button" class="navbar-toggle collapsed hambuger bottom-borderline" data-toggle="collapse" data-target="#navbar-ex1-collapse" id="menu-toggle">
+       <button type="button" class="navbar-toggle collapsed hambuger bottom-borderline" data-toggle="collapse" data-target="#headbar-ex1-collapse" id="menu-toggle">
         <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar black"></span>
           <span class="icon-bar black"></span>
@@ -132,18 +132,25 @@
           <span class="icon-title"><p>Menu</p></span>            
         </button>
        <div class="brand">  
-       <div class="logo-outer-box">
-        <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png"></a></div>
+        <div class="logo-outer-box">
+          <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png"></a></div>
         </div>
 
         <div class="fixed-menu">
           <ul class="list-icons">
-            <li class="on-mobile">
+            <li class="on-mobile" id="register-btn">
                 <a class="register">
-              <span class="img"><center><img src="img/header/login.png"></center></span>              
-                <span class="icon-title black"><p> Login </p></span>
+                  <span class="img"><center><img src="img/header/login.png"></center></span>       
+                  <span class="icon-title black"><p> Login </p></span>
+
                </a>
              </li>
+              <li class="on-mobile hidden" id="logged-btn">
+                <button type="button" class="navbar-toggle collapsed bottom-borderline account"data-toggle="collapse" data-target="#headbar-ex2-collapse" id="account-toggle">
+                <span><h5><strong>Hello</strong></h5></span>
+                <span id="user-account"><h5><strong>Name</strong></h5></span>
+                </button>
+              </li>
              <li class="on-mobile">
            <a class="basket" href="#basket">
                <span class="img"><center><img src="img/header/Basket.png"></center></span>
@@ -151,6 +158,7 @@
                 <span id="BubbleCountBasket" class="bubble-basket menu_basket_count white">0</span>
               </a> 
             </li>
+
           </ul>
         </div>
         </div> 
@@ -158,7 +166,7 @@
       </div> 
 
 
-      <div class="collapse navbar-collapse" id="navbar-ex1-collapse">
+      <div class="collapse navbar-collapse" id="headbar-ex1-collapse">
         <ul class="nav navbar-nav sub-menu">
           <li class ="sub-menu-list-flag">
            <a href="#">
@@ -200,9 +208,17 @@
           </li>
           <li class ="sub-menu-list"><a href="#">Subscribe</a></li>
           <li class ="sub-menu-list"><a href="#">Help</a></li>
+          <!--<li class ="sub-menu-list"><a href="#">Track Order</a></li> -->
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse" id="headbar-ex2-collapse">
+        <ul class="nav navbar-nav sub-menu-account">
+          <li class ="sub-menu-list"><a href="#">Account Settings</a></li>
+          <li class ="sub-menu-list"><a href="#">My projects</a></li>
           <li class ="sub-menu-list"><a href="#">Track Order</a></li>
         </ul>
       </div>
+
     </div>
   </script>
 
@@ -211,7 +227,7 @@
       <div class="nav-memu-bar">
         <ul>
           <li class="nav-left-menu-box">
-            <button type="button" class="navbar-toggle collapsed pd-text-box bottom-borderline" data-toggle="collapse" data-target="#navbar-ex2-collapse" id="shop-pd">
+            <button type="button" class="navbar-toggle collapsed pd-text-box pd-text-box-left bottom-borderline" data-toggle="collapse" data-target="#navbar-ex2-collapse" id="shop-pd">
              <span><h3>shop by <strong>Products</strong></h3></span>
              <span class="nav-arrow"><img src="img/header/RightArrow_pink.png"></span>
             </button>
@@ -268,6 +284,7 @@
       </div>
        
     </div>
+    <div class="pager-box-mobile" id="next_banner"></div> 
     
   </script>
  
@@ -412,7 +429,7 @@
     <div class="login-container">
       <div class="login-box center">
         <div class="login-icon center">
-          <img src='img/header/ContactUs.png'>
+          <img src='img/header/Login_avatar.png'>
         </div>
         <div class="login-form">
           <form>
@@ -656,6 +673,126 @@
 
 </script>
 
+<script id="titleHeaderMobileTemplate" type="text/x-handlebars-template">
+  <div class="navcontainer header-nav-box">
+    <div class="cart-outer-box">
+      <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png"></a></div>
+    </div>
+    <div class="cart-title">Cart</div>
+  </div>
+  <div class="only-clear"></div>   
+</script>
+
+
+<script id="navFlowerMobileTemplate" type="text/x-handlebars-template">
+  <div class="navcontainer">
+    <div class="row flow">
+       <div class="col-xs-4 active-text">1. Shopping Cart</div>
+       <div class="col-xs-4">2. Payment information</div>
+       <div class="col-xs-4">2. Order Confirmation</div>
+    </div>
+    </div>
+    <div class="only-clear"></div>   
+</script>
+
+<script id="baskettopMobileTemplate" type="text/x-handlebars-template">
+  <div class="cartcontainer">
+    <div class="product-path">
+      <a href=""><span id="backto"> < &nbsp;  Countinue Shopping </span></a>
+      <span style="color:#ff2a98" id="lastPath"></span>
+    </div>
+    <div class="btn-box-half right">
+      <button class="personalised button-printerpix white">Proceed to Checkout >
+      </button>
+    </div>
+  </div>
+  <div class="only-clear"></div>   
+</script>
+<script id="basketListMobileTemplate" type="text/x-handlebars-template">
+  <div class="basketcontainer">
+    <div class="list-container">
+
+
+      <div class="top-title">
+        <span><h4> Leather Photo Book</h4></span>
+        <span class="sq-btn"> X </span>
+      </div>
+      <div class="size-display">Size A4</div>
+      <div class="your-list">
+        <span><img src="img/Themes/photoBooks/UK/mobile/example.png"><span>
+        <ul class="right-basketbox">
+          <li> <span class="sq-btn"> - </span>
+              <span class="sq-btn select-count"> 3 </span>
+              <span class="sq-btn"> + </span>
+               <span class="your-price"> £20.99</span>
+          </li>
+          <li class="makeitgift"> Make it a Gift </li>
+          <li class="addSeperateAddr"> Add seperate delivery address </li>
+        </ul>
+      </div>
+      <div class="only-clear"></div>   
+    </div>
+    <div class="bottom-borderline"></div>   
+    <div class="list-container">
+      <div class="top-title">
+        <span><h4> Leather Photo Book</h4></span>
+        <span class="sq-btn"> X </span>
+      </div>
+      <div class="size-display">Size A4</div>
+      <div class="your-list">
+        <span><img src="img/Themes/photoBooks/UK/mobile/example.png"><span>
+        <ul class="right-basketbox">
+          <li> <span class="sq-btn"> - </span>
+              <span class="sq-btn select-count"> 3 </span>
+              <span class="sq-btn"> + </span>
+               <span class="your-price"> £20.99</span>
+          </li>
+          <li class="makeitgift"> Make it a Gift </li>
+          <li class="addSeperateAddr"> Add seperate delivery address </li>
+        </ul>
+      </div>
+      <div class="only-clear"></div>   
+    </div>
+    <div class="bottom-borderline"></div>   
+    <div class="list-container">
+      <div class="top-title">
+        <span><h4> Leather Photo Book</h4></span>
+        <span class="sq-btn"> X </span>
+      </div>
+      <div class="size-display">Size A4</div>
+      <div class="your-list">
+        <span><img src="img/Themes/photoBooks/UK/mobile/example.png"><span>
+        <ul class="right-basketbox">
+          <li> <span class="sq-btn"> - </span>
+              <span class="sq-btn select-count"> 3 </span>
+              <span class="sq-btn"> + </span>
+               <span class="your-price"> £20.99</span>
+          </li>
+          <li class="makeitgift"> Make it a Gift </li>
+          <li class="addSeperateAddr"> Add seperate delivery address </li>
+        </ul>
+      </div>
+      <div class="only-clear"></div>   
+
+    </div>
+    <div class="bottom-borderline"></div>   
+
+    <div class="promotion-code-box">
+      <form>
+       <input type="text" name="promotioncode" value=" Enter promotional code" class="promo-form-box">
+      </form>
+       <button type="button" class="apply-btn"><center>Apply</center></button>
+    </div>
+    <div class="totoal-price right"><strong>Total : £ 100.90</strong></div>
+    <div class="only-clear"></div> 
+    <div class="checkout-btn white"><center>Proceed to Checkout > </center></div>
+
+    <div class="pay-available right">pay pal mastercard VISA AmericanExpress  DISCOVER</div>
+    <div class="pay-sign right"></div>
+     <div class="only-clear"></div>   
+  </div>
+
+</script>
 
 </body>
 </html>

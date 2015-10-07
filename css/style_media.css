@@ -1,7 +1,7 @@
 
 
 @media screen and (max-width: 768px){
-  .fixed-menu { width: 126px; }
+  .fixed-menu { width: 128px; }
 
   .nav-memu-bar{ height: 72px;}
   /*.pd-text-box { margin-top: 2px; padding-bottom: 3px; }*/
@@ -86,6 +86,7 @@
 
 @media screen and (max-width: 420px) {
 
+  .fixed-menu { width: 126px; }
   .headerCallBox,.call-box { height: 46px;}
   .logo-box,.fixed-menu li { width: 63px; }
   .logo-outer-box,.header-box,.fixed-menu li,.hambuger { height: 63px;  }
@@ -94,14 +95,14 @@
   .fixed-menu img { height: 40px; margin-top: 2px;}
   .bubble-basket{ right: 8px; top: 5px; }
   
-  .nav-memu-bar{ height: 63px; }
+  .nav-memu-bar{ height: 52px; }
   .nav-memu-bar li,.pd-text-box h3 { font-size: 17px; }
 
   .login-box,.login-form,.btn-box,.user-form-box,.pw-form-box{width: 360px;}
   .user-form-box,.pw-form-box,.loginbtn,.regbtn {font-size: 4.2vw;}
   .user-form-box,.pw-form-box{  height: 42px;}
 
-  .pd-text-box h3{  width: 78px;  /*height: 56px; */margin-left: 27%; padding-top: 7px;}
+  .pd-text-box h3{  width: 78px;  /*height: 56px; */margin-left: 27%; padding-top: 2px;}
   .pd-text-box img{width:33px; height:33px; margin-top:10px;}
   .productContainer{ width: 404px;}
   .pd-mobile-title {font-size: 4vw;}
@@ -136,6 +137,7 @@
   .footer-category-mobile ul ul li {font-size: 3.8vw;}
   .footer-category-mobile{ height: 200px; margin:15px; }
   .footer-category-mobile ul ul li {padding: 6px 0px;}
+  .right-basketbox{ width:200px;}
   
 }
 
@@ -168,8 +170,9 @@
   .sub-menu { margin-top: 0px; }
   .sub-menu li { width: 106px; }
   .sub-menu li a { font-size: 12px; }
+  .account h5{ margin-top:6px;margin-bottom:5px;}
   /*.Pd-text-box { margin-top: 2px; }*/
-  .nav-memu-bar{ height: 52px; }
+  .nav-memu-bar{ height: 47px; }
   .pd-text-box h3{}
   .nav-memu-bar ul {height:100%;}
 
@@ -177,9 +180,9 @@
 
   .pd-text-box h3 { font-size: 14px; }
   .nav-arrow img{ width:26px; height:26px;}
-  .pd-text-box h3{margin-left:20%; padding-top: 8px;}
+  .pd-text-box h3{margin-left:20%; padding-top: 4px;}
   .login-box,.login-form,.btn-box,.user-form-box,.pw-form-box{width: 280px;}
-  .login-icon {width: 70px;}
+  .login-icon {width: 50px;}
 
   /* TODO: size adjustment
   */

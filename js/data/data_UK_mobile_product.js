@@ -565,7 +565,7 @@ var Cards={
     Occasions:[
     {   
         url:"",
-        title:"Graduation",
+        title:"Halloween",
     },
     {   
         url:"",
@@ -577,7 +577,7 @@ var Cards={
     },
     {   
         url:"",
-        title:"Bachelortte Party",
+        title:"Bachelorette party",
     },
     {   
         url:"",
@@ -589,7 +589,7 @@ var Cards={
     },
     {   
         url:"",
-        title:"First Baby",
+        title:"First Birthday",
     },
     {   
         url:"",
@@ -617,7 +617,11 @@ var Cards={
     },
     {   
         url:"",
-        title:"Chistmas",
+        title:"Chistmas -5'x7'",
+    },
+        {   
+        url:"",
+        title:"Chistmas-5x7",
     },
     {   
         url:"",
@@ -625,16 +629,13 @@ var Cards={
     },
     {   
         url:"",
-        title:"Valentines Day",
+        title:"Valentine Day",
     },
     {   
         url:"",
         title:"Happy Easter",
     },
-    {   
-        url:"",
-        title:"Thanksgiving",
-    },
+
     {   
         url:"",
         title:"Mother's day",
@@ -643,7 +644,10 @@ var Cards={
         url:"",
         title:"Father's day",
     },
-
+    {   
+        url:"",
+        title:"Graduation",
+    },
 
 
 
