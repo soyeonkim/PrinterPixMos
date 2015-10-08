@@ -1,13 +1,24 @@
 requirejs.config({
 	paths: {
-		libs: "libs",
-   		plugins: "libs/plugins",
-		jquery: ["//cdn.jsdelivr.net/jquery/1.11.0/jquery.min", "libs/jquery"],
-    	underscore: ["//cdn.jsdelivr.net/lodash/2.4.1/lodash.underscore.min", "libs/lodash"],
-    	backbone: ["//cdn.jsdelivr.net/backbonejs/1.1.2/backbone-min", "libs/backbone"],
- 
-
-	}
+    app: 'app/js',
+		libs: "./libs",
+		jquery:  "../libs/jquery",
+    underscore:"../libs/underscore",
+    backbone: "../libs/backbone",
+    handlebars: "../libs/handlebars-v4.0.2"
+	},
+    shim: {
+    underscore: {
+      exports: '_'
+    },
+    backbone: {
+      deps: ['jquery', 'underscore'],
+      exports: 'Backbone'
+    },
+    handlebars: {
+      exports: 'Handlebars'
+    }
+  }
 });
 requirejs([
   "jquery",
@@ -21,3 +32,4 @@ requirejs([
 		Printerpix.start();
 	});
 }); 
+

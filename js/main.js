@@ -12,55 +12,12 @@ function initCycle (numberSlide) {
 			pager: '#page-pager',
 
 		});
- 		$('#best-slider').cycle({
-			fx: 'carousel',
-			timeout: 0,
-			sildes: 'div',
-			next :'#prev_PhotoBookPage',
-			prev :'#next_PhotoBookPage',
-			startingSlide: 0,
-			carouselVisible:numberSlide
-		});
-		 $('#best-slider2').cycle({
-			fx: 'carousel',
-			timeout: 0,
-			sildes: 'div',
-			next :'#prev_PhotoBookPage',
-			prev :'#next_PhotoBookPage',
-			startingSlide: 2,
-			carouselVisible:numberSlide
-		});
 
-		$('#instagram-slider').cycle({
-			fx: 'carousel',
-			timeout: 0,
-			sildes: 'div',
-			next :'#prev_InstagramPage',
-			prev :'#nex_InstagramPage',
-			startingSlide: 0,
-			carouselVisible:numberSlide
-		});
-		$('#instagram-slider2').cycle({
-			fx: 'carousel',
-			timeout: 0,
-			sildes: 'div',
-			next :'#prev_InstagramPage',
-			prev :'#nex_InstagramPage',
-			startingSlide: 2,
-			carouselVisible:numberSlide
-		});
-
-
-	}
+}
  function loginPage(){
- //	$('input').on('keydown', function(e) {
- //   	if( !/[a-z]|[A-Z]/.test( String.fromCharCode( e.which ) ) )
- //       	return false;
-//	});​​​​​​​​
-
 	$('input').on('click focusin', function() {
     this.value = '';
-});
+	});
  }
 
  function showLoginPage() {
@@ -288,6 +245,28 @@ function displayFooterPage() {
  	$('#footer-register').children("div").remove();
  	// body...
  }
+function open_application () {
+	// body...
+	var data;
+	var headers = { 
+		//"Access-Control-Allow-Origin": "*"};
+		"appId":"printerpixmos_v1.0"};
+	var jqxhr = $.ajax( {
+		type:'GET',
+			url: 'http://api.printerpix.co.uk/api/account/applogin',
+			dataType:'json',
+			//contentType: 'application/json',
+			headers:headers,
+			data:data
+
+	}).done(function(data){
+		console.log("done",data);
+	});
+
+ 
+ 
+}
+
 $(document).ready(function () {
 	var template;
 
@@ -314,19 +293,9 @@ $(document).ready(function () {
 	// when login button is clicked
 
 	loginPage();
+
+	open_application();
 	//
 
 });
 
-function reference() {
-	$('#bs-example-navbar-collapse-1').on('show.bs.collapse', function () {
-  $('#bs-example-navbar-collapse-1').append($('#sidebar').html());
-  $('#bs-example-navbar-collapse-1 ul').last().removeClass('nav-pills nav-stacked').addClass('navbar navbar-nav');
-});
-$('#bs-example-navbar-collapse-1').on('hidden.bs.collapse', function () {
-  $('#bs-example-navbar-collapse-1 ul:last-child').remove();
-});
-$(window).on('resize', function () {
-  if (window.innerWidth > 768) {$('#bs-example-navbar-collapse-1').collapse('hide');}
-});
-}
