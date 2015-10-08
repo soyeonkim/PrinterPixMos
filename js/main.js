@@ -248,6 +248,7 @@ function displayFooterPage() {
 function open_application () {
 	// body...
 	var data;
+	var temp;
 	var headers = { 
 		//"Access-Control-Allow-Origin": "*"};
 		"appId":"printerpixmos_v1.0"};
@@ -260,7 +261,8 @@ function open_application () {
 			data:data
 
 	}).done(function(data){
-		console.log("done",data);
+		console.log("done",data.customer);
+		temp = JSON.parse(data.customer);
 	});
 
  

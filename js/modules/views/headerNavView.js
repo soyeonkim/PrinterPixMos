@@ -7,8 +7,8 @@ define(function(require) {
 
 
     var headerNavView = Backbone.View.extend({
-      template: "headerNavTemplate",
-      el:'#top-header-bar',
+     // template: "#headerNavTemplate",
+     // el:'#top-header-bar',
 
       events :{
         "click #menu-toggle":"toggleBottomLine",
@@ -55,6 +55,7 @@ define(function(require) {
       }
 
     });
+
 
     return headerNavView;
 

@@ -7,6 +7,8 @@ define(function(require) {
 
 
     var loginPageView = Backbone.View.extend({
+      template: "loginMobileTemplate",
+      el:'#login-container',
 
       initialize:function() {
        // this.template = JST[headerCallTemplate.tmpl];
@@ -14,7 +16,8 @@ define(function(require) {
       },
       render: function(){
         console.log("render");
-        var template = Handlebars.compile($('#loginMobileTemplate').html());
+        this.template = Handlebars.compile($(this.template).html());
+
         this.$el.html(template);
         return this;
       }

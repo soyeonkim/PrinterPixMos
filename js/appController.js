@@ -16,10 +16,10 @@ define(function (require) {
 					template:'headerCallTemplate'
 				}),
 				headerNavView :new headerNavView({
-				/*	el:'#top-header-bar',
-					template:'headerNavTemplate'
-					*/
+					el:'#top-header-bar',
+					template:'headerNavTemplate'			
 				}),
+
 				loginPageView :new loginPageView({
 					el:'#login-container',
 					template:'loginMobileTemplate'
