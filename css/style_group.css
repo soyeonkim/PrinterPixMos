@@ -214,6 +214,7 @@ footer { background: #ececec; }
 .pd-mobile-img h1, .pd-mobile-img p,
 .sub-menu li a,
 .sub-menu-account li a,
+.user-form-box:focus,.pw-form-box:focus,
 .product-path a
 
 { color:#1c1c1b;}
@@ -233,7 +234,7 @@ footer { background: #ececec; }
  .loginbtn,.regbtn
 {background:#fff;}
 .hambuger >.icon-bar,
-.user-form-box:focus,.pw-form-box:focus,
+
 .score,.cards-col a
 { background:#1c1c1b;}
 .bubble-basket,.personalised,
@@ -249,7 +250,8 @@ footer { background: #ececec; }
 .pd-menu,.about-mobile-Abox,
 .about-mobile-box,
 .footer-category-mobile-box,
-.score,.review-list li,.cards-col
+.score,.review-list li,.cards-col,
+.user-form-box:focus,.pw-form-box:focus,
 {border-color:#8d8d8d;}
 
 .about-mobile-Abox,.cards-col

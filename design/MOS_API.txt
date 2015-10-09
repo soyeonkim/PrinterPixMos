@@ -1,0 +1,88 @@
+
+var request_opion={
+	token:'',
+	useremail:'',
+	userpassword:'',
+	firstname:'',
+	lastname :'',
+	newsletter: '',
+	newsletter:'',
+	pageGroupTypeId:'',
+	pageGroupId:''
+}
+===========================
+AppLogin
+GET
+http://api.printerpix.co.uk/api/account/applogin
+HEADER
+appId: printerpixmos_v1.0
+=================================================================
+
+USER LOGIN
+GET
+https://api.printerpix.co.uk/api/account/userlogin
+HEADER
+useremail: yeanshi.teoh@syncoms.com
+userpassword: 12
+
+================================================================
+REGISTRATION
+https://api.printerpix.co.uk/api/account/Register/
+HEADER
+token: e0ddf7a7-4629-41b3-bb3d-042ef0d0e173
+appId:printerpixmos
+userFirstName: yeantests
+userLastName: testings
+newsletter: true
+useremail: yeanshi.teoh2222@syncoms.com
+userpassword: 12
+
+RESULT
+{"Token":"96d304a7-1be7-45be-9201-9f4b3b0a29bb","FirstName":"soyeon","LastName":"kim","EmailAddress":"skymedic@nate.com","IsAnonymous":false}"
+uploadUrl: "http://www.printerpix.co.uk/FileManager/UploadJob/"
+{Exception: "RegisterUser: Although you indicated you're a new …xists for this email address. [skymedic@nate.com]", DebugInfo: "Validate Parameters; RegisterUser(parameters)"}
+DebugInfo: "Validate Parameters; RegisterUser(parameters)"
+Exception: "RegisterUser: Although you indicated you're a new customer, an account already exists for this email address. [skymedic@nate.com]"
+==============================================
+
+GET (GET TOP MENU)
+http://api.printerpix.co.uk/api/PlatinumProduct/PageGroupTypes
+HEADER
+appId: printerpixmos_v1.0
+token: e0ddf7a7-4629-41b3-bb3d-042ef0d0e173
+
+RESULT
+{
+pageGroupTypes: "[{"name":"CalendarPage","id":"2"},{"name":"CanvasPage","id":"3"},{"name":"WallDecorPage","id":"4"},{"name":"PhotoGiftPage","id":"5"},{"name":"PhotoCoverPage","id":"6"},{"name":"PrintPage","id":"7"},{"name":"GreetingCardPage","id":"8"}]"
+}
+===========================================================
+GET (GET SUB MENU)
+http://api.printerpix.co.uk/api/PlatinumProduct/PageGroups?pageGroupTypeId=2
+HEADER
+token: e0ddf7a7-4629-41b3-bb3d-042ef0d0e173
+appId:printerpixmos
+
+RESULT
+{
+pageGroups: "[{"pageGroupId":"822972c6-fe5d-4c07-9952-7b5557a2f95d","pageGroupSeoFriendlyUrl":"/photo-calendar/","pageGroupHeader":"Wall Calendar","imageCaption":"WALL CALENDAR","defaultProductId":"dc54dba6-74b7-4e41-b3e3-9244a85161de","defaultProductPrice":"£17.95","defaultProductWidth":"210","defaultProductHeight":"297","marketingContent":"\u003cdiv style=\"text-align: justify;\"\u003e\u003c/div\u003e\r\n\u003cdiv style=\"text-align: justify;\"\u003eGive your friends and family the perfect gift with this ready-to-mount personalised wall calendar. Quickly upload the pictures you want for each month and even highlight birthdays, anniversaries and other key dates with your own custom selected images and text. Manufactured in the UK and published on high-quality photo paper for a quality appearance.\u003cbr /\u003e\r\n\u003cbr /\u003e\r\n\u003c/div\u003e\r\n\u003cdiv style=\"text-align: justify;\"\u003e\u003cstrong style=\"font-weight: bold;\"\u003e\u003cspan style=\"color: #ff0000;\"\u003eExciting news!\u003c/span\u003e\u003c/strong\u003e \u0027\u0027Wall Calendars are NOW also available in Swedish, Finnish and Norwegian. Simply pick your favourite language from the drop down when choosing your theme.\"\u003c/div\u003e","isInstagramProduct":false,"defaultProduct":{"guid":"dc54dba6-74b7-4e41-b3e3-9244a85161de","layout":"Portrait","refId":"CALP001v3","name":"A4 Wall Mount Photo Calendar","width":"210","height":"297","sizeDescription":"A4 Portrait 20x30 cm","displayPriceSign":"£","displayPriceValue":"17.95","discountAmount":"0.00","discountPrice":"17.95","discountDesc":"PreloadedModifiersAppIsZero","frameThickness":0,"PriceByPageRange":[],"fotolia":{"displayPriceValue":"22.94","discountPrice":"22.94","addOnItemPrice":"4.99","addOnItemDiscountPrice":"4.99"}}}]"
+}
+
+===========================================================
+GET PRODUCTS
+http://api.printerpix.co.uk/api/PlatinumProduct/products/?pageGroupId=822972c6-fe5d-4c07-9952-7b5557a2f95d
+token: e0ddf7a7-4629-41b3-bb3d-042ef0d0e173
+appId:printerpixmos
+
+RESULT
+{
+products: "[{"guid":"dc54dba6-74b7-4e41-b3e3-9244a85161de","layout":"Portrait","refId":"CALP001v3","name":"A4 Wall Mount Photo Calendar","width":"210","height":"297","sizeDescription":"A4 Portrait 20x30 cm","displayPriceSign":"£","displayPriceValue":"17.95","discountAmount":"0.00","discountPrice":"17.95","discountDesc":"PreloadedModifiersAppIsZero","frameThickness":0,"PriceByPageRange":[],"fotolia":{"displayPriceValue":"22.94","discountPrice":"22.94","addOnItemPrice":"4.99","addOnItemDiscountPrice":"4.99"}}]"
+}
+
+=============================================================
+GET (FORGET PASSWORD)
+url
+http://api.printerpix.co.uk/api/account/ForgotPassword?email=yeanshi.teoh@syncoms.com 
+
+RESULT
+{readyState: 4, responseText: "Your Password has been emailed to you; please chec… was not caught by your junk mail (spam) filter. ", status: 200, statusText: "OK"}
+{readyState: 4, responseText: "Email does not exist.", status: 200, statusText: "OK"}

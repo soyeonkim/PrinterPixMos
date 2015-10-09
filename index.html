@@ -139,7 +139,7 @@
 
         <div class="fixed-menu">
           <ul class="list-icons">
-            <li class="on-mobile" id="register-btn">
+            <li class="on-mobile" id="login-nav">
                 <a class="register">
                   <span class="img"><center><img src="img/header/login.png"></center></span>       
                   <span class="icon-title black"><p> Login </p></span>
@@ -434,21 +434,21 @@
         </div>
         <div class="login-form">
           <form>
-            <input type="text" name="username" value="  Username" class="user-form-box">
+            <input type="text" name="username" value="Email" class="user-form-box" id="username">
             <br>
-            <input tyle="password" name="psw" value="  Password" class="pw-form-box">
+            <input type="password" name="psw" value="Password" class="pw-form-box" id="password">
             <a href="#" id="forgetPassword"><p>Forgotten Password</p></a>
           </form>
         </div>
         <div class="btn-box center">
           <div class="login-btn">
-            <button type="button" class="loginbtn"><center>Login</center></button>
+            <button type="button" class="loginbtn" id="login-btn"><center>Login</center></button>
           </div>
         </div>
         <div class="btn-box center"><p><center> Not a member yet?</center></p></div>
         <div class="btn-box center">
           <div class="register-btn">
-          <button type="button" class="regbtn"><center>Register Here</center></button>
+          <button type="button" class="regbtn" id="newRegister"><center>Register Here</center></button>
           </div>
         </div>
       </div>
@@ -461,26 +461,27 @@
   <script id="forgotPasswordMobileTemplate" type="text/x-handlebars-template">
     <div class="login-container">
       <div class="login-box center">
-        <div class="text-center">
-          <h3>Forgot Password</h3>
+        <div class="text-center" id="forget-text">
+          <h3 id="forget-title">Forgot Password</h3>
           <br><br>
-          <h3> Please enter your email address above to retrieve your password. Your password will be emailed to you immediately. </h3>
+          <h3 id="forget-message"> Please enter your email address above to retrieve your password. Your password will be emailed to you immediately. </h3>
         </div>
 
         <div class="login-form">
             <form>
-              <input type="text" name="username" value="Email" class="user-form-box">
+              <input type="text" name="username" value="Email" class="user-form-box" id="f-username">
             </form>
         </div>
         <div class="btn-box center">
           <div class="login-btn">
-            <button type="button" class="loginbtn"><center>Send Password</center></button>
+            <button type="button" class="loginbtn" id="sendPassword"><center>Send Password</center></button>
+             <button type="button" class="loginbtn hidden" id="closePassword"><center>Back to login page</center></button>
           </div>
         </div>
      </div>
   </script>
     <!--------------------------------------------------------------------------- -->
-   <script id="registerMobileTemplate" type="text/x-handlebars-template">
+  <script id="registerMobileTemplate" type="text/x-handlebars-template">
     <div class="login-container">
       <div class="login-box center">
         <div class="text-center">
@@ -489,20 +490,22 @@
 
         <div class="login-form">
             <form>
-              <input type="text" name="firstname" value="  First name" class="user-form-box">
-              <br>
-              <input type="text" name="lastname" value="  Last name" class="user-form-box">
-              <br>
-              <input type="text" name="username" value="  Email" class="user-form-box">
-              <br>
-              <input tyle="password" name="psw" value="  Password" class="pw-form-box">
-              <br>
-              <input tyle="password" name="conpsw" value="  Confirm Password" class="pw-form-box">
+              <input type="text" name="firstname" value="First name" class="user-form-box" id="firstname">
+               <span class="hidden" id="invaild-reg-fname"><h5>This field is required.</h5></span>
+              <input type="text" name="lastname" value="Last name" class="user-form-box" id="lastname">
+               <span class="hidden" id="invaild-reg-lname"><h5>This field is required.</h5></span>
+              <input type="text" name="username" value="Email" class="user-form-box" id="reg_email">
+              <span class="hidden" id="invaild-reg-email"><h5>Please enter a valid email address.</h5></span> 
+               
+              <input type="password" name="psw" value="Password" class="pw-form-box" id="reg_password">
+               
+              <input type="password" name="conpsw" value="Password" class="pw-form-box" id="reg_password2">
+              <span class="hidden" id="invaild-reg-pw"><h5>Please enter the same password.</h5></span> 
             </form>
         </div>
         <div class="btn-box center">
           <div class="login-btn">
-            <button type="button" class="loginbtn"><center>Send Password</center></button>
+            <button type="button" class="loginbtn" id="register"><center>Register</center></button>
 
             <br>
             <form class="login-btn center">
@@ -523,11 +526,12 @@
   <!-------------------------------------------------------------------------->
 
   <script id="productMobileTemplate" type="text/x-handlebars-template">
-     {{#productPath}}
-        <div class="product-path">
-        <span>  {{path}} > </span><span style="color:#ff2a98">   {{secondPath}}   </span>
-      </div>
-      {{/productPath}}
+    {{#productPath}}
+    <div class="product-path">
+      <span>  {{path}} > </span><span style="color:#ff2a98">   {{secondPath}}   </span>
+    </div>
+    {{/productPath}}
+    
     <div class="productContainer center">
 
       <div class="text-center pd-mobile-title">
@@ -630,22 +634,22 @@
 
 
 
-    <div class="review-list">
-      <ul>
-      {{#cutomerReview}}
-        <li>
-          <center><img src="{{customerStar}}"></center>
-          <p>{{review}}</p>
-        </li>
-        {{/cutomerReview}}
-      </ul>
-      <div class="readmore"><center>See More</center></div>
+      <div class="review-list">
+        <ul>
+        {{#cutomerReview}}
+          <li>
+            <center><img src="{{customerStar}}"></center>
+            <p>{{review}}</p>
+          </li>
+          {{/cutomerReview}}
+        </ul>
+        <div class="readmore"><center>See More</center></div>
+      </div>
     </div>
-  </div>
 
 
 
-</script>
+  </script>
 
 <script id="CardsMobileTemplate" type="text/x-handlebars-template">
   <div class="product-path">

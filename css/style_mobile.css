@@ -161,10 +161,11 @@
 .login-form p {text-align: right;}
 .user-form-box,.pw-form-box{
   height: 33px;
-  margin: 10px 0px 5px 0px;
+  margin: 15px 0px 5px 0px;
   color:#d0d0d0;
   padding: 4px 10px;
 }
+.login-form h5{color:red; font-weight: bold; margin:0px;}
 .btn-box p{ font-size: 1.8rem;}
 .textBlock { margin-left: 8px;}
 .textBlock a {text-decoration: underline;}

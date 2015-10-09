@@ -1,6 +1,33 @@
 
  
 var product=[];
+var appId ='printerpixmos_v1.0';
+var request_opion={
+	token:'',
+	useremail:'',
+	userpassword:'',
+	firstname:'',
+	lastname:'',
+	newsletter: '',
+	newsletter:'',
+	pageGroupTypeId:'',
+	pageGroupId:''
+}
+
+var request_path ={
+	init:'/account/applogin',
+	login:'/account/userlogin',
+	register:'/account/Register/',
+	forgetpassword:'/account/ForgotPassword?email=',
+	pageGroupTypes:'/PlatinumProduct/PageGroupTypes',
+	subPageGroupe:'/PlatinumProduct/PageGroups?pageGroupTypeId=',
+	product:'/PlatinumProduct/products/?pageGroupId',
+
+}
+
+var urlRe = /([A-Za-z][A-Za-z0-9\+\.\-]*:\/\/([A-Za-z0-9\.\-_~:/\?#\[\]@!\$&''\(\)\*\+,;=]|%[A-Fa-f0-9]{2})+)|(\s|^)[^\s@\:]+\.(com|net|ru|org|de|uk|jp|br|pl|info|cn|fr|it|in|nl|au|biz|es|ir|eu|ro|lv)(?:(?=\s+)|$|\/(([\w.]*@(\w|.)*)*\w*))+/g;
+var emailRegexp = /(\s|^)[a-z0-9._%+-\/]+@[a-z0-9.-]+\.[a-z]{2,4}(\s|$)/i;
+
 function initCycle (numberSlide) {
 		 
 	$('#slider-source').cycle({
@@ -14,6 +41,58 @@ function initCycle (numberSlide) {
 		});
 
 }
+function request_S_server(path, option) {
+	var headers=[];
+	var response;
+	headers = {"appId":appId};;
+	headers["token"] = option.token;
+	headers["useremail"]=option.useremail;
+	headers["userpassword"]=option.userpassword;
+	headers["userFirstName"]=option.firstname;
+	headers["userLastName"]=option.lastname;
+	headers["newsletter"]="true";
+
+
+
+	return $.ajax({
+		type:'GET',
+			url: 'https://api.printerpix.co.uk/api'+path,
+			dataType:'json',
+			//contentType: 'application/json',
+			headers:headers,
+			data:response
+
+	});
+}
+function request_server ( path, option) {
+	var headers=[];
+	var response;
+	headers = {"appId":appId};;
+	headers["token"] = option.token;
+	headers["useremail"]=option.useremail;
+	headers["userpassword"]=option.userpassword;
+	
+
+	return $.ajax({
+		type:'GET',
+			url: 'http://api.printerpix.co.uk/api'+path,
+			dataType:'json',
+			//contentType: 'application/json',
+			headers:headers,
+			data:response
+
+	});
+
+	/*.done(function(response){
+			console.log("done",response.customer);
+			response = JSON.parse(response.customer);
+			option.token = response.Token;
+			console.log("done",option.token );
+		    callback(response);
+	});
+	*/
+
+}
  function loginPage(){
 	$('input').on('click focusin', function() {
     this.value = '';
@@ -23,7 +102,7 @@ function initCycle (numberSlide) {
  function showLoginPage() {
  	$(window).bind('hashchange', function(){
  		console.log("onhashchange");
- 		showLoginPage();
+ 		//showLoginPage();
  
  	});
  	console.log("showLoginPage");
@@ -41,6 +120,11 @@ function initCycle (numberSlide) {
  		$('#next_banner').removeClass('hidden');
  		$('#best-seller').removeClass('hidden');	
  	}
+
+ 	function showErrorMessage() {
+ 		console.log("showErrorMessage");
+ 	}
+
  	if($('#login-container').hasClass('hidden')) displayLogin();
  	else hiddenLogin();
  
@@ -48,8 +132,39 @@ function initCycle (numberSlide) {
  		showforgetPasswordPage();
  	});
 
- 	$('.regbtn').click(function(){
+ 	$('#newRegister').click(function(){
  		showRegisterPage();
+ 	});
+
+ 	$('#login-btn').click(function() {
+ 		var userId =  $("#username").val();
+ 		var password =  $("#password").val();
+ 		var response;
+
+ 		//Test id, password : //TODO: delete later
+ 		userId='yeanshi.teoh@syncoms.com';
+ 		password='12';
+ 		if(!(emailRegexp.test(userId))){
+ 			showErrorMessage();
+ 		} 
+ 		else {
+ 			request_opion.useremail =userId;
+ 			request_opion.userpassword = password;
+
+ 			request_S_server(request_path.login,request_opion).done(function(data){
+ 				var response = JSON.parse(data.customer);
+ 				console.log(response);
+ 				request_opion.firstname = response.FirstName;
+ 				request_opion.lastname = response.LastName;
+ 				hiddenLogin();
+ 			});
+ 			request_S_server(request_path.login,request_opion).fail(function(data){
+ 				showErrorMessage(data);
+ 			});
+
+
+ 		}
+ 		console.log("id",response);
  	});
 
  }
@@ -58,15 +173,59 @@ function initCycle (numberSlide) {
  	$('#login-container').children("div").remove();
  	var template = Handlebars.compile($('#forgotPasswordMobileTemplate').html()); 
 	$('#login-container').append(template(Mobildata));
-	window.onhashchange = function() {
+	/*window.onhashchange = function() {
 		$('#login-container').children("div").remove();
  	 	template = Handlebars.compile($('#loginMobileTemplate').html()); 
 		$('#login-container').append(template(Mobildata));
-
 	}
+	*/
+	$('#sendPassword').click(function() {
+		var userId =  $("#f-username").val();
+		userId='yeanshi.teoh2222@syncoms.com';
+		//userId='test@gmail.com';
+		if(!(emailRegexp.test(userId))){
+			console.log(userId);
+			showErrorMessage();
+		}
+ 		else {
+ 			console.log("start");
+ 			request_path.forgetpassword+=userId;
+			request_S_server(request_path.forgetpassword,request_opion).done(function(data){
+				//var response = JSON.parse(data.customer);
+ 				console.log(data.responseText);
+			});
+			request_S_server(request_path.forgetpassword,request_opion).fail(function(data){
+ 				//var response = JSON.parse(data.customer);
+ 				console.log(data.responseText);
+ 				if(data.status == 200){
+ 					if(data.responseText == "Email does not exist."){
+ 				 		$('#forget-title').text("Invalid Email");
+ 						$('#forget-message').text("There is no account associated with this email address.");
+ 					}
+ 					else {
+ 						$('#forget-message').text(data.responseText);
+ 						$('#sendPassword').addClass('hidden');
+ 						$('#closePassword').removeClass('hidden');
+
+ 						$('#closePassword').click(function() {
+ 							hideforgetPasswordPag();
+ 						});
+ 					}
+ 				}
+ 			});
+
+		}
+
+	});
+ }
+ function hideforgetPasswordPag() {
+	$('#login-container').children("div").remove();
+ 	var template = Handlebars.compile($('#loginMobileTemplate').html()); 
+	$('#login-container').append(template(Mobildata));
  }
 
  function showRegisterPage(){
+ 	var input_val;
  	console.log("showRegisterPage");
  	$('#login-container').children("div").remove();
  	var template = Handlebars.compile($('#registerMobileTemplate').html()); 
@@ -76,7 +235,101 @@ function initCycle (numberSlide) {
 		template = Handlebars.compile($('#loginMobileTemplate').html()); 
 		$('#login-container').append(template(Mobildata));
 	}
+	function makeEmpty(id,default_value) {
+		$(id).focus(function(){
+			if($(this).val() == default_value) {
+             	$(this).val("");
+            }
+        }).blur(function(){
+        	if($(this).val().length == 0) {
+            $(this).val(default_value);
+        }
+		});
+	}
+
+	var default_f_name = $("#firstname").val();
+	makeEmpty("#firstname",default_f_name);
+
+	var default_l_name = $("#lastname").val();
+	makeEmpty("#lastname", default_l_name);
+
+	input_val =  $("#reg_email").val();
+	makeEmpty("#reg_email",input_val);
+
+	var reg_password  =  $("#reg_password").val();
+	var reg_password2 = $("#reg_password2").val();
+
+	makeEmpty("#reg_password",reg_password);
+	makeEmpty("#reg_password2",reg_password2);
+
+
+
+	$('#register').click(function() {
+		input_val =  $("#firstname").val();
+		
+		var b_firstname = false;
+		var b_lastname = false;
+
+		if(!(input_val) || (input_val == default_f_name)){
+			$('#invaild-reg-fname').removeClass('hidden');
+		}
+		else {
+			$('#invaild-reg-fname').addClass('hidden');
+
+			b_firstname = true;
+			request_opion.firstname = input_val;
+		}
+		input_val =  $("#lastname").val();
+		if(!(input_val) || (input_val ==default_l_name)){
+			$('#invaild-reg-lname').removeClass('hidden');
+			
+		}
+		else {
+			$('#invaild-reg-lname').addClass('hidden');
+			b_lastname=true;
+			request_opion.lastname = input_val;
+		}
+		input_val =  $("#reg_email").val();
+
+		reg_password  =  $("#reg_password").val();
+		reg_password2 = $("#reg_password2").val();
+		if(!(emailRegexp.test(input_val))){
+			$('#invaild-reg-email').removeClass('hidden');
+
+		}
+		else if(reg_password != reg_password2){
+			$('#invaild-reg-email').addClass('hidden');
+			$('#invaild-reg-pw').removeClass('hidden');
+		}
+		else {
+			$('#invaild-reg-pw').addClass('hidden');
+			if(b_firstname && b_lastname){
+				request_opion.useremail = input_val;
+				request_opion.userpassword = reg_password;
+				request_S_server(request_path.register,request_opion).done(function(data){
+					console.log(data);
+					if(data.Exception) {
+
+					}
+					else {
+						hideRegisterPage();
+					}
+				});
+				request_S_server(request_path.register,request_opion).fail(function(data){
+					console.log(data);
+
+				});
+
+			}
+
+		}
+
+	});
  }
+function hideRegisterPage() {
+	$('#login-container').children("div").remove();
+	showLoginPage();
+}
 function showCartPage(){
 	hideHeaderPage();
 	hideNavProductPage();
@@ -101,7 +354,7 @@ function displayHeaderPage() {
 	// header for logo, login button, basket button, menu buton
 	template = Handlebars.compile($('#headerNavTemplate').html()); 
 	$('#top-header-bar').append(template);
-	$('.register').click( function() {
+	$('#login-nav').click( function() {
 		showLoginPage();
 	});
 	$('.basket').click( function() {
@@ -263,11 +516,12 @@ function open_application () {
 	}).done(function(data){
 		console.log("done",data.customer);
 		temp = JSON.parse(data.customer);
+		token = temp.Token;
+		console.log("done",token);
 	});
-
- 
  
 }
+
 
 $(document).ready(function () {
 	var template;
@@ -286,17 +540,15 @@ $(document).ready(function () {
    //	displayCartPage();
    	displayFooterPage();
 
-
-
-
-
- 
-
 	// when login button is clicked
 
 	loginPage();
-
-	open_application();
+ 
+ 
+	request_server(request_path.init,request_opion).done(function(data){
+		var response = JSON.parse(data.customer);
+		request_opion.token =response.Token;
+	});
 	//
 
 });
