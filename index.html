@@ -144,6 +144,7 @@
                   <span class="img"><center><img src="img/header/login.png"></center></span>       
                   <span class="icon-title black"><p> Login </p></span>
 
+
                </a>
              </li>
               <li class="on-mobile hidden" id="logged-btn">
@@ -431,6 +432,7 @@
       <div class="login-box center">
         <div class="login-icon center">
           <img src='img/header/Login_avatar.png'>
+          <div id="splashSpinnerLogin" class="spinner hidden"></div>
         </div>
         <div class="login-form">
           <form>
@@ -461,6 +463,7 @@
   <script id="forgotPasswordMobileTemplate" type="text/x-handlebars-template">
     <div class="login-container">
       <div class="login-box center">
+         <div id="splashSpinnerFoget" class="spinner hidden"></div>
         <div class="text-center" id="forget-text">
           <h3 id="forget-title">Forgot Password</h3>
           <br><br>
@@ -487,7 +490,7 @@
         <div class="text-center">
           <h3>Register</h3>
         </div>
-
+        <div id="splashSpinnerReg" class="spinner hidden"></div>
         <div class="login-form">
             <form>
               <input type="text" name="firstname" value="First name" class="user-form-box" id="firstname">
