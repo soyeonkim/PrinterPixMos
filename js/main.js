@@ -151,15 +151,19 @@ function request_server ( path, option) {
  			request_opion.useremail =userId;
  			request_opion.userpassword = password;
 
+ 			$('#splashSpinnerLogin').removeClass('hidden');
+
  			request_S_server(request_path.login,request_opion).done(function(data){
  				var response = JSON.parse(data.customer);
  				console.log(response);
  				request_opion.firstname = response.FirstName;
  				request_opion.lastname = response.LastName;
  				hiddenLogin();
+ 				$('#splashSpinnerLogin').addClass('hidden');
  			});
  			request_S_server(request_path.login,request_opion).fail(function(data){
  				showErrorMessage(data);
+ 				$('#splashSpinnerLogin').addClass('hidden');
  			});
 
 
@@ -190,9 +194,11 @@ function request_server ( path, option) {
  		else {
  			console.log("start");
  			request_path.forgetpassword+=userId;
+ 			$('#splashSpinnerFoget').removeClass('hidden');
 			request_S_server(request_path.forgetpassword,request_opion).done(function(data){
 				//var response = JSON.parse(data.customer);
  				console.log(data.responseText);
+ 				$('#splashSpinnerFoget').addClass('hidden');
 			});
 			request_S_server(request_path.forgetpassword,request_opion).fail(function(data){
  				//var response = JSON.parse(data.customer);
@@ -212,6 +218,7 @@ function request_server ( path, option) {
  						});
  					}
  				}
+ 				$('#splashSpinnerFoget').addClass('hidden');
  			});
 
 		}
@@ -306,6 +313,7 @@ function request_server ( path, option) {
 			if(b_firstname && b_lastname){
 				request_opion.useremail = input_val;
 				request_opion.userpassword = reg_password;
+				$('#splashSpinnerReg').removeClass('hidden');
 				request_S_server(request_path.register,request_opion).done(function(data){
 					console.log(data);
 					if(data.Exception) {
@@ -314,9 +322,11 @@ function request_server ( path, option) {
 					else {
 						hideRegisterPage();
 					}
+					$('#splashSpinnerReg').addClass('hidden');
 				});
 				request_S_server(request_path.register,request_opion).fail(function(data){
 					console.log(data);
+					$('#splashSpinnerReg').addClass('hidden');
 
 				});
 

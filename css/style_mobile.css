@@ -284,3 +284,51 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 .apply-btn{ margin:10px 0px; width:27%; font-size: 5vw;}
 .totoal-price{font-size: 6vw; margin:5px; padding:5px;}
 .checkout-btn{font-size: 5vw; margin:5px; padding:10px;}
+
+
+
+
+.spinner
+{
+  background: transparent url("../img/buttons/loading_icon.png") no-repeat center center;
+  background-size: contain;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotate
+{
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+#splashSpinnerLogin
+{
+  position: absolute;
+  top: 50%;
+  left: 44%;
+  width: 12%;
+  height: 7%;           /* 9/16th of the width, since the screen's ratio is 16/9 */
+}
+#splashSpinnerFoget
+{
+   position: absolute;
+  top: 45%;
+  left: 44%;
+  width: 12%;
+  height: 7%; 
+}
+#splashSpinnerReg
+{
+  position: absolute;
+  top: 55%;
+  left: 44%;
+  width: 12%;
+  height: 7%; 
+}
