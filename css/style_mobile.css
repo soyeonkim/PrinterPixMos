@@ -29,6 +29,7 @@
   min-width: 0px;
   border-left:1px solid  #8d8d8d;
   border-bottom: 1px solid  #8d8d8d;
+  cursor: pointer;
 }
 .bubble-basket{
     position: absolute;
@@ -76,6 +77,13 @@
   display: inline-block;
   font-size: 3.5vw; /* TODO: define size for model*/;
 }
+.account h5 { font-family:'MyriadProSemibold' ;font-weight: bold;
+    width: 85%;
+    margin: 7px auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
 .nav-left-menu-box{ /*border-top: 1px solid  #8d8d8d;  border-right: 1px solid  #8d8d8d; */cursor: pointer;}
 .nav-right-menu-box { /*border-top: 1px solid;*/}
 /*.pd-text-box { padding-top: 2px; padding-bottom: 4px; }*/
@@ -192,7 +200,24 @@ login, register button
 /***
   After choose the product 
 ***/
-.editer-box{width: 95vw; height: 75vw; border:1px dashed #ececec; margin: 10px 0px; }
+.editer-box{width: 90vw; height: 76vw; border:1px dashed #ececec; margin: 15px 15px; }
+
+
+.product-img-main {
+margin: 0px 3px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    text-align: center;
+  }
+ .product-sub-box {
+    float: left;
+    margin: 8px 0px;
+    width:100%;
+}
+.product-sub-box ul{ padding:0px; width:100%; margin:0px 3px;}
+.product-sub-box li{ align-items: center;};
+.product-sub-box{}
+.sub-img-container img{margin:2px 0px; width:24%;}
 .personalised{font-size: 18px; line-height: 2.0em; border: none; margin: 10px auto;}
 .product_details {width:90vw; margin: 5px auto; white-space: normal;}
 .product_price{

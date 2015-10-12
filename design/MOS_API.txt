@@ -53,7 +53,9 @@ token: e0ddf7a7-4629-41b3-bb3d-042ef0d0e173
 
 RESULT
 {
-pageGroupTypes: "[{"name":"CalendarPage","id":"2"},{"name":"CanvasPage","id":"3"},{"name":"WallDecorPage","id":"4"},{"name":"PhotoGiftPage","id":"5"},{"name":"PhotoCoverPage","id":"6"},{"name":"PrintPage","id":"7"},{"name":"GreetingCardPage","id":"8"}]"
+pageGroupTypes: "[{"name":"CalendarPage","id":"2"},{"name":"CanvasPage","id":"3"},{"name":"WallDecorPage","id":"4"},
+{"name":"PhotoGiftPage","id":"5"},{"name":"PhotoCoverPage","id":"6"},{"name":"PrintPage","id":"7"},
+{"name":"GreetingCardPage","id":"8"}]"
 }
 ===========================================================
 GET (GET SUB MENU)
@@ -67,9 +69,16 @@ RESULT
 pageGroups: "[{"pageGroupId":"822972c6-fe5d-4c07-9952-7b5557a2f95d","pageGroupSeoFriendlyUrl":"/photo-calendar/","pageGroupHeader":"Wall Calendar","imageCaption":"WALL CALENDAR","defaultProductId":"dc54dba6-74b7-4e41-b3e3-9244a85161de","defaultProductPrice":"£17.95","defaultProductWidth":"210","defaultProductHeight":"297","marketingContent":"\u003cdiv style=\"text-align: justify;\"\u003e\u003c/div\u003e\r\n\u003cdiv style=\"text-align: justify;\"\u003eGive your friends and family the perfect gift with this ready-to-mount personalised wall calendar. Quickly upload the pictures you want for each month and even highlight birthdays, anniversaries and other key dates with your own custom selected images and text. Manufactured in the UK and published on high-quality photo paper for a quality appearance.\u003cbr /\u003e\r\n\u003cbr /\u003e\r\n\u003c/div\u003e\r\n\u003cdiv style=\"text-align: justify;\"\u003e\u003cstrong style=\"font-weight: bold;\"\u003e\u003cspan style=\"color: #ff0000;\"\u003eExciting news!\u003c/span\u003e\u003c/strong\u003e \u0027\u0027Wall Calendars are NOW also available in Swedish, Finnish and Norwegian. Simply pick your favourite language from the drop down when choosing your theme.\"\u003c/div\u003e","isInstagramProduct":false,"defaultProduct":{"guid":"dc54dba6-74b7-4e41-b3e3-9244a85161de","layout":"Portrait","refId":"CALP001v3","name":"A4 Wall Mount Photo Calendar","width":"210","height":"297","sizeDescription":"A4 Portrait 20x30 cm","displayPriceSign":"£","displayPriceValue":"17.95","discountAmount":"0.00","discountPrice":"17.95","discountDesc":"PreloadedModifiersAppIsZero","frameThickness":0,"PriceByPageRange":[],"fotolia":{"displayPriceValue":"22.94","discountPrice":"22.94","addOnItemPrice":"4.99","addOnItemDiscountPrice":"4.99"}}}]"
 }
 
+
+{
+  "pageGroups": "[{\"pageGroupId\":\"66153ea8-7088-4332-ac3a-d38866d976c8\",\"pageGroupSeoFriendlyUrl\":\"/Square-canvas/\",\"pageGroupHeader\":\"Square Instagram Canvas\",\"imageCaption\":\"SQUARE INSTAGRAM CANVAS\",\"defaultProductId\":\"f7339859-8177-4479-8b93-1320a2aba359\",\"defaultProductPrice\":\"£24.95\",\"defaultProductWidth\":\"254\",\"defaultProductHeight\":\"254\",\"marketingContent\":\"\u003cdiv style=\"text-align: justify;\"\u003e\u003c/div\u003e\r\n\u003cdiv style=\"text-align: justify;\"\u003e\u003cspan style=\"font-size: 12px;\"\u003ePerfect for publishing your favourite Instagram photos, this sturdy square canvas is a great way to decorate your home or office.\u003c/span\u003e\u003c/div\u003e\",\"isInstagramProduct\":true,\"defaultProduct\":{\"guid\":\"f7339859-8177-4479-8b93-1320a2aba359\",\"layout\":\"Square\",\"refId\":\"121010_18_V3\",\"name\":\"2cm Frame - Square Instagram Canvas (10 x 10)\",\"width\":\"254\",\"height\":\"254\",\"sizeDescription\":\"10\"x10\" (25x25 cm)\",\"displayPriceSign\":\"£\",\"displayPriceValue\":\"24.95\",\"discountAmount\":\"0.00\",\"discountPrice\":\"24.95\",\"discountDesc\":\"PreloadedModifiersAppIsZero\",\"frameThickness\":18,\"PriceByPageRange\":[],\"fotolia\":{\"displayPriceValue\":\"29.94\",\"discountPrice\":\"29.94\",\"addOnItemPrice\":\"4.99\",\"addOnItemDiscountPrice\":\"4.99\"}}},{\"pageGroupId\":\"27ebd145-c131-4c75-8b51-6290c6ad16aa\",\"pageGroupSeoFriendlyUrl\":\"/photo-canvas/\",\"pageGroupHeader\":\"Photo Canvas\",\"imageCaption\":\"PHOTO CANVAS\",\"defaultProductId\":\"9ccf3d77-ad77-4b71-8b3b-e1be65fd2233\",\"defaultProductPrice\":\"£28.95\",\"defaultProductWidth\":\"300\",\"defaultProductHeight\":\"250\",\"marketingContent\":\"\u003cdiv style=\"text-align: justify;\"\u003e\u003c/div\u003e\r\n\u003cdiv style=\"text-align: justify;\"\u003ePrinted with high-definition ink, this UK manufactured canvas is hand stretched to ensure long-lasting quality. Upload your own photo or choose an image from our vast online library to create the perfect piece of personalised decoration.\u003c/div\u003e\",\"isInstagramProduct\":false,\"defaultProduct\":{\"guid\":\"9ccf3d77-ad77-4b71-8b3b-e1be65fd2233\",\"layout\":\"Landscape\",\"refId\":\"121068_new_18_V3\",\"name\":\"2cm Frame - Landscape Canvas Prints (12 x 10)\",\"width\":\"300\",\"height\":\"250\",\"sizeDescription\":\"12\"x10\" (30x25 cm)\",\"displayPriceSign\":\"£\",\"displayPriceValue\":\"28.95\",\"discountAmount\":\"0.00\",\"discountPrice\":\"28.95\",\"discountDesc\":\"PreloadedModifiersAppIsZero\",\"frameThickness\":18,\"PriceByPageRange\":[],\"fotolia\":{\"displayPriceValue\":\"33.94\",\"discountPrice\":\"33.94\",\"addOnItemPrice\":\"4.99\",\"addOnItemDiscountPrice\":\"4.99\"}}},{\"pageGroupId\":\"db28c327-f408-4920-9519-22d49fe3ed87\",\"pageGroupSeoFriendlyUrl\":\"/waterproof-canvas/\",\"pageGroupHeader\":\"Waterproof Canvas\",\"imageCaption\":\"WATERPROOF CANVAS\",\"defaultProductId\":\"29772cc3-00f8-43cd-b5c6-492edbe67aa0\",\"defaultProductPrice\":\"£39.95\",\"defaultProductWidth\":\"406\",\"defaultProductHeight\":\"305\",\"marketingContent\":\"\u003cdiv style=\"text-align: justify;\"\u003e\u003cspan style=\"font-size: 13px;\"\u003e\u003c/span\u003e\u003c/div\u003e\r\n\u003cdiv style=\"text-align: justify;\"\u003e\u003cspan style=\"font-size: 12px;\"\u003eThe ideal solution for decorating your bathroom, garden and swimming pool. Fully waterproof and printed using fade-resistant ink, this UK manufactured canvas is hand-made to ensure long-lasting quality. Quickly upload a photograph or choose an image from our vast database to create a customised piece of decoration that is sure to impress friend, family and client alike.\u003c/span\u003e\u003c/div\u003e\",\"isInstagramProduct\":false,\"defaultProduct\":{\"guid\":\"29772cc3-00f8-43cd-b5c6-492edbe67aa0\",\"layout\":\"Landscape\",\"refId\":\"cnv_wp_16x12_18v3\",\"name\":\"2cm Frame - Landscape Water proof Canvas (16 x 12)\",\"width\":\"406\",\"height\":\"305\",\"sizeDescription\":\"16\"x12\" (40x30 cm)\",\"displayPriceSign\":\"£\",\"displayPriceValue\":\"39.95\",\"discountAmount\":\"0.00\",\"discountPrice\":\"39.95\",\"discountDesc\":\"PreloadedModifiersAppIsZero\",\"frameThickness\":18,\"PriceByPageRange\":[],\"fotolia\":{\"displayPriceValue\":\"44.94\",\"discountPrice\":\"44.94\",\"addOnItemPrice\":\"4.99\",\"addOnItemDiscountPrice\":\"4.99\"}}}]"
+}
+
 ===========================================================
 GET PRODUCTS
 http://api.printerpix.co.uk/api/PlatinumProduct/products/?pageGroupId=822972c6-fe5d-4c07-9952-7b5557a2f95d
+
+http://api.printerpix.co.uk/api/PlatinumProduct/products/?pageGroupId=66153ea8-7088-4332-ac3a-d38866d976c8
 token: e0ddf7a7-4629-41b3-bb3d-042ef0d0e173
 appId:printerpixmos
 
@@ -86,3 +95,11 @@ http://api.printerpix.co.uk/api/account/ForgotPassword?email=yeanshi.teoh@syncom
 RESULT
 {readyState: 4, responseText: "Your Password has been emailed to you; please chec… was not caught by your junk mail (spam) filter. ", status: 200, statusText: "OK"}
 {readyState: 4, responseText: "Email does not exist.", status: 200, statusText: "OK"}
+
+
+================================================
+http://www.printerpix.co.uk/Account/Edit/
+
+
+
+chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security

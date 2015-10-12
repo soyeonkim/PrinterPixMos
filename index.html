@@ -144,13 +144,12 @@
                   <span class="img"><center><img src="img/header/login.png"></center></span>       
                   <span class="icon-title black"><p> Login </p></span>
 
-
                </a>
              </li>
               <li class="on-mobile hidden" id="logged-btn">
                 <button type="button" class="navbar-toggle collapsed bottom-borderline account"data-toggle="collapse" data-target="#headbar-ex2-collapse" id="account-toggle">
-                <span><h5><strong>Hello</strong></h5></span>
-                <span id="user-account"><h5><strong>Name</strong></h5></span>
+                <span><h5> Hello </h5></span>
+                <span id="user-account"><h5></h5></span>
                 </button>
               </li>
              <li class="on-mobile">
@@ -216,7 +215,7 @@
       <div class="collapse navbar-collapse" id="headbar-ex2-collapse">
         <ul class="nav navbar-nav sub-menu-account">
           <li class ="sub-menu-list"><a href="#">Account Settings</a></li>
-          <li class ="sub-menu-list"><a href="#">My projects</a></li>
+          <!--<li class ="sub-menu-list"><a href="#">My projects</a></li> -->
           <li class ="sub-menu-list"><a href="#">Track Order</a></li>
         </ul>
       </div>
@@ -247,7 +246,7 @@
         <div class="collapse navbar-collapse" id="navbar-ex2-collapse">
         <ul class="nav navbar-nav pd-menu">
          {{#nav}}
-          <li><a href="#">{{title}}</a></li>
+          <li><a href="#">{{name}}</a></li>
          {{/nav}}
         </ul>
       </div>
@@ -430,10 +429,12 @@
   <script id="loginMobileTemplate" type="text/x-handlebars-template">
     <div class="login-container">
       <div class="login-box center">
-        <div class="login-icon center">
-          <img src='img/header/Login_avatar.png'>
+        <div class="login-icon center" id="user-icon">
+          <img src='img/header/Login_avatar.png'>        
           <div id="splashSpinnerLogin" class="spinner hidden"></div>
         </div>
+        <div class="error-message">
+            <span id ="error-mg" class="hidden"><img src='img/error/Login_error_message.png'></span></div>
         <div class="login-form">
           <form>
             <input type="text" name="username" value="Email" class="user-form-box" id="username">
@@ -579,6 +580,38 @@
       {{/productPath}}
     <div class="productContainer center">
       <div class="editer-box">
+        <div class="thumbnail-main">
+          <div class="product-img-main">
+            <img src="http://www.printerpix.co.uk/images/Admin/PageGroupImages/Big01/852b8140-fecd-4400-9a81-caf96ce0cd65.jpg?v=21052015">
+          </div>
+
+          <div class="product-sub-box">
+            <ul class ="sub-img-container">
+              <li>
+                <a href="#">
+                  <img src="http://www.printerpix.co.uk/images/Admin/PageGroupImages/Small01/852b8140-fecd-4400-9a81-caf96ce0cd65.jpg?v=21052015" id="thumbnav01">
+                </a>
+              </li>
+
+                            <li>
+                <a href="#">
+                  <img src="http://www.printerpix.co.uk/images/Admin/PageGroupImages/Small01/852b8140-fecd-4400-9a81-caf96ce0cd65.jpg?v=21052015">
+                </a>
+              </li>
+                            <li>
+                <a href="#">
+                  <img src="http://www.printerpix.co.uk/images/Admin/PageGroupImages/Small01/852b8140-fecd-4400-9a81-caf96ce0cd65.jpg?v=21052015">
+                </a>
+              </li>
+                            <li>
+                <a href="#">
+                  <img src="http://www.printerpix.co.uk/images/Admin/PageGroupImages/Small01/852b8140-fecd-4400-9a81-caf96ce0cd65.jpg?v=21052015">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
 
 

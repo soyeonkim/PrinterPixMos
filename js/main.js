@@ -1,7 +1,8 @@
 
  
 var product=[];
-var appId ='printerpixmos_v1.0';
+var listProduct=[];
+var appId ='printerpixmos';
 var request_opion={
 	token:'',
 	useremail:'',
@@ -25,6 +26,7 @@ var request_path ={
 
 }
 
+
 var urlRe = /([A-Za-z][A-Za-z0-9\+\.\-]*:\/\/([A-Za-z0-9\.\-_~:/\?#\[\]@!\$&''\(\)\*\+,;=]|%[A-Fa-f0-9]{2})+)|(\s|^)[^\s@\:]+\.(com|net|ru|org|de|uk|jp|br|pl|info|cn|fr|it|in|nl|au|biz|es|ir|eu|ro|lv)(?:(?=\s+)|$|\/(([\w.]*@(\w|.)*)*\w*))+/g;
 var emailRegexp = /(\s|^)[a-z0-9._%+-\/]+@[a-z0-9.-]+\.[a-z]{2,4}(\s|$)/i;
 
@@ -41,6 +43,7 @@ function initCycle (numberSlide) {
 		});
 
 }
+
 function request_S_server(path, option) {
 	var headers=[];
 	var response;
@@ -67,7 +70,7 @@ function request_S_server(path, option) {
 function request_server ( path, option) {
 	var headers=[];
 	var response;
-	headers = {"appId":appId};;
+	headers = {"appId":appId};
 	headers["token"] = option.token;
 	headers["useremail"]=option.useremail;
 	headers["userpassword"]=option.userpassword;
@@ -76,6 +79,8 @@ function request_server ( path, option) {
 	return $.ajax({
 		type:'GET',
 			url: 'http://api.printerpix.co.uk/api'+path,
+			//url:'http://api.printerpix.co.uk/api/account/applogin',
+			//url:'http://api.printerpix.co.uk/api/PlatinumProduct/PageGroupTypes',
 			dataType:'json',
 			//contentType: 'application/json',
 			headers:headers,
@@ -92,6 +97,14 @@ function request_server ( path, option) {
 	});
 	*/
 
+}
+function navListProduct(response){
+	var tmp;
+	for (var i=0; i<response.length; i++){
+		tmp = response[i].name.substring(0,response[i].name.length-4);
+		response[i].name = tmp;
+	}
+	return response;
 }
  function loginPage(){
 	$('input').on('click focusin', function() {
@@ -122,9 +135,22 @@ function request_server ( path, option) {
  	}
 
  	function showErrorMessage() {
+ 		$('#user-icon').addClass('hidden');
+ 		$('#error-mg').removeClass('hidden');
+
  		console.log("showErrorMessage");
  	}
+ 	function hiddenErrorMessage(){
+ 		$('#user-icon').removeClass('hidden');
+ 		$('#error-mg').addClass('hidden');
 
+ 		console.log("hideErrorMessage");
+ 	}
+ 	function diplayUserinfo(){
+ 		$('#login-nav').addClass('hidden');
+ 		$('#user-account h5').text(request_opion.firstname);
+ 		$('#logged-btn').removeClass('hidden');
+ 	}
  	if($('#login-container').hasClass('hidden')) displayLogin();
  	else hiddenLogin();
  
@@ -158,8 +184,10 @@ function request_server ( path, option) {
  				console.log(response);
  				request_opion.firstname = response.FirstName;
  				request_opion.lastname = response.LastName;
- 				hiddenLogin();
  				$('#splashSpinnerLogin').addClass('hidden');
+ 				hiddenLogin();
+ 				diplayUserinfo();
+ 				
  			});
  			request_S_server(request_path.login,request_opion).fail(function(data){
  				showErrorMessage(data);
@@ -168,7 +196,7 @@ function request_server ( path, option) {
 
 
  		}
- 		console.log("id",response);
+ 		//console.log("id",response);
  	});
 
  }
@@ -229,6 +257,8 @@ function request_server ( path, option) {
 	$('#login-container').children("div").remove();
  	var template = Handlebars.compile($('#loginMobileTemplate').html()); 
 	$('#login-container').append(template(Mobildata));
+	$('#login-container').addClass('hidden');
+	showLoginPage();
  }
 
  function showRegisterPage(){
@@ -379,7 +409,7 @@ function hideHeaderPage(){
 function displayNavProductPage() {
 	var template;
 	template = Handlebars.compile($('#navbarTemplate').html()); 
-	$('#product-menu-bar').append(template(menu));
+	$('#product-menu-bar').append(template(listProduct));
 	//login page
 	template = Handlebars.compile($('#loginMobileTemplate').html()); 
 	$('#login-container').append(template(Mobildata));
@@ -453,8 +483,13 @@ function displayProductPages(ProductName) {
 }
 function displayMoreDetailofProductPages(ProductName){
 	//Example to choose
+	var template;
+	template = Handlebars.compile($('#moreInfoMobileTemplate').html()); 
+	$('#product-list').append(template(ProductName));
+	//TODO : test
 	product.push(ProductName);
-	$('#lastPath').text(product[product.length-1]);
+	//$('#lastPath').text(product[product.length-1]);
+	$('#lastPath').text("Leather Cover Book");
 	$('.product-info h1').text(ProductName.productList[1].title);
 	$('.product-info img').attr("src",ProductName.productList[1].customerStar);
 	$('.product-info p').text(ProductName.productList[1].details);
@@ -544,11 +579,12 @@ $(document).ready(function () {
 	$('#top-header-bar').append(template);*/
 	displayHeaderPage();
 	//Product list navigation bar
-	displayNavProductPage();
+	
 
-	displaySectionPage();
-   //	displayCartPage();
-   	displayFooterPage();
+	// displaySectionPage();
+    // displayCartPage();
+   	//displayProductPages(PhotoBook);
+   	
 
 	// when login button is clicked
 
@@ -558,7 +594,17 @@ $(document).ready(function () {
 	request_server(request_path.init,request_opion).done(function(data){
 		var response = JSON.parse(data.customer);
 		request_opion.token =response.Token;
+		console.log("token :",request_opion.token);
+		request_server(request_path.pageGroupTypes,request_opion)
+		.done(function(data){response = JSON.parse(data.pageGroupTypes);
+		console.log("response");
+		listProduct={"nav": navListProduct(response)}
+		displayNavProductPage(listProduct);
+		});
 	});
+	displaySectionPage(listProduct);
+	//displayMoreDetailofProductPages(PhotoBook);
+   	displayFooterPage();
 	//
 
 });
