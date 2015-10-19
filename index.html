@@ -50,6 +50,7 @@
 
     <!--  main container -->
     <section>
+      <div class="only-clear"></div>
       <!--  promotion slider show -->
       <div id="login-container" class='hidden'></div>
       <div id="promotion-slider-bar">      </div>
@@ -58,23 +59,19 @@
       <!---->
       <!-- productions -->
       <div class="pd-mobile-containder center" id="mobile-product">     <!-- production container -->
-       <!-- <div class="pager-box-mobile" id="next_banner"></div> -->
-          <div class="pd-mobile-contents">
-          <!--- best production -->
-            <div id="best-seller" class="best-product"></div>
-            <div id="best-seller2" class="best-product"></div>
-            <!--- end best production-->
-            <!--- instagram production -->
-            <div id="instagram-seller"class="inst-product"></div>
-            <div id="instagram-seller2"class="inst-product"></div>
-            <!--- end instagram production-->
-            <!--promotion -->
-            <div id="promo-mobile-seller"class="promo-mobile-product"> </div>
+      <!-- <div class="pager-box-mobile" id="next_banner"></div> -->
+       
+        <div class="pd-mobile-contents">
+        <!--- best production -->
+          <div id="best-seller" class="best-product"></div>
+          <!--- end best production-->
+          <!--promotion -->
+          <div id="promo-mobile-seller"class="promo-mobile-product"> </div>
           <!-- end promotion -->
-          </div>
-           <div class="pd-mobile-products">
-              <div id="product-list"></div>
-           </div>
+        </div>
+        <div class="pd-mobile-products">
+          <div id="product-list"></div>
+        </div>
       </div> 
       <!-- end productions -->
     </section>
@@ -89,16 +86,39 @@
       <div id="footer-register"></div>
     </footer>
     <!--- end footer-->
+
   <!-------------------------------------------------------------------------->
     <!--<script src="js/data.js"></script> -->
     <script src="js/data/data_UK_mobile_main.js"></script>
     <script src="js/data/data_UK_mobile_menu.js"></script>
     <script src="js/data/data_UK_mobile_product.js"></script>
     <script src="js/data/data_UK_mobile_footer.js"></script>
+    <script src="js/display_page.js"></script>
     <script src="js/main.js"></script>
     <script src="js/serverRequest.js"></script>
   <!-------------------------------------------------------------------------->
   <!--       *******************Template include ********************      -->
+  <!-- 
+    122 - 244 : header caller  header nav
+    246 - 291 : nav bar 
+    293 - 310 : promotion slide
+    311 - 444 : footer part
+    446 - 542 : login page / forget password / register
+    549 - 695 : product / more detail page  
+    000 - 000 :   
+    846 - 857 : error page
+    000 - 000 :   
+    000 - 000 :   
+    000 - 000 :   
+    000 - 000 :   
+    000 - 000 :   
+    000 - 000 :   
+    000 - 000 :   
+    000 - 000 :   
+    000 - 000 :   
+    000 - 000 :   
+    
+  -->
   <script id="headerCallTemplate" type="text/x-handlebars-template">
     <div class="headerCallBox">
       <div class="callcontainer">
@@ -120,7 +140,7 @@
         </div>
       </div>
     </div>
- <div class="only-clear"></div>
+  <div class="only-clear"></div>
   </script>
   <script id="headerNavTemplate"  type="text/x-handlebars-template">
     <div class="navcontainer header-nav-box">
@@ -214,7 +234,7 @@
       </div>
       <div class="collapse navbar-collapse" id="headbar-ex2-collapse">
         <ul class="nav navbar-nav sub-menu-account">
-          <li class ="sub-menu-list"><a href="#">Account Settings</a></li>
+          <li class ="sub-menu-list"><a href="#" id="accountSet">Account Settings</a></li>
           <!--<li class ="sub-menu-list"><a href="#">My projects</a></li> -->
           <li class ="sub-menu-list"><a href="#">Track Order</a></li>
         </ul>
@@ -236,7 +256,7 @@
           </li>
           <li class="nav-right-menu-box">
           <button type="button" class="navbar-toggle collapsed pd-text-box bottom-borderline" data-toggle="collapse" data-target="#navbar-ex3-collapse" id="shop-occas">
-             <span><h3>shop by <strong>Products</strong></h3></span>
+             <span><h3>shop by <strong>Occasions</strong></h3></span>
              <span class="nav-arrow"><img src="img/header/RightArrow_pink.png"></span>
             </button>
           </li>
@@ -246,7 +266,7 @@
         <div class="collapse navbar-collapse" id="navbar-ex2-collapse">
         <ul class="nav navbar-nav pd-menu">
          {{#nav}}
-          <li><a href="#">{{name}}</a></li>
+          <li><a href="#" id="nav_{{id}}">{{name}}</a></li>
          {{/nav}}
         </ul>
       </div>
@@ -286,10 +306,7 @@
        
     </div>
     <div class="pager-box-mobile" id="next_banner"></div> 
-    
   </script>
- 
-
   <!-------------------------------------------------------------------------->
   <script id="aboutMobileTemplate" type="text/x-handlebars-template">
     <div class="footer-mobile-box center">
@@ -425,7 +442,6 @@
   </script>
 
   <!--------------------------------------------------------------------------- -->
-
   <script id="loginMobileTemplate" type="text/x-handlebars-template">
     <div class="login-container">
       <div class="login-box center">
@@ -458,9 +474,7 @@
 
     </div>
   </script>
-
   <!--------------------------------------------------------------------------- -->
-
   <script id="forgotPasswordMobileTemplate" type="text/x-handlebars-template">
     <div class="login-container">
       <div class="login-box center">
@@ -484,7 +498,7 @@
         </div>
      </div>
   </script>
-    <!--------------------------------------------------------------------------- -->
+  <!--------------------------------------------------------------------------- -->
   <script id="registerMobileTemplate" type="text/x-handlebars-template">
     <div class="login-container">
       <div class="login-box center">
@@ -569,7 +583,6 @@
 
   </script>
 
-  <!--------------------------------------------------------------------------- -->
   <script id="moreInfoMobileTemplate" type="text/x-handlebars-template">
 
     {{#productPath}}
@@ -611,11 +624,7 @@
             </ul>
           </div>
         </div>
-
       </div>
-
-
- 
     <div class="product_details">
       <div class="product-info">
         <h1></h1>
@@ -667,9 +676,6 @@
       </div>
 
     </div>
-
-
-
       <div class="review-list">
         <ul>
         {{#cutomerReview}}
@@ -682,74 +688,72 @@
         <div class="readmore"><center>See More</center></div>
       </div>
     </div>
+  </script>
+  <!--------------------------------------------------------------------------- -->
+  <script id="CardsMobileTemplate" type="text/x-handlebars-template">
+    <div class="product-path">
+      <span>  Products > </span><span style="color:#ff2a98"> Cards </span>
+    </div>
+    <div class="productContainer center">
 
+        <div class="text-center pd-mobile-title">
+          <h3>Cards</h3>
+          <h3>Pick Your Occasion</h3>
+        </div>
+        <div class="row cards-box">
+        {{#Occasions}}
+         <div class="col-xs-6 cards-col" >
+        
+        <a href={{url}}>
+        <span class="select-box">{{title}}</span>
 
+        </a>
+
+       
+        </div>
+         {{/Occasions}}
+        </div>
+    </div>
 
   </script>
+ <!--------------------------------------------------------------------------- -->
 
-<script id="CardsMobileTemplate" type="text/x-handlebars-template">
-  <div class="product-path">
-    <span>  Products > </span><span style="color:#ff2a98"> Cards </span>
-  </div>
-  <div class="productContainer center">
-
-      <div class="text-center pd-mobile-title">
-        <h3>Cards</h3>
-        <h3>Pick Your Occasion</h3>
+  <script id="titleHeaderMobileTemplate" type="text/x-handlebars-template">
+    <div class="navcontainer header-nav-box">
+      <div class="cart-outer-box">
+        <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png"></a></div>
       </div>
-      <div class="row cards-box">
-      {{#Occasions}}
-       <div class="col-xs-6 cards-col" >
-      
-      <a href={{url}}>
-      <span class="select-box">{{title}}</span>
-
-      </a>
-
-     
-      </div>
-       {{/Occasions}}
-      </div>
-  </div>
-
-</script>
-
-<script id="titleHeaderMobileTemplate" type="text/x-handlebars-template">
-  <div class="navcontainer header-nav-box">
-    <div class="cart-outer-box">
-      <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png"></a></div>
-    </div>
-    <div class="cart-title">Cart</div>
-  </div>
-  <div class="only-clear"></div>   
-</script>
-
-
-<script id="navFlowerMobileTemplate" type="text/x-handlebars-template">
-  <div class="navcontainer">
-    <div class="row flow">
-       <div class="col-xs-4 active-text">1. Shopping Cart</div>
-       <div class="col-xs-4">2. Payment information</div>
-       <div class="col-xs-4">2. Order Confirmation</div>
-    </div>
+      <div class="cart-title">Cart</div>
     </div>
     <div class="only-clear"></div>   
-</script>
+  </script>
 
-<script id="baskettopMobileTemplate" type="text/x-handlebars-template">
-  <div class="cartcontainer">
-    <div class="product-path">
-      <a href=""><span id="backto"> < &nbsp;  Countinue Shopping </span></a>
-      <span style="color:#ff2a98" id="lastPath"></span>
+  <script id="navFlowerMobileTemplate" type="text/x-handlebars-template">
+    <div class="navcontainer">
+      <div class="row flow">
+         <div class="col-xs-4 active-text">1. Shopping Cart</div>
+         <div class="col-xs-4">2. Payment information</div>
+         <div class="col-xs-4">2. Order Confirmation</div>
+      </div>
+      </div>
+      <div class="only-clear"></div>   
+  </script>
+
+  <script id="baskettopMobileTemplate" type="text/x-handlebars-template">
+    <div class="cartcontainer">
+      <div class="product-path">
+        <a href=""><span id="backto"> < &nbsp;  Countinue Shopping </span></a>
+        <span style="color:#ff2a98" id="lastPath"></span>
+      </div>
+      <div class="btn-box-half right">
+        <button class="personalised button-printerpix white">Proceed to Checkout >
+        </button>
+      </div>
     </div>
-    <div class="btn-box-half right">
-      <button class="personalised button-printerpix white">Proceed to Checkout >
-      </button>
-    </div>
-  </div>
-  <div class="only-clear"></div>   
-</script>
-<script id="basketListMobileTemplate" type="text/x-handlebars-template">
+    <div class="only-clear"></div>   
+  </script>
+
+  <script id="basketListMobileTemplate" type="text/x-handlebars-template">
   <div class="basketcontainer">
     <div class="list-container">
 
@@ -833,7 +837,23 @@
      <div class="only-clear"></div>   
   </div>
 
-</script>
+  </script>
 
+  <!--------------------------------------------------------------------------- -->
+  <script id="404ErrorMobileTemplate" type="text/x-handlebars-template">
+    <div id="notFoundPage">
+     <div class="only-clear"></div>
+     <div class="productContainer center error-box">
+        <div class="text-center printerpix msg-title"><h3> 404 Error <br> Page Not Found</h3></div>
+      <div class="error-message"><img src="img/error/404error_message.png">
+      </div>
+    </div>
+    </div>
+
+  </script>
+
+  <!--------------------------------------------------------------------------- -->
+  <script id="accountSettingMobileTemplate"   type="text/x-handlebars-template">
+  </script>
 </body>
 </html>

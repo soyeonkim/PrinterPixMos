@@ -102,4 +102,51 @@ http://www.printerpix.co.uk/Account/Edit/
 
 
 
+===========================================
+CHANGE EMAIL
+https://api.printerpix.co.uk/api/account/ChangeEmail
+HEADER
+appId: printerpixmos_v1.0.0
+token: 0f7b773e-b1b4-4124-813a-202609f5d754
+useremail: yeanshi.teoh2222@syncoms.com
+userpassword: 12
+newEmail: yeanshi.teoh2222new@syncoms.com
+
+================================================
+CHANGE PASSWORD
+https://api.printerpix.co.uk/api/account/ChangePassword
+appId: printerpixmos_v1.0.0
+token: 0f7b773e-b1b4-4124-813a-202609f5d754
+useremail: yeanshi.teoh2222new@syncoms.com
+userpassword: 12
+newPassword: 123
+
+====================================================
+GET Billing Address
+https://api.printerpix.co.uk/api/account/GetBillingAddress
+appId: printerpixmos_v1.0.0
+token: 0f7b773e-b1b4-4124-813a-202609f5d754
+
+====================================================
+POST Billing Address
+https://api.printerpix.co.uk/api/account/ChangeBillingAddress
+appId: printerpixmos_v1.0.0
+token: 0f7b773e-b1b4-4124-813a-202609f5d754
+addrFirstName:
+addrLastName:
+addrStreet1:
+addrStreet2:
+addrCity:
+addrZip:
+addrRegionName:
+addrRegionId:
+addrUSCountyName:
+addrUSCountyId:
+addrCountryName:
+addrCountryId:
+addrPhoneNumber:
+
+
+
+
 chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security

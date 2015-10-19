@@ -112,147 +112,6 @@ function navListProduct(response){
 	});
  }
 
- function showLoginPage() {
- 	$(window).bind('hashchange', function(){
- 		console.log("onhashchange");
- 		//showLoginPage();
- 
- 	});
- 	console.log("showLoginPage");
- 	function displayLogin() {
- 		$('#login-container').removeClass('hidden');
- 		$('#promotion-slider-bar').addClass('hidden');
- 		$('#next_banner').addClass('no-background');
- 		$('#next_banner').addClass('hidden');
- 		$('#best-seller').addClass('hidden');
- 	}
- 	function hiddenLogin(){
- 	 	$('#login-container').addClass('hidden');
- 		$('#promotion-slider-bar').removeClass('hidden');
- 		$('#next_banner').removeClass('no-background');
- 		$('#next_banner').removeClass('hidden');
- 		$('#best-seller').removeClass('hidden');	
- 	}
-
- 	function showErrorMessage() {
- 		$('#user-icon').addClass('hidden');
- 		$('#error-mg').removeClass('hidden');
-
- 		console.log("showErrorMessage");
- 	}
- 	function hiddenErrorMessage(){
- 		$('#user-icon').removeClass('hidden');
- 		$('#error-mg').addClass('hidden');
-
- 		console.log("hideErrorMessage");
- 	}
- 	function diplayUserinfo(){
- 		$('#login-nav').addClass('hidden');
- 		$('#user-account h5').text(request_opion.firstname);
- 		$('#logged-btn').removeClass('hidden');
- 	}
- 	if($('#login-container').hasClass('hidden')) displayLogin();
- 	else hiddenLogin();
- 
- 	$('#forgetPassword').click(function(){
- 		showforgetPasswordPage();
- 	});
-
- 	$('#newRegister').click(function(){
- 		showRegisterPage();
- 	});
-
- 	$('#login-btn').click(function() {
- 		var userId =  $("#username").val();
- 		var password =  $("#password").val();
- 		var response;
-
- 		//Test id, password : //TODO: delete later
- 		userId='yeanshi.teoh@syncoms.com';
- 		password='12';
- 		if(!(emailRegexp.test(userId))){
- 			showErrorMessage();
- 		} 
- 		else {
- 			request_opion.useremail =userId;
- 			request_opion.userpassword = password;
-
- 			$('#splashSpinnerLogin').removeClass('hidden');
-
- 			request_S_server(request_path.login,request_opion).done(function(data){
- 				var response = JSON.parse(data.customer);
- 				console.log(response);
- 				request_opion.firstname = response.FirstName;
- 				request_opion.lastname = response.LastName;
- 				$('#splashSpinnerLogin').addClass('hidden');
- 				hiddenLogin();
- 				diplayUserinfo();
- 				
- 			});
- 			request_S_server(request_path.login,request_opion).fail(function(data){
- 				showErrorMessage(data);
- 				$('#splashSpinnerLogin').addClass('hidden');
- 			});
-
-
- 		}
- 		//console.log("id",response);
- 	});
-
- }
- function showforgetPasswordPage(){
- 	console.log("showforgetPasswordPage");
- 	$('#login-container').children("div").remove();
- 	var template = Handlebars.compile($('#forgotPasswordMobileTemplate').html()); 
-	$('#login-container').append(template(Mobildata));
-	/*window.onhashchange = function() {
-		$('#login-container').children("div").remove();
- 	 	template = Handlebars.compile($('#loginMobileTemplate').html()); 
-		$('#login-container').append(template(Mobildata));
-	}
-	*/
-	$('#sendPassword').click(function() {
-		var userId =  $("#f-username").val();
-		userId='yeanshi.teoh2222@syncoms.com';
-		//userId='test@gmail.com';
-		if(!(emailRegexp.test(userId))){
-			console.log(userId);
-			showErrorMessage();
-		}
- 		else {
- 			console.log("start");
- 			request_path.forgetpassword+=userId;
- 			$('#splashSpinnerFoget').removeClass('hidden');
-			request_S_server(request_path.forgetpassword,request_opion).done(function(data){
-				//var response = JSON.parse(data.customer);
- 				console.log(data.responseText);
- 				$('#splashSpinnerFoget').addClass('hidden');
-			});
-			request_S_server(request_path.forgetpassword,request_opion).fail(function(data){
- 				//var response = JSON.parse(data.customer);
- 				console.log(data.responseText);
- 				if(data.status == 200){
- 					if(data.responseText == "Email does not exist."){
- 				 		$('#forget-title').text("Invalid Email");
- 						$('#forget-message').text("There is no account associated with this email address.");
- 					}
- 					else {
- 						$('#forget-message').text(data.responseText);
- 						$('#sendPassword').addClass('hidden');
- 						$('#closePassword').removeClass('hidden');
-
- 						$('#closePassword').click(function() {
- 							hideforgetPasswordPag();
- 						});
- 					}
- 				}
- 				$('#splashSpinnerFoget').addClass('hidden');
- 			});
-
-		}
-
-	});
- }
  function hideforgetPasswordPag() {
 	$('#login-container').children("div").remove();
  	var template = Handlebars.compile($('#loginMobileTemplate').html()); 
@@ -401,19 +260,8 @@ function displayHeaderPage() {
 		showCartPage();
 	});
 
-}
-function hideHeaderPage(){
-	$('#caller-header-bar').children("div").remove();
-	$('#top-header-bar').children("div").remove();
-}
-function displayNavProductPage() {
-	var template;
-	template = Handlebars.compile($('#navbarTemplate').html()); 
-	$('#product-menu-bar').append(template(listProduct));
-	//login page
 	template = Handlebars.compile($('#loginMobileTemplate').html()); 
 	$('#login-container').append(template(Mobildata));
-
 
 
 	$('.main-flag').click(function (){
@@ -428,16 +276,185 @@ function displayNavProductPage() {
 		$('.flags-list').addClass('hidden');
 		$('.main-flag').removeClass('hidden');
 	});
-	$('#menu-toggle').click(function(){
- 		$(this).toggleClass('bottom-borderline');
+	$('#menu-toggle').click(function(event){
+ 		//$(this).toggleClass('bottom-borderline');
+ 		event.stopPropagation();
+ 		if($('#headbar-ex1-collapse').attr('aria-expanded') ==="true") {
+ 			hideDropdwonList('#headbar-ex1-collapse');
+ 			$('#menu-toggle').addClass('bottom-borderline');
+ 		}
+ 		else {
+ 			showDropdownList('#headbar-ex1-collapse');
+ 			$('#menu-toggle').removeClass('bottom-borderline');
+ 		}
+ 		$(document).click( function(){
+ 			$('#menu-toggle').addClass('bottom-borderline');
+        	hideDropdwonList('#headbar-ex1-collapse');
+    	});
+
 	});
-	/*$('#shop-pd').click(function(){
- 		$(this).toggleClass('bottom-borderline');
-	});
-	$('#shop-occas').click(function(){
- 		$(this).toggleClass('bottom-borderline');
-	});
+
+
+}
+function hideHeaderPage(){
+	$('#caller-header-bar').children("div").remove();
+	$('#top-header-bar').children("div").remove();
+}
+function displayNavProductPage(ProductList) {
+	var prename="#nav_";
+	precompleTemplate('#product-menu-bar','#navbarTemplate',ProductList);
+	//login page
+	for(var k = 0; k < ProductList.nav.length ; k++ ){
+		var new_id = prename+ProductList.nav[k].id;
+		$(new_id).click(function(){
+			var org_id = this.id.slice(4);
+			product.push(this.childNodes);
+			//this.childNodes : NAME of PRODUCT.
+			console.log("click:", org_id);
+			var request = request_server(request_path.subPageGroupe+org_id,request_opion);
+			request.done(function(data) {
+				console.log("done:", data);
+				var response = JSON.parse(data.pageGroups);
+				console.log("response:", response);
+				//response[0]
+				/*
+				defaultProduct: Object
+
+							PriceByPageRange: Array[0]
+							discountAmount: "0.00"
+							discountDesc: "PreloadedModifiersAppIsZero"
+							discountPrice: "17.95"
+							displayPriceSign: "£"
+							displayPriceValue: "17.95"
+							fotolia: Object
+
+								addOnItemDiscountPrice: "4.99"
+								addOnItemPrice: "4.99"
+								discountPrice: "22.94"
+								displayPriceValue: "22.94"
+
+
+							frameThickness: 0
+							guid: "dc54dba6-74b7-4e41-b3e3-9244a85161de"
+							height: "297"
+							layout: "Portrait"
+							name: "A4 Wall Mount Photo Calendar"
+							refId: "CALP001v3"
+							sizeDescription: "A4 Portrait 20x30 cm"
+							width: "210"
+
+
+
+
+				defaultProductHeight: "297"
+				defaultProductId: "dc54dba6-74b7-4e41-b3e3-9244a85161de"
+				defaultProductPrice: "£17.95"
+				defaultProductWidth: "210"
+				imageCaption: "WALL CALENDAR"
+				isInstagramProduct: false
+				marketingContent: "<div style="text-align: justify;"></div>
+				↵<div style="text-align: justify;">Give your friends and family the perfect gift with this ready-to-mount personalised wall calendar. Quickly upload the pictures you want for each month and even highlight birthdays, anniversaries and other key dates with your own custom selected images and text. Manufactured in the UK and published on high-quality photo paper for a quality appearance.<br />
+				↵<br />
+				↵</div>
+				↵<div style="text-align: justify;"><strong style="font-weight: bold;"><span style="color: #ff0000;">Exciting news!</span></strong> ''Wall Calendars are NOW also available in Swedish, Finnish and Norwegian. Simply pick your favourite language from the drop down when choosing your theme."</div>"
+				pageGroupHeader: "Wall Calendar"
+				pageGroupId: "822972c6-fe5d-4c07-9952-7b5557a2f95d"
+				pageGroupSeoFriendlyUrl: "/photo-calendar/"
+
 */
+
+//Canvas  -response - 3object 
+//eg response[0]
+/* 
+defaultProduct: Object
+	PriceByPageRange: Array[0]
+	discountAmount: "0.00"
+	discountDesc: "PreloadedModifiersAppIsZero"
+	discountPrice: "24.95"
+	displayPriceSign: "£"
+	displayPriceValue: "24.95"
+	fotolia: Object
+			addOnItemDiscountPrice: "4.99"
+			addOnItemPrice: "4.99"
+			discountPrice: "29.94"
+			displayPriceValue: "29.94"
+
+	frameThickness: 18
+	guid: "f7339859-8177-4479-8b93-1320a2aba359"
+	height: "254"
+	layout: "Square"
+	name: "2cm Frame - Square Instagram Canvas (10 x 10)"
+	refId: "121010_18_V3"
+	sizeDescription: "10"x10" (25x25 cm)"
+	width: "254"
+
+
+
+
+
+defaultProductHeight: "254"
+defaultProductId: "f7339859-8177-4479-8b93-1320a2aba359"
+defaultProductPrice: "£24.95"
+defaultProductWidth: "254"
+imageCaption: "SQUARE INSTAGRAM CANVAS"
+isInstagramProduct: true
+marketingContent: "<div style="text-align: justify;"></div>
+↵<div style="text-align: justify;"><span style="font-size: 12px;">Perfect for publishing your favourite Instagram photos, this sturdy square canvas is a great way to decorate your home or office.</span></div>"
+pageGroupHeader: "Square Instagram Canvas"
+pageGroupId: "66153ea8-7088-4332-ac3a-d38866d976c8"
+pageGroupSeoFriendlyUrl: "/Square-canvas/"
+
+--------------------------------------------------------------------------------------------
+defaultProduct: Object
+	PriceByPageRange: Array[0]
+	discountAmount: "0.00"
+	discountDesc: "PreloadedModifiersAppIsZero"
+	discountPrice: "28.95"
+	displayPriceSign: "£"
+	displayPriceValue: "28.95"
+	fotolia: Object
+		addOnItemDiscountPrice: "4.99"
+		addOnItemPrice: "4.99"
+		discountPrice: "33.94"
+		displayPriceValue: "33.94"
+	frameThickness: 18
+	guid: "9ccf3d77-ad77-4b71-8b3b-e1be65fd2233"
+	height: "250"
+	layout: "Landscape"
+	name: "2cm Frame - Landscape Canvas Prints (12 x 10)"
+	refId: "121068_new_18_V3"
+	sizeDescription: "12"x10" (30x25 cm)"
+	width: "300"
+
+
+
+defaultProductHeight: "250"
+defaultProductId: "9ccf3d77-ad77-4b71-8b3b-e1be65fd2233"
+defaultProductPrice: "£28.95"
+defaultProductWidth: "300"
+imageCaption: "PHOTO CANVAS"
+isInstagramProduct: false
+marketingContent: "<div style="text-align: justify;"></div>
+↵<div style="text-align: justify;">Printed with high-definition ink, this UK manufactured canvas is hand stretched to ensure long-lasting quality. Upload your own photo or choose an image from our vast online library to create the perfect piece of personalised decoration.</div>"
+pageGroupHeader: "Photo Canvas"
+pageGroupId: "27ebd145-c131-4c75-8b51-6290c6ad16aa"
+pageGroupSeoFriendlyUrl: "/photo-canvas/"
+
+
+*/
+
+
+
+
+			});
+			request.fail(function (jqXHR, textStatus) {
+				console.log(" fail jqXHR :",jqXHR);
+			});
+		});
+	}
+
+
+ 
 	$('#navbar-ex2-collapse').on('show.bs.collapse', function () {
 		console.log("open?");
 		$('#navbar-ex3-collapse').collapse('hide');
@@ -462,13 +479,10 @@ function hideNavProductPage(){
 	//$('#top-header-bar').children("div").remove();
 }
 function displaySectionPage() {
-	var template;
-	//promotion slide
-	template = Handlebars.compile($('#promoMobileTemplate').html()); 
-	$('#promotion-slider-bar').append(template(Mobildata));
+ 
+	precompleTemplate('#promotion-slider-bar','#promoMobileTemplate',Mobildata);
 	//Best seller list
-	template = Handlebars.compile($('#productMobileTemplate').html()); 
-	$('#best-seller').append(template(Mobildata));
+	precompleTemplate('#best-seller','#productMobileTemplate',Mobildata);
 	initCycle(2);
 
 }
@@ -476,64 +490,13 @@ function hideSectionPage() {
 	$('#promotion-slider-bar').children("div").remove();
  	$('#best-seller').children("div").remove();
 }
-function displayProductPages(ProductName) {
-	var template;
-	template = Handlebars.compile($('#productMobileTemplate').html()); 
-	$('#product-list').append(template(ProductName));
-}
-function displayMoreDetailofProductPages(ProductName){
-	//Example to choose
-	var template;
-	template = Handlebars.compile($('#moreInfoMobileTemplate').html()); 
-	$('#product-list').append(template(ProductName));
-	//TODO : test
-	product.push(ProductName);
-	//$('#lastPath').text(product[product.length-1]);
-	$('#lastPath').text("Leather Cover Book");
-	$('.product-info h1').text(ProductName.productList[1].title);
-	$('.product-info img').attr("src",ProductName.productList[1].customerStar);
-	$('.product-info p').text(ProductName.productList[1].details);
-}
-function displayCardPage() {
-	var template;
-	product.push('Cards');
-	template = Handlebars.compile($('#CardsMobileTemplate').html()); 
-	$('#product-list').append(template(Cards));
-}
-function displayCartPage(){
-	var template;
-	template = Handlebars.compile($('#titleHeaderMobileTemplate').html()); 
-	$('#top-header-bar').append(template);
-	template = Handlebars.compile($('#navFlowerMobileTemplate').html());
-	$('#nav-memu-bar').append(template);
-	template = Handlebars.compile($('#baskettopMobileTemplate').html());
-	$('#nav-memu-bar').append(template);
-	template = Handlebars.compile($('#basketListMobileTemplate').html());
-	$('#best-seller').append(template);
-	
-}
-function hideCartPage() {
-	$('#top-header-bar').children("div").remove();
-	$('#nav-memu-bar').children("div").remove();
-	$('#best-seller').children("div").remove();
-}
+
 function displayFooterPage() {
- 	var template;
- 	template = Handlebars.compile($('#footerMobileTemplate6').html()); 
-	$('#footer-mobile-about').append(template(footer));
-
-   	template = Handlebars.compile($('#socialMobileTemplate').html()); 
-	$('#footer-social').append(template(footer));
-
-	template = Handlebars.compile($('#footerMobileTemplate3').html()); 
-	$('#footer-flag').append(template(footer));
-
-
-   	template = Handlebars.compile($('#footerMobileTemplate4').html()); 
-	$('#footer-pd-list').append(template(footer));
-
-   	template = Handlebars.compile($('#footerMobileTemplate5').html()); 
-	$('#footer-register').append(template(footer));
+	precompleTemplate('#footer-mobile-about','#footerMobileTemplate6',footer);
+	precompleTemplate('#footer-social','#socialMobileTemplate',footer);
+	precompleTemplate('#footer-flag','#footerMobileTemplate3',footer);
+	precompleTemplate('#footer-pd-list','#footerMobileTemplate4',footer);
+	precompleTemplate('#footer-register','#footerMobileTemplate5',footer);
  }
  function hideFooterPage(argument) {
  	$('#footer-mobile-about').children("div").remove();
@@ -543,30 +506,7 @@ function displayFooterPage() {
  	$('#footer-register').children("div").remove();
  	// body...
  }
-function open_application () {
-	// body...
-	var data;
-	var temp;
-	var headers = { 
-		//"Access-Control-Allow-Origin": "*"};
-		"appId":"printerpixmos_v1.0"};
-	var jqxhr = $.ajax( {
-		type:'GET',
-			url: 'http://api.printerpix.co.uk/api/account/applogin',
-			dataType:'json',
-			//contentType: 'application/json',
-			headers:headers,
-			data:data
-
-	}).done(function(data){
-		console.log("done",data.customer);
-		temp = JSON.parse(data.customer);
-		token = temp.Token;
-		console.log("done",token);
-	});
  
-}
-
 
 $(document).ready(function () {
 	var template;
@@ -591,18 +531,28 @@ $(document).ready(function () {
 	loginPage();
  
  
-	request_server(request_path.init,request_opion).done(function(data){
+ 	var request = request_server(request_path.init,request_opion);
+	//request_server(request_path.init,request_opion)
+	request.done(function(data){
 		var response = JSON.parse(data.customer);
 		request_opion.token =response.Token;
 		console.log("token :",request_opion.token);
 		request_server(request_path.pageGroupTypes,request_opion)
 		.done(function(data){response = JSON.parse(data.pageGroupTypes);
-		console.log("response");
+		console.log("response:",response);
 		listProduct={"nav": navListProduct(response)}
 		displayNavProductPage(listProduct);
+		displaySectionPage(listProduct);
+
 		});
 	});
-	displaySectionPage(listProduct);
+	request.fail(function (jqXHR, textStatus) {
+		console.log(" fail jqXHR :",jqXHR);
+		console.log(" textStatus :",textStatus);
+		show404ErrorPage();
+	});
+	
+	
 	//displayMoreDetailofProductPages(PhotoBook);
    	displayFooterPage();
 	//

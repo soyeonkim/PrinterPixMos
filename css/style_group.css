@@ -205,8 +205,7 @@ footer { background: #ececec; }
 
 .pd-menu li{ font-size: 4.2vw;}
 .vert-list-left li h4, .vert-list-right li h4
-
- { font-size: 3vw;}
+{ font-size: 3vw;}
 
 /*header text color */
 .icon-title ,.login-menu h1,.login-menu p,
@@ -216,7 +215,6 @@ footer { background: #ececec; }
 .sub-menu-account li a,
 .user-form-box:focus,.pw-form-box:focus,
 .product-path a
-
 { color:#1c1c1b;}
 
 .readmore,.regbtn

@@ -115,6 +115,7 @@
 #navbar-ex2-collapse{ z-index: 999;}
 .slider-box { position: relative; overflow: hidden;}
 .pd-mobile-contents{margin-top:-10px;}
+
 .pd_prev ,.pd_next{ display: none; width: 18px; height: 34px; position: absolute; top: 35%; z-index:300; text-indent: -9999px;}
 .pd_prev { background: url('../img/buttons/Arrow-L.png') no-repeat left top; left: 1px;}
 .pd_next { background: url('../img/buttons/Arrow-R.png') no-repeat right top; right: 1px;}
@@ -128,6 +129,7 @@
 .each-mobile-slide { text-decoration: none; display: inline; }
 .customer-star img{ height: 15px; width:85px;}
 .promo-mobile-product{ margin-bottom: 20px;}
+.pd-mobile-products{margin-top:10px;}
 
 /***********************************************************************
   footer
@@ -311,8 +313,18 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 .checkout-btn{font-size: 5vw; margin:5px; padding:10px;}
 
 
+/**************************************************************************************
+  Error Message box
+*****************************************************************************************/
+.error-box{ margin: 10px 0px; padding:5px 0px;}
+.msg-title { padding-bottom: 20px;}
 
 
+
+
+/**************************************************************************************
+  Spinner
+****************************************************************************************/
 .spinner
 {
   background: transparent url("../img/buttons/loading_icon.png") no-repeat center center;
