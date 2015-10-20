@@ -184,10 +184,38 @@ function accountSettingPage () {
  }
 
 
- function displayProductPages(ProductName) {
+ function displayProductPages(path, ProductName) {
+ 	hideProductPages();
+
+	var product={"productList": ProductName }
+	console.log(product);
 	var template;
 	template = Handlebars.compile($('#productMobileTemplate').html()); 
-	$('#product-list').append(template(ProductName));
+	$('#product-list').append(template(product));
+	if(path.length>0) {
+		document.getElementById("first_path").innerHTML=" Products  > ";
+		document.getElementById("second_path").innerHTML= path[0];
+		document.getElementById("iproudct-title").innerHTML="<h3>"+ path[0]+ "</h3>";
+	}
+
+	$('.customer-star').addClass('hide');
+	if(ProductName.length>0){
+		var new_url = request_path.product+ProductName[0].pageGroupId;
+		console.log(new_url);
+		var request = request_server(new_url,request_opion);
+				request.done(function(data) {
+					console.log("done:", data);
+					if(data && data.products){
+						var response = JSON.parse(data.products);
+						console.log("---------------------");
+						console.log(response);
+					}
+				});
+		}
+
+}
+function hideProductPages(){
+	$('#product-list').children("div").remove();
 }
 function displayMoreDetailofProductPages(ProductName){
 	//Example to choose

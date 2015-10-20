@@ -544,11 +544,11 @@
   <!-------------------------------------------------------------------------->
 
   <script id="productMobileTemplate" type="text/x-handlebars-template">
-    {{#productPath}}
+ 
     <div class="product-path">
-      <span>  {{path}} > </span><span style="color:#ff2a98">   {{secondPath}}   </span>
+      <span id="first_path">  </span><span id="second_path"style="color:#ff2a98">       </span>
     </div>
-    {{/productPath}}
+ 
     
     <div class="productContainer center">
 
@@ -557,23 +557,21 @@
         <p>{{{title}}}</p>
         {{/productTitle}}
       </div>
-
-      {{#productPath}}
-
       
       <div class="text-center product-title">
-       <h3> {{secondPath}}</h3>
+       <span id="iproudct-title"><h3> </h3></span>
       </div>
-      {{/productPath}}
+    
       <div class="row product-box">
       {{#productList}}
         <div class="col-xs-6 pd-mobile-img">
           <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
-          <img src="{{img_url}}" />
-            <h1>{{title}}</h1>
-            <span class="customer-star "><img src="{{customerStar}}"></span>
-            <p>{{{description}}}</p>
-            <h4 class="readmore" href="#">{{readmore}}</h4>
+          <!--<img src="{{img_url}}" />-->
+            <img src="img/Themes/photoBooks/UK/mobile/example.png" />  <!--- TODO: Get img src from server -->
+            <h1>{{pageGroupHeader}}</h1>
+            <span class="customer-star"><img src="{{customerStar}}"></span>
+            <div class="content_preview">{{{marketingContent}}}</div>
+            <h4 class="readmore" href="#">readmore</h4>
             </div>
         {{/productList}} 
       <div>

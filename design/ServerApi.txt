@@ -1,0 +1,136 @@
+#1
+[HttpGet] AppLogin
+Url: http://api.printerpix.co.UK/api/account/AppLogin/
+Params:
+appId: PixApp / PixAndriod
+Return:
+{
+customer: "{"Token":"2d1e2b17-4355-4d9b-b5b1-9d82eb6d0cfa","FirstName":"","LastName":"","EmailAddress":"","IsAnonymous":true}"
+}
+ 
+#2
+[HttpGet] UserLogin
+Url: https://api.printerpix.co.UK/api/account/UserLogin/
+Params:
+appId: PixApp / PixAndriod
+                userEmail: yeanshi.teoh@syncoms.com
+                userPassword: xxxxx
+Return:
+{
+customer: "{"Token":"8c703829-6222-4d70-9955-1c7d23e5af44","FirstName":"próf TESTING","LastName":"ΔΕΝ ΣΤΕΛΝΩ","EmailAddress":"yeanshi.teoh@syncoms.com","IsAnonymous":false}"
+uploadUrl: "http://www.printerpix.co.uk/FileManager/UploadJob/"
+}
+ 
+#3
+[HttpGet] PageGroupTypes – Get Available PageGroupTypes
+Url: http://api.printerpix.co.uk/api/platinumproduct/PageGroupTypes/
+Params:
+Token: 8c703829-6222-4d70-9955-1c7d23e5af44 (the token returned by #1-AppLogin/#2-UserLogin)
+Return:
+{
+pageGroupTypes: "[{"name":"CanvasPage","id":"3"},{"name":"WallDecorPage","id":"4"},{"name":"PhotoGiftPage","id":"5"},{"name":"PhotoCoverPage","id":"6"},{"name":"PrintPage","id":"7"}]"
+}
+ 
+#4
+[HttpGet] PageGroups – Get Available PageGroups for a PageGroupType
+Url: http://api.printerpix.co.uk/api/platinumproduct/PageGroups/
+Params:
+Token: 8c703829-6222-4d70-9955-1c7d23e5af44 (the token returned by AppLogin/UserLogin)
+PageGroupTypeId: 7 (the id returned by #3 PageGroupTypes)
+Return:
+{
+pageGroups: "[{"pageGroupId":"5ef816f1-49fe-4ac4-baf7-b7677753e9d7","pageGroupSeoFriendlyUrl":"/photo-prints/","pageGroupHeader":"Photo Print","imageCaption":"PHOTO PRINT","defaultProductId":"bd99b0d9-3c4f-4c4d-9baf-cbe0e3cfe882","defaultProductPrice":"£0.13","defaultProductWidth":"152","defaultProductHeight":"102","marketingContent":null,"isInstagramProduct":false,"defaultProduct":{"guid":"bd99b0d9-3c4f-4c4d-9baf-cbe0e3cfe882","layout":"Landscape","refId":"PhotoPrint6x4","name":"PhotoPrint 6x4","width":"152","height":"102","sizeDescription":"6\"x4\" (15x11cm) Print","displayPriceSign":"£","displayPriceValue":"0.13","PriceByPageRange":null}},{"pageGroupId":"87b6966f-e652-4fb8-8a0f-588db66f4d86","pageGroupSeoFriendlyUrl":"/photo-instagram-prints/","pageGroupHeader":"Instagram Print","imageCaption":"INSTAGRAM PRINT","defaultProductId":"5cf64977-6049-4367-a8c2-3d8785a3d733","defaultProductPrice":"£0.95","defaultProductWidth":"76","defaultProductHeight":"76","marketingContent":null,"isInstagramProduct":true,"defaultProduct":{"guid":"5cf64977-6049-4367-a8c2-3d8785a3d733","layout":"Landscape","refId":"InstagramPrint5x4","name":"Instagram Print 5x4","width":"76","height":"76","sizeDescription":"Instagram Print","displayPriceSign":"£","displayPriceValue":"0.95","PriceByPageRange":null}}]"
+}
+ 
+ 
+#5
+[HttpGet] Products – Get Available Products for a PageGroup
+Url: http://api.printerpix.co.uk/api/platinumproduct/Products/
+Params:
+Token: 8c703829-6222-4d70-9955-1c7d23e5af44 (the token returned by AppLogin/UserLogin)
+PageGroupId: 5ef816f1-49fe-4ac4-baf7-b7677753e9d7 (the pageGroupId returned by #4 PageGroups)
+Return:
+{
+products: "[{"guid":"bd99b0d9-3c4f-4c4d-9baf-cbe0e3cfe882","layout":"Landscape","refId":"PhotoPrint6x4","name":"PhotoPrint 6x4","width":"152","height":"102","sizeDescription":"6\"x4\" (15x11cm) Print","displayPriceSign":"£","displayPriceValue":"0.13","PriceByPageRange":null},{"guid":"0015e6a6-5d1d-4ac7-a9a5-32ce4f758f4a","layout":"Landscape","refId":"PhotoPrint7x5","name":"PhotoPrint 7x5","width":"178","height":"127","sizeDescription":"7\"x5\" (18x13cm) Print","displayPriceSign":"£","displayPriceValue":"0.22","PriceByPageRange":null},{"guid":"a3d4275f-d936-4cdf-86bc-981b51668329","layout":"Landscape","refId":"PhotoPrint8x6","name":"PhotoPrint 8x6","width":"203","height":"152","sizeDescription":"8\"x6\" (20x15cm) Print","displayPriceSign":"£","displayPriceValue":"0.48","PriceByPageRange":null},{"guid":"cafebc53-19c6-42b6-ac5e-5ea9c2682bd9","layout":"Landscape","refId":"PhotoPrint10x8","name":"PhotoPrint 10x8","width":"254","height":"203","sizeDescription":"10\"x8\" (25x20cm) Print","displayPriceSign":"£","displayPriceValue":"1.52","PriceByPageRange":null},{"guid":"3b1ce9ab-223e-44d0-98af-c2d8eec4e454","layout":"Landscape","refId":"PhotoPrint18x12","name":"PhotoPrint 18x12","width":"457","height":"305","sizeDescription":"18\"x12\" (45x30cm) Print","displayPriceSign":"£","displayPriceValue":"8.99","PriceByPageRange":null},{"guid":"1f796655-cf87-4cb7-937e-91a28fcf75cd","layout":"Landscape","refId":"PhotoPrint6x5","name":"PhotoPrint 6x5","width":"152","height":"127","sizeDescription":"6\"x5\" (15x13cm) Print","displayPriceSign":"£","displayPriceValue":"0.14","PriceByPageRange":null},{"guid":"16eac0be-b245-484f-8bc3-2243dca03e21","layout":"Landscape","refId":"PhotoPrintA4","name":"PhotoPrint 12x8(A4)","width":"297","height":"210","sizeDescription":"12\"x8\" (30x21cm) Print","displayPriceSign":"£","displayPriceValue":"1.64","PriceByPageRange":null},{"guid":"f0566de2-c18a-4ed5-a692-a88bdefcf52b","layout":"Landscape","refId":"PhotoPrint12x10","name":"PhotoPrint 12x10","width":"305","height":"254","sizeDescription":"12\"x10\" (30x25cm) Print","displayPriceSign":"£","displayPriceValue":"3.58","PriceByPageRange":null}]"
+}
+ 
+#6
+[HttpGet] Product – Get Product
+Url: http://api.printerpix.co.uk/api/platinumproduct/Product/
+Params:
+Token: 8c703829-6222-4d70-9955-1c7d23e5af44 (the token returned by AppLogin/UserLogin)
+ProductId: 5ef816f1-49fe-4ac4-baf7-b7677753e9d7 (the guid returned by #5 Products)
+Return:
+{
+product: "{"guid":"bd99b0d9-3c4f-4c4d-9baf-cbe0e3cfe882","layout":"Landscape","refId":"PhotoPrint6x4","name":"PhotoPrint 6x4","width":"152","height":"102","sizeDescription":"6\"x4\" (15x11cm) Print","displayPriceSign":"£","displayPriceValue":"0.13","PriceByPageRange":null}"
+}
+ 
+ 
+#7
+[HttpGet] PreviewData
+Url: http://api.printerpix.co.uk/api/platinumproduct/PreviewData/
+Params:
+Token: 8c703829-6222-4d70-9955-1c7d23e5af44 (the token returned by AppLogin/UserLogin)
+ProductId: d6d6487-d85a-4cae-a677-6af416fd05d4 (the guid returned by #5 Products)
+Return:
+
+#8
+[HttpGet] GetPriceByNumberOfPrint – Get PhotoPrice
+Url: http://api.printerpix.co.uk/api/platinumproduct/GetPriceByNumberOfPrint/
+Params:
+Token: 8c703829-6222-4d70-9955-1c7d23e5af44 (the token returned by AppLogin/UserLogin)
+ProductId: bd99b0d9-3c4f-4c4d-9baf-cbe0e3cfe882 (the guid returned by #5 Products, the product has to be a PhotoPrint Product)
+numberOfPrint:100
+Return:
+{
+price: "13.20"
+}
+ 
+ 
+#9
+[HttpGet] FotoliaPrice – Get FotoliaPrice
+Url: http://api.printerpix.co.uk/api/platinumproduct/FotoliaPrice/
+Params:
+Token: 8c703829-6222-4d70-9955-1c7d23e5af44 (the token returned by AppLogin/UserLogin)
+ProductId: bd99b0d9-3c4f-4c4d-9baf-cbe0e3cfe882 (the guid returned by #5 Products, the product has to be a PhotoPrint Product)
+numberOfPrint:100
+Return:
+{
+price: "13.20"
+}
+
+
+#10
+[HttpPost]AppSubmitBasket - Submit Basket
+Content-type: application/x-www-form-urlencoded
+Url: http://www.printerpix.co.uk/checkout/AppSubmitBasket/
+[Parameters in BODY]:
+token: 8c703829-6222-4d70-9955-1c7d23e5af44
+basketData: [{"Qty":1,"ProductId":"13c9e3be-1cf0-4e2b-a57d-4717cf041607","PlatinumProductDetailsId":"00000000-0000-0000-0000-000000000000","BatchQty": 1,"JobId":"APP_MQHE45MGKufuBT5G"}]
+discountCode: synpix
+[Return]:
+{"CheckOutUrl" = "http://printerpix.localhost/App/checkout/payment/?token=8c703829-6222-4d70-9955-1c7d23e5af44", "PaymentSuccessUrlKeyword" = "/OrderConfirmation.aspx"
+}
+
+
+#11
+[HttpPost]UploadJob - upload item
+Url: http://www.printerpix.co.uk/FileManager/UploadJob/
+[Parameters in BODY]: 
+string token
+string productId
+string jobId
+string imageSource ----- "File"
+string jobData="" ------ leave it blank for PhotoPrint
+string fileStream
+int currentFileSequence – default to 1
+int currentPrintQty – default to 1
+int numberOfFiles – default to 1
+int numberOfPrints – default to 1
+string clientInfo
+[Return]:
+numberOfFilesReceived
+numberOfFilesExpected
+jobId
+PlatinumProductDetailsId è before complete, return 00000000-0000-0000-0000-000000000000, once completed, return a true Guid, PlatinumProductDetailsId
+

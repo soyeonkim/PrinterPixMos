@@ -22,7 +22,7 @@ var request_path ={
 	forgetpassword:'/account/ForgotPassword?email=',
 	pageGroupTypes:'/PlatinumProduct/PageGroupTypes',
 	subPageGroupe:'/PlatinumProduct/PageGroups?pageGroupTypeId=',
-	product:'/PlatinumProduct/products/?pageGroupId',
+	product:'/PlatinumProduct/products/?pageGroupId=',
 
 }
 
@@ -107,7 +107,7 @@ function navListProduct(response){
 	return response;
 }
  function loginPage(){
-	$('input').on('click focusin', function() {
+	$('input').on('click focusin', function() { 
     this.value = '';
 	});
  }
@@ -307,148 +307,34 @@ function displayNavProductPage(ProductList) {
 	for(var k = 0; k < ProductList.nav.length ; k++ ){
 		var new_id = prename+ProductList.nav[k].id;
 		$(new_id).click(function(){
+			product=[];
 			var org_id = this.id.slice(4);
-			product.push(this.childNodes);
+			product.push(this.childNodes[0].nodeValue);
 			//this.childNodes : NAME of PRODUCT.
-			console.log("click:", org_id);
-			var request = request_server(request_path.subPageGroupe+org_id,request_opion);
+			//console.log("click:", org_id);
+			var new_url = request_path.subPageGroupe+org_id;
+			console.log("url: ",new_url);
+			var request = request_server(new_url,request_opion);
 			request.done(function(data) {
-				console.log("done:", data);
-				var response = JSON.parse(data.pageGroups);
-				console.log("response:", response);
-				//response[0]
-				/*
-				defaultProduct: Object
-
-							PriceByPageRange: Array[0]
-							discountAmount: "0.00"
-							discountDesc: "PreloadedModifiersAppIsZero"
-							discountPrice: "17.95"
-							displayPriceSign: "£"
-							displayPriceValue: "17.95"
-							fotolia: Object
-
-								addOnItemDiscountPrice: "4.99"
-								addOnItemPrice: "4.99"
-								discountPrice: "22.94"
-								displayPriceValue: "22.94"
-
-
-							frameThickness: 0
-							guid: "dc54dba6-74b7-4e41-b3e3-9244a85161de"
-							height: "297"
-							layout: "Portrait"
-							name: "A4 Wall Mount Photo Calendar"
-							refId: "CALP001v3"
-							sizeDescription: "A4 Portrait 20x30 cm"
-							width: "210"
-
-
-
-
-				defaultProductHeight: "297"
-				defaultProductId: "dc54dba6-74b7-4e41-b3e3-9244a85161de"
-				defaultProductPrice: "£17.95"
-				defaultProductWidth: "210"
-				imageCaption: "WALL CALENDAR"
-				isInstagramProduct: false
-				marketingContent: "<div style="text-align: justify;"></div>
-				↵<div style="text-align: justify;">Give your friends and family the perfect gift with this ready-to-mount personalised wall calendar. Quickly upload the pictures you want for each month and even highlight birthdays, anniversaries and other key dates with your own custom selected images and text. Manufactured in the UK and published on high-quality photo paper for a quality appearance.<br />
-				↵<br />
-				↵</div>
-				↵<div style="text-align: justify;"><strong style="font-weight: bold;"><span style="color: #ff0000;">Exciting news!</span></strong> ''Wall Calendars are NOW also available in Swedish, Finnish and Norwegian. Simply pick your favourite language from the drop down when choosing your theme."</div>"
-				pageGroupHeader: "Wall Calendar"
-				pageGroupId: "822972c6-fe5d-4c07-9952-7b5557a2f95d"
-				pageGroupSeoFriendlyUrl: "/photo-calendar/"
-
-*/
-
-//Canvas  -response - 3object 
-//eg response[0]
-/* 
-defaultProduct: Object
-	PriceByPageRange: Array[0]
-	discountAmount: "0.00"
-	discountDesc: "PreloadedModifiersAppIsZero"
-	discountPrice: "24.95"
-	displayPriceSign: "£"
-	displayPriceValue: "24.95"
-	fotolia: Object
-			addOnItemDiscountPrice: "4.99"
-			addOnItemPrice: "4.99"
-			discountPrice: "29.94"
-			displayPriceValue: "29.94"
-
-	frameThickness: 18
-	guid: "f7339859-8177-4479-8b93-1320a2aba359"
-	height: "254"
-	layout: "Square"
-	name: "2cm Frame - Square Instagram Canvas (10 x 10)"
-	refId: "121010_18_V3"
-	sizeDescription: "10"x10" (25x25 cm)"
-	width: "254"
-
-
-
-
-
-defaultProductHeight: "254"
-defaultProductId: "f7339859-8177-4479-8b93-1320a2aba359"
-defaultProductPrice: "£24.95"
-defaultProductWidth: "254"
-imageCaption: "SQUARE INSTAGRAM CANVAS"
-isInstagramProduct: true
-marketingContent: "<div style="text-align: justify;"></div>
-↵<div style="text-align: justify;"><span style="font-size: 12px;">Perfect for publishing your favourite Instagram photos, this sturdy square canvas is a great way to decorate your home or office.</span></div>"
-pageGroupHeader: "Square Instagram Canvas"
-pageGroupId: "66153ea8-7088-4332-ac3a-d38866d976c8"
-pageGroupSeoFriendlyUrl: "/Square-canvas/"
-
---------------------------------------------------------------------------------------------
-defaultProduct: Object
-	PriceByPageRange: Array[0]
-	discountAmount: "0.00"
-	discountDesc: "PreloadedModifiersAppIsZero"
-	discountPrice: "28.95"
-	displayPriceSign: "£"
-	displayPriceValue: "28.95"
-	fotolia: Object
-		addOnItemDiscountPrice: "4.99"
-		addOnItemPrice: "4.99"
-		discountPrice: "33.94"
-		displayPriceValue: "33.94"
-	frameThickness: 18
-	guid: "9ccf3d77-ad77-4b71-8b3b-e1be65fd2233"
-	height: "250"
-	layout: "Landscape"
-	name: "2cm Frame - Landscape Canvas Prints (12 x 10)"
-	refId: "121068_new_18_V3"
-	sizeDescription: "12"x10" (30x25 cm)"
-	width: "300"
-
-
-
-defaultProductHeight: "250"
-defaultProductId: "9ccf3d77-ad77-4b71-8b3b-e1be65fd2233"
-defaultProductPrice: "£28.95"
-defaultProductWidth: "300"
-imageCaption: "PHOTO CANVAS"
-isInstagramProduct: false
-marketingContent: "<div style="text-align: justify;"></div>
-↵<div style="text-align: justify;">Printed with high-definition ink, this UK manufactured canvas is hand stretched to ensure long-lasting quality. Upload your own photo or choose an image from our vast online library to create the perfect piece of personalised decoration.</div>"
-pageGroupHeader: "Photo Canvas"
-pageGroupId: "27ebd145-c131-4c75-8b51-6290c6ad16aa"
-pageGroupSeoFriendlyUrl: "/photo-canvas/"
-
-
-*/
-
-
-
+				//console.log("done:", data);
+				if(data  && data.pageGroups) {
+					var response = JSON.parse(data.pageGroups);
+					console.log("response:", response);
+					hideSectionPage();
+					displayProductPages(product, response);
+					if($('#navbar-ex2-collapse').attr('aria-expanded') ==="true") {
+ 						hideDropdwonList('#navbar-ex2-collapse');
+ 						$('#shop-pd').addClass('bottom-borderline');
+ 					}
+				}
+				else {
+					show404ErrorPage();
+				}
 
 			});
 			request.fail(function (jqXHR, textStatus) {
 				console.log(" fail jqXHR :",jqXHR);
+				show404ErrorPage();
 			});
 		});
 	}

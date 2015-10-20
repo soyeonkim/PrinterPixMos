@@ -250,10 +250,10 @@ footer { background: #ececec; }
 .footer-category-mobile-box,
 .score,.review-list li,.cards-col,
 .user-form-box:focus,.pw-form-box:focus,
-{border-color:#8d8d8d;}
+{border-color:#ababab;}
 
 .about-mobile-Abox,.cards-col
 .score,.review-list li,.flow,
 .cartcontainer,
 .sq-btn
-{border: 1px solid  #8d8d8d;}
+{border: 1px solid  #ababab;}

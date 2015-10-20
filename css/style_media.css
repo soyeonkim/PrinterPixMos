@@ -2,6 +2,7 @@
 
 @media screen and (max-width: 768px){
   .fixed-menu { width: 128px; }
+  .call-number p{font-size: 2.4vw;}
 
   .nav-memu-bar{ height: 72px;}
   /*.pd-text-box { margin-top: 2px; padding-bottom: 3px; }*/
@@ -41,6 +42,8 @@
   .pd-mobile-img h1 {font-size: 3.35vw; font-family:MyriadProSemibold; }
   .pd-mobile-img p {  font-size:2.4vw;}
   .customer-star img{ height: 17px; width:85px;}
+  .call-number p{font-size: 2.7vw;}
+  .pd-mobile-title{font-size:3.6vw;}
 }
 
 @media screen and (max-width: 512px) {
@@ -54,6 +57,7 @@
   .pd-text-box img{ width:46px; height:46px; margin-top: 12px;}
   .login-box,.login-form,.btn-box,.user-form-box,.pw-form-box{width: 420px;}
   .user-form-box,.pw-form-box{ height: 42px; font-size: 4vw;}
+   .pd-mobile-title {font-size: 3.5vw;}
 
  /* .fixed-menu ul.list-icons li .zone-icon span.bubble-basket{ */
 
@@ -102,6 +106,9 @@
   .user-form-box,.pw-form-box,.loginbtn,.regbtn {font-size: 4.2vw;}
   .user-form-box,.pw-form-box{  height: 42px;}
 
+    .pager-box-mobile{ background: url('../img/buttons/Arrow_46x46.png') no-repeat; width: 46px;  height: 46px; bottom:16px; }
+
+
   .pd-text-box h3{  width: 78px;  /*height: 56px; */margin-left: 27%; padding-top: 2px;}
   .pd-text-box img{width:33px; height:33px; margin-top:10px;}
   .productContainer{ width: 404px;}
@@ -143,7 +150,7 @@
 
 @media screen and (max-width: 400px) {
   .pd-mobile-img {margin:0px 12px;}
-  .pd-mobile-img, .pd-mobile-img img { width: 154px; }
+  .pd-mobile-img, .pd-mobile-img img { width: 142px; }
   .productContainer{ width: 374px;}
   .pd-mobile-containder{ width: 338px;}
   .customer-star img{ height: 15px; width:85px;}
@@ -186,7 +193,8 @@
 
   /* TODO: size adjustment
   */
-  .pager-box-mobile{ width: 56px;  height: 56px;  }
+  .pager-box-mobile{ background: url('../img/buttons/Arrow_32x32.png') no-repeat; width: 32px;  height: 32px;  bottom:12px;}
+
   .pd-mobile-containder,.productContainer{ width: 300px}
   .pd-mobile-img,.promo-mobile-box {margin:0px 8px;}
   .pd-mobile-img, .pd-mobile-img img { width: 134px; }

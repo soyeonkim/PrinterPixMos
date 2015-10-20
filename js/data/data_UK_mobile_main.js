@@ -61,16 +61,16 @@ var Mobildata = {
         url:  "/photo-books/ValentinoWhite", 
         img_url: "./img/Themes/bestSeller/UK/Photo-Book-Valentina.jpg",
         customerStar: "./img/Themes/bestSeller/stars/star_4_5.png",
-        title: "Valentina Photo book", 
-        description: "Perfect for weddings, birthdays and other celebrations, this Valentina Photobook is the perfect way to",
+        pageGroupHeader: "Valentina Photo book", 
+        marketingContent: "Perfect for weddings, birthdays and other celebrations, this Valentina Photobook is the perfect way to",
         readmore:"Read more..",
       },
      { 
         url: "/montage-canvas", 
         img_url: "./img/Themes/bestSeller/UK/Montage-Canvas.jpg",
         customerStar: "./img/Themes/bestSeller/stars/star_4_5.png",
-        title: "Collage Canvas",  
-        description: "Record your memories in style with this fully customisable canvas. ",
+        pageGroupHeader: "Collage Canvas",  
+        marketingContent: "Record your memories in style with this fully customisable canvas. ",
         readmore:"Read more.." ,
      },
  
@@ -78,16 +78,16 @@ var Mobildata = {
        url: "/instagram-canvas/", 
         img_url: "./img/Themes/bestSeller/UK/Instagram_Canvas.jpg",
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
-        title: "Instagram Canvas",  
-        description: "Perfect for publishing your favourite Instagram photos, this sturdy square canvas is a great way to decorate your home or office.",
+        pageGroupHeader: "Instagram Canvas",  
+        marketingContent: "Perfect for publishing your favourite Instagram photos, this sturdy square canvas is a great way to decorate your home or office.",
         readmore:"Read more.."
        }, 
        { 
         url: "/metal-prints/", 
         img_url: "./img/Themes/bestSeller/UK/Metal-Print.jpg", 
         customerStar:"./img/Themes/bestSeller/stars/no_star.png",
-        title: "Metal Prints", 
-        description: "Upload a photo or select an image from our huge online library to print on this sturdy aluminium sheet" ,
+        pageGroupHeader: "Metal Prints", 
+        marketingContent: "Upload a photo or select an image from our huge online library to print on this sturdy aluminium sheet" ,
         readmore:"Read more.."
         },
       { 
@@ -95,8 +95,8 @@ var Mobildata = {
         img_url: "./img/Themes/bestSeller/UK/Magic-Mug.jpg", 
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
-        title: "Magic Mug",  
-        description:"Using the latest heat-to-reveal technology, simply pour a hot drink to see your favourite photo magically appear." ,
+        pageGroupHeader: "Magic Mug",  
+        marketingContent:"Using the latest heat-to-reveal technology, simply pour a hot drink to see your favourite photo magically appear." ,
         readmore:"Read more.."
         },
       { 
@@ -104,8 +104,8 @@ var Mobildata = {
         img_url: "./img/Themes/bestSeller/UK/Wood-Jigsaw.jpg",
         customerStar: "./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
-        title: "Wooden Jigsaw",         
-        description: "Great fun for the whole family, upload a photo or choose an image from our huge library to print on this full-colour jigsaw.",
+        pageGroupHeader: "Wooden Jigsaw",         
+        marketingContent: "Great fun for the whole family, upload a photo or choose an image from our huge library to print on this full-colour jigsaw.",
         readmore:"Read more.." ,
       },
       { 
@@ -113,8 +113,8 @@ var Mobildata = {
         img_url: "./img/Themes/bestSeller/UK/Cushion-Cover.jpg",
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
-        title: "Cushion Cover", 
-        description: "Decorate your home with this personalised Cushion Cover.",
+        pageGroupHeader: "Cushion Cover", 
+        marketingContent: "Decorate your home with this personalised Cushion Cover.",
         readmore:"Read more.." 
       },
       {   
@@ -122,8 +122,8 @@ var Mobildata = {
         img_url: "./img/Themes/bestSeller/UK/Crystal-Frame.jpg",
         customerStar:"./img/Themes/bestSeller/stars/no_star.png",
         isNew:"",
-        title: "Crystal Frame", 
-        description: "Sleek and sophisticated, print your favourite photos on this high quality crystal block.",
+        pageGroupHeader: "Crystal Frame", 
+        marketingContent: "Sleek and sophisticated, print your favourite photos on this high quality crystal block.",
         readmore:"Read more.." ,
      },
                
