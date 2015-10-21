@@ -400,21 +400,10 @@ function displayFooterPage() {
 $(document).ready(function () {
 	var template;
 
-	// header for icon+ call number -black blackground
-/*	template = Handlebars.compile($('#headerCallTemplate').html()); 
-	$('#caller-header-bar').append(template);
-	// header for logo, login button, basket button, menu buton
-	template = Handlebars.compile($('#headerNavTemplate').html()); 
-	$('#top-header-bar').append(template);*/
+ 
 	displayHeaderPage();
 	//Product list navigation bar
-	
-
-	// displaySectionPage();
-    // displayCartPage();
-   	//displayProductPages(PhotoBook);
-   	
-
+ 
 	// when login button is clicked
 
 	loginPage();
@@ -451,5 +440,10 @@ $(document).ready(function () {
    	displayFooterPage();
 	//
 
+	
+	
+	//TEST codes;
+	//showCartPage();
+	//printerpixMos.cart.showCartPage();
 });
 

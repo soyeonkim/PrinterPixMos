@@ -29,11 +29,12 @@ printerpixMos.products = {
 			//console.log("register:",ProductName[k].pageGroupId);
 			$('#'+ProductName[k].pageGroupId).click (function(e) {
 				var new_url = request_path.product+this.id;
+				console.log(new_url);
 				path.push(this.childNodes[9].firstChild.nodeValue);
 				if (e.stopPropagation) e.stopPropagation();
 				console.log("----");
 				that.displaySubmenuProducts(path,this.id);
-				/*var request = request_server(new_url,request_opion);
+				var request = request_server(new_url,request_opion);
 
 				request.done(function(data) {
 					//console.log("done:", data);
@@ -45,7 +46,7 @@ printerpixMos.products = {
 				});
 				request.fail(function() {
 					show404ErrorPage();
-				}); */
+				}); 
 			});
 		}
 
