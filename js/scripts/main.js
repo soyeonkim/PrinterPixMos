@@ -320,7 +320,7 @@ function displayNavProductPage(ProductList) {
 				if(data  && data.pageGroups) {
 					//console.log("response:", data.pageGroups);
 					var response = JSON.parse(data.pageGroups);
-					//console.log("response:", response);
+					console.log("response:", response);
 					hideSectionPage();
 					//printerpixMos.products.init();
 					printerpixMos.products.displayProductPages(product, response);
@@ -400,21 +400,10 @@ function displayFooterPage() {
 $(document).ready(function () {
 	var template;
 
-	// header for icon+ call number -black blackground
-/*	template = Handlebars.compile($('#headerCallTemplate').html()); 
-	$('#caller-header-bar').append(template);
-	// header for logo, login button, basket button, menu buton
-	template = Handlebars.compile($('#headerNavTemplate').html()); 
-	$('#top-header-bar').append(template);*/
+ 
 	displayHeaderPage();
 	//Product list navigation bar
-	
-
-	// displaySectionPage();
-    // displayCartPage();
-   	//displayProductPages(PhotoBook);
-   	
-
+ 
 	// when login button is clicked
 
 	loginPage();
@@ -451,5 +440,10 @@ $(document).ready(function () {
    	displayFooterPage();
 	//
 
+	
+	
+	//TEST codes;
+	//showCartPage();
+	//printerpixMos.cart.showCartPage();
 });
 

@@ -571,8 +571,8 @@
       {{#productList}}
         <div class="col-xs-6 pd-mobile-img" id={{pageGroupId}}>
           <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
-          <!--<img src="{{img_url}}" />-->
-            <img src="img/Themes/photoBooks/UK/mobile/example.png" />  <!--- TODO: Get img src from server -->
+          <img src="{{pageGroupImageUrl}}" />
+          <!--  <img src="img/Themes/photoBooks/UK/mobile/example.png" /> --> <!--- TODO: Get img src from server -->
             <h1>{{pageGroupHeader}}</h1>
             <span class="customer-star"><img src="{{customerStar}}"></span>
             <div class="content_preview">{{{marketingContent}}}</div>
@@ -723,10 +723,10 @@
 
   <script id="titleHeaderMobileTemplate" type="text/x-handlebars-template">
     <div class="navcontainer header-nav-box">
-      <div class="cart-outer-box">
-        <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png"></a></div>
+      <div class="checkout-outer-box">
+        <div class="back-btn-box"> <div class="back-btn" id="backto">< Back</div></div>
+        <div class="cart-title"><strong>Cart</strong></div>
       </div>
-      <div class="cart-title">Cart</div>
     </div>
     <div class="only-clear"></div>   
   </script>
@@ -744,10 +744,15 @@
 
   <script id="baskettopMobileTemplate" type="text/x-handlebars-template">
     <div class="cartcontainer">
-      <div class="product-path">
+      <div class="gift-check-box">
+      
+      </div>
+    <!--  <div class="product-path">
         <a href=""><span id="backto"> < &nbsp;  Countinue Shopping </span></a>
         <span style="color:#ff2a98" id="lastPath"></span>
       </div>
+    -->
+
       <div class="btn-box-half right">
         <button class="personalised button-printerpix white">Proceed to Checkout >
         </button>

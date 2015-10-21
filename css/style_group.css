@@ -185,7 +185,9 @@ footer { background: #ececec; }
 .option1,.option2,
 .radioleft,.textBlock,
 .on-mobile,.Cart-title,
-.promo-form-box,.apply-btn
+.promo-form-box,.apply-btn,
+.checkout-outer-box,
+.back-btn
 {float: left;}
 
 .menu-box,.fixed-menu,.sub-menu ,
@@ -217,7 +219,8 @@ footer { background: #ececec; }
 .product-path a
 { color:#1c1c1b;}
 
-.readmore,.regbtn
+.readmore,.regbtn,
+.back-btn
 { color:#36a9e0;}
 .loginbtn,.your-price
 { color:#ce217e;}

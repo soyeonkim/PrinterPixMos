@@ -59,7 +59,7 @@ var Mobildata = {
        
       {   
         url:  "/photo-books/ValentinoWhite", 
-        img_url: "./img/Themes/bestSeller/UK/Photo-Book-Valentina.jpg",
+        pageGroupImageUrl: "./img/Themes/bestSeller/UK/Photo-Book-Valentina.jpg",
         customerStar: "./img/Themes/bestSeller/stars/star_4_5.png",
         pageGroupHeader: "Valentina Photo book", 
         marketingContent: "Perfect for weddings, birthdays and other celebrations, this Valentina Photobook is the perfect way to",
@@ -67,7 +67,7 @@ var Mobildata = {
       },
      { 
         url: "/montage-canvas", 
-        img_url: "./img/Themes/bestSeller/UK/Montage-Canvas.jpg",
+        pageGroupImageUrl: "./img/Themes/bestSeller/UK/Montage-Canvas.jpg",
         customerStar: "./img/Themes/bestSeller/stars/star_4_5.png",
         pageGroupHeader: "Collage Canvas",  
         marketingContent: "Record your memories in style with this fully customisable canvas. ",
@@ -76,7 +76,7 @@ var Mobildata = {
  
      { 
        url: "/instagram-canvas/", 
-        img_url: "./img/Themes/bestSeller/UK/Instagram_Canvas.jpg",
+        pageGroupImageUrl: "./img/Themes/bestSeller/UK/Instagram_Canvas.jpg",
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
         pageGroupHeader: "Instagram Canvas",  
         marketingContent: "Perfect for publishing your favourite Instagram photos, this sturdy square canvas is a great way to decorate your home or office.",
@@ -84,7 +84,7 @@ var Mobildata = {
        }, 
        { 
         url: "/metal-prints/", 
-        img_url: "./img/Themes/bestSeller/UK/Metal-Print.jpg", 
+        pageGroupImageUrl: "./img/Themes/bestSeller/UK/Metal-Print.jpg", 
         customerStar:"./img/Themes/bestSeller/stars/no_star.png",
         pageGroupHeader: "Metal Prints", 
         marketingContent: "Upload a photo or select an image from our huge online library to print on this sturdy aluminium sheet" ,
@@ -92,7 +92,7 @@ var Mobildata = {
         },
       { 
         url: "/photo-magic-mug/",
-        img_url: "./img/Themes/bestSeller/UK/Magic-Mug.jpg", 
+        pageGroupImageUrl: "./img/Themes/bestSeller/UK/Magic-Mug.jpg", 
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
         pageGroupHeader: "Magic Mug",  
@@ -101,7 +101,7 @@ var Mobildata = {
         },
       { 
         url: "/Jigsaws-Wooden/", 
-        img_url: "./img/Themes/bestSeller/UK/Wood-Jigsaw.jpg",
+        pageGroupImageUrl: "./img/Themes/bestSeller/UK/Wood-Jigsaw.jpg",
         customerStar: "./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
         pageGroupHeader: "Wooden Jigsaw",         
@@ -110,7 +110,7 @@ var Mobildata = {
       },
       { 
         url: "/photo-cushion-gifts/", 
-        img_url: "./img/Themes/bestSeller/UK/Cushion-Cover.jpg",
+        pageGroupImageUrl: "./img/Themes/bestSeller/UK/Cushion-Cover.jpg",
         customerStar:"./img/Themes/bestSeller/stars/star_4_5.png",
         isNew:"",
         pageGroupHeader: "Cushion Cover", 
@@ -119,7 +119,7 @@ var Mobildata = {
       },
       {   
         url: "/Crystal-Photo-Frame", 
-        img_url: "./img/Themes/bestSeller/UK/Crystal-Frame.jpg",
+        pageGroupImageUrl: "./img/Themes/bestSeller/UK/Crystal-Frame.jpg",
         customerStar:"./img/Themes/bestSeller/stars/no_star.png",
         isNew:"",
         pageGroupHeader: "Crystal Frame", 

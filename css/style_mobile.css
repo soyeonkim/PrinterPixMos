@@ -279,16 +279,20 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
   */
 
 /******************************
-  cart/basket page
+  cart/basket page -checkout
 *******************************/
 .basketcontainer{margin-top:10px;}
-.cart-outer-box{}
+.cart-outer-box{ }
+.checkout-outer-box{width:100%; height:52px; }
+.back-btn-box{ width:30%;}
+.back-btn { font-size: 5vw; width:100%; height:100%; padding-left: 15px; padding-top:20px;
+  cursor:pointer;
+}
 .cart-title{
   text-align: center;
-  float:left;
   width:70%;
   font-size: 6vw;
-  padding-top:15px;
+  padding-top:18px;
 }
 .flow{ }
 .active-text {color:#1c1c1b !important;}
