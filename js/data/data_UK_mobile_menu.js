@@ -82,27 +82,27 @@ var menu = {
   ],
   nav_occasions:[
         { 
-            title: "Rugby Champion 2015",
+            name: "Rugby Champion 2015",
             url:"http://www.printerpix.co.uk/rwc2015/"
 
           },
          { 
-            title: "Halloween",
+            name: "Halloween",
             url:"http://www.printerpix.co.uk/happy-halloween14/"
 
           },
         { 
-            title: "Back To School",
+            name: "Back To School",
             url:"http://www.printerpix.co.uk/b2s/"
 
           },
         { 
-            title: "Graduation",
+            name: "Graduation",
             url:"http://www.printerpix.co.uk/PixGraduateUK/"
 
           },
        { 
-            title: "Wedding",
+            name: "Wedding",
             url:"http://www.printerpix.co.uk/wedding-shop//"
 
           },

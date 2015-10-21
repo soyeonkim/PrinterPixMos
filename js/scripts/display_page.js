@@ -183,7 +183,7 @@ function accountSettingPage () {
 	});
  }
 
-
+/*
  function displayProductPages(path, ProductName) {
  	hideProductPages();
 
@@ -217,6 +217,7 @@ function accountSettingPage () {
 function hideProductPages(){
 	$('#product-list').children("div").remove();
 }
+
 function displayMoreDetailofProductPages(ProductName){
 	//Example to choose
 	var template;
@@ -229,7 +230,7 @@ function displayMoreDetailofProductPages(ProductName){
 	$('.product-info h1').text(ProductName.productList[1].title);
 	$('.product-info img').attr("src",ProductName.productList[1].customerStar);
 	$('.product-info p').text(ProductName.productList[1].details);
-}
+}*/
 function displayCardPage() {
 	var template;
 	product.push('Cards');

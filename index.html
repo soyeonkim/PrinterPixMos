@@ -93,9 +93,14 @@
     <script src="js/data/data_UK_mobile_menu.js"></script>
     <script src="js/data/data_UK_mobile_product.js"></script>
     <script src="js/data/data_UK_mobile_footer.js"></script>
-    <script src="js/display_page.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/serverRequest.js"></script>
+    <!-------------------------------------------------------------------------->
+    <script type="text/javascript" src="js/scripts/display_page.js"></script>
+    <script type="text/javascript" src="js/scripts/common/common.js"></script>
+    <script type="text/javascript" src="js/scripts/login/login.js"></script>
+    <script type="text/javascript"src="js/scripts/products/products.js"></script>
+    <script type="text/javascript" src="js/scripts/basket/basket.js"></script>
+    <script type="text/javascript" src="js/scripts/main.js"></script>
+    <script type="text/javascript" src="js/serverRequest.js"></script>
   <!-------------------------------------------------------------------------->
   <!--       *******************Template include ********************      -->
   <!-- 
@@ -273,7 +278,7 @@
      <div class="collapse navbar-collapse" id="navbar-ex3-collapse">
         <ul class="nav navbar-nav pd-menu">
          {{#nav_occasions}}
-          <li><a href="#">{{title}}</a></li>
+          <li><a href="#">{{name}}</a></li>
          {{/nav_occasions}}
         </ul>
       </div>
@@ -564,7 +569,7 @@
     
       <div class="row product-box">
       {{#productList}}
-        <div class="col-xs-6 pd-mobile-img">
+        <div class="col-xs-6 pd-mobile-img" id={{pageGroupId}}>
           <!--<a class="each-mobile-slide" href="http://www.printerpix.co.uk{{url}}">  -->
           <!--<img src="{{img_url}}" />-->
             <img src="img/Themes/photoBooks/UK/mobile/example.png" />  <!--- TODO: Get img src from server -->

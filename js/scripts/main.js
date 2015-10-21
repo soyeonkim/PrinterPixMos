@@ -1,4 +1,4 @@
-
+var printerpixMos = printerpixMos ||{};
  
 var product=[];
 var listProduct=[];
@@ -318,10 +318,13 @@ function displayNavProductPage(ProductList) {
 			request.done(function(data) {
 				//console.log("done:", data);
 				if(data  && data.pageGroups) {
+					//console.log("response:", data.pageGroups);
 					var response = JSON.parse(data.pageGroups);
-					console.log("response:", response);
+					//console.log("response:", response);
 					hideSectionPage();
-					displayProductPages(product, response);
+					//printerpixMos.products.init();
+					printerpixMos.products.displayProductPages(product, response);
+					//displayProductPages(product, response);
 					if($('#navbar-ex2-collapse').attr('aria-expanded') ==="true") {
  						hideDropdwonList('#navbar-ex2-collapse');
  						$('#shop-pd').addClass('bottom-borderline');
@@ -424,19 +427,24 @@ $(document).ready(function () {
 		request_opion.token =response.Token;
 		console.log("token :",request_opion.token);
 		request_server(request_path.pageGroupTypes,request_opion)
-		.done(function(data){response = JSON.parse(data.pageGroupTypes);
-		console.log("response:",response);
-		listProduct={"nav": navListProduct(response)}
-		displayNavProductPage(listProduct);
-		displaySectionPage(listProduct);
 
+		.done(function(data){
+			console.log(":",data.pageGroupTypes);
+			response = JSON.parse(data.pageGroupTypes);
+			console.log("response:",response);
+			listProduct={"nav": navListProduct(response)};
+			//TODO: later change from 
+			listProduct["nav_occasions"]= menu.nav_occasions;
+			displayNavProductPage(listProduct);
+			displaySectionPage(listProduct);
+
+			});
 		});
-	});
-	request.fail(function (jqXHR, textStatus) {
-		console.log(" fail jqXHR :",jqXHR);
-		console.log(" textStatus :",textStatus);
-		show404ErrorPage();
-	});
+		request.fail(function (jqXHR, textStatus) {
+			console.log(" fail jqXHR :",jqXHR);
+			console.log(" textStatus :",textStatus);
+			show404ErrorPage();
+		});
 	
 	
 	//displayMoreDetailofProductPages(PhotoBook);
