@@ -320,7 +320,7 @@ function displayNavProductPage(ProductList) {
 				if(data  && data.pageGroups) {
 					//console.log("response:", data.pageGroups);
 					var response = JSON.parse(data.pageGroups);
-					//console.log("response:", response);
+					console.log("response:", response);
 					hideSectionPage();
 					//printerpixMos.products.init();
 					printerpixMos.products.displayProductPages(product, response);
