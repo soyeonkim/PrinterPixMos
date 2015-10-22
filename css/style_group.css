@@ -96,8 +96,42 @@ footer { background: #ececec; }
     border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
-  }
+}
+.horizontalBox
+{
+  display: -moz-box;        /* Firefox */
+  display: -webkit-box;     /* Safari and Chrome */
+  display: -ms-flexbox;     /* Internet Explorer 10 */
+  display: box;         /* W3C */
 
+  -moz-box-orient: horizontal;  /* Firefox */
+  -webkit-box-orient: horizontal; /* Safari, Opera, and Chrome */
+  box-orient: horizontal;     /* W3C */
+}
+
+.verticalBox
+{
+  display: -moz-box;        /* Firefox */
+  display: -webkit-box;     /* Safari and Chrome */
+  display: -ms-flexbox;     /* Internet Explorer 10 */
+  display: box;         /* W3C */
+
+  -moz-box-orient: vertical;    /* Firefox */
+  -webkit-box-orient: vertical; /* Safari, Opera, and Chrome */
+  box-orient: vertical;     /* W3C */
+
+  /* Left-aligned for now, because that's what we need. */
+  -ms-flex-pack: center;
+  -ms-flex-align: start;
+  -moz-box-pack: center;
+  -moz-box-align: start;
+  -webkit-box-pack: center;
+  -webkit-box-align: start;
+  box-pack: center;
+  box-align: start;
+}
+.bottom-borderline { border-bottom: 1px solid #ababab;  border-radius: 0px; }
+.top-borderline { border-top: 1px solid #ababab;  border-radius: 0px; }
 /**************************************************************************
     header
 ***************************************************************************/
@@ -131,14 +165,20 @@ footer { background: #ececec; }
  .cart-outer-box,
  .cartcontainer,
  .top-title,
- .list-container
+ .list-container,
+ .back-btn,
+ .checkout-outer-box,
+ .basketOutercontainer,
+ .list-item-box
 {width: 100%;}
 
 .nav-memu-bar ul,
 .nav-memu-bar li,
 .pd-text-box h3,
 .pd-text-box,
-.account,.Cart-title
+.account,.Cart-title,
+.back-btn,
+.back-btn-box
 {height:100%;}
 
 
@@ -186,12 +226,13 @@ footer { background: #ececec; }
 .radioleft,.textBlock,
 .on-mobile,.Cart-title,
 .promo-form-box,.apply-btn,
-.checkout-outer-box,
-.back-btn
+.checkout-outer-box
 {float: left;}
 
 .menu-box,.fixed-menu,.sub-menu ,
-.sub-menu-account,.right
+.sub-menu-account,.right,
+.del-btn
+
 { float: right;}
 
 
@@ -220,9 +261,10 @@ footer { background: #ececec; }
 { color:#1c1c1b;}
 
 .readmore,.regbtn,
-.back-btn
+.back-btn-arrow h4
 { color:#36a9e0;}
-.loginbtn,.your-price
+.loginbtn,.your-price,
+#total-price
 { color:#ce217e;}
 .flow >.col-xs-4
 { color: #8d8d8d;}
@@ -253,10 +295,10 @@ footer { background: #ececec; }
 .footer-category-mobile-box,
 .score,.review-list li,.cards-col,
 .user-form-box:focus,.pw-form-box:focus,
+.cartcontainer
 {border-color:#ababab;}
 
 .about-mobile-Abox,.cards-col
 .score,.review-list li,.flow,
-.cartcontainer,
-.sq-btn
+.sq-btn,.del-btn
 {border: 1px solid  #ababab;}
