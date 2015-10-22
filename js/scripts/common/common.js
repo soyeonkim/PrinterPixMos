@@ -51,6 +51,30 @@ printerpixMos.config = {
 
 		});
 	},
+	request_server: function  ( path, option) {
+		var headers=[];
+		var response;
+		headers = {"appId":this.appId};
+		headers["token"] = option.token;
+		headers["useremail"]=option.useremail;
+		headers["userpassword"]=option.userpassword;
+
+		console.log(headers);
+		
+
+		return $.ajax({
+			type:'GET',
+				url: 'http://api.printerpix.co.uk/api'+path,
+				//url:'http://api.printerpix.co.uk/api/account/applogin',
+				//url:'http://api.printerpix.co.uk/api/PlatinumProduct/PageGroupTypes',
+				dataType:'json',
+				//contentType: 'application/json',
+				headers:headers,
+				data:response
+
+		});
+	},
+
 
 };
 printerpixMos.common =  {

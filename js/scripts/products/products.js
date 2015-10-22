@@ -24,13 +24,13 @@ printerpixMos.products = {
 		for( var k = 0; k < ProductName.length ; k++){
 			//console.log("register:",ProductName[k].pageGroupId);
 			$('#'+ProductName[k].pageGroupId).click (function(e) {
-				var new_url = request_path.product+this.id;
+				var new_url = printerpixMos.config.request_path.product+this.id;
 				console.log(new_url);
 				path.push(this.childNodes[9].firstChild.nodeValue);
 				if (e.stopPropagation) e.stopPropagation();
 				console.log("----");
 				that.displaySubmenuProducts(path,this.id);
-				var request = request_server(new_url,printerpixMos.config.request_opion);
+				var request = printerpixMos.config.request_server(new_url,printerpixMos.config.request_opion);
 
 				request.done(function(data) {
 					//console.log("done:", data);
@@ -101,7 +101,7 @@ printerpixMos.products = {
 				$('#invaild-reg-fname').addClass('hidden');
 
 				b_firstname = true;
-				request_opion.firstname = input_val;
+				printerpixMos.config.request_opion.firstname = input_val;
 			}
 			input_val =  $("#lastname").val();
 			if(!(input_val) || (input_val ==default_l_name)){
@@ -111,7 +111,7 @@ printerpixMos.products = {
 			else {
 				$('#invaild-reg-lname').addClass('hidden');
 				b_lastname=true;
-				request_opion.lastname = input_val;
+				printerpixMos.config.request_opion.lastname = input_val;
 			}
 			input_val =  $("#reg_email").val();
 
@@ -128,10 +128,10 @@ printerpixMos.products = {
 			else {
 				$('#invaild-reg-pw').addClass('hidden');
 				if(b_firstname && b_lastname){
-					request_opion.useremail = input_val;
-					request_opion.userpassword = reg_password;
+					printerpixMos.config.request_opion.useremail = input_val;
+					printerpixMos.config.request_opion.userpassword = reg_password;
 					$('#splashSpinnerReg').removeClass('hidden');
-					request_S_server(request_path.register,request_opion).done(function(data){
+					request_S_server(printerpixMos.config.request_path.register,printerpixMos.config.request_opion).done(function(data){
 						console.log(data);
 						if(data.Exception) {
 
@@ -141,7 +141,7 @@ printerpixMos.products = {
 						}
 						$('#splashSpinnerReg').addClass('hidden');
 					});
-					request_S_server(request_path.register,request_opion).fail(function(data){
+					request_S_server(printerpixMos.config.request_path.register,printerpixMos.config.request_opion).fail(function(data){
 						console.log(data);
 						$('#splashSpinnerReg').addClass('hidden');
 

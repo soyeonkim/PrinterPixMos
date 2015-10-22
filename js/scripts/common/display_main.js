@@ -9,7 +9,7 @@ printerpixMos.main = {
 
 	init: function(){
 		var that = this;
-		request = request_server(request_path.init,printerpixMos.config.request_opion);
+		request = printerpixMos.config.request_server(printerpixMos.config.request_path.init,printerpixMos.config.request_opion);
 		request.done(function(data){
 			response = JSON.parse(data.customer);
 			printerpixMos.config.request_opion.token = response.Token;
@@ -20,7 +20,7 @@ printerpixMos.main = {
 	},
 	requestInfo : function() {
 		var that = this;
-		request = request_server(request_path.pageGroupTypes,printerpixMos.config.request_opion);
+		request = printerpixMos.config.request_server(printerpixMos.config.request_path.pageGroupTypes,printerpixMos.config.request_opion);
 
 		request.done(function(data){
 			console.log(":",data.pageGroupTypes);
@@ -119,9 +119,9 @@ printerpixMos.main = {
 				product.push(this.childNodes[0].nodeValue);
 				//this.childNodes : NAME of PRODUCT.
 				//console.log("click:", org_id);
-				var new_url = request_path.subPageGroupe+org_id;
+				var new_url = printerpixMos.config.request_path.subPageGroupe+org_id;
 				console.log("url: ",new_url);
-				var request = request_server(new_url,printerpixMos.config.request_opion);
+				var request = printerpixMos.config.request_server(new_url,printerpixMos.config.request_opion);
 				request.done(function(data) {
 					//console.log("done:", data);
 					if(data  && data.pageGroups) {

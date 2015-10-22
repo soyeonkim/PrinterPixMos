@@ -2,6 +2,9 @@ var printerpixMos = printerpixMos ||{};
 
 printerpixMos.login = {
 
+	request:null,
+	response:null,
+
 	init: function() {
 		console.log("init");
 	},
@@ -14,7 +17,7 @@ printerpixMos.login = {
 
 	 	function diplayUserinfo(){
 	 		$('#login-nav').addClass('hidden');
-	 		$('#user-account h5').text(request_opion.firstname);
+	 		$('#user-account h5').text(printerpixMos.config.request_opion.firstname);
 	 		$('#logged-btn').removeClass('hidden');
 	 		$('#logged-btn').click(function(event){
 	 			event.stopPropagation();
@@ -47,24 +50,24 @@ printerpixMos.login = {
 	 		//Test id, password : //TODO: delete later
 	 		userId='yeanshi.teoh2222new@syncoms.com';
 	 		password='123';
-	 		if(!(emailRegexp.test(userId))){
+	 		if(!(printerpixMos.config.emailRegexp.test(userId))){
 	 			that.showErrorMessage();
 	 		} 
 	 		else {
-	 			request_opion.useremail =userId;
-	 			request_opion.userpassword = password;
+	 			printerpixMos.config.request_opion.useremail =userId;
+	 			printerpixMos.config.request_opion.userpassword = password;
 
 	 			$('#splashSpinnerLogin').removeClass('hidden');
-
-	 			var request = request_S_server(request_path.login,request_opion)
+	 			console.log(printerpixMos.config.request_opion);
+	 			request = printerpixMos.config.request_S_server(printerpixMos.config.request_path.login,printerpixMos.config.request_opion);
 	 			request.done(function(data){
 	 				if(data && data.customer){
 		 				var response = JSON.parse(data.customer);
 		 				console.log(response);
-		 				request_opion.firstname = response.FirstName;
-		 				request_opion.lastname = response.LastName;
+		 				printerpixMos.config.request_opion.firstname = response.FirstName;
+		 				printerpixMos.config.request_opion.lastname = response.LastName;
 		 				$('#splashSpinnerLogin').addClass('hidden');
-		 				hiddenLogin();
+		 				that.hiddenLogin();
 		 				diplayUserinfo();
 	 				}
 	 				else if(data && data.Exception){
@@ -103,20 +106,21 @@ printerpixMos.login = {
 			var userId =  $("#f-username").val();
 			userId='yeanshi.teoh2222@syncoms.com';
 			//userId='test@gmail.com';
-			if(!(emailRegexp.test(userId))){
+			if(!(printerpixMos.config.emailRegexp.test(userId))){
 				console.log(userId);
 				that.showErrorMessage();
 			}
 	 		else {
 	 			console.log("start");
-	 			request_path.forgetpassword+=userId;
+	 			printerpixMos.config.request_path.forgetpassword+=userId;
 	 			$('#splashSpinnerFoget').removeClass('hidden');
-				request_S_server(request_path.forgetpassword,request_opion).done(function(data){
+				request = printerpixMos.config.request_S_server(printerpixMos.config.request_path.forgetpassword, printerpixMos.config.request_opion);
+				request.done(function(data){
 					//var response = JSON.parse(data.customer);
 	 				console.log(data.responseText);
 	 				$('#splashSpinnerFoget').addClass('hidden');
 				});
-				request_S_server(request_path.forgetpassword,request_opion).fail(function(data){
+				request.fail(function(data){
 	 				//var response = JSON.parse(data.customer);
 	 				console.log(data.responseText);
 	 				if(data.status == 200){
@@ -210,7 +214,7 @@ printerpixMos.login = {
 				$('#invaild-reg-fname').addClass('hidden');
 
 				b_firstname = true;
-				request_opion.firstname = input_val;
+				printerpixMos.config.request_opion.firstname = input_val;
 			}
 			input_val =  $("#lastname").val();
 			if(!(input_val) || (input_val ==default_l_name)){
@@ -220,7 +224,7 @@ printerpixMos.login = {
 			else {
 				$('#invaild-reg-lname').addClass('hidden');
 				b_lastname=true;
-				request_opion.lastname = input_val;
+				printerpixMos.config.request_opion.lastname = input_val;
 			}
 			input_val =  $("#reg_email").val();
 
@@ -237,10 +241,14 @@ printerpixMos.login = {
 			else {
 				$('#invaild-reg-pw').addClass('hidden');
 				if(b_firstname && b_lastname){
-					request_opion.useremail = input_val;
-					request_opion.userpassword = reg_password;
+					printerpixMos.config.request_opion.useremail = input_val;
+					printerpixMos.config.request_opion.userpassword = reg_password;
 					$('#splashSpinnerReg').removeClass('hidden');
-					request_S_server(request_path.register,request_opion).done(function(data){
+					
+
+					request = printerpixMos.config.request_S_server(printerpixMos.config.request_path.register,printerpixMos.config.request_opion);
+
+					request.done(function(data){
 						console.log(data);
 						if(data.Exception) {
 
@@ -250,7 +258,7 @@ printerpixMos.login = {
 						}
 						$('#splashSpinnerReg').addClass('hidden');
 					});
-					request_S_server(request_path.register,request_opion).fail(function(data){
+					request.fail(function(data){
 						console.log(data);
 						$('#splashSpinnerReg').addClass('hidden');
 
