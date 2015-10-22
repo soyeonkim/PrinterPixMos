@@ -4,19 +4,15 @@ printerpixMos.products = {
 	ProductSubmenu:[],
 
 	init: function() {
-		console.log("init");
+		console.log("product init");
 	},
 	displayProductPages : function(path,  ProductName) {
 		var that = this;
 		that.ProductSubmenu={"productList": ProductName }
 		that.hideProductPages();
 
-		
-		//console.log(product);
-		//var template;
 		printerpixMos.common.precompleTemplate('#product-list','#productMobileTemplate',that.ProductSubmenu);
-		//template = Handlebars.compile($('#productMobileTemplate').html()); 
-		//$('#product-list').append(template(product));
+
 		if(path.length>0) {
 			document.getElementById("first_path").innerHTML=" Products  > ";
 			document.getElementById("second_path").innerHTML= path[0];
@@ -34,7 +30,7 @@ printerpixMos.products = {
 				if (e.stopPropagation) e.stopPropagation();
 				console.log("----");
 				that.displaySubmenuProducts(path,this.id);
-				var request = request_server(new_url,request_opion);
+				var request = request_server(new_url,printerpixMos.config.request_opion);
 
 				request.done(function(data) {
 					//console.log("done:", data);
@@ -50,6 +46,116 @@ printerpixMos.products = {
 			});
 		}
 
+	},
+
+	showRegisterPage: function (){
+	 	var input_val;
+	 	console.log("showRegisterPage");
+	 	$('#login-container').children("div").remove();
+	 	var template = Handlebars.compile($('#registerMobileTemplate').html()); 
+		$('#login-container').append(template(Mobildata));
+		window.onhashchange = function() {
+			$('#login-container').children("div").remove();
+			template = Handlebars.compile($('#loginMobileTemplate').html()); 
+			$('#login-container').append(template(Mobildata));
+		}
+		function makeEmpty(id,default_value) {
+			$(id).focus(function(){
+				if($(this).val() == default_value) {
+	             	$(this).val("");
+	            }
+	        }).blur(function(){
+	        	if($(this).val().length == 0) {
+	            $(this).val(default_value);
+	        }
+			});
+		}
+
+		var default_f_name = $("#firstname").val();
+		makeEmpty("#firstname",default_f_name);
+
+		var default_l_name = $("#lastname").val();
+		makeEmpty("#lastname", default_l_name);
+
+		input_val =  $("#reg_email").val();
+		makeEmpty("#reg_email",input_val);
+
+		var reg_password  =  $("#reg_password").val();
+		var reg_password2 = $("#reg_password2").val();
+
+		makeEmpty("#reg_password",reg_password);
+		makeEmpty("#reg_password2",reg_password2);
+
+
+
+		$('#register').click(function() {
+			input_val =  $("#firstname").val();
+			
+			var b_firstname = false;
+			var b_lastname = false;
+
+			if(!(input_val) || (input_val == default_f_name)){
+				$('#invaild-reg-fname').removeClass('hidden');
+			}
+			else {
+				$('#invaild-reg-fname').addClass('hidden');
+
+				b_firstname = true;
+				request_opion.firstname = input_val;
+			}
+			input_val =  $("#lastname").val();
+			if(!(input_val) || (input_val ==default_l_name)){
+				$('#invaild-reg-lname').removeClass('hidden');
+				
+			}
+			else {
+				$('#invaild-reg-lname').addClass('hidden');
+				b_lastname=true;
+				request_opion.lastname = input_val;
+			}
+			input_val =  $("#reg_email").val();
+
+			reg_password  =  $("#reg_password").val();
+			reg_password2 = $("#reg_password2").val();
+			if(!(emailRegexp.test(input_val))){
+				$('#invaild-reg-email').removeClass('hidden');
+
+			}
+			else if(reg_password != reg_password2){
+				$('#invaild-reg-email').addClass('hidden');
+				$('#invaild-reg-pw').removeClass('hidden');
+			}
+			else {
+				$('#invaild-reg-pw').addClass('hidden');
+				if(b_firstname && b_lastname){
+					request_opion.useremail = input_val;
+					request_opion.userpassword = reg_password;
+					$('#splashSpinnerReg').removeClass('hidden');
+					request_S_server(request_path.register,request_opion).done(function(data){
+						console.log(data);
+						if(data.Exception) {
+
+						}
+						else {
+							hideRegisterPage();
+						}
+						$('#splashSpinnerReg').addClass('hidden');
+					});
+					request_S_server(request_path.register,request_opion).fail(function(data){
+						console.log(data);
+						$('#splashSpinnerReg').addClass('hidden');
+
+					});
+
+				}
+
+			}
+
+		});
+	 },
+	hideRegisterPage:function () {
+		$('#login-container').children("div").remove();
+		showLoginPage();
 	},
 	hideProductPages : function(){
 		$('#product-list').children("div").remove();

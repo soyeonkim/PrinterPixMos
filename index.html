@@ -94,13 +94,13 @@
     <script src="js/data/data_UK_mobile_product.js"></script>
     <script src="js/data/data_UK_mobile_footer.js"></script>
     <!-------------------------------------------------------------------------->
-    <script type="text/javascript" src="js/scripts/display_page.js"></script>
+    <!--<script type="text/javascript" src="js/scripts/display_page.js"></script> -->
     <script type="text/javascript" src="js/scripts/common/common.js"></script>
+    <script type="text/javascript" src="js/scripts/common/display_main.js"></script>
     <script type="text/javascript" src="js/scripts/login/login.js"></script>
-    <script type="text/javascript"src="js/scripts/products/products.js"></script>
+    <script type="text/javascript" src="js/scripts/products/products.js"></script>
     <script type="text/javascript" src="js/scripts/basket/basket.js"></script>
     <script type="text/javascript" src="js/scripts/main.js"></script>
-    <script type="text/javascript" src="js/serverRequest.js"></script>
   <!-------------------------------------------------------------------------->
   <!--       *******************Template include ********************      -->
   <!-- 
@@ -723,8 +723,10 @@
 
   <script id="titleHeaderMobileTemplate" type="text/x-handlebars-template">
     <div class="navcontainer header-nav-box">
-      <div class="checkout-outer-box">
-        <div class="back-btn-box"> <div class="back-btn" id="backto">< Back</div></div>
+      <div class="checkout-outer-box horizontalBox">
+        <div class="back-btn-box" id="backto"> 
+          <div class="back-btn-arrow"><h4>Back</h4></div>
+        </div>
         <div class="cart-title"><strong>Cart</strong></div>
       </div>
     </div>
@@ -744,14 +746,16 @@
 
   <script id="baskettopMobileTemplate" type="text/x-handlebars-template">
     <div class="cartcontainer">
-      <div class="gift-check-box">
-      
+      <div class="check-box-container">
+        <div class="total-price-box">
+          <span></span> Basket Subtotal ( <span id="item-count">3 items</span> ):<span id="total-price"> £total price</span>
+        </div>
+        <div class="gift-check-box center">
+        <form>
+          <input type="checkbox" name="gift-option" value="gift" class="check-option">   This order contians a gift
+        </form>
+        </div>
       </div>
-    <!--  <div class="product-path">
-        <a href=""><span id="backto"> < &nbsp;  Countinue Shopping </span></a>
-        <span style="color:#ff2a98" id="lastPath"></span>
-      </div>
-    -->
 
       <div class="btn-box-half right">
         <button class="personalised button-printerpix white">Proceed to Checkout >
@@ -762,87 +766,39 @@
   </script>
 
   <script id="basketListMobileTemplate" type="text/x-handlebars-template">
-  <div class="basketcontainer">
-    <div class="list-container">
+  <div class="basketOutercontainer">
+   <!-- <div class="basketContainer center">-->
+    <div class="list-container top-borderline">
+      <div class="item-list-container">
 
+        <div class="list-item-box horizontalBox">
+          <div class="item-list-img your-list">
+            <span><img src="img/Themes/photoBooks/UK/mobile/example.png"><span>
+          </div>
+          <div class="item-list-text">
+            <div class="item-title">
+              <h3> <span id="item-name">Leather Photo Book</span></h3>
+            </div>
+            <div class="item-size"><h4>Size A4</h4></div>
+            <div class="item-price"><h4>item Price</h4></div>
+            <div class="item-count-box">
+              <div class="sq-btn del-count"><img src="img/basket/minus.png"> </div>
+              <div class="sq-btn select-count">2</div>
+              <div class="sq-btn add-count"><img src="img/basket/plus.png"> </div>
+              <div class="del-btn"><img src="img/basket/delete_pink.png"> </div>
+              <div class="only-clear"></div>
+            </div>
+          </div>
+        </div>
 
-      <div class="top-title">
-        <span><h4> Leather Photo Book</h4></span>
-        <span class="sq-btn"> X </span>
-      </div>
-      <div class="size-display">Size A4</div>
-      <div class="your-list">
-        <span><img src="img/Themes/photoBooks/UK/mobile/example.png"><span>
-        <ul class="right-basketbox">
-          <li> <span class="sq-btn"> - </span>
-              <span class="sq-btn select-count"> 3 </span>
-              <span class="sq-btn"> + </span>
-               <span class="your-price"> £20.99</span>
-          </li>
-          <li class="makeitgift"> Make it a Gift </li>
-          <li class="addSeperateAddr"> Add seperate delivery address </li>
-        </ul>
       </div>
       <div class="only-clear"></div>   
     </div>
-    <div class="bottom-borderline"></div>   
-    <div class="list-container">
-      <div class="top-title">
-        <span><h4> Leather Photo Book</h4></span>
-        <span class="sq-btn"> X </span>
-      </div>
-      <div class="size-display">Size A4</div>
-      <div class="your-list">
-        <span><img src="img/Themes/photoBooks/UK/mobile/example.png"><span>
-        <ul class="right-basketbox">
-          <li> <span class="sq-btn"> - </span>
-              <span class="sq-btn select-count"> 3 </span>
-              <span class="sq-btn"> + </span>
-               <span class="your-price"> £20.99</span>
-          </li>
-          <li class="makeitgift"> Make it a Gift </li>
-          <li class="addSeperateAddr"> Add seperate delivery address </li>
-        </ul>
-      </div>
-      <div class="only-clear"></div>   
-    </div>
-    <div class="bottom-borderline"></div>   
-    <div class="list-container">
-      <div class="top-title">
-        <span><h4> Leather Photo Book</h4></span>
-        <span class="sq-btn"> X </span>
-      </div>
-      <div class="size-display">Size A4</div>
-      <div class="your-list">
-        <span><img src="img/Themes/photoBooks/UK/mobile/example.png"><span>
-        <ul class="right-basketbox">
-          <li> <span class="sq-btn"> - </span>
-              <span class="sq-btn select-count"> 3 </span>
-              <span class="sq-btn"> + </span>
-               <span class="your-price"> £20.99</span>
-          </li>
-          <li class="makeitgift"> Make it a Gift </li>
-          <li class="addSeperateAddr"> Add seperate delivery address </li>
-        </ul>
-      </div>
-      <div class="only-clear"></div>   
-
-    </div>
-    <div class="bottom-borderline"></div>   
-
-    <div class="promotion-code-box">
-      <form>
-       <input type="text" name="promotioncode" value=" Enter promotional code" class="promo-form-box">
-      </form>
-       <button type="button" class="apply-btn"><center>Apply</center></button>
-    </div>
-    <div class="totoal-price right"><strong>Total : £ 100.90</strong></div>
+  
     <div class="only-clear"></div> 
     <div class="checkout-btn white"><center>Proceed to Checkout > </center></div>
-
-    <div class="pay-available right">pay pal mastercard VISA AmericanExpress  DISCOVER</div>
-    <div class="pay-sign right"></div>
-     <div class="only-clear"></div>   
+     <div class="only-clear"></div> 
+   <!--  </div>  -->
   </div>
 
   </script>
