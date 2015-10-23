@@ -40,7 +40,6 @@ printerpixMos.config = {
 		headers["newsletter"]="true";
 
 
-
 		return $.ajax({
 			type:'GET',
 				url: 'https://api.printerpix.co.uk/api'+path,
@@ -59,9 +58,8 @@ printerpixMos.config = {
 		headers["useremail"]=option.useremail;
 		headers["userpassword"]=option.userpassword;
 
-		console.log(headers);
+		//console.log(headers);
 		
-
 		return $.ajax({
 			type:'GET',
 				url: 'http://api.printerpix.co.uk/api'+path,

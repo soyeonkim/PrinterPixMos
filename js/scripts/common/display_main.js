@@ -125,7 +125,7 @@ printerpixMos.main = {
 				request.done(function(data) {
 					//console.log("done:", data);
 					if(data  && data.pageGroups) {
-						//console.log("response:", data.pageGroups);
+					//	console.log("response:", data.pageGroups);
 						var response = JSON.parse(data.pageGroups);
 						console.log("response:", response);
 						that.hideSectionPage();

@@ -223,6 +223,18 @@ margin: 0px 3px;
 .sub-img-container img{margin:2px 0px; width:24%;}
 .personalised{font-size: 18px; line-height: 2.2em; border: none; margin: 10px auto;}
 .product_details {width:90vw; margin: 5px auto; white-space: normal;}
+.sub_layout li {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+  }
+.sub_layout li:hover {
+  background:grey;
+}
 .product_price{
   font-size: 2.4rem;
   text-align: left;
