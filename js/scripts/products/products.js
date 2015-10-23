@@ -2,6 +2,7 @@ var printerpixMos = printerpixMos ||{};
 
 printerpixMos.products = {
 	ProductSubmenu:[],
+	Productdetailmenu:{},
 
 	init: function() {
 		console.log("product init");
@@ -29,7 +30,7 @@ printerpixMos.products = {
 				path.push(this.childNodes[9].firstChild.nodeValue);
 				if (e.stopPropagation) e.stopPropagation();
 				console.log("----");
-				that.displaySubmenuProducts(path,this.id);
+				that.displaySubmenuProducts(path,this.id,that.ProductSubmenu);
 				var request = printerpixMos.config.request_server(new_url,printerpixMos.config.request_opion);
 
 				request.done(function(data) {
@@ -37,7 +38,9 @@ printerpixMos.products = {
 					if(data && data.products){
 						var response = JSON.parse(data.products);
 						console.log("---------------------");
+						console.log(data.products);
 						console.log(response);
+						that.displaySubmenuInformation(response);
 					}
 				});
 				request.fail(function() {
@@ -155,40 +158,122 @@ printerpixMos.products = {
 	 },
 	hideRegisterPage:function () {
 		$('#login-container').children("div").remove();
-		showLoginPage();
+		this.showLoginPage();
 	},
 	hideProductPages : function(){
 		$('#product-list').children("div").remove();
 	},
-	displaySubmenuProducts: function(path,pageGroupId) {
+	displaySubmenuProducts: function(path,id, subMenuObject) {
 		var that = this;
-		var subProduct = that.ProductSubmenu.productList;
-		//find product data from id
-		for(var k =0; k<subProduct.length; k++){
-			if(subProduct[0].pageGroupId == pageGroupId){
-				that.hideProductPages();
-				that.displayMoreDetailofProductPages (path,subProduct[k]);
+		var subProduct = that.getObjectbyPageGroupId(id, subMenuObject.productList);
 
-				break;
-			}
+		//that.Productdetailmenu={"SelectProduct": subProduct };
+		if(subProduct){
+			that.hideProductPages();
+			that.displayMoreProductPagesImage (path,subProduct);
 		}
 
 	},
-	displayMoreDetailofProductPages: function (path,moreProductName){
-	//Example to choose
-	//var template;
-	//template = Handlebars.compile($('#moreInfoMobileTemplate').html()); 
-	//$('#product-list').append(template(ProductName));
+	displaySubmenuInformation: function(subMenuObject){
+		var that = this;
+		var layout=[];
+		//that.Productdetailmenu = subMenuObject;
+		layout = that.setObjectbyLayout(subMenuObject,that.Productdetailmenu);
+		if(layout.length>0){
+			for(var i = 0; i < layout.length ; i++ ){
+				 $('#layout').append('<li>'+layout[i]+'</li>');
+			}
+			//$("#option1").text(layout[0]);
+		}
+		else {
+
+		}
+
+		$("#layout li").click(function(){
+
+	      //$(".btn:first-child").text($(this).text());
+	      //$(".btn:first-child").val($(this).text());
+	      console.log($(this).text());
+
+	   	});
+
+
+		//$("#yourdropdownid option:selected").text();
+		console.log(layout);
+
+	},
+	displayMoreProductPagesImage: function (path,moreProductName){
+		var that = this;
+
+		that.product_info = moreProductName;
 		printerpixMos.common.precompleTemplate('#product-list','#moreInfoMobileTemplate',moreProductName);
 		console.log("moreProductName:",moreProductName);
-		//TODO : test
-		//product.push(ProductName);
-		//$('#lastPath').text(product[product.length-1]);
-		$('#lastPath').text("Leather Cover Book");
-		//$('.product-info h1').text(moreProductName.productList[1].title);
-		//$('.product-info img').attr("src",moreProductName.productList[1].customerStar);
-		//$('.product-info p').text(moreProductName.productList[1].details);
+
+		document.getElementById('sub_path').innerHTML= path[0] +" >";
+		if(path.length >1)document.getElementById('sub_last_path').innerHTML= path[1];
+		else {
+			document.getElementById('sub_path').style.color='#ce217e';
+		}
+		$('#main_thumbnav_img').attr('src',moreProductName.pageGroupBannersFullSizeUrls[0]);
+		//$('.product-img-main img').attr('src',mmoreProductName.pageGroupBannersFullSizeUrls[0]);
+
+		$("#thumbnav01").attr('src',moreProductName.pageGroupBannersThumbnailUrls[1]);
+		$("#thumbnav02").attr('src',moreProductName.pageGroupBannersThumbnailUrls[2]);
+		$("#thumbnav03").attr('src',moreProductName.pageGroupBannersThumbnailUrls[3]);
+		$("#thumbnav04").attr('src',moreProductName.pageGroupBannersThumbnailUrls[4]);
+
+
+
+		function swichImage(org_src,dest){
+			var img_big_loca 	= org_src.indexOf('big');
+			//var img_count = org_src.slice(img_loca+3,main_img.indexOf('/', img_loca));
+			var img_small_loca 	= dest.src.indexOf('small');
+			var img_big_org		= org_src.slice(img_big_loca,org_src.indexOf('/',img_big_loca));
+			var img_small_org	= dest.src.slice(img_small_loca, dest.src.indexOf('/',img_small_loca));
+
+			var img_big_new	= 'big'+dest.src.slice(img_small_loca+5, dest.src.indexOf('/',img_small_loca));
+			var img_small_new  = 'small'+org_src.slice(img_big_loca+3,org_src.indexOf('/',img_big_loca));
+			
+			$('#main_thumbnav_img').attr('src', org_src.replace(img_big_org,img_big_new));
+			dest.src=dest.src.replace(img_small_org,img_small_new);
+	
+			console.log("swichImage");
+		}
+
+		for(var k = 1; k <5 ; k ++){
+			$('#thumbnav0'+k).click(function(e){
+				swichImage($('#main_thumbnav_img').attr('src'),this);
+			});
+		}
+
 	},
+	getObjectbyPageGroupId: function(id,objects){
+		var length = objects.length;
+		for(var k = 0 ;k <length; k++ ){
+			if(id == objects[k].pageGroupId){
+				return objects[k];
+			}
+		}
+		return false;
+
+	},
+	setObjectbyLayout: function (objects){
+		var _layout=[];
+		var _length = objects.length;
+		var i,j;
+		console.log(objects[0].layout);
+		for(j=0; j<_length; j++){
+			if(_layout.indexOf(objects[j].layout) < 0) _layout.push(objects[j].layout);
+		}
+		return _layout;
+
+	},
+	getObjectbyLayout: function(objects) {
+
+	},
+	setObjectbySize:function (objects){
+		var _size=[]
+	}
 
 
 };

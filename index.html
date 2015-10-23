@@ -551,7 +551,7 @@
   <script id="productMobileTemplate" type="text/x-handlebars-template">
  
     <div class="product-path">
-      <span id="first_path">  </span><span id="second_path"style="color:#ff2a98">       </span>
+      <span id="first_path">  </span><span id="second_path"style="color:#ce217e">       </span>
     </div>
  
     
@@ -588,44 +588,46 @@
 
   <script id="moreInfoMobileTemplate" type="text/x-handlebars-template">
 
-    {{#productPath}}
+
     <div class="product-path">
-      <span>  {{path}} >{{secondPath}}> </span>
-      <span style="color:#ff2a98" id="lastPath"></span>
+      Product > <span id="sub_path"> </span>
+      <span style="color:#ce217e" id="sub_last_path"> last </span>
     </div>
-      {{/productPath}}
+ 
     <div class="productContainer center">
       <div class="editer-box">
         <div class="thumbnail-main">
+
           <div class="product-img-main">
-            <img src="http://www.printerpix.co.uk/images/Admin/PageGroupImages/Big01/852b8140-fecd-4400-9a81-caf96ce0cd65.jpg?v=21052015">
+            <img src="img/Themes/empty_big.png" id="main_thumbnav_img">
           </div>
 
           <div class="product-sub-box">
             <ul class ="sub-img-container">
               <li>
                 <a href="#">
-                  <img src="http://www.printerpix.co.uk/images/Admin/PageGroupImages/Small01/852b8140-fecd-4400-9a81-caf96ce0cd65.jpg?v=21052015" id="thumbnav01">
+                  <img src="img/Themes/empty_small.png" id="thumbnav01">
                 </a>
               </li>
 
                             <li>
                 <a href="#">
-                  <img src="http://www.printerpix.co.uk/images/Admin/PageGroupImages/Small01/852b8140-fecd-4400-9a81-caf96ce0cd65.jpg?v=21052015">
+                  <img src="img/Themes/empty_small.png" id="thumbnav02">
                 </a>
               </li>
                             <li>
                 <a href="#">
-                  <img src="http://www.printerpix.co.uk/images/Admin/PageGroupImages/Small01/852b8140-fecd-4400-9a81-caf96ce0cd65.jpg?v=21052015">
+                  <img src="img/Themes/empty_small.png" id="thumbnav03">
                 </a>
               </li>
                             <li>
                 <a href="#">
-                  <img src="http://www.printerpix.co.uk/images/Admin/PageGroupImages/Small01/852b8140-fecd-4400-9a81-caf96ce0cd65.jpg?v=21052015">
+                  <img src="img/Themes/empty_small.png" id="thumbnav04">
                 </a>
               </li>
             </ul>
           </div>
+
         </div>
       </div>
     <div class="product_details">
@@ -639,22 +641,17 @@
           <div class="option1">
             <div class="dropdown select-option">
               <button class="btn btn-default dropdown-toggle option-btn" type="button" data-toggle="dropdown">
-                Select Size
+                <span id="option1">Select layout</span>
                 <span class="caret"></span>
               </button>
-              <ul class="dropdown-menu">
-                <li><a herf="#">A5(21x15cm)-Landscape</a></li>
-                <li><a herf="#">20x20cm</a></li>
-                <li><a herf="#">A4(30x21cm)-Landscape</a></li>
-                <li><a herf="#">30x30cm</a></li>
-
+              <ul class="dropdown-menu sub_layout" id="layout">
               </ul>
             </div>
 
           </div>
           <div class="option2">
             <div class="dropdown select-option">
-              <button class="btn btn-default dropdown-toggle option-btn" type="button" data-toggle="dropdown">
+              <button class="btn btn-default dropdown-toggle option-btn" type="button" id="option2" data-toggle="dropdown">
                 Select Pages
                 <span class="caret"></span>
               </button>
@@ -695,7 +692,7 @@
   <!--------------------------------------------------------------------------- -->
   <script id="CardsMobileTemplate" type="text/x-handlebars-template">
     <div class="product-path">
-      <span>  Products > </span><span style="color:#ff2a98"> Cards </span>
+      <span>  Products > </span><span style="color:#ce217e"> Cards </span>
     </div>
     <div class="productContainer center">
 

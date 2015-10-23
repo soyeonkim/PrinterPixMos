@@ -1,0 +1,17 @@
+
+1. Some-top product menu is missing
+http://api.printerpix.co.uk/api/PlatinumProduct/PageGroupTypes
+
+ Mos has : calendar, canvas, wall decor photo Gift, Photo cover print, greeting card
+
+ Missing : Photo Books, Occasions, Cards,(Santa letters)
+
+
+2. sub main menu
+
+  a. calender has : wall calendar
+  		Missing: Kichen Calendar, (wall planner)
+
+  b. Canvas has : Square Instagram Canvas , Photo Canvas, Waterproof Canvas
+
+
