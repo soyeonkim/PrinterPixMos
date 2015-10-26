@@ -98,6 +98,7 @@ printerpixMos.common =  {
 		$(id).removeClass('in');
 		$(id).attr("aria-expanded",'false');
 	},
+ 
 	initCycle: function  (numberSlide) {
 		 
 		$('#slider-source').cycle({

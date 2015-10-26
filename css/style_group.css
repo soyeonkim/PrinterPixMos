@@ -78,6 +78,8 @@ footer { background: #ececec; }
 .printerpix, .printerpix a{color:#ce217e;}
 .img-centered { margin: 0 auto;}
 .center { margin: 0 auto; }
+.align-left{float:left;}
+.align-right {float:right;}
 .middle-div { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
 .text-center { text-align: center;}
 .clear {clear:both;  line-height: 1px; height: 1px;}
@@ -280,7 +282,7 @@ footer { background: #ececec; }
 
 .score,.cards-col a
 { background:#1c1c1b;}
-.bubble-basket,.personalised,
+.bubble-basket,
 .checkout-btn
 {background:#ce217e;}
 .bubble-basket,.loginbtn
