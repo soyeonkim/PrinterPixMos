@@ -4,6 +4,13 @@ printerpixMos.products = {
 	ProductSubmenu:[],
 	Productdetailmenu:{},
 
+	_layout:[],
+	_size:[],
+	SelectObject:{
+		SeletProductLayout:null,
+		SelectProductSize:null,
+	},
+
 	init: function() {
 		console.log("product init");
 	},
@@ -176,30 +183,93 @@ printerpixMos.products = {
 	},
 	displaySubmenuInformation: function(subMenuObject){
 		var that = this;
-		var layout=[];
+		//var layout=[];
+		//var size =[];
+		var text;
 		//that.Productdetailmenu = subMenuObject;
-		layout = that.setObjectbyLayout(subMenuObject,that.Productdetailmenu);
-		if(layout.length>0){
-			for(var i = 0; i < layout.length ; i++ ){
-				 $('#layout').append('<li>'+layout[i]+'</li>');
+		that._layout = that.setLayoutbyObject(subMenuObject,that.Productdetailmenu);
+
+		if(that._layout.length > 0){
+			for(var i = 0; i < that._layout.length ; i++ ){
+				var temp  = that.getSizebyLayout(that._layout[i],subMenuObject);
+				if(temp) {
+					that._size[i]= temp;
+				}
+				$('#layout').append('<li id="layout'+i+'">'+that._layout[i]+'</li>');
+				$('#layout'+i).click(function(e){
+					if (e.stopPropagation) e.stopPropagation();
+					text=$(this).text();
+					document.getElementById('option1').innerHTML=text;
+					that.displaySizebyLayout(this.id.slice(6));
+
+					if(that.SelectObject.SeletProductLayout != text){
+						document.getElementById('option2').innerHTML='Select Size';
+						console.log("1:"+that.SelectObject.SeletProductLayout+" / "+ text);
+					}
+					else if(that.SelectObject.SelectProductSize != undefined) {
+						document.getElementById('option2').innerHTML= that.SelectObject.SelectProductSize;
+					}
+
+					that.SelectObject.SeletProductLayout=text;
+					console.log("2:"+that.SelectObject.SeletProductLayout+" / "+ text);
+					that.hideProductDetailList();
+				});
+			}
+			// Products have mutiple layout
+			if(that._layout.length > 2){  
+				var i = 0;
+				for(var j = 0 ; j < that._size.length ; j++){
+					for(var k = 0; k < that._size[j].length ; k++){
+						$('#sizeDescrtipon2').append('<li id="size'+i+'">'+that._size[j][k]+'</li>');
+						//console.log('id: ',(i));
+						$('#size'+(i)).click(function(){
+							text = $(this).text();		
+							var count = that.getLayoutbySize(text,that._size);
+					 		document.getElementById('option1').innerHTML=that._layout[count];
+					 		document.getElementById('option2').innerHTML=text;
+					 		$('#sizeDescrtipon2 li').remove();	
+					 		that.displaySizebyLayout(count);
+					 		that.SelectObject.SeletProductLayout=that._layout[count];
+					 		that.SelectObject.SelectProductSize=text;
+					 		console.log(that.SelectObject.SelectProductSize+" / "+that.SelectObject.SeletProductLayout);
+					 		that.hideProductDetailList();
+					 		//option-btn
+						});
+						i++;
+					}
+				}
+				$('.option0').addClass('hide');
+				$('.option1').removeClass('hide');
+				$('.option2').removeClass('hide');
+			}
+			else {
+				// Products have only one layout
+				for(var j = 0 ; j < that._size.length ; j++){
+					for(var k = 0; k < that._size[j].length ; k++){
+						$('#sizeDescrtipon').append('<li id="size'+(j*k+k)+'">'+that._size[j][k]+'</li>');
+						$('#size'+(j*k+k)).click(function(e){
+							if (e.stopPropagation) e.stopPropagation();
+							text = $(this).text();							
+					 		that.SelectProductSize=text;
+					 		console.log(that.SelectProductSize);
+					 		document.getElementById('option0').innerHTML=text;
+
+					 		that.hideProductDetailList();
+						});
+					}
+
+				}
+				$('.option0').removeClass('hide');
+				$('.option1').addClass('hide');
+				$('.option2').addClass('hide');
+
+				
 			}
 			//$("#option1").text(layout[0]);
 		}
 		else {
 
 		}
-
-		$("#layout li").click(function(){
-
-	      //$(".btn:first-child").text($(this).text());
-	      //$(".btn:first-child").val($(this).text());
-	      console.log($(this).text());
-
-	   	});
-
-
-		//$("#yourdropdownid option:selected").text();
-		console.log(layout);
 
 	},
 	displayMoreProductPagesImage: function (path,moreProductName){
@@ -247,6 +317,29 @@ printerpixMos.products = {
 		}
 
 	},
+	hideProductDetailList: function () {
+		$('.select-option').removeClass('open');
+		$('option-btn').attr("aria-expanded",'false');
+		//option-btn
+	},
+	displaySizebyLayout: function(count) {
+		var that = this;
+		var size = that._size[count];
+
+		$('#sizeDescrtipon2 li').remove();
+		for (var j = 0; j<size.length; j++) {
+			$('#sizeDescrtipon2').append('<li id="size'+(j)+'">'+size[j]+'</li>');
+			$('#size'+(j)).click(function(e){
+			if (e.stopPropagation) e.stopPropagation();
+				text = $(this).text();							
+		 		that.SelectObject.SelectProductSize=text;
+		 		document.getElementById('option2').innerHTML=text;
+		 		that.hideProductDetailList();
+
+			});
+		}
+	},
+
 	getObjectbyPageGroupId: function(id,objects){
 		var length = objects.length;
 		for(var k = 0 ;k <length; k++ ){
@@ -257,18 +350,37 @@ printerpixMos.products = {
 		return false;
 
 	},
-	setObjectbyLayout: function (objects){
+	setLayoutbyObject: function (objects){
 		var _layout=[];
 		var _length = objects.length;
 		var i,j;
-		console.log(objects[0].layout);
+		//console.log(objects[0].layout);
 		for(j=0; j<_length; j++){
 			if(_layout.indexOf(objects[j].layout) < 0) _layout.push(objects[j].layout);
 		}
 		return _layout;
 
 	},
-	getObjectbyLayout: function(objects) {
+	getLayoutbySize: function(size, layoutArray ){
+		var _layout;
+	
+		for(var j=0; j< layoutArray.length; j++){
+			if(layoutArray[j].indexOf(size) >= 0) return j;
+		}
+
+		return -1;
+
+	},
+	getSizebyLayout: function(layout,objects) {
+
+		var _length = objects.length;
+		var _size=[];
+		for (var i =0; i <_length; i++ ){
+			if(layout == objects[i].layout ) {
+				_size.push(objects[i].sizeDescription);
+			}
+		}
+		return _size;
 
 	},
 	setObjectbySize:function (objects){
