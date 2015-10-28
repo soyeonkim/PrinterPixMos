@@ -278,8 +278,10 @@ footer { background: #ececec; }
  .sub-menu-account,
  .loginbtn,.regbtn
 {background:#fff;}
-.hambuger >.icon-bar,
+.gray-background
+{background:#ababab;}
 
+.hambuger >.icon-bar,
 .score,.cards-col a
 { background:#1c1c1b;}
 .bubble-basket,
