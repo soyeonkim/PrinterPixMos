@@ -52,6 +52,7 @@
     <section>
       <div class="only-clear"></div>
       <!--  promotion slider show -->
+      <div id="main-container"></div>
       <div id="login-container" class='hidden'></div>
       <div id="promotion-slider-bar">      </div>
       <!--  end promotion slider show -->
@@ -100,6 +101,7 @@
     <script type="text/javascript" src="js/scripts/login/login.js"></script>
     <script type="text/javascript" src="js/scripts/products/products.js"></script>
     <script type="text/javascript" src="js/scripts/basket/basket.js"></script>
+    <script type="text/javascript" src="js/scripts/basket/make_gift.js"></script>
     <script type="text/javascript" src="js/scripts/main.js"></script>
   <!-------------------------------------------------------------------------->
   <!--       *******************Template include ********************      -->
@@ -130,7 +132,7 @@
         <div class="call-box">
           <div class="call-img">
              <!--<span class="glyphicon glyphicon-user white"></span>-->
-             <img src="img/header/ContactUs.png">
+             <img src="img/header/ContactUs.png" />
           </div>
           <div class="call-number middle-div white">
             <ul>
@@ -159,14 +161,14 @@
         </button>
        <div class="brand">  
         <div class="logo-outer-box">
-          <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png"></a></div>
+          <div class="logo-box"><a href="#"><img src="img/header/PixLogo.png" /></a></div>
         </div>
 
         <div class="fixed-menu">
           <ul class="list-icons">
             <li class="on-mobile" id="login-nav">
                 <a class="register">
-                  <span class="img"><center><img src="img/header/login.png"></center></span>       
+                  <span class="img"><center><img src="img/header/login.png" /></center></span>       
                   <span class="icon-title black"><p> Login </p></span>
 
                </a>
@@ -179,7 +181,7 @@
               </li>
              <li class="on-mobile">
            <a class="basket" href="#basket">
-               <span class="img"><center><img src="img/header/Basket.png"></center></span>
+               <span class="img"><center><img src="img/header/Basket.png"/ ></center></span>
                 <span class="icon-title black"><p>Basket</p></span>
                 <span id="BubbleCountBasket" class="bubble-basket menu_basket_count white">0</span>
               </a> 
@@ -255,14 +257,14 @@
           <li class="nav-left-menu-box">
             <button type="button" class="navbar-toggle collapsed pd-text-box pd-text-box-left bottom-borderline" data-toggle="collapse" data-target="#navbar-ex2-collapse" id="shop-pd">
              <span><h3>shop by <strong>Products</strong></h3></span>
-             <span class="nav-arrow"><img src="img/header/RightArrow_pink.png"></span>
+             <span class="nav-arrow"><img src="img/header/RightArrow_pink.png"/></span>
             </button>
 
           </li>
           <li class="nav-right-menu-box">
           <button type="button" class="navbar-toggle collapsed pd-text-box bottom-borderline" data-toggle="collapse" data-target="#navbar-ex3-collapse" id="shop-occas">
              <span><h3>shop by <strong>Occasions</strong></h3></span>
-             <span class="nav-arrow"><img src="img/header/RightArrow_pink.png"></span>
+             <span class="nav-arrow"><img src="img/header/RightArrow_pink.png"/></span>
             </button>
           </li>
         </ul>
@@ -285,13 +287,6 @@
 
     
     </div>
-
-
-
-
-
-    
-
     <div class="only-clear"></div>
   </script>
  <!-------------------------------------------------------------------------->
@@ -323,14 +318,14 @@
             <li>
               <ul class="vert-list-left">
               {{#AboutInfoLeft}}
-                <li><img src="{{img_url}}"><h4>{{{description}}}</h4></li>
+                <li><img src="{{img_url}}" /><h4>{{{description}}}</h4></li>
               {{/AboutInfoLeft}}
               </ul>
             </li>
             <li>
              <ul class="vert-list-right">
              {{#AboutInfoRight}}
-                <li><img src="{{img_url}}"><h4>{{{description}}}</h4></li>
+                <li><img src="{{img_url}}" /><h4>{{{description}}}</h4></li>
               {{/AboutInfoRight}}
               </ul>
             </li>
@@ -352,17 +347,17 @@
         <div class="social-box center ">
           <div class="social-mobile-link">
             <a target="_blank" href="https://twitter.com/printerpix">
-              <img alt="" src="img/social/twitter.png"></a>
+              <img alt="" src="img/social/twitter.png"/></a>
             <a target="_blank" href="https://www.facebook.com/PrinterPixUK">
-              <img alt="" src="img/social/Facebook.png"></a>
+              <img alt="" src="img/social/Facebook.png" /></a>
             <a target="_blank" href="https://www.youtube.com/user/printerpix">
-              <img alt="" src="img/social/Youtube.png"></a>
+              <img alt="" src="img/social/Youtube.png" /></a>
             <a target="_blank" href="https://uk.pinterest.com/printerpixuk/">
-              <img alt=""src="img/social/Pinterest.png"></a>
+              <img alt=""src="img/social/Pinterest.png" /></a>
             <a target="_blank" href="https://instagram.com/printerpixuk/">
-              <img alt="" src="img/social/Instagram.png"></a>   
+              <img alt="" src="img/social/Instagram.png" /></a>   
             <a target="_blank" href="http://printerpix.tumblr.com">
-              <img alt=""src="img/social/tumblr.png"></a>
+              <img alt=""src="img/social/tumblr.png" /></a>
           </div>
         </div>
       </div>
@@ -379,20 +374,20 @@
       <div class="flag-mobile-outbox">
         <div class="footer-flag-box center">
           <div class="flag-hor-list">
-            <img src="img/flag/UK-36x36.png">
-            <img src="img/flag/US-36x36.png">
-            <img src="img/flag/Germany-36x36.png">
-            <img src="img/flag/Italy-36x36.png">
-            <img src="img/flag/France-36x36.png">
-            <img src="img/flag/Spain-36x36.png">
-            <img src="img/flag/Holland-36x36.png">
-            <img src="img/flag/Mexico-36x36.png">
-            <img src="img/flag/Brazil-36x36.png">
-            <img src="img/flag/Canada-36x36.png">
-            <img src="img/flag/Finland-36x36.png">
-            <img src="img/flag/Norway-36x36.png">
-            <img src="img/flag/Denmark-36x36.png">
-            <img src="img/flag/Greece-36x36.png">
+            <img src="img/flag/UK-36x36.png"/>
+            <img src="img/flag/US-36x36.png"/>
+            <img src="img/flag/Germany-36x36.png"/>
+            <img src="img/flag/Italy-36x36.png"/>
+            <img src="img/flag/France-36x36.png"/>
+            <img src="img/flag/Spain-36x36.png"/>
+            <img src="img/flag/Holland-36x36.png"/>
+            <img src="img/flag/Mexico-36x36.png"/>
+            <img src="img/flag/Brazil-36x36.png"/>
+            <img src="img/flag/Canada-36x36.png"/>
+            <img src="img/flag/Finland-36x36.png"/>
+            <img src="img/flag/Norway-36x36.png"/>
+            <img src="img/flag/Denmark-36x36.png"/>
+            <img src="img/flag/Greece-36x36.png"/>
           </div>
         </div>
       </div> <!-- end flg box -->
@@ -440,7 +435,7 @@
        <div class="only-clear"></div>
         <div class="about-mobile-Abox">
         {{#AboutInfoImage}}
-        <img src="{{img_url}}">
+        <img src="{{img_url}}"/>
         {{/AboutInfoImage}}
         </div>
      </div>
@@ -451,11 +446,11 @@
     <div class="login-container">
       <div class="login-box center">
         <div class="login-icon center" id="user-icon">
-          <img src='img/header/Login_avatar.png'>        
+          <img src='img/header/Login_avatar.png' />        
           <div id="splashSpinnerLogin" class="spinner hidden"></div>
         </div>
         <div class="error-message">
-            <span id ="error-mg" class="hidden"><img src='img/error/Login_error_message.png'></span></div>
+            <span id ="error-mg" class="hidden"><img src='img/error/Login_error_message.png'/></span></div>
         <div class="login-form">
           <form>
             <input type="text" name="username" value="Email" class="user-form-box" id="username">
@@ -574,7 +569,7 @@
           <img src="{{pageGroupImageUrl}}" />
           <!--  <img src="img/Themes/photoBooks/UK/mobile/example.png" /> --> <!--- TODO: Get img src from server -->
             <h1>{{pageGroupHeader}}</h1>
-            <span class="customer-star"><img src="{{customerStar}}"></span>
+            <span class="customer-star"><img src="{{customerStar}}"/></span>
             <div class="content_preview">{{{marketingContent}}}</div>
             <h4 class="readmore" href="#">readmore</h4>
             </div>
@@ -599,31 +594,23 @@
         <div class="thumbnail-main">
 
           <div class="product-img-main">
-            <img src="img/Themes/empty_big.png" id="main_thumbnav_img">
+            <img src="img/Themes/empty_big.png" id="main_thumbnav_img" />
           </div>
 
           <div class="product-sub-box">
             <ul class ="sub-img-container">
               <li>
-                <a href="#">
-                  <img src="img/Themes/empty_small.png" id="thumbnav01">
-                </a>
+                <a href="#"><img src="img/Themes/empty_small.png" id="thumbnav01"/></a>
               </li>
 
-                            <li>
-                <a href="#">
-                  <img src="img/Themes/empty_small.png" id="thumbnav02">
-                </a>
+              <li>
+                <a href="#"><img src="img/Themes/empty_small.png" id="thumbnav02"/></a>
               </li>
-                            <li>
-                <a href="#">
-                  <img src="img/Themes/empty_small.png" id="thumbnav03">
-                </a>
+              <li>
+                <a href="#"><img src="img/Themes/empty_small.png" id="thumbnav03"/></a>
               </li>
-                            <li>
-                <a href="#">
-                  <img src="img/Themes/empty_small.png" id="thumbnav04">
-                </a>
+              <li>
+                <a href="#"><img src="img/Themes/empty_small.png" id="thumbnav04"/></a>
               </li>
             </ul>
           </div>
@@ -633,7 +620,7 @@
     <div class="product_details">
       <div class="product-info">
         <h1></h1>
-        <span class="customer-star"><img src=""><span class="score white">4.6</span><span id="number_review">  (900 reviews)</span> </span>
+        <span class="customer-star"><img src=""/><span class="score white">4.6</span><span id="number_review">  (900 reviews)</span> </span>
         <h5><a href="">Read 900 reviews</a></h5>
         <div class="product_price printerpix">£20.99
         </div>
@@ -659,7 +646,6 @@
               <ul class="dropdown-menu sub_layout" id="layout">
               </ul>
             </div>
-
           </div>
           <div class="option2">
             <div class="dropdown select-option">
@@ -687,7 +673,7 @@
         <ul>
         {{#cutomerReview}}
           <li>
-            <center><img src="{{customerStar}}"></center>
+            <center><img src="{{customerStar}}" /></center>
             <p>{{review}}</p>
           </li>
           {{/cutomerReview}}
@@ -770,40 +756,40 @@
   </script>
 
   <script id="basketListMobileTemplate" type="text/x-handlebars-template">
-  <div class="basketOutercontainer">
-   <!-- <div class="basketContainer center">-->
-    <div class="list-container top-borderline">
-      <div class="item-list-container">
+    <div class="basketOutercontainer">
+     <!-- <div class="basketContainer center">-->
+      <div class="list-container top-borderline">
+        <div class="item-list-container">
 
-        <div class="list-item-box horizontalBox">
-          <div class="item-list-img your-list">
-            <span><img src="img/Themes/photoBooks/UK/mobile/example.png"><span>
-          </div>
-          <div class="item-list-text">
-            <div class="item-title">
-              <h3> <span id="item-name">Leather Photo Book</span></h3>
+          <div class="list-item-box horizontalBox">
+            <div class="item-list-img your-list">
+              <span><img src="img/Themes/photoBooks/UK/mobile/example.png"/><span>
             </div>
-            <div class="item-size"><h4>Size A4</h4></div>
-            <div class="item-price"><h4>item Price</h4></div>
-            <div class="item-count-box">
-              <div class="sq-btn del-count"><img src="img/basket/minus.png"> </div>
-              <div class="sq-btn select-count">2</div>
-              <div class="sq-btn add-count"><img src="img/basket/plus.png"> </div>
-              <div class="del-btn"><img src="img/basket/delete_pink.png"> </div>
-              <div class="only-clear"></div>
+            <div class="item-list-text">
+              <div class="item-title">
+                <h3> <span id="item-name">Leather Photo Book</span></h3>
+              </div>
+              <div class="item-size"><h4>Size A4</h4></div>
+              <div class="item-price"><h4>item Price</h4></div>
+              <div class="item-count-box">
+                <div class="sq-btn del-count"><img src="img/basket/minus.png"/> </div>
+                <div class="sq-btn select-count">2</div>
+                <div class="sq-btn add-count"><img src="img/basket/plus.png"/> </div>
+                <div class="del-btn"><img src="img/basket/delete_pink.png"/> </div>
+                <div class="only-clear"></div>
+              </div>
             </div>
           </div>
+
         </div>
-
+        <div class="only-clear"></div>   
       </div>
-      <div class="only-clear"></div>   
+    
+      <div class="only-clear"></div> 
+      <div class="checkout-btn white"><center>Proceed to Checkout > </center></div>
+       <div class="only-clear"></div> 
+     <!--  </div>  -->
     </div>
-  
-    <div class="only-clear"></div> 
-    <div class="checkout-btn white"><center>Proceed to Checkout > </center></div>
-     <div class="only-clear"></div> 
-   <!--  </div>  -->
-  </div>
 
   </script>
 
@@ -813,7 +799,7 @@
      <div class="only-clear"></div>
      <div class="productContainer center error-box">
         <div class="text-center printerpix msg-title"><h3> 404 Error <br> Page Not Found</h3></div>
-      <div class="error-message"><img src="img/error/404error_message.png">
+      <div class="error-message"><img src="img/error/404error_message.png"/>
       </div>
     </div>
     </div>
@@ -821,6 +807,116 @@
   </script>
 
   <!--------------------------------------------------------------------------- -->
+
+  <!--------------------------------------------------------------------------- -->
+  <script id="makeGiftheaderMobileTemplate" type="text/x-handlebars-template">
+    <div id="makeGiftPage">
+      <div class="only-clear"></div>
+      <div class="productContainer center">
+        <div class="text-center"><h3>Choose your Greeting Card</h3>
+        <p>from only £1.99</p></div>
+      </div>
+    </div>
+  </script>
+  <script id="makeGiftMobileTemplate" type="text/x-handlebars-template">
+    <div id="makeGiftPage">
+      <div class="only-clear"></div>
+      <div class="giftOutercontainer">
+        <div class="gift-list-container">
+
+          <div class="gift-option"><h5><strong> 1st </strong>&nbsp; Select the Occasion</h5>
+            <div class="opt-occasion">
+                <div class="dropdown">
+                  <button class="btn btn-white dropdown-toggle option-btn" type="button" data-toggle="dropdown">
+                    <span id="option1">Click on the arrow to choose your occasion</span>
+                    <span class="caret caret-right"></span>
+                  </button>
+                  <ul class="dropdown-menu sub_size" id="layout">
+                    <li>Christmas</li>
+                    <li>Birthday</li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+
+          <div class="gift-option"><h5><strong>2nd</strong>&nbsp; Type your Personal Message (max 200 characters)</h5>
+            <div class="opt-occasion">
+              <textarea rows="4" maxlength="200"></textarea>
+            </div>
+          </div>
+          <div class="gift-option"><h5><h5><strong>3rd</strong>&nbsp;Choose your Card</h5>
+            <div class="opt-occasion opt-card-box">
+              <div class="item-list-container">
+                 <form role="form">
+                  <fieldset>
+                    <div class="card-group">
+                      <label><img src="img/basket/Card_flat01.png"/>Flat</label>
+                      <input type="radio" name="gift_card" value="v-flat"> 
+                    </div>
+                    <div class="card-group">
+                      <label><img src="img/basket/Card_flat02.png"/>Folded</label>
+                      <input type="radio" name="gift_card" value="v-folded"> 
+                      </label>
+                    </div>
+   
+                    <div class="card-group">
+                      <label><img src="img/basket/Card_folded01.png"/>Flat</label>
+                      <input type="radio" name="gift_card" value="h-flat">
+                      </label>
+                    </div>
+   
+                    <div class="card-group">
+                      <label><img src="img/basket/Card_folded02.png"/>Folded</label>
+                      <input type="radio" name="gift_card" value="h-folded"> 
+                      </label>
+                    </div>     
+                   </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="gift-option"><h5><strong>4th</strong>&nbsp;Select your design</h5>
+            <div class="opt-occasion opt-card-box">
+              <div class="item-list-container">
+                <div class="opt-card-silderbox">
+                  <a href="#" title="Previous"  class="opt-card-prev" id="prev_card">Previous</a>
+                  <a href="#" title="Next"      class="opt-card-next" id="next_card">Next </a>
+                  <div class="slide-showcase opt-card-showcase">
+                    <div id="gift-card-slider" class="cardSlide-holder cycle-slideshow"  data-cycle-fx=carousel data-cycle-timeout=0 data-cycle-carousel-visible=1 data-cycle-prev="#prev_card" data-cycle-next="#next_card" data-cycle-slides="div">
+                      <div class="giftcard-img center">
+                         <img id="card_1" src="img/Themes/empty_card.png" />
+                      </div>
+                                            <div class="giftcard-img">
+                         <img id="card_2"src="img/Themes/empty_card.png" />
+                      </div>
+                                            <div class="giftcard-img">
+                         <img  id="card_3"src="img/Themes/empty_card.png" />
+                      </div>
+                    </div>
+                  </div>
+    
+ 
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script id="CountinueMobileTemplate"type="text/javasx-handlebars-templatecript">
+    <div class="procedure-container">
+      <div class="btn-procedure center text-center">
+          <button class="personalised button-printerpix white">Save Gift Options >
+          </button>
+          <a href='#'><span  id="cancel-btn">Cancel</span></a>
+      </div>
+
+    </div>
+  </script>
+
   <script id="accountSettingMobileTemplate"   type="text/x-handlebars-template">
   </script>
 </body>

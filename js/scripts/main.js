@@ -6,13 +6,13 @@ $(document).ready(function () {
 
  
 	//
-  	printerpixMos.main.init();
-  	printerpixMos.main.rendorInitPage();
+  	//printerpixMos.main.init();
+  	//printerpixMos.main.rendorInitPage();
  
  
 	
 	//TEST codes;
 	//showCartPage();
-	//printerpixMos.cart.showCartPage();
+	printerpixMos.makeGift.displayMakeGiftPage();
 });
 

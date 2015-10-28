@@ -112,6 +112,17 @@ printerpixMos.common =  {
 			});
 
 	},
+	initSide: function (selector,numberSlide, next_id, prev_id) {
+		$(selector).cycle({
+			fx: 'carousel',
+			timeout: 0,
+			sildes: 'div',
+			next :next_id,
+			prev :prev_id,
+			startingSlide: 0,
+			carouselVisible:numberSlide
+		});
+	},
 	setLocalStorageItem: function (str_id , items) {
 		localStorage.setItem(str_id,items);
 	},
