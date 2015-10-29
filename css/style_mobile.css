@@ -436,8 +436,14 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
   color:#8d8d8d;
   background-color: #fff;
   margin-bottom: 20px;
+  cursor:pointer;
 }
 .addr-radio{width:20px; height:20px;}
+.add-new-addr{ font-size: 2.6rem; width: 92%; padding: 5px 0px 5px 20px;}
+#addNewAddr-btn{cursor:pointer;}
+.btn-container{margin:10px 0px; padding:10px 0px;}
+.opt-addr-next{text-indent: -999px; width:12px; margin-top:4px;}
+
 /**************************************************************************************
   Make Gift page
 ***************************************************************************************/
@@ -476,7 +482,7 @@ textarea{
 .opt-card-prev,.opt-card-next{ width: 18px; 
   height: 34px; position: absolute; top: 35%; z-index:300; text-indent: -9999px;}
 .opt-card-prev {  background: url('../img/buttons/Arrow-L.png') no-repeat left top; left: 1px;}
-.opt-card-next {  background: url('../img/buttons/Arrow-R.png') no-repeat right top; right: 1px;}
+.opt-card-next,.opt-addr-next{  background: url('../img/buttons/Arrow-R.png') no-repeat right top; right: 1px;}
 .cardSlide-holder,.giftcard-img{ width:180px;}
 .cardSlide-holder{ margin: auto;}
 .giftcard-img img{width:100%}
@@ -497,6 +503,10 @@ textarea{
 .item-img{ width:150px; height:150px;}
 .add-gift{padding:5px 25px; background:#fff; border: 2px solid #ce217e;}
 .option-add-btn{width:60%; margin:15px auto;}
+
+/*
+.opt-card-prev,.opt-card-next{ width: 18px; 
+  height: 34px; position: absolute; top: 35%; z-index:300; text-indent: -9999px;}*/
 
 
 

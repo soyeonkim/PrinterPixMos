@@ -271,7 +271,9 @@ footer { background: #ececec; }
 #total-price,
 .option-notify,.add-gift
 { color:#ce217e;}
-.flow >.col-xs-4,.half-btn
+.flow >.col-xs-4,.half-btn,
+#addMultipleNewAddr-btn
+
 { color: #8d8d8d;}
 
 
