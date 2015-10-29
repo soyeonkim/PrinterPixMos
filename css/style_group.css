@@ -32,7 +32,7 @@ body {
   background: #fff;
   margin: 0;
 }
-b,strong {font-family: MyriadProSemibold;}
+b,strong,.bold {font-family: MyriadProSemibold;}
 h1,h2,h3,h4,p, a{font-family: MyriadProRegular;}
 header { font-family: MyriadProLight;}
 article,
@@ -99,6 +99,7 @@ footer { background: #ececec; }
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
 }
+
 .horizontalBox
 {
   display: -moz-box;        /* Firefox */
@@ -167,7 +168,7 @@ footer { background: #ececec; }
  .cart-outer-box,
  .cartcontainer,
  .top-title,
- .list-container,
+ .list-item-box,
  .back-btn,
  .checkout-outer-box,
  .basketOutercontainer,
@@ -266,7 +267,8 @@ footer { background: #ececec; }
 .back-btn-arrow h4
 { color:#36a9e0;}
 .loginbtn,.your-price,
-#total-price
+#total-price,
+.option-notify,.add-gift
 { color:#ce217e;}
 .flow >.col-xs-4
 { color: #8d8d8d;}

@@ -366,7 +366,9 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 .item-list-img{width:34%;}
 .item-list-text{width:65%; padding-left:10px;}
 .item-title{}
-.item-title h3,.item-size h4 .item-price h4{margin:5px;}
+.item-title h3,.item-size h4, .item-price h4{margin:5px;}
+.item-title h3,.item-size h4,.item-price h4{margin:5px;}
+
 
 .sq-btn,.del-btn {width:30px; height:30px;}
 .sq-btn { float:left; text-align: center; margin:0px 3px;}
@@ -378,7 +380,7 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 .top-title h4{float:left;}
 .top-title >.sq-btn{float:right; padding:8px 15px; width:36px;}
 .your-list {}
-.your-list img{ float:left; width: 125px; height:125px;}
+.your-list img{ float:left; width: 125px; height:inherit;} /* :TODO add media for size checking; */
 .your-list li>.sq-btn{float:left; padding:8px 15px; width:36px; margin: 5px 0px 0px 10px;}
 .your-price{ float:right; font-size: 6vw;}
 .right-basketbox { float:right; margin:0px; padding:0px;}
@@ -402,6 +404,28 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 .error-box{ margin: 10px 0px; padding:5px 0px;}
 .msg-title { padding-bottom: 20px;}
 
+/**************************************************************************************
+  deliver address box
+*****************************************************************************************/
+
+.input-radio-box {
+    width: 80%;
+    font-size: 1.8rem;
+    margin: 10px auto;
+}
+.input-radio-box label{
+  font-weight:400;
+}
+.input-radio-box input{
+    margin-top: 4.8rem;
+    vertical-align: middle;
+    float: left;
+}
+.displayAddrDiv li {
+  word-wrap: break-word;
+  display: inline-block;
+  list-style-type: none
+}
 /**************************************************************************************
   Make Gift page
 ***************************************************************************************/
@@ -446,6 +470,24 @@ textarea{
 .giftcard-img img{width:100%}
 .procedure-container{width:100%; padding:10px;}
 .btn-procedure {margin-bottom: 15px;}
+
+.input-check-box{width:80%; font-size: 1.8rem; margin:20px auto;}
+.input-check-box input {float:left;}
+.input-check-box label{display:block; margin-left:1.4em;}
+/* :TODO check browser size*/
+.gift-check-img {
+    position: relative;
+    left: 14px;
+    bottom: 116px;
+}
+.gift-check-img img {float:none; width:70%; height:inherit; max-width: 130px;} /* :TODO check browser size*/
+.item-title h4, .item-size h5, .delivery-to h4, .delivery-addr h4 {margin:0px 5px;}
+.item-img{ width:150px; height:150px;}
+.add-gift{padding:5px 25px; background:#fff; border: 2px solid #ce217e;}
+.option-add-btn{width:60%; margin:15px auto;}
+
+
+
 /**************************************************************************************
   Spinner
 ****************************************************************************************/

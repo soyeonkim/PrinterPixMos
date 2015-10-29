@@ -94,6 +94,7 @@
     <script src="js/data/data_UK_mobile_menu.js"></script>
     <script src="js/data/data_UK_mobile_product.js"></script>
     <script src="js/data/data_UK_mobile_footer.js"></script>
+    <script src="js/data/data_UK_mobile_gift.js"></script>
     <!-------------------------------------------------------------------------->
     <!--<script type="text/javascript" src="js/scripts/display_page.js"></script> -->
     <script type="text/javascript" src="js/scripts/common/common.js"></script>
@@ -101,7 +102,10 @@
     <script type="text/javascript" src="js/scripts/login/login.js"></script>
     <script type="text/javascript" src="js/scripts/products/products.js"></script>
     <script type="text/javascript" src="js/scripts/basket/basket.js"></script>
-    <script type="text/javascript" src="js/scripts/basket/make_gift.js"></script>
+    <script type="text/javascript" src="js/scripts/basket/deliveryAddr.js"></script>
+    <script type="text/javascript" src="js/scripts/basket/makeGift.js"></script>
+    <script type="text/javascript" src="js/scripts/basket/giftList.js"></script>
+    
     <script type="text/javascript" src="js/scripts/main.js"></script>
   <!-------------------------------------------------------------------------->
   <!--       *******************Template include ********************      -->
@@ -180,7 +184,7 @@
                 </button>
               </li>
              <li class="on-mobile">
-           <a class="basket" href="#basket">
+           <a class="basket" href="#">
                <span class="img"><center><img src="img/header/Basket.png"/ ></center></span>
                 <span class="icon-title black"><p>Basket</p></span>
                 <span id="BubbleCountBasket" class="bubble-basket menu_basket_count white">0</span>
@@ -717,7 +721,7 @@
         <div class="back-btn-box" id="backto"> 
           <div class="back-btn-arrow"><h4>Back</h4></div>
         </div>
-        <div class="cart-title"><strong>Cart</strong></div>
+        <div class="cart-title bold"> Cart </div>
       </div>
     </div>
     <div class="only-clear"></div>   
@@ -748,7 +752,7 @@
       </div>
 
       <div class="btn-box-half right">
-        <button class="personalised button-printerpix white">Proceed to Checkout >
+        <button class="personalised button-printerpix white" id='checkout1'>Proceed to Checkout >
         </button>
       </div>
     </div>
@@ -786,10 +790,15 @@
       </div>
     
       <div class="only-clear"></div> 
-      <div class="checkout-btn white"><center>Proceed to Checkout > </center></div>
-       <div class="only-clear"></div> 
-     <!--  </div>  -->
-    </div>
+      <div class="procedure-container">
+        <div class="btn-procedure center text-center">
+          <button class="personalised button-printerpix white" id="checkout2">Proceed to Checkout > 
+          </button>
+        </div>
+      </div>
+
+      <div class="only-clear"></div> 
+     </div>
 
   </script>
 
@@ -807,12 +816,38 @@
   </script>
 
   <!--------------------------------------------------------------------------- -->
+  <script id="deliverAddressActiveMobileTemplate" type="text/x-handlebars-template">
+    <div class="only-clear"></div>
+
+    <div class="basketOutercontainer center ">
+      <div class="list-container top-borderline">
+        <div class="input-radio-box">
+          <label class="">
+            <input type="radio" name="default-addr" value="" checked="">
+            <div class="displayAddrDiv">
+              <ul>
+                <li class="displayAddrFullName"><b>Hanme Kim</b></li>
+                <li class="displayAddrLine1">Unit 5 Stonefield Way, Ruislip, Middlesex</li>
+                <li class="displayAddrLine2">l</li>
+                <li class="displayAddrCityStateOrRegionPostalCode">London,  HA4 0JS</li>
+                <li class="displayAddrCountryName">United Kingdom</li>
+              </ul>
+            </div>
+          </label>  
+        </div>     
+      </div>
+    </div>
+
+  </script>
+  <script id="deliverAddressListMobileTemplate" type="text/x-handlebars-template">
+
+  </script>
 
   <!--------------------------------------------------------------------------- -->
   <script id="makeGiftheaderMobileTemplate" type="text/x-handlebars-template">
     <div id="makeGiftPage">
       <div class="only-clear"></div>
-      <div class="productContainer center">
+      <div class="productContainer center ">
         <div class="text-center"><h3>Choose your Greeting Card</h3>
         <p>from only £1.99</p></div>
       </div>
@@ -909,14 +944,61 @@
   <script id="CountinueMobileTemplate"type="text/javasx-handlebars-templatecript">
     <div class="procedure-container">
       <div class="btn-procedure center text-center">
-          <button class="personalised button-printerpix white">Save Gift Options >
+          <button class="personalised button-printerpix white" id="procedure">Save Gift Options >
           </button>
           <a href='#'><span  id="cancel-btn">Cancel</span></a>
       </div>
 
     </div>
   </script>
+  <script id="GiftItemsheaderMobileTemplate"   type="text/x-handlebars-template">
+    <div id="makeGiftPage">
+      <div class="productContainer center">
+        <div class="input-check-box">
+          <form>
+          <input type="checkbox" name="gift-option" value="gift" class="check-option">
+          <label> Hide prices on the packing slip for this purchase. </label>
+         </form>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script id="GiftItemsMobileTemplate"   type="text/x-handlebars-template">
+     <div class="giftItemOutercontainer">
 
+      {{#GiftOption}}
+      <div class="list-container1 top-borderline" id={{id}}>
+        <div class="item-list-container">
+          <div class="list-item-box horizontalBox">
+            <div class="item-img">
+              <span><img src="img/Themes/photoBooks/UK/mobile/example.png"/></span>
+              <span class="gift-check-img {{gift_added}}"><img src="img/basket/MakeGift_icon.png"/></span>
+            </div>
+            <div class="item-list-text">
+              <div class="item-title">
+                  <h3> <span id="item-name">{{product_title}}</span></h3>
+              </div>
+              <div class="item-size"><h4>{{size_option}}</h4></div>
+              <div class="delivery-to">
+                <h4>Delivering to:<span id="deliverWhom">{{delivery_name}} </span></h4>
+              </div>
+              <div class="delivery-addr"><h4>{{delivery_addr}}</h4></div>
+              <div class="option-notify {{gift_added}}">
+                <h4> Gift option added: £1.99</h4>
+              </div>
+            </div>
+          </div>
+          <div class="option-add-btn {{gift_add}}">
+              <button class="add-gift " id="">Make this a Gift ></button>
+          </div> 
+        </div>
+      </div>
+      {{/GiftOption}}
+
+      <div class="bottom-borderline "></div>
+    </div>
+
+  </script>
   <script id="accountSettingMobileTemplate"   type="text/x-handlebars-template">
   </script>
 </body>

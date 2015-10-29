@@ -36,6 +36,9 @@
   .footer-login-box p{padding-top: 10px;}
   .footer-category-mobile{height: 225px;}
 
+  .gift-check-img {left:14px;}
+  .gift-check-img img {width:100px;}
+
 }
 @media screen and (max-width: 620px) { 
   .info-about ul { padding-left: 10px;}
@@ -80,6 +83,7 @@
   .social-box { width: 370px; }
   .social-mobile-link img { width: 48px; height:48px;}
   .footer-login-box{ height: 52px;}
+  .add-gift{font-size: 20px;}
 
 
 }
@@ -93,7 +97,7 @@
   .pd-text-box h3{ margin-left: 20%;}
   .pd-text-box img{ width:40px; height:40px; margin-top: 15px;}
   .login-box,.login-form,.btn-box,.user-form-box,.pw-form-box{width: 420px;}
-   .user-form-box,.pw-form-box{  height: 42px;}
+  .user-form-box,.pw-form-box{  height: 42px;}
 }
 
 @media screen and (max-width: 420px) {
@@ -114,7 +118,7 @@
   .user-form-box,.pw-form-box,.loginbtn,.regbtn {font-size: 4.2vw;}
   .user-form-box,.pw-form-box{  height: 42px;}
 
-    .pager-box-mobile{ background: url('../img/buttons/Arrow_46x46.png') no-repeat; width: 46px;  height: 46px; bottom:16px; }
+  .pager-box-mobile{ background: url('../img/buttons/Arrow_46x46.png') no-repeat; width: 46px;  height: 46px; bottom:16px; }
 
 
   .pd-text-box h3{  width: 78px;  /*height: 56px; */margin-left: 27%; padding-top: 2px;}
@@ -155,7 +159,11 @@
   .footer-category-mobile{ height: 200px; margin:15px; }
   .footer-category-mobile ul ul li {padding: 6px 0px;}
   .right-basketbox{ width:200px;}
-  
+  .gift-check-img {left:22px; bottom: 103px;}
+  .gift-check-img img { width:80px;}
+  .item-img{ width:120px; height:120px;}
+  .add-gift{font-size: 18px;}
+
 }
 
 @media screen and (max-width: 400px) {
@@ -167,6 +175,9 @@
   .pd-mobile-containder{ width: 338px;}
   .customer-star img{ height: 15px; width:85px;}
   .login-box,.login-form,.btn-box,.user-form-box,.pw-form-box{width: 360px;}
+  .gift-check-img {left:20px; bottom: 95px;}
+  .gift-check-img img { width:76px;}
+  .item-img{ width:112px; height:112px;}
 }
 
 @media screen and (max-width: 320px) {
@@ -222,5 +233,10 @@
   .flag-hor-list img{width: 24px;}
   .footer-login-box{height: 52px;}
   .footer-login-box p {padding-top: 7px;}
+  .gift-check-img {left:19px; bottom: 85px;}
+  .gift-check-img img { width:64px;}
+  .item-img{ width:100px; height:100px;}
+  .item-title h3 {font-size: 20px}
+  .item-size h4,.item-price h4 ,.add-gift,.delivery-addr h4,.delivery-to h4,.option-notify h4{font-size: 14px;}
 }
 

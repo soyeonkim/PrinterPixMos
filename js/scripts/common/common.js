@@ -134,5 +134,15 @@ printerpixMos.common =  {
 	},
 	getLocalStorageObject: function (str_id) {
 		return JSON.parse(localStorage.getItem(str_id));
-	}
+	},
+	closeAllLoginPage:function() {
+		printerpixMos.login.hideLoginPage();
+	},
+	closeAllBasket: function () {
+		var that = this;
+		printerpixMos.cart.hideCartPage();
+		printerpixMos.makeGift.hideMakeGiftPage();		
+		printerpixMos.giftList.hideGiftItemList();
+
+	},
 };

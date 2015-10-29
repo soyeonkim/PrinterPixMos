@@ -13,9 +13,11 @@ printerpixMos.products = {
 
 	init: function() {
 		console.log("product init");
+		printerpixMos.common.closeAllLoginPage();
 	},
 	displayProductPages : function(path,  ProductName) {
 		var that = this;
+		that.init();
 		that.ProductSubmenu={"productList": ProductName }
 		that.hideProductPages();
 

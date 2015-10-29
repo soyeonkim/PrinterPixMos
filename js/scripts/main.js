@@ -13,6 +13,8 @@ $(document).ready(function () {
 	
 	//TEST codes;
 	//showCartPage();
-	printerpixMos.makeGift.displayMakeGiftPage();
+	//printerpixMos.makeGift.displayMakeGiftPage();
+	//printerpixMos.giftList.displayGiftItemList();
+	printerpixMos.deliveryAddr.displayDeliverAddrPage();
 });
 
