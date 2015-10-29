@@ -178,6 +178,8 @@
   .gift-check-img {left:20px; bottom: 95px;}
   .gift-check-img img { width:76px;}
   .item-img{ width:112px; height:112px;}
+  .cart-title{ font-size: 2.4rem;  padding-top: 15px;}
+  .addr-radio{width:20px; height:20px;}
 }
 
 @media screen and (max-width: 320px) {
@@ -238,5 +240,9 @@
   .item-img{ width:100px; height:100px;}
   .item-title h3 {font-size: 20px}
   .item-size h4,.item-price h4 ,.add-gift,.delivery-addr h4,.delivery-to h4,.option-notify h4{font-size: 14px;}
+  .cart-title{font-size: 1.8rem;}
+  .input-radio-box{font-size: 1.6rem;}
+  .input-radio-box input{ margin-top: 3.8rem;}
+  .addr-radio{width:20px; height:16px;}
 }
 

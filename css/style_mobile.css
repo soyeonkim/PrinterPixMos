@@ -411,7 +411,7 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 .input-radio-box {
     width: 80%;
     font-size: 1.8rem;
-    margin: 10px auto;
+    margin: 0px auto;
 }
 .input-radio-box label{
   font-weight:400;
@@ -426,6 +426,18 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
   display: inline-block;
   list-style-type: none
 }
+.displayAddrFullName{
+   display: inherit !important;
+}
+.half-btn{
+  width: 47%;
+  border: 1px solid #8d8d8d;
+  line-height: 2.2em;
+  color:#8d8d8d;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+.addr-radio{width:20px; height:20px;}
 /**************************************************************************************
   Make Gift page
 ***************************************************************************************/

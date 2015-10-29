@@ -229,12 +229,13 @@ footer { background: #ececec; }
 .radioleft,.textBlock,
 .on-mobile,.Cart-title,
 .promo-form-box,.apply-btn,
-.checkout-outer-box
+.checkout-outer-box,
+.left-btn
 {float: left;}
 
 .menu-box,.fixed-menu,.sub-menu ,
 .sub-menu-account,.right,
-.del-btn
+.del-btn,.right-btn
 
 { float: right;}
 
@@ -270,7 +271,7 @@ footer { background: #ececec; }
 #total-price,
 .option-notify,.add-gift
 { color:#ce217e;}
-.flow >.col-xs-4
+.flow >.col-xs-4,.half-btn
 { color: #8d8d8d;}
 
 

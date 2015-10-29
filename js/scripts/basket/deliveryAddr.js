@@ -23,7 +23,7 @@ printerpixMos.deliveryAddr = {
 		}
 		
 		that.deliveryAddrList = that.checkHistoryAddr();
-		if(that.deliveryAddrList.length >0 )
+		//if(that.deliveryAddrList.length >0 )
 			printerpixMos.common.precompleTemplate('#main-container','#deliverAddressListMobileTemplate',that.deliveryAddrList);
 		
 		that.renameHeader();
@@ -40,6 +40,7 @@ printerpixMos.deliveryAddr = {
 	},
 	checkHistoryAddr:function() {
 		//TODO: import data later.
+		this.deliveryAddrList=DeliveryData;
 		return this.deliveryAddrList;
 	},
 	checkActiveAddr: function () {

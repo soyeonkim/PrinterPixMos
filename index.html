@@ -822,25 +822,60 @@
     <div class="basketOutercontainer center ">
       <div class="list-container top-borderline">
         <div class="input-radio-box">
+        
           <label class="">
-            <input type="radio" name="default-addr" value="" checked="">
+            <input type="radio" name="default-addr" value="" checked=""  class="addr-radio">
             <div class="displayAddrDiv">
               <ul>
-                <li class="displayAddrFullName"><b>Hanme Kim</b></li>
-                <li class="displayAddrLine1">Unit 5 Stonefield Way, Ruislip, Middlesex</li>
-                <li class="displayAddrLine2">l</li>
+                <li class="displayAddrFullName bold">Name here</li>
+                <li class="displayAddrLine1">Unit 5 Stonefield Way, Ruislip, </li>
+                <li class="displayAddrLine2">Middlesex,</li>
                 <li class="displayAddrCityStateOrRegionPostalCode">London,  HA4 0JS</li>
                 <li class="displayAddrCountryName">United Kingdom</li>
               </ul>
             </div>
           </label>  
+
         </div>     
       </div>
+      
+      <div class="input-radio-box">
+       <div class="center text-center">
+            <button class="personalised button-printerpix white" id="procedure">Deliver to this address >
+            </button>
+            <div class="half-btn left-btn" id='editAddr-btn'>Edit</div> 
+            <div class="half-btn right-btn" id='deleteAddr-btn '>Delete</div>
+            <div class="only-clear"></div>
+        </div> 
+      </div>
+ 
     </div>
 
   </script>
   <script id="deliverAddressListMobileTemplate" type="text/x-handlebars-template">
-
+  {{#DeliveryAddr}}
+    <div class="basketOutercontainer center ">
+      <div class="list-container top-borderline">
+        <div class="input-radio-box">        
+          <label class="">
+            <input type="radio" name="default-addr"value="" class="addr-radio">
+            <div class="displayAddrDiv">
+              <ul>
+                <li class="displayAddrFullName bold">{{FirstName}}</li>
+                <li class="displayAddrLine1">Unit 5 Stonefield Way, Ruislip, </li>
+                <li class="displayAddrLine2">Middlesex,</li>
+                <li class="displayAddrCityStateOrRegionPostalCode">London,  HA4 0JS</li>
+                <li class="displayAddrCountryName">United Kingdom</li>
+              </ul>
+            </div>
+          </label> 
+         
+        </div>     
+      </div>
+    </div>
+  {{/DeliveryAddr}} 
+    <div>
+    </div>
   </script>
 
   <!--------------------------------------------------------------------------- -->
