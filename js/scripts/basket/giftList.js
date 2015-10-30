@@ -12,13 +12,13 @@ printerpixMos.giftList = {
 	displayGiftItemList: function () {
 		printerpixMos.common.precompleTemplate('#top-header-bar','#GiftItemsheaderMobileTemplate',null);
 		printerpixMos.common.precompleTemplate('#main-container','#GiftItemsMobileTemplate',GiftpOptionData);
-		printerpixMos.common.precompleTemplate('#mobile-product','#CountinueMobileTemplate',null);
+		printerpixMos.common.precompleTemplate('#main-container','#CountinueMobileTemplate',null);
 		this.rename();
 	},
 	hideGiftItemList:function() {
 		$('#top-header-bar').children("div").remove();
 		$('#main-container').children("div").remove();
-		$('#mobile-product').children("div").remove();
+		$('#main-container').children("div").remove();
 	}
 
 };

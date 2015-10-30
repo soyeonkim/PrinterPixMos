@@ -2,9 +2,7 @@ var printerpixMos = printerpixMos ||{};
  
  
 $(document).ready(function () {
-	var template;
 
- 
 	//
   	//printerpixMos.main.init();
   	//printerpixMos.main.rendorInitPage();

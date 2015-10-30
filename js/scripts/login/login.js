@@ -276,10 +276,10 @@ printerpixMos.login = {
 		this.hideAccountSettingPage();
 	},
 	showAccountSettingPage: function () {
-		printerpixMos.common.precompleTemplate('#mobile-product' ,'#accountSettingMobileTemplate', null);
+		printerpixMos.common.precompleTemplate('#main-container' ,'#accountSettingMobileTemplate', null);
 	},
 	hideAccountSettingPage:function(){
-		$('#mobile-product').children("div").remove();
+		$('#main-container').children("div").remove();
 	},
 	accountSettingPage: function  () {
 		$('#accountSet').click(function() {

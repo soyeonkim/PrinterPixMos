@@ -17,12 +17,15 @@ printerpixMos.cart = {
 
 		$('#backto').click(function(){
 			that.hideCartPage();
-
-			printerpixMos.main.displayHeaderPage();
+ 			printerpixMos.main.init();
+  			printerpixMos.main.rendorInitPage();
+ 
+			/*printerpixMos.main.displayHeaderPage();
 			that.productList = printerpixMos.common.getLocalStorageObject('productList');
 			printerpixMos.main.displayNavProductPage(that.productList);
 			printerpixMos.main.displaySectionPage();
 			printerpixMos.main.displayFooterPage();
+			*/
 		});
 
 		$('#checkout1,#checkout2').click(function(){

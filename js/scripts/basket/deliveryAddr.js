@@ -82,7 +82,7 @@ printerpixMos.deliveryAddr = {
 		var that =this;
 		printerpixMos.common.precompleTemplate('#top-header-bar','#titleHeaderMobileTemplate',null);
 		printerpixMos.common.precompleTemplate('#nav-memu-bar','#addNewAddrMobileTemplate',null);	
-		printerpixMos.common.precompleTemplate('#mobile-product','#CountinueMobileTemplate',null);
+		printerpixMos.common.precompleTemplate('#main-container','#CountinueMobileTemplate',null);
 		
 		that.renameHeader(' Add new Address ');
 		that.setErrorMessage();
@@ -129,7 +129,7 @@ printerpixMos.deliveryAddr = {
 	hideAddNewAddrPage:function() {
 		$('#top-header-bar').children("div").remove();
 		$('#nav-memu-bar').children("div").remove();
-		$('#mobile-product').children("div").remove();
+		$('#main-container').children("div").remove();
 	},
 	deliverToThisAddr: function() {
 

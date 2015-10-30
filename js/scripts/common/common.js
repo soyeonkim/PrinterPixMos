@@ -89,7 +89,10 @@ printerpixMos.common =  {
 		else $(id).append(template());
 	},
 	show404ErrorPage: function  () {
-		this.precompleTemplate('#mobile-product','#404ErrorMobileTemplate',null);
+		this.precompleTemplate('#main-container','#404ErrorMobileTemplate',null);
+	},
+	hide404ErrorPage:function() {
+		$('#main-container').children("div").remove();
 	},
 	showDropdownList: function (id) {
 		$(id).addClass('in');
