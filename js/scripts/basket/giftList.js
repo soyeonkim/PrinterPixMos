@@ -23,6 +23,10 @@ printerpixMos.giftList = {
 		printerpixMos.common.precompleTemplate('#main-container','#CountinueMobileTemplate',null);
 		this.rename();
 		that.displayGiftOptions(that.GiftOptionList);
+
+		$('#procedure').click(function(){
+			alert('TODO :payment info page');
+		})
 	},
 	hideGiftItemList:function() {
 		$('#top-header-bar').children("div").remove();

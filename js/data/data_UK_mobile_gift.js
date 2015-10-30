@@ -27,6 +27,7 @@ var GiftpOptionData = {
                 "Sorry|3baebce1-3e7f-4fa5-9bef-9faaafc50e97":"Sorry",
                 "ThankYou|d7c04975-2bac-419c-a8cd-26c913c994aa":"Thank You",
                 "HalloweenCard|e940ba51-0f17-4372-bd58-5202ff2e21d3":"Halloween"},
+                
                 "Flats":{"Flat-Vertical-Card.png":"1",
                 "Folded-Vertical-Card.png":"2",
                 "Flat-Horizontal-Card.png":"3",
