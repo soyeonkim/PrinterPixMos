@@ -39,7 +39,8 @@ printerpixMos.config = {
 		headers["userLastName"]=option.lastname;
 		headers["newsletter"]="true";
 
-
+		console.log(headers);
+		
 		return $.ajax({
 			type:'GET',
 				url: 'https://api.printerpix.co.uk/api'+path,
@@ -129,7 +130,7 @@ printerpixMos.common =  {
 	setLocalStorageObject: function (str_id , items) {
 		localStorage.setItem(str_id,JSON.stringify(items));
 	},
-	gettLocalStorageItem: function (str_id , items) {
+	getLocalStorageItem: function (str_id , items) {
 		return localStorage.getItem(str_id);
 	},
 	getLocalStorageObject: function (str_id) {

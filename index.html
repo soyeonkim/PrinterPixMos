@@ -861,10 +861,9 @@
             <input type="radio" name="default-addr"value="" class="addr-radio">
             <div class="displayAddrDiv">
               <ul>
-                <li class="displayAddrFullName bold">{{FirstName}}</li>
-                <li class="displayAddrLine1">Unit 5 Stonefield Way, Ruislip, </li>
-                <li class="displayAddrLine2">Middlesex,</li>
-                <li class="displayAddrCityStateOrRegionPostalCode">London,  HA4 0JS</li>
+                <li class="displayAddrFullName bold">{{FirstName}} {{LastName}}</li>
+                <li class="displayAddrLine1">{{CompanyName}} {{Street1}} </li>
+                <li class="displayAddrCityStateOrRegionPostalCode">{{City}}, &nbsp;{{PostCode.Value}}</li>
                 <li class="displayAddrCountryName">United Kingdom</li>
               </ul>
             </div>
@@ -873,9 +872,11 @@
         </div>     
       </div>
     </div>
+     <div class="only-clear"></div>
   {{/DeliveryAddr}} 
-  <div class="only-clear"></div>
-     <div class="basketOutercontainer center ">
+
+    <div class="only-clear"></div>
+    <div class="basketOutercontainer center ">
       <div class="btn-container top-borderline">
         <div class="checkout-outer-box horizontalBox" id="addNewAddr-btn">
           <div class="add-new-addr bold"> Add a New Address </div>
@@ -892,14 +893,16 @@
         </div>
       </div>
     </div>
-     <div class="only-clear"></div>
-         <div class="procedure-container">
+    <div class="only-clear"></div>
+    <div class="top-borderline cancel-box">
       <div class="btn-procedure center text-center">
 
-          <a href='#'><span  id="cancel-btn">Cancel</span></a>
-      </div>
+      <a href='#'><span  id="cancel-btn">Cancel and continue shopping</span></a>
+     </div>
 
-    </div>
+  </div>
+  </script>
+  <script id="addNewAddrMobileTemplate" type="text/x-handlebars-template">
   </script>
 
   <!--------------------------------------------------------------------------- -->

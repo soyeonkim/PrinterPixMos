@@ -12,9 +12,9 @@ $(document).ready(function () {
  
 	
 	//TEST codes;
-	//showCartPage();
+	printerpixMos.cart.showCartPage();
 	//printerpixMos.makeGift.displayMakeGiftPage();
 	//printerpixMos.giftList.displayGiftItemList();
-	printerpixMos.deliveryAddr.displayDeliverAddrPage();
+	//printerpixMos.deliveryAddr.displayDeliverAddrPage();
 });
 

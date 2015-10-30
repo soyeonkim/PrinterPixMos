@@ -93,9 +93,6 @@ printerpixMos.login = {
 		var that =this;
 		that.hideLoginPage();
 	 	printerpixMos.common.precompleTemplate('#login-container' ,'#forgotPasswordMobileTemplate', null);
-
-//	 	var template = Handlebars.compile($('#forgotPasswordMobileTemplate').html()); 
-//		$('#login-container').append(template(Mobildata));
 		/*window.onhashchange = function() {
 			$('#login-container').children("div").remove();
 	 	 	template = Handlebars.compile($('#loginMobileTemplate').html()); 
@@ -274,8 +271,15 @@ printerpixMos.login = {
 		$('#login-container').children("div").remove();
 		this.showLoginPage();
 	},
+	hideAllpages:function() {
+		this.hideLoginPage();
+		this.hideAccountSettingPage();
+	},
 	showAccountSettingPage: function () {
 		printerpixMos.common.precompleTemplate('#mobile-product' ,'#accountSettingMobileTemplate', null);
+	},
+	hideAccountSettingPage:function(){
+		$('#mobile-product').children("div").remove();
 	},
 	accountSettingPage: function  () {
 		$('#accountSet').click(function() {

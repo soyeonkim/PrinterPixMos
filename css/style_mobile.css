@@ -415,16 +415,19 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 }
 .input-radio-box label{
   font-weight:400;
+  margin:0px;
 }
 .input-radio-box input{
     margin-top: 4.8rem;
     vertical-align: middle;
     float: left;
 }
+.displayAddrDiv ul{margin:0px;}
 .displayAddrDiv li {
   word-wrap: break-word;
-  display: inline-block;
-  list-style-type: none
+  display: list-item;
+  text-align: -webkit-match-parent;
+  list-style-type: none;
 }
 .displayAddrFullName{
    display: inherit !important;
@@ -443,6 +446,7 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 #addNewAddr-btn{cursor:pointer;}
 .btn-container{margin:10px 0px; padding:10px 0px;}
 .opt-addr-next{text-indent: -999px; width:12px; margin-top:4px;}
+.cancel-box{margin:10px 0px; padding:20px 0px;}
 
 /**************************************************************************************
   Make Gift page

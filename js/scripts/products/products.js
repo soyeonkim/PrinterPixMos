@@ -60,115 +60,6 @@ printerpixMos.products = {
 
 	},
 
-	showRegisterPage: function (){
-	 	var input_val;
-	 	console.log("showRegisterPage");
-	 	$('#login-container').children("div").remove();
-	 	var template = Handlebars.compile($('#registerMobileTemplate').html()); 
-		$('#login-container').append(template(Mobildata));
-		window.onhashchange = function() {
-			$('#login-container').children("div").remove();
-			template = Handlebars.compile($('#loginMobileTemplate').html()); 
-			$('#login-container').append(template(Mobildata));
-		}
-		function makeEmpty(id,default_value) {
-			$(id).focus(function(){
-				if($(this).val() == default_value) {
-	             	$(this).val("");
-	            }
-	        }).blur(function(){
-	        	if($(this).val().length == 0) {
-	            $(this).val(default_value);
-	        }
-			});
-		}
-
-		var default_f_name = $("#firstname").val();
-		makeEmpty("#firstname",default_f_name);
-
-		var default_l_name = $("#lastname").val();
-		makeEmpty("#lastname", default_l_name);
-
-		input_val =  $("#reg_email").val();
-		makeEmpty("#reg_email",input_val);
-
-		var reg_password  =  $("#reg_password").val();
-		var reg_password2 = $("#reg_password2").val();
-
-		makeEmpty("#reg_password",reg_password);
-		makeEmpty("#reg_password2",reg_password2);
-
-
-
-		$('#register').click(function() {
-			input_val =  $("#firstname").val();
-			
-			var b_firstname = false;
-			var b_lastname = false;
-
-			if(!(input_val) || (input_val == default_f_name)){
-				$('#invaild-reg-fname').removeClass('hidden');
-			}
-			else {
-				$('#invaild-reg-fname').addClass('hidden');
-
-				b_firstname = true;
-				printerpixMos.config.request_opion.firstname = input_val;
-			}
-			input_val =  $("#lastname").val();
-			if(!(input_val) || (input_val ==default_l_name)){
-				$('#invaild-reg-lname').removeClass('hidden');
-				
-			}
-			else {
-				$('#invaild-reg-lname').addClass('hidden');
-				b_lastname=true;
-				printerpixMos.config.request_opion.lastname = input_val;
-			}
-			input_val =  $("#reg_email").val();
-
-			reg_password  =  $("#reg_password").val();
-			reg_password2 = $("#reg_password2").val();
-			if(!(emailRegexp.test(input_val))){
-				$('#invaild-reg-email').removeClass('hidden');
-
-			}
-			else if(reg_password != reg_password2){
-				$('#invaild-reg-email').addClass('hidden');
-				$('#invaild-reg-pw').removeClass('hidden');
-			}
-			else {
-				$('#invaild-reg-pw').addClass('hidden');
-				if(b_firstname && b_lastname){
-					printerpixMos.config.request_opion.useremail = input_val;
-					printerpixMos.config.request_opion.userpassword = reg_password;
-					$('#splashSpinnerReg').removeClass('hidden');
-					request_S_server(printerpixMos.config.request_path.register,printerpixMos.config.request_opion).done(function(data){
-						console.log(data);
-						if(data.Exception) {
-
-						}
-						else {
-							hideRegisterPage();
-						}
-						$('#splashSpinnerReg').addClass('hidden');
-					});
-					request_S_server(printerpixMos.config.request_path.register,printerpixMos.config.request_opion).fail(function(data){
-						console.log(data);
-						$('#splashSpinnerReg').addClass('hidden');
-
-					});
-
-				}
-
-			}
-
-		});
-	 },
-	hideRegisterPage:function () {
-		$('#login-container').children("div").remove();
-		this.showLoginPage();
-	},
 	hideProductPages : function(){
 		$('#product-list').children("div").remove();
 	},
@@ -180,6 +71,51 @@ printerpixMos.products = {
 		if(subProduct){
 			that.hideProductPages();
 			that.displayMoreProductPagesImage (path,subProduct);
+		}
+
+	},
+	displayMoreProductPagesImage: function (path,moreProductName){
+		var that = this;
+
+		that.product_info = moreProductName;
+		printerpixMos.common.precompleTemplate('#product-list','#moreInfoMobileTemplate',moreProductName);
+		console.log("moreProductName:",moreProductName);
+
+		document.getElementById('sub_path').innerHTML= path[0] +" >";
+		if(path.length >1)document.getElementById('sub_last_path').innerHTML= path[1];
+		else {
+			document.getElementById('sub_path').style.color='#ce217e';
+		}
+		$('#main_thumbnav_img').attr('src',moreProductName.pageGroupBannersFullSizeUrls[0]);
+		//$('.product-img-main img').attr('src',mmoreProductName.pageGroupBannersFullSizeUrls[0]);
+
+		$("#thumbnav01").attr('src',moreProductName.pageGroupBannersThumbnailUrls[1]);
+		$("#thumbnav02").attr('src',moreProductName.pageGroupBannersThumbnailUrls[2]);
+		$("#thumbnav03").attr('src',moreProductName.pageGroupBannersThumbnailUrls[3]);
+		$("#thumbnav04").attr('src',moreProductName.pageGroupBannersThumbnailUrls[4]);
+
+
+
+		function swichImage(org_src,dest){
+			var img_big_loca 	= org_src.indexOf('big');
+			//var img_count = org_src.slice(img_loca+3,main_img.indexOf('/', img_loca));
+			var img_small_loca 	= dest.src.indexOf('small');
+			var img_big_org		= org_src.slice(img_big_loca,org_src.indexOf('/',img_big_loca));
+			var img_small_org	= dest.src.slice(img_small_loca, dest.src.indexOf('/',img_small_loca));
+
+			var img_big_new	= 'big'+dest.src.slice(img_small_loca+5, dest.src.indexOf('/',img_small_loca));
+			var img_small_new  = 'small'+org_src.slice(img_big_loca+3,org_src.indexOf('/',img_big_loca));
+			
+			$('#main_thumbnav_img').attr('src', org_src.replace(img_big_org,img_big_new));
+			dest.src=dest.src.replace(img_small_org,img_small_new);
+	
+			console.log("swichImage");
+		}
+
+		for(var k = 1; k <5 ; k ++){
+			$('#thumbnav0'+k).click(function(e){
+				swichImage($('#main_thumbnav_img').attr('src'),this);
+			});
 		}
 
 	},
@@ -274,51 +210,7 @@ printerpixMos.products = {
 		}
 
 	},
-	displayMoreProductPagesImage: function (path,moreProductName){
-		var that = this;
-
-		that.product_info = moreProductName;
-		printerpixMos.common.precompleTemplate('#product-list','#moreInfoMobileTemplate',moreProductName);
-		console.log("moreProductName:",moreProductName);
-
-		document.getElementById('sub_path').innerHTML= path[0] +" >";
-		if(path.length >1)document.getElementById('sub_last_path').innerHTML= path[1];
-		else {
-			document.getElementById('sub_path').style.color='#ce217e';
-		}
-		$('#main_thumbnav_img').attr('src',moreProductName.pageGroupBannersFullSizeUrls[0]);
-		//$('.product-img-main img').attr('src',mmoreProductName.pageGroupBannersFullSizeUrls[0]);
-
-		$("#thumbnav01").attr('src',moreProductName.pageGroupBannersThumbnailUrls[1]);
-		$("#thumbnav02").attr('src',moreProductName.pageGroupBannersThumbnailUrls[2]);
-		$("#thumbnav03").attr('src',moreProductName.pageGroupBannersThumbnailUrls[3]);
-		$("#thumbnav04").attr('src',moreProductName.pageGroupBannersThumbnailUrls[4]);
-
-
-
-		function swichImage(org_src,dest){
-			var img_big_loca 	= org_src.indexOf('big');
-			//var img_count = org_src.slice(img_loca+3,main_img.indexOf('/', img_loca));
-			var img_small_loca 	= dest.src.indexOf('small');
-			var img_big_org		= org_src.slice(img_big_loca,org_src.indexOf('/',img_big_loca));
-			var img_small_org	= dest.src.slice(img_small_loca, dest.src.indexOf('/',img_small_loca));
-
-			var img_big_new	= 'big'+dest.src.slice(img_small_loca+5, dest.src.indexOf('/',img_small_loca));
-			var img_small_new  = 'small'+org_src.slice(img_big_loca+3,org_src.indexOf('/',img_big_loca));
-			
-			$('#main_thumbnav_img').attr('src', org_src.replace(img_big_org,img_big_new));
-			dest.src=dest.src.replace(img_small_org,img_small_new);
 	
-			console.log("swichImage");
-		}
-
-		for(var k = 1; k <5 ; k ++){
-			$('#thumbnav0'+k).click(function(e){
-				swichImage($('#main_thumbnav_img').attr('src'),this);
-			});
-		}
-
-	},
 	hideProductDetailList: function () {
 		$('.select-option').removeClass('open');
 		$('option-btn').attr("aria-expanded",'false');
@@ -340,6 +232,9 @@ printerpixMos.products = {
 
 			});
 		}
+	},
+	hideAllpages:function() {
+		this.hideProductPages();
 	},
 
 	getObjectbyPageGroupId: function(id,objects){
