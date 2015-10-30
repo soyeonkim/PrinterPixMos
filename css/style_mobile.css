@@ -449,6 +449,18 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 .cancel-box{margin:10px 0px; padding:20px 0px;}
 
 /**************************************************************************************
+  add a new address page
+**************************************************************************************/
+
+.add-a-new-addr{ width:100%; margin-bottom: 1.7rem!important; font-size: 1.8rem; line-height: 1.8em; border:1px solid #ababab;}
+
+.enterAddressFormField{ background-color: #fff; overflow-x: hidden;border-top:1px solid #e8e8e8;}
+.enterAddressFormField input{width:98%; padding:3px 5px; box-shadow: none; border: 0; margin:2px;}
+.a-form-error{border-top-color: #d00;     border-color: #d00;
+    z-index: 1;
+    -webkit-box-shadow: 0 0 0 .3rem rgba(221,0,0,.4) inset;
+    box-shadow: 0 0 0 .3rem rgba(221,0,0,.4) inset;}
+/**************************************************************************************
   Make Gift page
 ***************************************************************************************/
 .giftOutercontainer{width:100%; height:auto; padding:10px 0px;background-color: #e8e8e8; /*position:fixed;*/}
