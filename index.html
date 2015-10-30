@@ -959,9 +959,7 @@
                     <span id="option1">Click on the arrow to choose your occasion</span>
                     <span class="caret caret-right"></span>
                   </button>
-                  <ul class="dropdown-menu sub_size" id="layout">
-                    <li>Christmas</li>
-                    <li>Birthday</li>
+                  <ul class="dropdown-menu sub_size" id="gift_occasions">
                   </ul>
                 </div>
             </div>
@@ -1059,13 +1057,13 @@
   <script id="GiftItemsMobileTemplate"   type="text/x-handlebars-template">
      <div class="giftItemOutercontainer">
 
-      {{#GiftOption}}
-      <div class="list-container1 top-borderline" id={{id}}>
+      {{#CartItems}}
+      <div class="list-container1 top-borderline" id={{OrderProductDetailsId}}>
         <div class="item-list-container">
           <div class="list-item-box horizontalBox">
             <div class="item-img">
-              <span><img src="img/Themes/photoBooks/UK/mobile/example.png"/></span>
-              <span class="gift-check-img {{gift_added}}"><img src="img/basket/MakeGift_icon.png"/></span>
+              <span><img src="{{ImgProductImageUrl}}"/></span>
+              <span class="gift-check-img hidden" id="apply_{{OrderProductDetailsId}}"><img src="img/basket/MakeGift_icon.png"/></span>
             </div>
             <div class="item-list-text">
               <div class="item-title">
@@ -1076,17 +1074,17 @@
                 <h4>Delivering to:<span id="deliverWhom">{{delivery_name}} </span></h4>
               </div>
               <div class="delivery-addr"><h4>{{delivery_addr}}</h4></div>
-              <div class="option-notify {{gift_added}}">
+              <div class="option-notify hidden " id='added_{{OrderProductDetailsId}}'>
                 <h4> Gift option added: £1.99</h4>
               </div>
             </div>
           </div>
-          <div class="option-add-btn {{gift_add}}">
-              <button class="add-gift " id="">Make this a Gift ></button>
+          <div class="option-add-btn ">
+              <button class="add-gift" id="gift_{{OrderProductDetailsId}}">Make this a Gift ></button>
           </div> 
         </div>
       </div>
-      {{/GiftOption}}
+      {{/CartItems}}
 
       <div class="bottom-borderline "></div>
     </div>

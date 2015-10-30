@@ -4,8 +4,8 @@ var printerpixMos = printerpixMos ||{};
 $(document).ready(function () {
 
 	//
-  	//printerpixMos.main.init();
-  	//printerpixMos.main.rendorInitPage();
+  	printerpixMos.main.init();
+  	printerpixMos.main.rendorInitPage();
  
  
 	
@@ -15,6 +15,6 @@ $(document).ready(function () {
 	//printerpixMos.makeGift.displayMakeGiftPage();
 	//printerpixMos.giftList.displayGiftItemList();
 	//printerpixMos.deliveryAddr.displayDeliverAddrPage();
-	printerpixMos.deliveryAddr.displayAddNewAddrPage();
+	//printerpixMos.deliveryAddr.displayAddNewAddrPage();
 });
 
