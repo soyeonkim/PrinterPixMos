@@ -39,7 +39,8 @@ printerpixMos.config = {
 		headers["userLastName"]=option.lastname;
 		headers["newsletter"]="true";
 
-
+		console.log(headers);
+		
 		return $.ajax({
 			type:'GET',
 				url: 'https://api.printerpix.co.uk/api'+path,
@@ -88,7 +89,10 @@ printerpixMos.common =  {
 		else $(id).append(template());
 	},
 	show404ErrorPage: function  () {
-		this.precompleTemplate('#mobile-product','#404ErrorMobileTemplate',null);
+		this.precompleTemplate('#main-container','#404ErrorMobileTemplate',null);
+	},
+	hide404ErrorPage:function() {
+		$('#main-container').children("div").remove();
 	},
 	showDropdownList: function (id) {
 		$(id).addClass('in');
@@ -129,10 +133,20 @@ printerpixMos.common =  {
 	setLocalStorageObject: function (str_id , items) {
 		localStorage.setItem(str_id,JSON.stringify(items));
 	},
-	gettLocalStorageItem: function (str_id , items) {
+	getLocalStorageItem: function (str_id , items) {
 		return localStorage.getItem(str_id);
 	},
 	getLocalStorageObject: function (str_id) {
 		return JSON.parse(localStorage.getItem(str_id));
-	}
+	},
+	closeAllLoginPage:function() {
+		printerpixMos.login.hideLoginPage();
+	},
+	closeAllBasket: function () {
+		var that = this;
+		printerpixMos.cart.hideCartPage();
+		printerpixMos.makeGift.hideMakeGiftPage();		
+		printerpixMos.giftList.hideGiftItemList();
+
+	},
 };

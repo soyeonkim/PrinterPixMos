@@ -366,7 +366,9 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 .item-list-img{width:34%;}
 .item-list-text{width:65%; padding-left:10px;}
 .item-title{}
-.item-title h3,.item-size h4 .item-price h4{margin:5px;}
+.item-title h3,.item-size h4, .item-price h4{margin:5px;}
+.item-title h3,.item-size h4,.item-price h4{margin:5px;}
+
 
 .sq-btn,.del-btn {width:30px; height:30px;}
 .sq-btn { float:left; text-align: center; margin:0px 3px;}
@@ -378,7 +380,7 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 .top-title h4{float:left;}
 .top-title >.sq-btn{float:right; padding:8px 15px; width:36px;}
 .your-list {}
-.your-list img{ float:left; width: 125px; height:125px;}
+.your-list img{ float:left; width: 125px; height:inherit;} /* :TODO add media for size checking; */
 .your-list li>.sq-btn{float:left; padding:8px 15px; width:36px; margin: 5px 0px 0px 10px;}
 .your-price{ float:right; font-size: 6vw;}
 .right-basketbox { float:right; margin:0px; padding:0px;}
@@ -402,6 +404,62 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 .error-box{ margin: 10px 0px; padding:5px 0px;}
 .msg-title { padding-bottom: 20px;}
 
+/**************************************************************************************
+  deliver address box
+*****************************************************************************************/
+
+.input-radio-box {
+    width: 80%;
+    font-size: 1.8rem;
+    margin: 0px auto;
+}
+.input-radio-box label{
+  font-weight:400;
+  margin:0px;
+}
+.input-radio-box input{
+    margin-top: 4.8rem;
+    vertical-align: middle;
+    float: left;
+}
+.displayAddrDiv ul{margin:0px;}
+.displayAddrDiv li {
+  word-wrap: break-word;
+  display: list-item;
+  text-align: -webkit-match-parent;
+  list-style-type: none;
+}
+.displayAddrFullName{
+   display: inherit !important;
+}
+.half-btn{
+  width: 47%;
+  border: 1px solid #8d8d8d;
+  line-height: 2.2em;
+  color:#8d8d8d;
+  background-color: #fff;
+  margin-bottom: 20px;
+  cursor:pointer;
+}
+.addr-radio{width:20px; height:20px;}
+.add-new-addr{ font-size: 2.6rem; width: 92%; padding: 5px 0px 5px 20px;}
+#addNewAddr-btn{cursor:pointer;}
+.btn-container{margin:10px 0px; padding:10px 0px;}
+.opt-addr-next{text-indent: -999px; width:12px; margin-top:4px;}
+.cancel-box{margin:10px 0px; padding:20px 0px;}
+
+/**************************************************************************************
+  add a new address page
+**************************************************************************************/
+
+.add-a-new-addr{ width:100%; margin-bottom: 1.7rem!important; font-size: 1.8rem; line-height: 1.8em; border:1px solid #ababab;}
+
+.enterAddressFormField{ background-color: #fff; overflow-x: hidden;border-top:1px solid #e8e8e8;}
+.enterAddressFormField input{width:98%; padding:3px 5px; box-shadow: none; border: 0; margin:2px;}
+.a-form-error{border-top-color: #d00;     border-color: #d00;
+    z-index: 1;
+    -webkit-box-shadow: 0 0 0 .3rem rgba(221,0,0,.4) inset;
+    box-shadow: 0 0 0 .3rem rgba(221,0,0,.4) inset;}
 /**************************************************************************************
   Make Gift page
 ***************************************************************************************/
@@ -440,12 +498,34 @@ textarea{
 .opt-card-prev,.opt-card-next{ width: 18px; 
   height: 34px; position: absolute; top: 35%; z-index:300; text-indent: -9999px;}
 .opt-card-prev {  background: url('../img/buttons/Arrow-L.png') no-repeat left top; left: 1px;}
-.opt-card-next {  background: url('../img/buttons/Arrow-R.png') no-repeat right top; right: 1px;}
+.opt-card-next,.opt-addr-next{  background: url('../img/buttons/Arrow-R.png') no-repeat right top; right: 1px;}
 .cardSlide-holder,.giftcard-img{ width:180px;}
 .cardSlide-holder{ margin: auto;}
 .giftcard-img img{width:100%}
 .procedure-container{width:100%; padding:10px;}
 .btn-procedure {margin-bottom: 15px;}
+
+.input-check-box{width:80%; font-size: 1.8rem; margin:20px auto;}
+.input-check-box input {float:left;}
+.input-check-box label{display:block; margin-left:1.4em;}
+/* :TODO check browser size*/
+.gift-check-img {
+    position: relative;
+    left: 14px;
+    bottom: 116px;
+}
+.gift-check-img img {float:none; width:70%; height:inherit; max-width: 130px;} /* :TODO check browser size*/
+.item-title h4, .item-size h5, .delivery-to h4, .delivery-addr h4 {margin:0px 5px;}
+.item-img{ width:150px; height:150px;}
+.add-gift{padding:5px 25px; background:#fff; border: 2px solid #ce217e;}
+.option-add-btn{width:60%; margin:15px auto;}
+
+/*
+.opt-card-prev,.opt-card-next{ width: 18px; 
+  height: 34px; position: absolute; top: 35%; z-index:300; text-indent: -9999px;}*/
+
+
+
 /**************************************************************************************
   Spinner
 ****************************************************************************************/

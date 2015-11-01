@@ -2,9 +2,7 @@ var printerpixMos = printerpixMos ||{};
  
  
 $(document).ready(function () {
-	var template;
 
- 
 	//
   	//printerpixMos.main.init();
   	//printerpixMos.main.rendorInitPage();
@@ -12,7 +10,11 @@ $(document).ready(function () {
  
 	
 	//TEST codes;
-	//showCartPage();
-	printerpixMos.makeGift.displayMakeGiftPage();
+	//printerpixMos.cart.showCartPage();
+
+	//printerpixMos.makeGift.displayMakeGiftPage();
+	//printerpixMos.giftList.displayGiftItemList();
+	//printerpixMos.deliveryAddr.displayDeliverAddrPage();
+	printerpixMos.deliveryAddr.displayAddNewAddrPage();
 });
 

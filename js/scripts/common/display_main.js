@@ -18,6 +18,9 @@ printerpixMos.main = {
 			that.requestInfo();
 		});
 	},
+	checkLocalData: function() {
+		
+	},
 	requestInfo : function() {
 		var that = this;
 		request = printerpixMos.config.request_server(printerpixMos.config.request_path.pageGroupTypes,printerpixMos.config.request_opion);
@@ -219,6 +222,13 @@ printerpixMos.main = {
 			response[i].name = tmp;
 		}
 		return response;
+	},
+	hideAllpages: function() {
+		var that =this;
+		that.hideHeaderPage();
+		that.hideNavProductPage();
+		that.hideSectionPage();
+		that.hideFooterPage();
 	},
 	 
 
