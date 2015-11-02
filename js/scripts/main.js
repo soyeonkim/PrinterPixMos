@@ -15,6 +15,9 @@ $(document).ready(function () {
 	//printerpixMos.makeGift.displayMakeGiftPage();
 	//printerpixMos.giftList.displayGiftItemList();
 	//printerpixMos.deliveryAddr.displayDeliverAddrPage();
-	printerpixMos.deliveryAddr.displayAddNewAddrPage();
+	//printerpixMos.deliveryAddr.displayAddNewAddrPage();
+	//printerpixMos.paymentInfoExist.displayPaymentExistingUser();
+	//printerpixMos.paymentInfoNew.displayPaymentNewUser();
+	printerpixMos.paymentConfirm.displayPaymentConfirmation();
 });
 

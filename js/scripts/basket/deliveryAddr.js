@@ -42,7 +42,12 @@ printerpixMos.deliveryAddr = {
 			console.log(printerpixMos.cart.giftOption);
 			//checked gift option
 			that.hideDeliverAddrPage();
-			if(printerpixMos.cart.giftOption) printerpixMos.makeGift.displayMakeGiftPage();
+			if(printerpixMos.cart.giftOption) {
+				printerpixMos.giftList.displayGiftItemList();
+			}
+			else {
+				alert('TODO: add delivery option page');
+			}
 			//else //TODO: go to Delivery option page.
 		});
 		$('#addNewAddr-btn').click(function(){
@@ -116,8 +121,6 @@ printerpixMos.deliveryAddr = {
 			that.displayDeliverAddrPage();	
 		}
 			
- 
-
 		});
 		$('#cancel-btn').click(function(){
 			//alert('have to save a new address');

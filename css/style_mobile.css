@@ -422,14 +422,14 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
     vertical-align: middle;
     float: left;
 }
-.displayAddrDiv ul{margin:0px;}
-.displayAddrDiv li {
+.displayAddrDiv ul,.displayCardDiv ul{margin:0px;}
+.displayAddrDiv li,.displayCardDiv li {
   word-wrap: break-word;
   display: list-item;
   text-align: -webkit-match-parent;
   list-style-type: none;
 }
-.displayAddrFullName{
+.displayAddrFullName ,.CardCompany{
    display: inherit !important;
 }
 .half-btn{
@@ -443,7 +443,7 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 }
 .addr-radio{width:20px; height:20px;}
 .add-new-addr{ font-size: 2.6rem; width: 92%; padding: 5px 0px 5px 20px;}
-#addNewAddr-btn{cursor:pointer;}
+#addNewAddr-btn, #addNewCard-btn{cursor:pointer;}
 .btn-container{margin:10px 0px; padding:10px 0px;}
 .opt-addr-next{text-indent: -999px; width:12px; margin-top:4px;}
 .cancel-box{margin:10px 0px; padding:20px 0px;}
@@ -453,13 +453,43 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
 **************************************************************************************/
 
 .add-a-new-addr{ width:100%; margin-bottom: 1.7rem!important; font-size: 1.8rem; line-height: 1.8em; border:1px solid #ababab;}
-
-.enterAddressFormField{ background-color: #fff; overflow-x: hidden;border-top:1px solid #e8e8e8;}
-.enterAddressFormField input{width:98%; padding:3px 5px; box-shadow: none; border: 0; margin:2px;}
+.add-new-card,.add-payPal { width:100%; font-size: 1.8rem; line-height: 1.8em; border:1px solid #ababab; }
+.enterAddressFormField,.enterCardFormField ,.paypalFormField{ background-color: #fff; overflow-x: hidden;border-top:1px solid #e8e8e8;}
+.enterAddressFormField input ,.enterCardFormField input, .paypalFormField input{width:98%; padding:3px 5px; box-shadow: none; border: 0; margin:2px;}
 .a-form-error{border-top-color: #d00;     border-color: #d00;
     z-index: 1;
     -webkit-box-shadow: 0 0 0 .3rem rgba(221,0,0,.4) inset;
     box-shadow: 0 0 0 .3rem rgba(221,0,0,.4) inset;}
+.expire{margin:10px;}
+.col-30{ width:33.3%; }
+.col-60{ width:67%;}
+.cardExpireDateText{    font-size: 1.8rem;
+    margin: 2px;
+    line-height: 1.8em; color:#8d8d8d; }
+
+.a-dropdown-container{text-align: left; width:100%;}
+.a-dropdown {
+    display: block !important;
+    width: 100%;
+    padding: 3px;
+ 
+}
+.payment-check-box {
+  width:90%;
+  font-size: 1.6rem;
+  margin: 10px auto;
+}
+.check-pay-option {
+  width:1.6rem;
+  height:1.6rem;
+}
+.saveInfo-label{
+  font-weight: 400;
+}
+
+.card-radio {
+  margin-top:2.8rem !important;
+}
 /**************************************************************************************
   Make Gift page
 ***************************************************************************************/
@@ -480,8 +510,7 @@ body[class^="pbx_layout_stretch"] .rebrand-header-main{
     border-radius: 4px;
 
 }
-textarea{
-  width:100%;
+textarea{ width:100%;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -523,9 +552,29 @@ textarea{
 /*
 .opt-card-prev,.opt-card-next{ width: 18px; 
   height: 34px; position: absolute; top: 35%; z-index:300; text-indent: -9999px;}*/
+/**************************************************************************************
+  Confirmation page
+****************************************************************************************/
 
-
-
+.summary-box,.dispach-box{width:98%; margin:8px auto; font-size: 1.8rem; line-height: 1.8em; border:1px solid #ababab; background:#fff;}
+.summary-box ul{padding:0px 10px; margin:5px 0px;}
+.summary-box li {color:#8d8d8d; display:inline-block; width:49%;}
+.dispach-box li{color:#8d8d8d;}
+.totalOrder{color:#1d1d1d !important; }
+.totalOrder-price {color:#ce217e !important;}
+.dispath-info{padding:0px 6px; margin:8px 0px;}
+.dispath-detail{  
+    word-wrap: break-word; text-overflow: ellipsis;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;}
+.addr-edit-link{width:97%;}
+.promotion-code-box{width:98%; margin:8px auto; font-size: 1.8rem; line-height: 1.8em;}
+.promo-code{margin-right: 10px; width:67%;}
+.promo-code input{width:100%;padding:0px 10px; margin:5px 0px;  border: 1px solid #8d8d8d; }
+.appy-btn{width:30% ; padding:0px 10px; margin:5px 0px; font-size: 1.8rem; line-height: 1.8em; border:1px solid #8d8d8d; }
 /**************************************************************************************
   Spinner
 ****************************************************************************************/

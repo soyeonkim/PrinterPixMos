@@ -2,9 +2,11 @@ var printerpixMos = printerpixMos ||{};
 
 
 printerpixMos.makeGift = {
+	makeGiftOption:[],
 
-	init: function() {
+	init: function(data) {
 		console.log("init");
+		makeGiftOption=data;
 	},
 	displayMakeGiftPage: function () {
 		var that =this;
@@ -12,6 +14,9 @@ printerpixMos.makeGift = {
 		printerpixMos.common.precompleTemplate('#main-container','#makeGiftMobileTemplate',null);
 		printerpixMos.common.precompleTemplate('#product-list','#CountinueMobileTemplate',null);	
 		printerpixMos.common.initSide('#gift-card-slider',1,'#prev_card','#next_card');
+
+		//makeGiftOption.GiftOption.Occasions
+		//gift_occasions
 
 		$('#procedure').click(function(){
 			that.procedure();
@@ -37,6 +42,7 @@ printerpixMos.makeGift = {
 		that.hideMakeGiftPage();
 		printerpixMos.cart.showCartPage();
 		console.log('click cancel');
-	}
+	},
+
 
 };
