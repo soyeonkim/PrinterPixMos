@@ -82,6 +82,8 @@ footer { background: #ececec; }
 .align-right {float:right;}
 .middle-div { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
 .text-center { text-align: center;}
+.text-left {text-align: left;}
+.text-right{text-align: right;}
 .clear {clear:both;  line-height: 1px; height: 1px;}
 .only-clear{clear:both;}
 .no-background{background: none !important;}
@@ -265,7 +267,8 @@ footer { background: #ececec; }
 { color:#1c1c1b;}
 
 .readmore,.regbtn,
-.back-btn-arrow h4
+.back-btn-arrow h4,
+.addr-edit-link
 { color:#36a9e0;}
 .loginbtn,.your-price,
 #total-price,

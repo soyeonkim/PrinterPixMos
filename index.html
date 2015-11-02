@@ -105,7 +105,10 @@
     <script type="text/javascript" src="js/scripts/basket/deliveryAddr.js"></script>
     <script type="text/javascript" src="js/scripts/basket/makeGift.js"></script>
     <script type="text/javascript" src="js/scripts/basket/giftList.js"></script>
-    
+
+    <script type="text/javascript" src="js/scripts/payment/paymentInfo_new.js"></script>
+    <script type="text/javascript" src="js/scripts/payment/paymentInfo_exist.js"></script>  
+    <script type="text/javascript" src="js/scripts/payment/payment_confirm.js"></script>      
     <script type="text/javascript" src="js/scripts/main.js"></script>
   <!-------------------------------------------------------------------------->
   <!--       *******************Template include ********************      -->
@@ -853,7 +856,7 @@
 
   </script>
   <script id="deliverAddressListMobileTemplate" type="text/x-handlebars-template">
-  {{#DeliveryAddr}}
+    {{#DeliveryAddr}}
     <div class="basketOutercontainer center ">
       <div class="list-container top-borderline">
         <div class="input-radio-box">        
@@ -872,8 +875,8 @@
         </div>     
       </div>
     </div>
-     <div class="only-clear"></div>
-  {{/DeliveryAddr}} 
+    <div class="only-clear"></div>
+    {{/DeliveryAddr}} 
 
     <div class="only-clear"></div>
     <div class="basketOutercontainer center ">
@@ -896,22 +899,19 @@
     <div class="only-clear"></div>
     <div class="top-borderline cancel-box">
       <div class="btn-procedure center text-center">
-
-      <a href='#'><span  id="cancel-btn">Cancel and continue shopping</span></a>
-     </div>
-
-  </div>
+        <a href='#'><span  id="cancel-btn">Cancel and continue shopping</span></a>
+      </div>
+    </div>
   </script>
   <script id="addNewAddrMobileTemplate" type="text/x-handlebars-template">
     <div class="only-clear"></div>
-   <div class="basketOutercontainer center ">
+    <div class="basketOutercontainer center ">
       <div class="list-container top-borderline">
         <div class="item-list-container">
           <div class="add-a-new-addr">
             <div class="enterAddressFormField enterAddressFullName">
                 <input type="text" maxlength="50" id="enterAddressFullName" placeholder="Full name" name="enterAddressFullName">
             </div>
-
             <div class="enterAddressFormField enterAddressAddressLine1">
               <input type="text" maxlength="60" id="enterAddressAddressLine1" placeholder="Address Line 1 (or company name)" name="enterAddressAddressLine1">
             </div>
@@ -928,8 +928,9 @@
               <input type="text" maxlength="20" id="enterAddressPostalCode" placeholder="Postcode" name="enterAddressPostalCode">
             </div>
             <div class="enterAddressFormField enterAddressPhoneNumber">
-             <input type="text" maxlength="20" id="enterAddressPhoneNumber" placeholder="Phone number" name="enterAddressPhoneNumber"></div>
+              <input type="text" maxlength="20" id="enterAddressPhoneNumber" placeholder="Phone number" name="enterAddressPhoneNumber">
             </div>
+        
           </div>
         </div>
       </div>
@@ -1090,6 +1091,276 @@
     </div>
 
   </script>
+  <!--------------------------------------------------------------------------- -->
+
+  <script id="NewUserAddBillingAddrMobileTemplate"   type="text/x-handlebars-template">
+    <div class="only-clear"></div>
+
+    <div class="basketOutercontainer center ">
+      <div class="list-container top-borderline">
+        <div class="productContainer center ">
+          <div class="text-center">
+            <h4><strong>Billing Information</strong></h4>
+          </div>
+        </div>
+
+        <div class="item-list-container">
+          <div class="add-a-new-addr">
+            <div class="enterAddressFormField enterAddressFullName">
+                <input type="text" maxlength="50" id="enterAddressFullName" placeholder="Full name" name="enterAddressFullName">
+            </div>
+            <div class="enterAddressFormField enterAddressAddressLine1">
+              <input type="text" maxlength="60" id="enterAddressAddressLine1" placeholder="Address Line 1 (or company name)" name="enterAddressAddressLine1">
+            </div>
+            <div class="enterAddressFormField enterAddressAddressLine2">
+              <input type="text" maxlength="60" id="enterAddressAddressLine2" placeholder="Address Line 2 (optional)" name="enterAddressAddressLine2">
+            </div>
+            <div class="enterAddressFormField enterAddressCity">
+              <input type="text" maxlength="50" id="enterAddressCity" placeholder="Town/City" name="enterAddressCity">
+            </div>
+            <div class="enterAddressFormField enterAddressStateOrRegion">
+              <input type="text" maxlength="50" id="enterAddressStateOrRegion" placeholder="County" name="enterAddressStateOrRegion">
+            </div>
+            <div class="enterAddressFormField enterAddressPostalCode">
+              <input type="text" maxlength="20" id="enterAddressPostalCode" placeholder="Postcode" name="enterAddressPostalCode">
+            </div>
+            <div class="enterAddressFormField enterAddressPhoneNumber">
+              <input type="text" maxlength="20" id="enterAddressPhoneNumber" placeholder="Phone number" name="enterAddressPhoneNumber">
+            </div>
+        
+          </div>
+
+          </div>
+      </div>
+    </div>
+  </script>
+
+  <script id="addNewCardInfoMobileTemplate"   type="text/x-handlebars-template">
+    <div class="only-clear"></div>
+
+    <div class="basketOutercontainer center ">
+      <div class="list-container top-borderline">
+        <div class="productContainer center ">
+          <div class="text-center">
+            <h4><strong>Payment</strong></h4>
+          </div>
+          <div class="available-card">
+            <img src="">
+          </div>
+        </div>
+        <div class="item-list-container">
+          <div class="add-new-card">
+              <div class="enterCardFormField enterNameonCard">
+                <input type="text" maxlength="30" id="enterNameonCard" placeholder="Name on Card" name="enterNameonCard">
+            </div>
+            <div class="enterCardFormField enterCardNumber">
+              <input type="text" maxlength="16" id="enterCardNumber" placeholder="Card Number" name="enterCardNumber">
+            </div>
+          </div>
+          <div class="expire horizontalBox">
+            <div class="col-30 cardExpireDateText">Expire date</div>
+            <div class="col-30 cardExpireDateText">
+              <div class="a-dropdown-container">
+                <select name="month" id="ccMonth" class="a-dropdown">
+                  <option value="1"> 01 </option>
+                  <option value="2"> 02 </option>
+                  <option value="3"> 03 </option>
+                  <option value="4"> 04 </option>
+                  <option value="5"> 05 </option>
+                  <option value="6"> 06 </option>
+                  <option value="7"> 07 </option>
+                  <option value="8"> 08 </option>
+                  <option value="9"> 09 </option>
+                  <option value="10"> 10 </option>
+                  <option value="11"> 11 </option>
+                  <option value="12"> 12 </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-30 cardExpireDateText">
+              <select name="year" id="ccYear" class="a-dropdown">
+                <option value="2015" selected="">2015</option>
+                <option value="2016"> 2016</option>
+                <option value="2017"> 2017</option>
+                <option value="2018"> 2018</option>
+                <option value="2019"> 2019</option>
+                <option value="2020"> 2020</option>
+                <option value="2021"> 2021</option>
+                <option value="2022"> 2022</option>
+                <option value="2023"> 2023</option>
+                <option value="2024"> 2024</option>
+                <option value="2025"> 2025</option>
+                <option value="2026"> 2026</option>
+                <option value="2027"> 2027</option>
+                <option value="2028"> 2028 </option>
+                <option value="2029"> 2029</option>
+                <option value="2030"> 2030</option>
+                <option value="2031"> 2031</option>
+                <option value="2032"> 2032</option>
+                <option value="2033"> 2033</option>
+                <option value="2034"> 2034</option>
+                <option value="2035"> 2035</option>
+              </select>
+            </div>
+          </div>
+          <div class="text-center">
+            <p>or</p>
+          </div>
+
+  
+
+        </div>
+
+      </div>
+    </div>
+
+  </script>
+  <script id="payPalUserInfoMobileTemplate"   type="text/x-handlebars-template">
+    <div class="only-clear"></div>
+    <div class="basketOutercontainer center ">
+      <div class="list-container">
+        <div class="item-list-container">
+          <div class="paypal-img">
+            <img src="img/basket/Paypal_logos.png">
+          </div>
+          <div class="add-payPal">
+            <div class="paypalFormField enterNameonCard">
+                <input type="text" maxlength="60" id="enterNameonCard" placeholder=" " name="enterNameonCard">
+            </div>
+            <div class="paypalFormField enterCardNumber">
+              <input type="text" maxlength="60" id="enterCardNumber" placeholder=" " name="enterCardNumber">
+            </div>
+          </div>
+          <div class="payment-check-box">
+            <form>
+            <input type="checkbox" name="payment-option" value="payment" class="check-pay-option">
+            <label class="saveInfo-label">Save payment info for quick purchases </label>
+            </form>
+          </div> 
+        </div> 
+      </div>
+    </div>
+  </script>
+
+  <script id="paymentExistingUserMobileTemplate"   type="text/x-handlebars-template">
+    <div class="only-clear"></div>
+
+    <div class="basketOutercontainer center ">
+      <div class="list-container top-borderline">
+        <div class="productContainer center ">
+          <div class="text-center">
+            <h4><strong>Payment Method</strong></h4>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="list-container top-borderline">
+        <div class="input-radio-box">        
+          <label class="">
+            <input type="radio" name="default-card"value="" class="card-radio" checked="">
+            <div class="displayCardDiv">
+              <ul>
+                <li class="CardCompany bold" id="default_pay_card">Visa/Delta/Election ******1234</li>
+                <li class="displayNameonCard" id="default_pay_holder">Name </li>
+                <li class="displayExpireDate" id="default_pay_expire">Expires xx/20xx</li>
+              </ul>
+            </div>
+          </label>           
+        </div>     
+      </div>
+       {{#PaymentInfo}}
+      <div class="list-container top-borderline">
+        <div class="input-radio-box">        
+          <label class="">
+            <input type="radio" name="default-card"value="" class="card-radio" >
+            <div class="displayCardDiv">
+              <ul>
+                <li class="CardCompany bold">{{CardCompany}} {{CardNumber}}</li>
+                <li class="displayNameonCard">{{CardHolerName}} </li>
+                <li class="displayExpireDate">{{ExpireDate}}</li>
+              </ul>
+            </div>
+          </label>           
+        </div>     
+      </div>
+      {{/PaymentInfo}}
+
+
+      <div class="only-clear"></div>
+    </div>
+    <div class="only-clear"></div>
+    <div class="basketOutercontainer center ">
+      <div class="btn-container top-borderline">
+        <div class="checkout-outer-box horizontalBox" id="addNewCard-btn">
+          <div class="add-new-addr bold"> Add a New Card </div>
+          <div class="opt-addr-next"> Next </div>
+        </div>
+      </div>
+    </div>
+    <div class="only-clear"></div>
+    <div class="basketOutercontainer center ">
+      <div class="btn-container top-borderline">
+         <div class="text-center">
+            <p>or</p>
+          </div>
+      </div>
+    </div>
+  </script>
+  <script id="paymentConfirmBtnHeaderMobileTemplate"   type="text/x-handlebars-template">
+    <div class="only-clear"></div> 
+    <div class="procedure-container">
+        <div class=" center text-center">
+          <button class="personalised button-printerpix white" id="confirm-btn">Confirm and Purchase > 
+          </button>
+        </div>
+    </div>
+  </script>
+  <script id="paymentConfirmSummaryMobileTemplate"   type="text/x-handlebars-template">
+      <div class="basketOutercontainer center ">
+      <div class="list-container ">
+        <div class="productContainer center">
+          <div class="text-center">
+            <h4><strong>Order Summary</strong></h4>
+          </div>
+
+          <div class="summary-box center">
+            <ul>
+              <li class='text-left'>items </li>
+              <li class='text-right' id='item-price'>£xx.xx </li>
+            </ul>
+             <ul>
+              <li class='text-left'>Postage & Packaging </li>
+              <li class='text-right' id='postage-price'>£xx.xx </li>
+            </ul>
+            <ul>
+              <li class='text-left totalOrder'><strong>Order Total</strong> </li>
+              <li class='text-right totalOrder-price' id='total-price'><strong>£xx.xx</strong></li>
+            </ul>
+          </div>
+          <div class="dispach-box center">
+            <div class="horizontalBox dispath-info">
+              <div class='col-30 '>Dispathing to: </div>
+              <div class='col-60 dispath-detail'>Name here  Test address goes here here here here here here here here </div>
+            </div>
+            <div class='addr-edit-link text-right'>Edit</div>
+          </div>
+
+          <div class="promotion-code-box center">
+            <div class="horizontalBox">
+            <div class='promo-code'>
+              <input type="text" id="enterPromotionCde" placeholder="Enter pormotional code" name="enterPromotionCde">
+            </div>
+            <div class='appy-btn text-center bold'> Apply </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </script>
+
+
+  <!--------------------------------------------------------------------------- -->
   <script id="accountSettingMobileTemplate"   type="text/x-handlebars-template">
   </script>
 </body>
