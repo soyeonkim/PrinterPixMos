@@ -31,7 +31,7 @@ printerpixMos.paymentConfirm = {
 		printerpixMos.common.precompleTemplate('#footer-mobile-about','#paymentConfirmDeliveryMobileTemplate',null);
 		//paymentConfirmDeliveryMobileTemplate
 
-		//printerpixMos.common.precompleTemplate('#main-container','#CountinueMobileTemplate',null);
+		printerpixMos.common.precompleTemplate('#footer-register','#CountinueMobileTemplate',null);
 
 		that.renameButton('Confirm and Purchase >', 'Cancel and continue shopping');
 	},
