@@ -28,8 +28,8 @@ printerpixMos.paymentConfirm = {
       */
 		printerpixMos.common.precompleTemplate('#footer-mobile-about','#paymentConfirmBtnHeaderMobileTemplate',null);
 		printerpixMos.common.precompleTemplate('#footer-mobile-about','#paymentConfirmSummaryMobileTemplate',null);
-		//printerpixMos.common.precompleTemplate('#footer-mobile-about','#paymentConfirmSummaryMobileTemplate',null);
-		
+		printerpixMos.common.precompleTemplate('#footer-mobile-about','#paymentConfirmDeliveryMobileTemplate',null);
+		//paymentConfirmDeliveryMobileTemplate
 
 		//printerpixMos.common.precompleTemplate('#main-container','#CountinueMobileTemplate',null);
 

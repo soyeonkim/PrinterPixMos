@@ -1317,48 +1317,85 @@
     </div>
   </script>
   <script id="paymentConfirmSummaryMobileTemplate"   type="text/x-handlebars-template">
-      <div class="basketOutercontainer center ">
-      <div class="list-container ">
-        <div class="productContainer center">
-          <div class="text-center">
-            <h4><strong>Order Summary</strong></h4>
-          </div>
+    <div class="basketOutercontainer center ">
+    <div class="list-container ">
+      <div class="productContainer center">
+        <div class="text-center">
+          <h4><strong>Order Summary</strong></h4>
+        </div>
 
-          <div class="summary-box center">
-            <ul>
-              <li class='text-left'>items </li>
-              <li class='text-right' id='item-price'>£xx.xx </li>
-            </ul>
-             <ul>
-              <li class='text-left'>Postage & Packaging </li>
-              <li class='text-right' id='postage-price'>£xx.xx </li>
-            </ul>
-            <ul>
-              <li class='text-left totalOrder'><strong>Order Total</strong> </li>
-              <li class='text-right totalOrder-price' id='total-price'><strong>£xx.xx</strong></li>
-            </ul>
+        <div class="summary-box center">
+          <ul>
+            <li class='text-left'>items </li>
+            <li class='text-right' id='item-price'>£xx.xx </li>
+          </ul>
+           <ul>
+            <li class='text-left'>Postage & Packaging </li>
+            <li class='text-right' id='postage-price'>£xx.xx </li>
+          </ul>
+          <ul>
+            <li class='text-left totalOrder'><strong>Order Total</strong> </li>
+            <li class='text-right totalOrder-price' id='total-price'><strong>£xx.xx</strong></li>
+          </ul>
+        </div>
+        <div class="dispach-box center">
+          <div class="horizontalBox dispath-info">
+            <div class='col-30 '>Dispathing to: </div>
+            <div class='col-60 dispath-detail'>Name here  Test address goes here here here here here here here here </div>
           </div>
-          <div class="dispach-box center">
-            <div class="horizontalBox dispath-info">
-              <div class='col-30 '>Dispathing to: </div>
-              <div class='col-60 dispath-detail'>Name here  Test address goes here here here here here here here here </div>
-            </div>
-            <div class='addr-edit-link text-right'>Edit</div>
-          </div>
+          <div class='addr-edit-link text-right'>Edit</div>
+        </div>
 
-          <div class="promotion-code-box center">
-            <div class="horizontalBox">
-            <div class='promo-code'>
-              <input type="text" id="enterPromotionCde" placeholder="Enter pormotional code" name="enterPromotionCde">
-            </div>
-            <div class='appy-btn text-center bold'> Apply </div>
-            </div>
+        <div class="promotion-code-box center">
+          <div class="horizontalBox">
+          <div class='promo-code'>
+            <input type="text" id="enterPromotionCde" placeholder="Enter pormotional code" name="enterPromotionCde">
           </div>
-
+          <div class='appy-btn text-center bold'> Apply </div>
+          </div>
         </div>
       </div>
+    </div>
   </script>
+  <script id="paymentConfirmDeliveryMobileTemplate"   type="text/x-handlebars-template">
+    <div class="only-clear"></div>
+    <div class="basketOutercontainer center ">
+      <div class="list-container ">
+        <div class="productContainer center">
+          <div class="text-left confirm-title">
+          <h4><strong>Delivery Address</strong></h4>
+          </div> 
+          <div class="dispach-box center">
+            <div class="horizontalBox  dispath-info" id=''>
+              <div class='dispath-detail2'>Name here <br>  Test address goes here here here here here here here here </div> 
+            <div class="opt-addr-next2"> Next </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="basketOutercontainer center ">
+      <div class="list-container ">
+        <div class="productContainer center">
+          <div class="text-left confirm-title">
+            <h4><strong>Delivery Address</strong></h4>
+          </div> 
+          <div class="dispach-box center">
+            <div class="horizontalBox  dispath-info" id=''>
+              <div class='dispath-detail3'><strong>Payment Method:<br></strong><span id='confirm-pay'>Visa/Delta/Election ********1234</span> </div> 
+              <div class="opt-addr-next3"> Next </div>
+            </div>
+          <!--</div>
+          <div class="dispach-box center"> -->
+          <div class="top-borderline"></div>
+            <div class="horizontalBox  dispath-info" id=''>
+              <div class='dispath-detail3'><strong>Invoice address:<br></strong><span id='invoice-addr'>Same as deliver address</span> </div>
+            <div class="opt-addr-next3"> Next </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
 
   <!--------------------------------------------------------------------------- -->
   <script id="accountSettingMobileTemplate"   type="text/x-handlebars-template">
